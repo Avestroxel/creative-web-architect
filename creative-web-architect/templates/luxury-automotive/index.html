@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AETHER APEX | The Pure Electric Grand Tourer</title>
+  <meta name="description" content="Aether Apex is the pinnacle of luxury electric engineering, combining 1,450 HP, liquid-sculpted aerodynamics, and an intelligent glass cockpit.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body class="theme-obsidian">
+  <!-- Top Glass Navigation -->
+  <header class="glass-nav" id="main-nav">
+    <div class="nav-container">
+      <a href="#" class="brand-logo" aria-label="Aether Apex Home">
+        <span class="logo-mark">▲</span>
+        <span class="logo-text">AETHER</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <a href="#overview" class="nav-link active">Overview</a>
+        <a href="#performance" class="nav-link">Performance</a>
+        <a href="#aerodynamics" class="nav-link">Aerodynamics</a>
+        <a href="#configurator" class="nav-link">Configurator</a>
+        <a href="#cockpit" class="nav-link">Cockpit</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="sound-toggle-btn" id="sound-btn" aria-label="Toggle electric propulsion audio" title="Electric Propulsion Audio">
+          <span class="sound-icon">🔊</span>
+          <span class="sound-label">Audio</span>
+        </button>
+        <button class="glass-button btn-primary" id="open-reserve-btn" aria-haspopup="dialog">
+          Reserve Apex
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section with Canvas Interactive Visualizer -->
+  <main id="main-content">
+    <section id="overview" class="hero-section">
+      <div class="hero-canvas-container">
+        <canvas id="hero-car-canvas" aria-label="Interactive 3D representation of Aether Apex"></canvas>
+        <div class="canvas-ambient-glow"></div>
+      </div>
+
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="pulse-dot"></span>
+          <span>SERIES 01 // PRODUCTION ALLOCATION OPEN</span>
+        </div>
+        <h1 class="hero-title">
+          <span class="title-sub">THE ARCHITECTURE OF SPEED</span>
+          <span class="title-main">AETHER APEX</span>
+        </h1>
+        <p class="hero-description">
+          Engineered without compromise. Tri-motor electric hyper-torque, active carbon aerodynamic surfaces, and an adaptive liquid-crystal cockpit delivering pure transcendence.
+        </p>
+
+        <!-- Live Telemetry HUD -->
+        <div class="telemetry-grid" role="region" aria-label="Vehicle Key Specifications">
+          <div class="telemetry-card glass-panel" data-metric="accel">
+            <div class="metric-value"><span class="counter" data-target="1.84">0.00</span><span class="unit">s</span></div>
+            <div class="metric-label">0 – 60 MPH</div>
+            <div class="metric-sub">Sub-2 Second Threshold</div>
+          </div>
+          <div class="telemetry-card glass-panel" data-metric="power">
+            <div class="metric-value"><span class="counter" data-target="1450">0</span><span class="unit">HP</span></div>
+            <div class="metric-label">PEAK OUTPUT</div>
+            <div class="metric-sub">Tri-Motor Permanent Magnet</div>
+          </div>
+          <div class="telemetry-card glass-panel" data-metric="range">
+            <div class="metric-value"><span class="counter" data-target="620">0</span><span class="unit">MI</span></div>
+            <div class="metric-label">EPA RANGE</div>
+            <div class="metric-sub">Solid-State Nanotube Matrix</div>
+          </div>
+          <div class="telemetry-card glass-panel" data-metric="speed">
+            <div class="metric-value"><span class="counter" data-target="258">0</span><span class="unit">MPH</span></div>
+            <div class="metric-label">TOP SPEED</div>
+            <div class="metric-sub">Electronic Limited V-Max</div>
+          </div>
+        </div>
+
+        <div class="hero-cta-group">
+          <a href="#configurator" class="glass-button btn-large btn-cyan">
+            <span>Configure Your Build</span>
+            <span class="btn-arrow">→</span>
+          </a>
+          <button class="glass-button btn-large btn-outline" id="play-drive-sound">
+            <span>Simulate Launch Sound</span>
+            <span class="btn-icon">⚡</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Configurator Section -->
+    <section id="configurator" class="configurator-section">
+      <div class="section-header">
+        <span class="section-tag">BESPOKE ATELIER</span>
+        <h2 class="section-title">Colorway & Materiality</h2>
+        <p class="section-subtitle">Select handcrafted exterior pigments infused with liquid-metal flakes and diamond micro-prisms.</p>
+      </div>
+
+      <div class="configurator-wrapper">
+        <div class="car-stage glass-panel">
+          <div class="stage-lighting" id="stage-glow"></div>
+          <div class="car-silhouette" id="car-preview">
+            <div class="body-shell" id="car-body">
+              <div class="aerodynamic-lines"></div>
+              <div class="headlight-streamer"></div>
+              <div class="cockpit-glass"></div>
+              <div class="wheel wheel-front"></div>
+              <div class="wheel wheel-rear"></div>
+            </div>
+          </div>
+          <div class="stage-info">
+            <div class="active-finish-name" id="finish-name">Obsidian Void</div>
+            <div class="active-finish-spec" id="finish-spec">Deep-luster basalt metallic with electro-reflective nano-topcoat</div>
+          </div>
+        </div>
+
+        <div class="swatches-panel glass-panel">
+          <h3 class="swatches-title">Exterior Finishes</h3>
+          <div class="swatch-list" role="radiogroup" aria-label="Exterior Finishes">
+            <button class="swatch-btn active" data-color="#0F1117" data-accent="#00F0FF" data-name="Obsidian Void" data-spec="Deep-luster basalt metallic with electro-reflective nano-topcoat" aria-label="Obsidian Void finish">
+              <span class="swatch-circle" style="background: radial-gradient(circle at 30% 30%, #2A2D3A, #0B0C10);"></span>
+              <span class="swatch-label">Obsidian Void</span>
+            </button>
+            <button class="swatch-btn" data-color="#E8ECF2" data-accent="#4E75FF" data-name="Arctic Glaze" data-spec="Liquid frost tri-coat with sub-zero sapphire pearlescence" aria-label="Arctic Glaze finish">
+              <span class="swatch-circle" style="background: radial-gradient(circle at 30% 30%, #FFFFFF, #B8C4D4);"></span>
+              <span class="swatch-label">Arctic Glaze</span>
+            </button>
+            <button class="swatch-btn" data-color="#002D3B" data-accent="#00FFA3" data-name="Hyperion Teal" data-spec="Deep marine teal shifting to ultraviolet under direct sunlight" aria-label="Hyperion Teal finish">
+              <span class="swatch-circle" style="background: radial-gradient(circle at 30% 30%, #00F0FF, #003647);"></span>
+              <span class="swatch-label">Hyperion Teal</span>
+            </button>
+            <button class="swatch-btn" data-color="#38260D" data-accent="#FFB800" data-name="Solar Flare Gold" data-spec="Warm champagne titanium with molten amber crystalline flecks" aria-label="Solar Flare Gold finish">
+              <span class="swatch-circle" style="background: radial-gradient(circle at 30% 30%, #FFD700, #4A3310);"></span>
+              <span class="swatch-label">Solar Flare Gold</span>
+            </button>
+            <button class="swatch-btn" data-color="#0E2319" data-accent="#10B981" data-name="Verdant Apex" data-spec="Heritage racing emerald infused with carbon weave textures" aria-label="Verdant Apex finish">
+              <span class="swatch-circle" style="background: radial-gradient(circle at 30% 30%, #10B981, #081B13);"></span>
+              <span class="swatch-label">Verdant Apex</span>
+            </button>
+          </div>
+
+          <div class="wheel-picker">
+            <h4 class="sub-title">Aero Wheels</h4>
+            <div class="wheel-options">
+              <button class="wheel-opt active" data-wheel="vortex" aria-label="21 inch Vortex Carbon Turbine">21" Vortex Carbon</button>
+              <button class="wheel-opt" data-wheel="hyper" aria-label="22 inch Monoblock Forged Magnesium">22" Monoblock Magnesium</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Aerodynamics & Pinned Storytelling Section -->
+    <section id="aerodynamics" class="aero-section">
+      <div class="section-header">
+        <span class="section-tag">FLUID DYNAMICS</span>
+        <h2 class="section-title">Zero Drag. Infinite Downforce.</h2>
+        <p class="section-subtitle">Active aerodynamic geometry continuous morphing at high velocity.</p>
+      </div>
+
+      <div class="story-grid">
+        <article class="story-card glass-panel">
+          <div class="story-num">01</div>
+          <h3 class="story-heading">Active Venturi Underfloor</h3>
+          <p class="story-body">Four computational fluid intake tunnels channel underbody airflow, sealing the chassis to the tarmac at speeds exceeding 150 mph without mechanical turbulence.</p>
+          <div class="story-metric">
+            <span class="metric-highlight">0.19 Cd</span>
+            <span class="metric-caption">Lowest drag coefficient in hyper-GT history</span>
+          </div>
+        </article>
+
+        <article class="story-card glass-panel">
+          <div class="story-num">02</div>
+          <h3 class="story-heading">Liquid Crystal Airbrakes</h3>
+          <p class="story-body">Twin carbon-fiber deployable wings articulate within 80 milliseconds, generating over 1,200 kg of lateral stabilization and instantaneous deceleration downforce.</p>
+          <div class="story-metric">
+            <span class="metric-highlight">80 ms</span>
+            <span class="metric-caption">Deployment response time</span>
+          </div>
+        </article>
+
+        <article class="story-card glass-panel">
+          <div class="story-num">03</div>
+          <h3 class="story-heading">Structural Carbon Monocell</h3>
+          <p class="story-body">Formed in a high-pressure autoclave using formula-grade prepreg carbon fiber, yielding torsional rigidity of 68,000 Nm/deg for razor-sharp steering feedback.</p>
+          <div class="story-metric">
+            <span class="metric-highlight">68,000 Nm</span>
+            <span class="metric-caption">Torsional rigidity benchmark</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Cockpit & Intelligence Section -->
+    <section id="cockpit" class="cockpit-section">
+      <div class="glass-panel cockpit-container">
+        <div class="cockpit-badge">AETHER OS // QUANTUM HUD</div>
+        <h2 class="cockpit-title">The Glass Horizon Cockpit</h2>
+        <p class="cockpit-desc">A panoramic curved micro-OLED panel spanning pillar to pillar with tactile haptic glass controls and neural eye-tracking interface.</p>
+        <div class="cockpit-features">
+          <div class="feature-item">
+            <span class="feat-icon">👁️</span>
+            <div>
+              <strong>Neural Gaze Projection</strong>
+              <p>Instruments project directly into your focal plane without peripheral distraction.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <span class="feat-icon">🛡️</span>
+            <div>
+              <strong>Level 4 Autonomous Co-Pilot</strong>
+              <p>32 high-resolution lidar, radar, and hyperspectral vision sensors.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <span class="feat-icon">🎶</span>
+            <div>
+              <strong>Acoustic Resonance Suite</strong>
+              <p>28-speaker 3D spatial array utilizing the carbon chassis as a soundboard.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Reservation Modal -->
+  <div class="modal-backdrop" id="reserve-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+    <div class="modal-card glass-panel">
+      <div class="modal-header">
+        <div>
+          <span class="modal-tag">ALLOCATION REQUEST</span>
+          <h2 id="modal-title" class="modal-heading">Reserve Your Aether Apex</h2>
+        </div>
+        <button class="modal-close-btn" id="close-modal-btn" aria-label="Close reservation dialog">✕</button>
+      </div>
+
+      <form id="reservation-form" class="modal-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" required placeholder="Elena">
+          </div>
+          <div class="form-group">
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" required placeholder="Vane">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">VIP Direct Email</label>
+          <input type="email" id="email" required placeholder="elena@vane-holdings.com">
+        </div>
+
+        <div class="form-group">
+          <label for="region">Primary Delivery Hub</label>
+          <select id="region">
+            <option value="zurich">Zurich Atelier — Switzerland</option>
+            <option value="tokyo">Tokyo Ginza — Japan</option>
+            <option value="london">London Mayfair — United Kingdom</option>
+            <option value="monaco">Monaco Port Hercule — Monaco</option>
+            <option value="beverly">Beverly Hills — United States</option>
+          </select>
+        </div>
+
+        <div class="allocation-notice glass-panel">
+          <div class="notice-num">Priority Queue Position: <strong>#042 / 250</strong></div>
+          <div class="notice-fee">Fully refundable allocation deposit: <strong>$5,000 USD</strong></div>
+        </div>
+
+        <button type="submit" class="glass-button btn-cyan btn-full">
+          Confirm Allocation Application
+        </button>
+      </form>
+      <div id="form-success" class="form-success-msg" hidden>
+        <h3>Allocation Request Received</h3>
+        <p>A personal concierge from the Zurich Atelier will reach out within 2 hours to confirm your build slot.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="glass-footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <span class="footer-logo">AETHER APEX</span>
+        <p>© 2026 Aether Automotive AG. Handcrafted in Switzerland. All rights reserved.</p>
+      </div>
+      <div class="footer-right">
+        <span>Architected with Creative Web Architect Agent Toolkit</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>

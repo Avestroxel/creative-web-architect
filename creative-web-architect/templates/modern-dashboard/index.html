@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nebula AI // Cloud Telemetry & Neural Cluster Operations</title>
+  <meta name="description" content="High-performance real-time telemetry dashboard for distributed AI clusters, featuring neural GPU monitoring and Liquid Glass UI.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body class="dashboard-body">
+  <!-- Top Glass Bar -->
+  <header class="top-nav glass-panel">
+    <div class="nav-brand">
+      <div class="cluster-icon"></div>
+      <span class="brand-title">NEBULA<span class="brand-accent">.OS</span></span>
+      <span class="cluster-tag">CLUSTER // US-EAST-04</span>
+    </div>
+
+    <div class="nav-center">
+      <div class="system-status glass-pill">
+        <span class="status-indicator live"></span>
+        <span class="status-text">ALL NODES SYNCHRONIZED</span>
+        <span class="status-metric">99.998% SLA</span>
+      </div>
+    </div>
+
+    <div class="nav-controls">
+      <button class="glass-btn" id="open-cmd-btn" aria-label="Open command palette">
+        <span class="cmd-icon">⌘</span>
+        <span class="cmd-text">Quick Command</span>
+        <span class="cmd-kbd">K</span>
+      </button>
+      <div class="avatar-pill glass-pill">
+        <span class="avatar-dot"></span>
+        <span class="avatar-name">SecOps Lead</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Grid Layout -->
+  <main class="dashboard-main">
+    <!-- Quick Metrics Row -->
+    <section class="metrics-row" aria-label="Cluster Performance Metrics">
+      <div class="metric-card glass-panel">
+        <div class="metric-header">
+          <span class="metric-title">TOTAL INFERENCE RUNS</span>
+          <span class="metric-badge positive">+18.4%</span>
+        </div>
+        <div class="metric-value-large" id="metric-inferences">24,892,104</div>
+        <div class="metric-footer">
+          <span class="sparkline-bar" style="width: 78%"></span>
+          <span class="footer-label">Avg 14.2k req/sec</span>
+        </div>
+      </div>
+
+      <div class="metric-card glass-panel">
+        <div class="metric-header">
+          <span class="metric-title">CLUSTER H100 UTILIZATION</span>
+          <span class="metric-badge live-pulse">ACTIVE</span>
+        </div>
+        <div class="metric-value-large" id="metric-gpu">91.4<span class="unit">%</span></div>
+        <div class="metric-footer">
+          <span class="sparkline-bar color-cyan" style="width: 91.4%"></span>
+          <span class="footer-label">512/560 Tensor Cores</span>
+        </div>
+      </div>
+
+      <div class="metric-card glass-panel">
+        <div class="metric-header">
+          <span class="metric-title">P99 INFERENCE LATENCY</span>
+          <span class="metric-badge positive">-4.2ms</span>
+        </div>
+        <div class="metric-value-large" id="metric-latency">8.42<span class="unit">ms</span></div>
+        <div class="metric-footer">
+          <span class="sparkline-bar color-emerald" style="width: 45%"></span>
+          <span class="footer-label">Quantum Cache Hit: 94.6%</span>
+        </div>
+      </div>
+
+      <div class="metric-card glass-panel">
+        <div class="metric-header">
+          <span class="metric-title">THERMAL EFFICIENCY</span>
+          <span class="metric-badge neutral">NOMINAL</span>
+        </div>
+        <div class="metric-value-large" id="metric-thermal">52.8<span class="unit">°C</span></div>
+        <div class="metric-footer">
+          <span class="sparkline-bar color-purple" style="width: 58%"></span>
+          <span class="footer-label">Immersion Liquid Flow: Optimal</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Charts & Analytics Section -->
+    <section class="charts-section">
+      <!-- Main Live Chart -->
+      <div class="chart-card glass-panel">
+        <div class="card-header">
+          <div>
+            <h2 class="card-heading">Real-Time Cluster Throughput & Token Generation</h2>
+            <p class="card-subheading">Live streaming tensor bandwidth across distributed nodes</p>
+          </div>
+          <div class="time-filter-group glass-pill">
+            <button class="filter-tab active" data-range="live">LIVE</button>
+            <button class="filter-tab" data-range="1h">1H</button>
+            <button class="filter-tab" data-range="24h">24H</button>
+            <button class="filter-tab" data-range="7d">7D</button>
+          </div>
+        </div>
+        <div class="chart-container">
+          <canvas id="live-throughput-chart" height="260" aria-label="Cluster throughput visualization"></canvas>
+        </div>
+        <div class="chart-legend">
+          <div class="legend-item"><span class="legend-dot color-cyan"></span> Primary Inferences (kTokens/s)</div>
+          <div class="legend-item"><span class="legend-dot color-purple"></span> Speculative Decoding Bandwidth</div>
+          <div class="legend-item"><span class="legend-dot color-gold"></span> Cross-Node KV Cache Sync</div>
+        </div>
+      </div>
+
+      <!-- Side Cluster Node Status -->
+      <div class="cluster-nodes-card glass-panel">
+        <div class="card-header">
+          <h2 class="card-heading">Compute Nodes</h2>
+          <span class="live-pill">8 ONLINE</span>
+        </div>
+        <div class="nodes-list" id="nodes-container">
+          <!-- Populated by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Activity Stream & Operations Log -->
+    <section class="activity-section">
+      <div class="activity-card glass-panel">
+        <div class="card-header">
+          <h2 class="card-heading">Cluster Audit & Event Stream</h2>
+          <button class="glass-btn-sm" id="clear-log-btn">Clear View</button>
+        </div>
+        <div class="activity-stream" id="event-stream" role="log" aria-live="polite">
+          <!-- Live events inserted dynamically -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Floating Liquid Glass Dock Navigation -->
+  <aside class="floating-dock glass-panel" aria-label="Dashboard views">
+    <button class="dock-item active" data-tooltip="Cluster Overview" aria-label="Cluster Overview">
+      <span class="dock-icon">📊</span>
+    </button>
+    <button class="dock-item" data-tooltip="Model Registry" aria-label="Model Registry">
+      <span class="dock-icon">🧠</span>
+    </button>
+    <button class="dock-item" data-tooltip="GPU Telemetry" aria-label="GPU Telemetry">
+      <span class="dock-icon">⚡</span>
+    </button>
+    <button class="dock-item" data-tooltip="Security & Keys" aria-label="Security & Keys">
+      <span class="dock-icon">🔒</span>
+    </button>
+    <button class="dock-item" data-tooltip="System Settings" aria-label="System Settings">
+      <span class="dock-icon">⚙️</span>
+    </button>
+  </aside>
+
+  <!-- Quick Command Modal -->
+  <div class="cmd-backdrop" id="cmd-modal" role="dialog" aria-modal="true" aria-labelledby="cmd-modal-title" hidden>
+    <div class="cmd-dialog glass-panel">
+      <div class="cmd-input-wrapper">
+        <span class="cmd-search-icon">🔍</span>
+        <input type="text" id="cmd-input" placeholder="Type a command or query cluster..." autocomplete="off">
+        <button class="cmd-close" id="cmd-close-btn" aria-label="Close command palette">ESC</button>
+      </div>
+      <div class="cmd-results" id="cmd-results">
+        <div class="cmd-group-label">SUGGESTED ACTIONS</div>
+        <button class="cmd-result-item" data-action="scale">
+          <span class="item-icon">🚀</span>
+          <span class="item-text">Scale US-EAST-04 cluster +32 nodes</span>
+          <span class="item-tag">ACTION</span>
+        </button>
+        <button class="cmd-result-item" data-action="flush-cache">
+          <span class="item-icon">🧹</span>
+          <span class="item-text">Flush speculative KV cache partitions</span>
+          <span class="item-tag">CACHE</span>
+        </button>
+        <button class="cmd-result-item" data-action="export">
+          <span class="item-icon">📥</span>
+          <span class="item-text">Export Prometheus telemetry metrics snapshot</span>
+          <span class="item-tag">METRICS</span>
+        </button>
+        <button class="cmd-result-item" data-action="benchmark">
+          <span class="item-icon">⏱️</span>
+          <span class="item-text">Initiate synthetic latency load test</span>
+          <span class="item-tag">BENCHMARK</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>

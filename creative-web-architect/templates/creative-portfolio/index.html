@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kaelen Voss // Creative Technologist & Interaction Architect</title>
+  <meta name="description" content="Portfolio of Kaelen Voss, specializing in generative design, WebGL experiences, Liquid Glass interfaces, and next-generation creative engineering.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body class="portfolio-body">
+  <!-- Dynamic Custom Cursor -->
+  <div class="custom-cursor" id="cursor"></div>
+  <div class="cursor-glow" id="cursor-glow"></div>
+
+  <!-- Top Navigation -->
+  <header class="portfolio-nav glass-panel">
+    <div class="nav-brand">
+      <span class="brand-monogram">KV</span>
+      <span class="brand-name">Kaelen Voss</span>
+    </div>
+
+    <nav class="nav-links" aria-label="Portfolio Navigation">
+      <a href="#work" class="nav-link active">Work</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#experiments" class="nav-link">Experiments</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+
+    <div class="nav-cta">
+      <button class="glass-btn magnetic" id="open-contact-btn">Get In Touch</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-badge glass-pill">
+        <span class="availability-dot"></span>
+        <span>OPEN FOR SELECTIVE COMMISSIONS // 2026</span>
+      </div>
+
+      <h1 class="hero-title">
+        <span>Designing at the</span>
+        <span class="hero-italic">Intersection</span>
+        <span>of Motion, Code & Art.</span>
+      </h1>
+
+      <p class="hero-bio">
+        Interaction architect crafting award-winning digital experiences, WebGL narrative worlds, and tactile glass interfaces for forward-thinking brands and institutions worldwide.
+      </p>
+
+      <div class="hero-stats">
+        <div class="stat-card glass-panel">
+          <div class="stat-num">9×</div>
+          <div class="stat-label">Awwwards Site of the Day</div>
+        </div>
+        <div class="stat-card glass-panel">
+          <div class="stat-num">12+</div>
+          <div class="stat-label">Years Creative Engineering</div>
+        </div>
+        <div class="stat-card glass-panel">
+          <div class="stat-num">40M+</div>
+          <div class="stat-label">Global Unique Interactions</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Grid Section -->
+    <section id="work" class="work-section">
+      <div class="section-top">
+        <div>
+          <span class="section-tag">SELECTED ARCHIVE</span>
+          <h2 class="section-title">Featured Commissions</h2>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="filter-tabs glass-panel" role="tablist">
+          <button class="tab-btn active" data-filter="all">All Projects</button>
+          <button class="tab-btn" data-filter="webgl">3D & WebGL</button>
+          <button class="tab-btn" data-filter="glass">Liquid Glass</button>
+          <button class="tab-btn" data-filter="generative">Generative</button>
+        </div>
+      </div>
+
+      <div class="projects-grid" id="projects-grid">
+        <!-- Project 1 -->
+        <article class="project-card glass-panel" data-category="webgl" data-id="lumina">
+          <div class="card-visual visual-lumina">
+            <div class="visual-badge">WebGL // Three.js</div>
+          </div>
+          <div class="card-content">
+            <div class="card-tags">
+              <span>Automotive</span>
+              <span>•</span>
+              <span>Shader Art</span>
+            </div>
+            <h3 class="card-title">Lumina Hyper-Spatial</h3>
+            <p class="card-desc">An interactive WebGL narrative showcasing next-generation photonics and volumetric aerodynamic light trails.</p>
+            <button class="view-project-btn" data-target="lumina">Inspect Case Study →</button>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card glass-panel" data-category="glass" data-id="zenith">
+          <div class="card-visual visual-zenith">
+            <div class="visual-badge">Liquid Glass // React</div>
+          </div>
+          <div class="card-content">
+            <div class="card-tags">
+              <span>Fintech OS</span>
+              <span>•</span>
+              <span>Design System</span>
+            </div>
+            <h3 class="card-title">Zenith Wealth Horizon</h3>
+            <p class="card-desc">Tactile multi-layer glass interface engineered for algorithmic asset management and real-time portfolio telemetry.</p>
+            <button class="view-project-btn" data-target="zenith">Inspect Case Study →</button>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card glass-panel" data-category="generative" data-id="neural">
+          <div class="card-visual visual-neural">
+            <div class="visual-badge">GLSL // Compute</div>
+          </div>
+          <div class="card-content">
+            <div class="card-tags">
+              <span>Interactive Sound</span>
+              <span>•</span>
+              <span>Bio-Sensors</span>
+            </div>
+            <h3 class="card-title">Neural Resonance Synthesizer</h3>
+            <p class="card-desc">Audio-reactive procedural geometry powered by Web Audio API and custom custom compute displacement shaders.</p>
+            <button class="view-project-btn" data-target="neural">Inspect Case Study →</button>
+          </div>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="project-card glass-panel" data-category="webgl" data-id="solis">
+          <div class="card-visual visual-solis">
+            <div class="visual-badge">Three.js // GLSL</div>
+          </div>
+          <div class="card-content">
+            <div class="card-tags">
+              <span>Luxury Watchmaking</span>
+              <span>•</span>
+              <span>E-Commerce</span>
+            </div>
+            <h3 class="card-title">Solis Chronograph Atelier</h3>
+            <p class="card-desc">Photorealistic mechanical tourbillon exploded view with real-time gear interaction and spring kinematics.</p>
+            <button class="view-project-btn" data-target="solis">Inspect Case Study →</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+      <div class="about-card glass-panel">
+        <div class="about-left">
+          <span class="section-tag">PHILOSOPHY</span>
+          <h2 class="about-title">Digital Craftsmanship without Boundaries.</h2>
+          <p class="about-p">
+            I believe modern web experiences should feel alive — responsive not merely to screen dimensions, but to touch, light, motion, and user intentionality.
+          </p>
+          <p class="about-p">
+            By harmonizing algorithmic shaders, micro-timed physics, and refined typography, every interaction becomes a memorable micro-story.
+          </p>
+        </div>
+        <div class="about-right">
+          <div class="skill-category">
+            <h4>Core Architecture</h4>
+            <div class="skill-pills">
+              <span class="skill-pill">WebGL / Three.js</span>
+              <span class="skill-pill">GLSL Shaders</span>
+              <span class="skill-pill">Liquid Glass Systems</span>
+              <span class="skill-pill">GSAP / Framer Physics</span>
+              <span class="skill-pill">TypeScript / React</span>
+              <span class="skill-pill">Web Audio API</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h4>Design Capabilities</h4>
+            <div class="skill-pills">
+              <span class="skill-pill">Creative Art Direction</span>
+              <span class="skill-pill">Spatial UI / 3D Layout</span>
+              <span class="skill-pill">Design Tokens & Systems</span>
+              <span class="skill-pill">Micro-Interaction Choreography</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Case Study Modal Dialog -->
+  <div class="case-study-modal" id="case-study-modal" role="dialog" aria-modal="true" hidden>
+    <div class="modal-content glass-panel" id="modal-content">
+      <button class="close-modal-btn" id="close-modal" aria-label="Close dialog">✕</button>
+      <div id="case-study-body">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Drawer / Modal -->
+  <div class="contact-modal" id="contact-modal" role="dialog" aria-modal="true" hidden>
+    <div class="contact-card glass-panel">
+      <button class="close-modal-btn" id="close-contact" aria-label="Close dialog">✕</button>
+      <span class="section-tag">DIRECT INQUIRY</span>
+      <h2 class="contact-title">Let's craft something transcendent.</h2>
+      <p class="contact-desc">Available for select enterprise partnerships, keynote consulting, and bespoke creative development.</p>
+
+      <div class="email-copy-box glass-panel" id="copy-email-box">
+        <span class="email-address">kaelen@voss-studio.design</span>
+        <button class="copy-btn glass-btn" id="copy-btn">Copy Address</button>
+      </div>
+
+      <div class="contact-socials">
+        <a href="#" class="social-link">GitHub</a>
+        <a href="#" class="social-link">Twitter / X</a>
+        <a href="#" class="social-link">Read.cv</a>
+        <a href="#" class="social-link">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="portfolio-footer">
+    <div class="footer-wrap">
+      <span>© 2026 Kaelen Voss. Handcrafted with Creative Web Architect.</span>
+      <span>Zurich / Tokyo / Remote</span>
+    </div>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "name": "@cwa/template-creative-portfolio",
+  "version": "0.1.0",
+  "description": "Kaelen Voss Creative Technologist & Interaction Architect portfolio built with Creative Web Architect",
+  "type": "module",
+  "scripts": {
+    "dev": "npx -y serve . -p 3002",
+    "preview": "npx -y serve . -p 3002"
+  },
+  "keywords": ["portfolio", "creative-developer", "liquid-glass", "shaders", "webgl", "template"]
+}

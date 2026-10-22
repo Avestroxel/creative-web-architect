@@ -1,0 +1,11 @@
+{
+  "name": "@cwa/template-modern-dashboard",
+  "version": "0.1.0",
+  "description": "Nebula AI Telemetry & Neural Cluster Operations dashboard built with Creative Web Architect",
+  "type": "module",
+  "scripts": {
+    "dev": "npx -y serve . -p 3001",
+    "preview": "npx -y serve . -p 3001"
+  },
+  "keywords": ["dashboard", "telemetry", "ai-cluster", "liquid-glass", "monitoring", "template"]
+}

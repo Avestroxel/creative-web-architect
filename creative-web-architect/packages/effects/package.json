@@ -1,0 +1,46 @@
+{
+  "name": "@cwa/effects",
+  "version": "0.1.0",
+  "description": "Liquid Glass components, motion utilities, and visual effect helpers for Creative Web Architect",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./liquid-glass": {
+      "import": "./dist/liquid-glass/index.js",
+      "types": "./dist/liquid-glass/index.d.ts"
+    },
+    "./motion": {
+      "import": "./dist/motion/index.js",
+      "types": "./dist/motion/index.d.ts"
+    },
+    "./css": "./dist/liquid-glass/liquid-glass.css"
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "typecheck": "tsc --noEmit",
+    "clean": "node -e \"const fs=require('fs');fs.rmSync('dist',{recursive:true,force:true})\""
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "peerDependenciesMeta": {
+    "react": { "optional": true },
+    "react-dom": { "optional": true }
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.48",
+    "@types/react-dom": "^18.2.18",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^5.3.3",
+    "@types/node": "^20.11.0"
+  }
+}

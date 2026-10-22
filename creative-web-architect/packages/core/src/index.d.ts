@@ -1,0 +1,13 @@
+/**
+ * @cwa/core — Creative Web Architect Core Engine
+ *
+ * Provides skill discovery, configuration management, and shared types
+ * for the Creative Web Architect toolkit.
+ */
+export { discoverSkills, loadSkill, getSkillPath, validateSkill } from './skill-discovery.js';
+export { createConfig, loadConfig, getDefaultConfig, mergeConfigs } from './config.js';
+export { createDesignSystemForStyle, generateFluidClamp, getDefaultTypographyScale, exportToCSSVariables, } from './design-system.js';
+export type { Skill, SkillMetadata, CWAConfig, DesignMode, DesignStyle, DesignStyleCategory, DesignToken, DesignSystem, ColorPalette, TypographyScale, MotionConfig, LiquidGlassConfig, PerformanceTargets, AccessibilityConfig, ProjectBrief, CreativeDirection, AgentEnvironment, } from './types.js';
+export { DESIGN_MODES, DESIGN_STYLES, STYLE_CATEGORIES } from './constants.js';
+export { resolvePath, isSubPath, createBackup } from './utils.js';
+//# sourceMappingURL=index.d.ts.map

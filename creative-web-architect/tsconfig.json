@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "jsx": "react-jsx",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "@cwa/core": ["packages/core/src/index.ts"],
+      "@cwa/effects": ["packages/effects/src/index.ts"],
+      "@cwa/effects/*": ["packages/effects/src/*"]
+    },
+    "types": ["node"]
+  },
+  "exclude": ["node_modules", "dist", "templates", "examples"]
+}

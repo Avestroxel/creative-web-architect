@@ -1,0 +1,21 @@
+{
+  "version": "0.1.0",
+  "mode": "auto",
+  "skillsDir": "C:\\Users\\Golden\\Desktop\\agent\\creative-web-architect\\.agents\\skills",
+  "performance": {
+    "lcpTarget": 2500,
+    "inpTarget": 200,
+    "clsTarget": 0.1,
+    "targetFPS": 60
+  },
+  "accessibility": {
+    "contrastRatio": 4.5,
+    "reducedMotionFallback": true,
+    "keyboardNavigation": true,
+    "screenReaderSupport": true,
+    "minTouchTarget": 44
+  },
+  "targetEnvironments": [
+    "antigravity"
+  ]
+}

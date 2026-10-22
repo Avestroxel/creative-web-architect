@@ -1,0 +1,11 @@
+{
+  "name": "@cwa/template-luxury-automotive",
+  "version": "0.1.0",
+  "description": "Luxury Electric Grand Tourer showcase website built with Creative Web Architect",
+  "type": "module",
+  "scripts": {
+    "dev": "npx -y serve . -p 3000",
+    "preview": "npx -y serve . -p 3000"
+  },
+  "keywords": ["automotive", "luxury", "electric", "glassmorphism", "webgl", "template"]
+}

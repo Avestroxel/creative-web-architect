@@ -1,0 +1,153 @@
+/**
+ * Constants for design modes, styles, and style categories.
+ */
+import type { DesignMode, DesignStyle, DesignStyleCategory } from './types.js';
+
+/** All supported design modes with descriptions */
+export const DESIGN_MODES: Record<DesignMode, string> = {
+  auto: 'Full autonomous creative decisions — the agent decides everything',
+  guided: 'Honor user preferences for style, colors, and stack choices',
+  experimental: 'Prioritize creative risk and unusual interaction approaches',
+  performance: 'Minimize runtime overhead, maximize loading speed',
+  immersive: 'Cinematic storytelling, advanced motion, and 3D techniques',
+  redesign: 'Improve an existing site without breaking required functionality',
+  'liquid-glass': 'Sophisticated translucent material-inspired visual language',
+  'design-system': 'Build reusable tokens, components, and interface patterns',
+  component: 'Create a standalone reusable UI component or interaction',
+  audit: 'Evaluate and recommend or execute improvements on existing code',
+};
+
+/** Design style categories with their member styles */
+export const STYLE_CATEGORIES: Record<DesignStyleCategory, { label: string; description: string; styles: DesignStyle[] }> = {
+  'minimal-structured': {
+    label: 'Minimal & Structured',
+    description: 'Clean, ordered designs with intentional negative space and geometric precision',
+    styles: [
+      'swiss-international',
+      'contemporary-minimalism',
+      'japanese-minimalism',
+      'scandinavian-design',
+      'editorial-minimalism',
+      'architectural-minimalism',
+      'monochrome-design',
+      'geometric-modernism',
+    ],
+  },
+  'expressive-experimental': {
+    label: 'Expressive & Experimental',
+    description: 'Bold, boundary-pushing designs that challenge conventions and prioritize creative expression',
+    styles: [
+      'neo-brutalism',
+      'digital-brutalism',
+      'maximalism',
+      'experimental-editorial',
+      'anti-design',
+      'postmodernism',
+      'memphis-design',
+      'expressive-typography',
+      'generative-design',
+      'interactive-art-direction',
+    ],
+  },
+  'premium-cinematic': {
+    label: 'Premium & Cinematic',
+    description: 'Luxurious, story-driven designs with cinematic pacing and premium material quality',
+    styles: [
+      'luxury-editorial',
+      'cinematic-product',
+      'dark-luxury',
+      'fashion-editorial',
+      'art-deco',
+      'minimal-luxury',
+      'automotive-showcase',
+      'premium-product-storytelling',
+    ],
+  },
+  'futuristic-technological': {
+    label: 'Futuristic & Technological',
+    description: 'Forward-looking designs inspired by technology, science fiction, and emerging interfaces',
+    styles: [
+      'spatial-ui',
+      'futuristic-interfaces',
+      'cyberpunk',
+      'retro-futurism',
+      'y2k',
+      'immersive-webgl',
+      'holographic-interfaces',
+      'generative-shader',
+      'glassmorphism',
+      'liquid-glass',
+      'advanced-material',
+    ],
+  },
+  'organic-human': {
+    label: 'Organic & Human',
+    description: 'Warm, approachable designs inspired by nature, craft, and human touch',
+    styles: [
+      'organic-modernism',
+      'nature-inspired',
+      'warm-editorial',
+      'handcrafted-design',
+      'playful-illustration',
+      'soft-geometric',
+      'tactile-interfaces',
+    ],
+  },
+};
+
+/** Flat map of all design styles with descriptions */
+export const DESIGN_STYLES: Record<DesignStyle, { label: string; description: string; category: DesignStyleCategory }> = {
+  // Minimal & Structured
+  'swiss-international': { label: 'Swiss International Style', description: 'Grid-based precision, Helvetica-derived typography, mathematical composition, functional clarity', category: 'minimal-structured' },
+  'contemporary-minimalism': { label: 'Contemporary Minimalism', description: 'Generous whitespace, restrained palette, sans-serif typography, micro-interactions', category: 'minimal-structured' },
+  'japanese-minimalism': { label: 'Japanese Minimalism', description: 'Wabi-sabi aesthetics, organic textures, deliberate imperfection, zen-like calm', category: 'minimal-structured' },
+  'scandinavian-design': { label: 'Scandinavian Design', description: 'Warm minimalism, natural materials, soft curves, cozy functionality', category: 'minimal-structured' },
+  'editorial-minimalism': { label: 'Editorial Minimalism', description: 'Magazine-inspired layouts, strong typography hierarchy, reading-first design', category: 'minimal-structured' },
+  'architectural-minimalism': { label: 'Architectural Minimalism', description: 'Structural grid systems, spatial awareness, monumental scale, clean lines', category: 'minimal-structured' },
+  'monochrome-design': { label: 'Monochrome Design', description: 'Single-hue or grayscale palette, high contrast, dramatic light and shadow', category: 'minimal-structured' },
+  'geometric-modernism': { label: 'Geometric Modernism', description: 'Bold geometric shapes, primary colors, Bauhaus influence, structural composition', category: 'minimal-structured' },
+
+  // Expressive & Experimental
+  'neo-brutalism': { label: 'Neo-Brutalism', description: 'Raw aesthetics, thick borders, bold colors, visible structure, anti-polish', category: 'expressive-experimental' },
+  'digital-brutalism': { label: 'Digital Brutalism', description: 'Monospace typography, exposed code aesthetics, raw HTML energy, deliberate roughness', category: 'expressive-experimental' },
+  'maximalism': { label: 'Maximalism', description: 'Visual abundance, layered patterns, clashing colors, sensory overload by design', category: 'expressive-experimental' },
+  'experimental-editorial': { label: 'Experimental Editorial', description: 'Unconventional layouts, mixed media, dynamic typography, editorial art direction', category: 'expressive-experimental' },
+  'anti-design': { label: 'Anti-Design', description: 'Deliberate ugliness, broken grids, clashing elements, confrontational aesthetics', category: 'expressive-experimental' },
+  'postmodernism': { label: 'Postmodernism', description: 'Eclectic mixing, historical references, ironic juxtaposition, playful subversion', category: 'expressive-experimental' },
+  'memphis-design': { label: 'Memphis Design', description: 'Playful geometric patterns, pastel and neon colors, 80s-inspired bold forms', category: 'expressive-experimental' },
+  'expressive-typography': { label: 'Expressive Typography', description: 'Typography as primary visual element, kinetic text, scale play, letter-based art', category: 'expressive-experimental' },
+  'generative-design': { label: 'Generative Design', description: 'Algorithm-driven visuals, procedural patterns, code art, mathematical beauty', category: 'expressive-experimental' },
+  'interactive-art-direction': { label: 'Interactive Art Direction', description: 'Cursor-driven visuals, interactive canvases, user participation in design', category: 'expressive-experimental' },
+
+  // Premium & Cinematic
+  'luxury-editorial': { label: 'Luxury Editorial', description: 'Premium typography, elegant spacing, editorial photography, restrained luxury', category: 'premium-cinematic' },
+  'cinematic-product': { label: 'Cinematic Product Design', description: 'Full-screen imagery, dramatic reveals, product-hero storytelling, movie-like pacing', category: 'premium-cinematic' },
+  'dark-luxury': { label: 'Dark Luxury', description: 'Deep dark surfaces, gold/silver accents, dramatic lighting, exclusive atmosphere', category: 'premium-cinematic' },
+  'fashion-editorial': { label: 'Fashion Editorial', description: 'High-fashion photography, editorial grids, dramatic typography, runway aesthetics', category: 'premium-cinematic' },
+  'art-deco': { label: 'Art Deco', description: 'Geometric ornamentation, metallic finishes, symmetrical layouts, 1920s glamour', category: 'premium-cinematic' },
+  'minimal-luxury': { label: 'Minimal Luxury', description: 'Ultra-refined minimalism, premium materials, subtle details, quiet confidence', category: 'premium-cinematic' },
+  'automotive-showcase': { label: 'Automotive Showcase', description: 'Dynamic vehicle photography, technical specifications, configurators, performance focus', category: 'premium-cinematic' },
+  'premium-product-storytelling': { label: 'Premium Product Storytelling', description: 'Scroll-driven product narratives, detail close-ups, feature reveals, aspiration', category: 'premium-cinematic' },
+
+  // Futuristic & Technological
+  'spatial-ui': { label: 'Spatial UI', description: 'Depth layers, floating elements, spatial navigation, 3D interface paradigms', category: 'futuristic-technological' },
+  'futuristic-interfaces': { label: 'Futuristic Interfaces', description: 'Sci-fi inspired UI, HUD elements, data visualization, tech-forward aesthetics', category: 'futuristic-technological' },
+  'cyberpunk': { label: 'Cyberpunk', description: 'Neon on dark, glitch effects, dystopian tech, high contrast, digital noise', category: 'futuristic-technological' },
+  'retro-futurism': { label: 'Retro Futurism', description: 'Vintage future visions, analog-digital blend, optimistic tech nostalgia', category: 'futuristic-technological' },
+  'y2k': { label: 'Y2K', description: 'Early internet aesthetics, chrome effects, translucent plastics, cyber-optimism', category: 'futuristic-technological' },
+  'immersive-webgl': { label: 'Immersive WebGL', description: 'Full 3D environments, interactive scenes, spatial navigation, real-time rendering', category: 'futuristic-technological' },
+  'holographic-interfaces': { label: 'Holographic Interfaces', description: 'Iridescent surfaces, rainbow gradients, floating holograms, prismatic effects', category: 'futuristic-technological' },
+  'generative-shader': { label: 'Generative Shader Design', description: 'GLSL-driven visuals, procedural textures, real-time GPU art, mathematical aesthetics', category: 'futuristic-technological' },
+  'glassmorphism': { label: 'Glassmorphism', description: 'Frosted glass surfaces, background blur, transparency, subtle borders', category: 'futuristic-technological' },
+  'liquid-glass': { label: 'Liquid Glass', description: 'Fluid translucent surfaces, optical depth, dynamic refraction, living glass material', category: 'futuristic-technological' },
+  'advanced-material': { label: 'Advanced Material Interfaces', description: 'Physical material simulation, surface textures, haptic-inspired design', category: 'futuristic-technological' },
+
+  // Organic & Human
+  'organic-modernism': { label: 'Organic Modernism', description: 'Curved forms, natural proportions, biomorphic shapes, flowing compositions', category: 'organic-human' },
+  'nature-inspired': { label: 'Nature-Inspired Design', description: 'Earth tones, botanical elements, natural textures, environmental harmony', category: 'organic-human' },
+  'warm-editorial': { label: 'Warm Editorial', description: 'Serif typography, warm palettes, intimate photography, personal narratives', category: 'organic-human' },
+  'handcrafted-design': { label: 'Handcrafted Design', description: 'Hand-drawn elements, custom illustrations, artisanal quality, personal touch', category: 'organic-human' },
+  'playful-illustration': { label: 'Playful Illustration', description: 'Character art, animated illustrations, vibrant colors, joyful interactions', category: 'organic-human' },
+  'soft-geometric': { label: 'Soft Geometric Design', description: 'Rounded geometries, pastel gradients, gentle shapes, friendly precision', category: 'organic-human' },
+  'tactile-interfaces': { label: 'Tactile Interfaces', description: 'Touch-optimized, physical feedback, material depth, satisfying interactions', category: 'organic-human' },
+};
