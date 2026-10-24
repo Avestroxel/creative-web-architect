@@ -143,7 +143,7 @@ When asked to build, design, or scaffold any website, page, or component:
 
 ---
 
-## 33 LEARNED ARCHITECTURAL TECHNIQUES (INSTALLED IN KNOWLEDGE/)
+## 36 LEARNED ARCHITECTURAL TECHNIQUES (INSTALLED IN KNOWLEDGE/)
 
 In every project, you MUST inspect and autonomously apply 2 to 4 complementary techniques from your local \`knowledge/index.json\`:
 
@@ -152,7 +152,7 @@ In every project, you MUST inspect and autonomously apply 2 to 4 complementary t
 3. **Reelmark Video Atlas Single-Stream** (\`video-atlas-single-stream-grid-sync\`): Packs 10 video clips into a single 5x2 composite video texture, slashing bandwidth by 90% and preventing mobile decoder crashes.
 4. **Mainframe Queue-Gated Video Scrubbing** (\`queue-gated-mouse-scrub-video-kinematics\`): Background video playback scrubbed via horizontal mouse velocity with an onSeeked anti-flood queue latch.
 5. **Mainframe Conversational Action Triage** (\`conversational-action-triage-and-optical-blur\`): Intentional optical blur (filter: blur(4px)) on secondary copy paired with conversational action pills and 1-click clipboard copy.
-6. **Jack Sticky Card Deck Stacking** (\`sticky-stacking-card-deck-scale-decay\`): Stacking project deck with scale decay formula $targetScale = 1 - (total - 1 - i) \\times 0.03$ and sticky viewport pinning.
+6. **Jack Sticky Card Deck Stacking** (\`sticky-stacking-card-deck-scale-decay\`): Stacking project deck with scale decay formula $targetScale = 1 - (total - 1 - i) \times 0.03$ and sticky viewport pinning.
 7. **Jack Scroll Character Opacity Wave** (\`scroll-driven-character-opacity-wave\`): Text illuminated character-by-character from opacity 0.2 to 1.0 tied to scroll progress with zero layout shift.
 8. **Jack Damped Magnetic Cursor Follow** (\`damped-magnetic-cursor-follow-physics\`): 150px proximity threshold pulling hero elements toward cursor with asymmetric timing (0.3s in / 0.6s out).
 9. **Jack Dual-Row Opposing Marquee** (\`dual-row-scroll-coupled-marquee-kinematics\`): Vertical scroll directly coupled to counter-directional horizontal marquee rows.
@@ -180,6 +180,9 @@ In every project, you MUST inspect and autonomously apply 2 to 4 complementary t
 31. **Model-Viewer Cursor Tilt & Forcefield Repulsion** (\`model-viewer-cursor-tilt-and-forcefield-repulsion\`): Google <model-viewer> camera orbit cursor tilt with exponential smoothing lerp coupled with an inverted distance-based physical forcefield that repels surrounding floating 3D/2.5D items within a 400px radius.
 32. **Shader-Warmed Texture Swap & Entity Implosion** (\`shader-warmed-texture-swap-and-entity-implosion\`): Pre-compiles GPU shaders on model load to eliminate texture swap stutter, paired with a dual-phase 720° spin with motion blur at velocity peak, and coordinated entity center-implosion, asset geometry swap, and spring explosion.
 33. **Three-Tier Depth-Layered Parallax Staging** (\`three-tier-depth-layered-parallax-staging\`): Creates volumetric stage depth using discrete Z-index elevation planes (leaves -15, background berries -30, product 50, UI 100, foreground berries 110 at +60 parallax), integrated with a lightweight self-cleaning rising bubble particle stream.
+34. **Curvature-Time-Dilated Circuit Trace Kinematics** (\`curvature-time-dilated-circuit-trace\`): Curvature-coupled velocity modulation along 2D/3D polylines (braking into corners, accelerating down straights), paired with a dual-gradient heat filament and distance-gated marker pop flares.
+35. **Packed-Delta Lattice Halftone Matrix** (\`packed-delta-lattice-halftone-matrix\`): 8,000+ point coordinate field delta-compressed into compact row/col strings with O(1) queries, offscreen canvas baking, and interactive crosshair reticles squaring into dynamic chequerboards.
+36. **Depth-Parallax Normal Relighting & Dissolve Burn** (\`depth-parallax-normal-relighting-burn\`): Single-quad UV depth map displacement with Lambertian normal map relighting toward cursor coordinates, combined with a height/noise procedural dissolution burn with luminous boundary edge glow.
 
 ---
 

@@ -1,21 +1,21 @@
 {
   "version": "1.0.0",
-  "updatedAt": "2026-10-24T18:55:00.000Z",
-  "totalTechniques": 33,
+  "updatedAt": "2026-10-24T19:25:00.000Z",
+  "totalTechniques": 36,
   "categories": {
     "typography": 4,
-    "scroll-animations": 6,
+    "scroll-animations": 7,
     "accessibility": 1,
     "button-interactions": 1,
     "hover-effects": 2,
     "art-direction": 2,
-    "three-dimensional-web": 6,
+    "three-dimensional-web": 7,
     "ui-components": 2,
     "creative-storytelling": 1,
     "visual-composition": 3,
     "page-transitions": 1,
     "micro-interactions": 1,
-    "performance-engineering": 2,
+    "performance-engineering": 3,
     "color-systems": 1
   },
   "techniques": [
@@ -664,6 +664,69 @@
         "type": "prompt",
         "title": "Soda 3D Beverage Prompt",
         "date": "2026-10-24T18:55:00.000Z"
+      }
+    },
+    {
+      "id": "curvature-time-dilated-circuit-trace",
+      "name": "Curvature-Time-Dilated Circuit Trace Kinematics",
+      "description": "Calculates local polyline turning angles to physically modulate velocity (braking into corners and accelerating along straights), combined with a dual-gradient heat filament and distance-gated marker pop flares.",
+      "category": "scroll-animations",
+      "tags": [
+        "canvas",
+        "kinematics",
+        "curvature",
+        "racing-line",
+        "circuit-trace",
+        "kimi"
+      ],
+      "validationStatus": "reviewed",
+      "targetSkill": "advanced-scroll-animation",
+      "sourceReference": {
+        "type": "prompt",
+        "title": "KIMI GRIDO1 Racing Systems Prompt",
+        "date": "2026-10-24T19:25:00.000Z"
+      }
+    },
+    {
+      "id": "packed-delta-lattice-halftone-matrix",
+      "name": "Packed-Delta Lattice Halftone Matrix & Interactive Reticle",
+      "description": "Encodes 8,000+ geometric coordinates as delta-compressed row/col strings with O(1) lattice queries, baked offscreen, morphing circular dots into dynamic squared chequerboards upon cursor reticle proximity.",
+      "category": "performance-engineering",
+      "tags": [
+        "canvas",
+        "halftone",
+        "delta-compression",
+        "reticle",
+        "performance",
+        "kimi"
+      ],
+      "validationStatus": "reviewed",
+      "targetSkill": "performance-profiling",
+      "sourceReference": {
+        "type": "prompt",
+        "title": "KIMI GRIDO1 Racing Systems Prompt",
+        "date": "2026-10-24T19:25:00.000Z"
+      }
+    },
+    {
+      "id": "depth-parallax-normal-relighting-burn",
+      "name": "Depth-Parallax Normal Relighting & Procedural Dissolve Burn",
+      "description": "Combines single-quad UV depth displacement with cursor-reactive Lambertian normal map relighting, paired with a height/noise entrance dissolve burn with luminous boundary edge glow.",
+      "category": "three-dimensional-web",
+      "tags": [
+        "webgl",
+        "depth-parallax",
+        "normal-relighting",
+        "dissolve-burn",
+        "glsl",
+        "kimi"
+      ],
+      "validationStatus": "reviewed",
+      "targetSkill": "three-dimensional-web",
+      "sourceReference": {
+        "type": "prompt",
+        "title": "KIMI GRIDO1 Racing Systems Prompt",
+        "date": "2026-10-24T19:25:00.000Z"
       }
     }
   ]

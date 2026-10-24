@@ -3,7 +3,7 @@
  * Features:
  *  1. Interactive 3D Dotted Matrix Background (Canvas 3D perspective tilt & wave)
  *  2. Multi-Platform CLI Installation Tabs (Windows, pnpm, macOS/Linux, in-place)
- *  3. 33 Learned Architectural Techniques Filter & Explorer
+ *  3. 36 Learned Architectural Techniques Filter & Explorer
  *  4. 1-Click Clipboard Utilities
  *  5. Design Styles Interactive Showcase
  *  6. Accessible FAQ Accordions & Mobile Navigation
@@ -249,7 +249,7 @@
   }
 
   // =========================================================================
-  // 4. 33 LEARNED ARCHITECTURAL TECHNIQUES FILTER
+  // 4. 36 LEARNED ARCHITECTURAL TECHNIQUES FILTER
   // =========================================================================
   function initTechniquesFilter() {
     const filterBtns = document.querySelectorAll('.tech-filter-btn');

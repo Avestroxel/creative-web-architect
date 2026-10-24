@@ -103,7 +103,7 @@ Always check dependency compatibility before installing.
 
 ---
 
-## 33 LEARNED ARCHITECTURAL TECHNIQUES (INSTALLED IN KNOWLEDGE/)
+## 36 LEARNED ARCHITECTURAL TECHNIQUES (INSTALLED IN KNOWLEDGE/)
 
 In every project, you MUST inspect and autonomously apply 2 to 4 complementary techniques from your local `knowledge/index.json`:
 
@@ -140,5 +140,8 @@ In every project, you MUST inspect and autonomously apply 2 to 4 complementary t
 31. **Model-Viewer Cursor Tilt & Forcefield Repulsion** (`model-viewer-cursor-tilt-and-forcefield-repulsion`): Google <model-viewer> camera orbit cursor tilt with exponential smoothing lerp coupled with an inverted distance-based physical forcefield that repels surrounding floating 3D/2.5D items within a 400px radius.
 32. **Shader-Warmed Texture Swap & Entity Implosion** (`shader-warmed-texture-swap-and-entity-implosion`): Pre-compiles GPU shaders on model load to eliminate texture swap stutter, paired with a dual-phase 720° spin with motion blur at velocity peak, and coordinated entity center-implosion, asset geometry swap, and spring explosion.
 33. **Three-Tier Depth-Layered Parallax Staging** (`three-tier-depth-layered-parallax-staging`): Creates volumetric stage depth using discrete Z-index elevation planes (leaves -15, background berries -30, product 50, UI 100, foreground berries 110 at +60 parallax), integrated with a lightweight self-cleaning rising bubble particle stream.
+34. **Curvature-Time-Dilated Circuit Trace Kinematics** (`curvature-time-dilated-circuit-trace`): Curvature-coupled velocity modulation along 2D/3D polylines (braking into corners, accelerating down straights), paired with a dual-gradient heat filament and distance-gated marker pop flares.
+35. **Packed-Delta Lattice Halftone Matrix** (`packed-delta-lattice-halftone-matrix`): 8,000+ point coordinate field delta-compressed into compact row/col strings with O(1) queries, offscreen canvas baking, and interactive crosshair reticles squaring into dynamic chequerboards.
+36. **Depth-Parallax Normal Relighting & Dissolve Burn** (`depth-parallax-normal-relighting-burn`): Single-quad UV depth map displacement with Lambertian normal map relighting toward cursor coordinates, combined with a height/noise procedural dissolution burn with luminous boundary edge glow.
 
 
