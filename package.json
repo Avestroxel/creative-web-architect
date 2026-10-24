@@ -33,6 +33,7 @@
     "typecheck": "pnpm -r run typecheck",
     "clean": "pnpm -r run clean",
     "doctor": "node packages/cli/dist/index.js doctor",
+    "cwa": "node packages/cli/dist/index.js",
     "prepare": "pnpm build"
   },
   "devDependencies": {

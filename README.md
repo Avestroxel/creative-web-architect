@@ -75,34 +75,55 @@ graph TD
 
 ---
 
-## Quick Start
+## Quick Start: Initialize Any Project in Seconds
 
-### 1. Initialize in Your Workspace
+When you clone this repository, you can instantly inject all **36 Agent Skills**, **27 Learned Architectural Techniques**, and the **Master Anti-Generic Directives** into **any target folder** on your computer with a single terminal command—**no manual copying or pasting required**:
 
-Run the `cwa` CLI to automatically detect your AI coding environment and configure skills:
-
+### Step 1: Clone & Build Repository
 ```bash
-npx @creative-web-architect/cli init
+git clone https://github.com/Avestroxel/creative-web-architect.git
+cd creative-web-architect
+pnpm install
+pnpm build
 ```
 
-### 2. Install Skills
+### Step 2: Initialize Your Target Project Directory
+Run `cwa init` followed by the path of the folder you want to power up:
 
-Install all 23 creative skills or select specific ones:
-
-```bash
-# Install all skills into your detected agent workspace
-npx @creative-web-architect/cli install
-
-# Or install specific capabilities
-npx @creative-web-architect/cli install liquid-glass motion-design typography
+**On Windows (PowerShell / CMD):**
+```powershell
+.\cwa.cmd init "C:\Path\To\YourProject"
 ```
 
-### 3. Verify Environment Health
-
-Run the diagnostic suite:
-
+**On macOS / Linux:**
 ```bash
-npx @creative-web-architect/cli doctor
+./cwa init /path/to/your-project
+```
+
+**Using pnpm:**
+```bash
+pnpm cwa init "C:\Path\To\YourProject"
+```
+
+*(Note: If you run `.\cwa.cmd init` or `pnpm cwa init` without a path, it will initialize the current directory.)*
+
+### Step 3: What Gets Automatically Injected
+- `.agents/skills/` and `./skills/` — All 36 specialized Agent Skills
+- `knowledge/` and `.agents/knowledge/` — 27 learned architectural techniques from award-winning sites
+- `AGENTS.md` & `GEMINI.md` — Strict Anti-Generic Mandate, No-Glow Architectural Policy, and technique inventory
+- `cwa.config.json` — Environment auto-detection configuration
+
+### Step 4: Open and Prompt Your AI Agent
+Open your target folder in **Antigravity**, **Cursor**, **Claude Code**, or **Gemini CLI**. Your agent will immediately recognize the skills, reference the 27 techniques, and build bespoke, award-winning interfaces from simple prompts.
+
+---
+
+### Verify Environment Health
+Run the diagnostic suite anytime:
+```bash
+.\cwa.cmd doctor
+# or
+pnpm cwa doctor
 ```
 
 ---

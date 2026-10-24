@@ -91,7 +91,7 @@ async function main(): Promise<void> {
   try {
     switch (command) {
       case 'init':
-        await handleInit(options);
+        await handleInit(positional[0], options);
         break;
       case 'install':
         await handleInstall(positional, options);
