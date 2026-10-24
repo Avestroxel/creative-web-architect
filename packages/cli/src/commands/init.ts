@@ -86,8 +86,8 @@ export async function handleInit(targetPath?: string, options: InitOptions = {})
 
   logBlank();
 
-  // Step 3: Auto-Install 27 Learned Techniques & Knowledge Base
-  log(LogLevel.INFO, 'Installing Knowledge Base (27 Learned Architectural Techniques)...');
+  // Step 3: Auto-Install 30 Learned Techniques & Knowledge Base
+  log(LogLevel.INFO, 'Installing Knowledge Base (30 Learned Architectural Techniques)...');
   const bundledKnowledgeDir = getBundledDir('knowledge');
   const targetKnowledgeDir = resolve(projectDir, 'knowledge');
   const targetAgentsKnowledgeDir = resolve(projectDir, '.agents', 'knowledge');
@@ -143,7 +143,7 @@ When asked to build, design, or scaffold any website, page, or component:
 
 ---
 
-## 27 LEARNED ARCHITECTURAL TECHNIQUES (INSTALLED IN KNOWLEDGE/)
+## 30 LEARNED ARCHITECTURAL TECHNIQUES (INSTALLED IN KNOWLEDGE/)
 
 In every project, you MUST inspect and autonomously apply 2 to 4 complementary techniques from your local \`knowledge/index.json\`:
 
@@ -174,6 +174,9 @@ In every project, you MUST inspect and autonomously apply 2 to 4 complementary t
 25. **Targeted Incremental Refactoring** (\`targeted-incremental-baseline-refactoring\`): Targeted non-destructive delta edits preserving baseline motion tokens.
 26. **Alethia Stratigraphic Materiality** (\`alethia-stratigraphic-materiality\`): Mineral palette and geological cross-sections.
 27. **Magnetic Project Index Pill** (\`magnetic-project-index-pill\`): Floating index pill with dampened spring physics.
+28. **Scroll-Driven 3D GLTF Flight Path & Banking** (\`scroll-driven-3d-gltf-flight-path-kinematics\`): Normalized viewport keyframes, hold-and-dive transition kinematics, and velocity-coupled Euler banking.
+29. **Procedural Multi-Layer Wing Flutter & Ghosting** (\`procedural-multi-layer-alpha-threshold-wing-flutter\`): Luminance alpha thresholding on black-background textures, root hinge offsets, and 3-tier phase ghosting for zero-cost biological motion blur.
+30. **Scroll-Synchronized Flora Parallax & Theme Triage** (\`scroll-synchronized-multidirectional-flora-parallax\`): Decoupled velocity and rotational parallax on botanical diorama layers with dynamic viewport probe sampling to toggle dark/light theme on fixed UI chrome.
 
 ---
 
@@ -216,7 +219,7 @@ Use the specialized skills in \`.agents/skills/\` for specific phases:
   log(LogLevel.SUCCESS, '🎉 Creative Web Architect successfully initialized!');
   log(LogLevel.INFO, 'Every AI agent in this folder is now powered by:');
   log(LogLevel.INFO, '  • 36 Specialized Creative Agent Skills in .agents/skills/');
-  log(LogLevel.INFO, '  • 27 Learned Architectural Techniques in knowledge/');
+  log(LogLevel.INFO, '  • 30 Learned Architectural Techniques in knowledge/');
   log(LogLevel.INFO, '  • Strict No-Glow & Awwwards-grade Master Directives in AGENTS.md');
   logBlank();
   log(LogLevel.INFO, 'To start building: Open this folder in Antigravity and prompt your agent!');

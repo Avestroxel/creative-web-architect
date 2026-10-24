@@ -1,15 +1,15 @@
 {
   "version": "1.0.0",
-  "updatedAt": "2026-10-24T13:28:00.000Z",
-  "totalTechniques": 27,
+  "updatedAt": "2026-10-24T18:38:00.000Z",
+  "totalTechniques": 30,
   "categories": {
     "typography": 4,
-    "scroll-animations": 5,
+    "scroll-animations": 6,
     "accessibility": 1,
     "button-interactions": 1,
     "hover-effects": 2,
     "art-direction": 2,
-    "three-dimensional-web": 2,
+    "three-dimensional-web": 4,
     "ui-components": 2,
     "creative-storytelling": 1,
     "visual-composition": 2,
@@ -544,6 +544,66 @@
         "type": "prompt",
         "title": "Mainframe Creative Agency Prompt",
         "date": "2026-10-24T13:28:00.000Z"
+      }
+    },
+    {
+      "id": "scroll-driven-3d-gltf-flight-path-kinematics",
+      "name": "Scroll-Driven 3D GLTF Flight Path & Inertial Banking Kinematics",
+      "description": "Binds a photorealistic 3D model to document scroll progress using normalized viewport keyframes, hold-and-dive transition kinematics, and velocity-coupled Euler banking (pitch coupled to vertical speed, roll coupled to lateral speed).",
+      "category": "three-dimensional-web",
+      "tags": [
+        "threejs",
+        "flight-path",
+        "scroll-driven",
+        "banking-physics",
+        "melli"
+      ],
+      "validationStatus": "reviewed",
+      "targetSkill": "three-dimensional-web",
+      "sourceReference": {
+        "type": "prompt",
+        "title": "Melli Master 3D Artistry Prompt",
+        "date": "2026-10-24T18:36:00.000Z"
+      }
+    },
+    {
+      "id": "procedural-multi-layer-alpha-threshold-wing-flutter",
+      "name": "Procedural Multi-Layer Alpha-Threshold Wing Flutter & Ghosted Motion Blur",
+      "description": "Synthesizes ultra-realistic biological wing kinematics on wingless GLTF models: processes photographic black-background wing textures into dynamic luminance alpha channels, attaches triple-phase offset ghost meshes for zero-cost motion blur, and accelerates flap frequency with flight velocity.",
+      "category": "three-dimensional-web",
+      "tags": [
+        "threejs",
+        "procedural-wings",
+        "luminance-alpha",
+        "motion-blur",
+        "melli"
+      ],
+      "validationStatus": "reviewed",
+      "targetSkill": "three-dimensional-web",
+      "sourceReference": {
+        "type": "prompt",
+        "title": "Melli Master 3D Artistry Prompt",
+        "date": "2026-10-24T18:36:00.000Z"
+      }
+    },
+    {
+      "id": "scroll-synchronized-multidirectional-flora-parallax",
+      "name": "Scroll-Synchronized Multidirectional Flora Parallax & Active Viewport Theme Triage",
+      "description": "Orchestrates multidirectional botanical diorama layers with individual speed multipliers and continuous stem rotation without layout thrashing. Features active viewport intersection probing to smoothly toggle dark/light theme classes on fixed navigation chrome.",
+      "category": "scroll-animations",
+      "tags": [
+        "parallax",
+        "flora",
+        "rotational-scroll",
+        "theme-triage",
+        "melli"
+      ],
+      "validationStatus": "reviewed",
+      "targetSkill": "advanced-scroll-animation",
+      "sourceReference": {
+        "type": "prompt",
+        "title": "Melli Master 3D Artistry Prompt",
+        "date": "2026-10-24T18:36:00.000Z"
       }
     }
   ]
