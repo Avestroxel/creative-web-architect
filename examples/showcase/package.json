@@ -1,0 +1,18 @@
+{
+  "name": "@cwa/official-website",
+  "version": "0.2.0",
+  "description": "Official public-facing product website for Creative Web Architect. Created by Anas Hashim.",
+  "type": "module",
+  "scripts": {
+    "dev": "npx -y serve . -p 3003",
+    "preview": "npx -y serve . -p 3003"
+  },
+  "keywords": [
+    "creative-web-architect",
+    "official-website",
+    "ai-agent",
+    "motion-design",
+    "liquid-glass",
+    "open-source"
+  ]
+}

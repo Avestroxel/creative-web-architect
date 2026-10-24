@@ -1,0 +1,39 @@
+{
+  "id": "video-atlas-single-stream-grid-sync",
+  "name": "Video Atlas Single-Stream Grid Sync & Viewport Tile Offsetting",
+  "description": "High-performance video architecture that packs multiple synchronized video clips into a single 5x2 composite video texture (atlas). Eliminates multi-video network thrashing and mobile GPU decoder limits by downloading one shared media stream and offsetting viewports geometrically.",
+  "category": "performance-engineering",
+  "tags": [
+    "video-atlas",
+    "single-stream",
+    "performance",
+    "memory-optimization",
+    "reelmark",
+    "media-sync",
+    "sprite-sheet"
+  ],
+  "designPhilosophy": "Solving the fundamental performance cliff of multi-video web interfaces. Loading 10 separate HTML5 video streams triggers severe mobile hardware decoder limits, battery drain, and network packet contention. The Video Atlas architecture combines all video tiles into a single 5x2 composite video file, downloading one synchronized media stream and using CSS background/transform clipping to display individual tiles.",
+  "appropriateUseCases": [
+    "Video-heavy landing heroes, creator marketplaces, and portfolio lists",
+    "E-commerce product grids featuring short video previews on hover",
+    "Social media feed mockups and multi-screen interactive installations",
+    "Performance-critical mobile video showcases"
+  ],
+  "implementationApproach": "1. Composite Grid Layout: Pack 10 video clips into a single 16:9 video container formatted as a 5x2 tile matrix (384x540 per tile). 2. Single Shared Video Source: Instantiate video elements pointing to the identical media URI so the browser network cache reuses one HTTP stream. 3. Geometric Tile Offsetting: Inside each clipped card viewport, position the composite video with transform: translate(-col * tileWidth, -row * tileHeight) and scale appropriately. 4. Master Timestamp Synchronization: Synchronize the video instances to identical currentTime values, eliminating audio/frame phase drift. 5. First-Frame Fade-in: Keep poster layer visible until the video's 'canplay' or first frame ready event fires, ensuring seamless presentation without blank frames.",
+  "relevantTechnologies": [
+    "HTML5 Video Element & Network Caching",
+    "CSS transform: translate3d",
+    "Video Grid Compositing (5x2 Matrix)",
+    "Web Animations API Virtual Clock"
+  ],
+  "performanceConsiderations": "Reduces video network requests by 90% (from 10 requests to 1). Reduces mobile hardware video decoder instances from 10 to 1, preventing out-of-memory crashes on iOS Safari and low-end Android devices.",
+  "accessibilityRequirements": "All clips are muted by default with no audio track contention. Pauses video playback when the tab is hidden (Document.visibilityState) or when prefers-reduced-motion is enabled, displaying high-resolution static posters instead.",
+  "sourceReference": {
+    "type": "prompt",
+    "title": "Reelmark Hero Reference Prompt",
+    "date": "2026-10-23T01:14:00.000Z"
+  },
+  "validationStatus": "reviewed",
+  "targetSkill": "performance-optimization",
+  "isExemptFromNoGlow": false
+}

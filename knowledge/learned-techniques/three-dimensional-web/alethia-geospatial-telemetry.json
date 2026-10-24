@@ -1,0 +1,39 @@
+{
+  "id": "alethia-geospatial-telemetry",
+  "name": "Alethia Geospatial Telemetry & Orthographic Earth Projections",
+  "description": "Scientific geospatial HUD and restrained 3D orthographic Earth projection. Features Great-Circle trigonometric wireframe coordinates, elevation counters, solar terminator lighting, and latitude/longitude spatial markers without noisy neon clutter.",
+  "category": "three-dimensional-web",
+  "tags": [
+    "geospatial",
+    "earth-canvas",
+    "orthographic-globe",
+    "coordinates-hud",
+    "alethia",
+    "planetary-data"
+  ],
+  "designPhilosophy": "Empirical elegance in planetary representation. Rather than cartoonish spinning spheres or heavy satellite rasters, the Alethia approach renders Earth as an architectural coordinate system: mathematical meridians, honest elevation scales, and precision geospatial telemetry that honors the quiet magnitude of planetary science.",
+  "appropriateUseCases": [
+    "Climate science research institutes and environmental initiatives",
+    "Geospatial data platforms and satellite telemetry dashboards",
+    "Exploration monographs, documentary showcases, and expedition journals",
+    "Sustainable architectural planning and site-specific land art projects"
+  ],
+  "implementationApproach": "1. Orthographic Wireframe Canvas: Mathematical projection of 24 meridians and 12 parallels using spherical trigonometry (x = R * cos(lat) * sin(lon), y = R * sin(lat)) rendered with sub-pixel 0.5px line width. 2. Geospatial Telemetry HUD: Real-time latitude/longitude readouts with smooth coordinate interpolation during user orbit. 3. Solar Terminator Line: Soft cosine shading calculating the day/night boundary without heavy post-processing bloom.",
+  "relevantTechnologies": [
+    "HTML5 Canvas 2D / WebGL",
+    "Spherical Trigonometry",
+    "Great-Circle Formulas",
+    "Monospace Typography (JetBrains Mono)",
+    "RequestAnimationFrame 60 FPS"
+  ],
+  "performanceConsiderations": "Vector sphere vertices pre-computed into static typed arrays (Float32Array) to achieve 60 FPS with zero memory allocations in the render loop.",
+  "accessibilityRequirements": "Textual alternative providing location coordinates and data metrics in readable tabular form for screen reader accessibility.",
+  "sourceReference": {
+    "type": "prompt",
+    "title": "Alethia Earth Reference Prompt",
+    "date": "2026-10-23T00:58:00.000Z"
+  },
+  "validationStatus": "reviewed",
+  "targetSkill": "three-dimensional-web",
+  "isExemptFromNoGlow": false
+}

@@ -1,0 +1,40 @@
+{
+  "id": "ricardo-isometric-mechanical-console",
+  "name": "Ricardo Isometric Spatial Console, Rotary Potentiometers & Multi-Plane Z-Elevation",
+  "description": "Tactile industrial hardware console architecture utilizing pure isometric CSS 3D projections (rotateX 60deg, rotateZ -45deg), multi-plane Z-axis elevation on hover, authentic rotary potentiometer dials with knurled metal textures, and physical detent physics.",
+  "category": "three-dimensional-web",
+  "tags": [
+    "isometric-3d",
+    "mechanical-console",
+    "rotary-knob",
+    "ricardo",
+    "z-elevation",
+    "spatial-diorama",
+    "tactile-hardware"
+  ],
+  "designPhilosophy": "Translating physical analog audio synthesizers and industrial control desks into digital web space through pure isometric geometry. Rather than flat static cards or heavy 3D game meshes, the Ricardo pattern leverages orthographic isometric projections and multi-tier Z-axis elevation to create tactile, touchable consoles with realistic rotary potentiometer knobs and physical toggle physics.",
+  "appropriateUseCases": [
+    "Audio production suites, Web MIDI instruments, and sound design tools",
+    "Creative developer portfolios and interactive diorama showcases",
+    "Hardware engineering telemetry, IoT monitoring dashboards, and automotive interfaces",
+    "Retro-futuristic game hubs and creative agency tech demonstrations"
+  ],
+  "implementationApproach": "1. Isometric Orthogonal Stage: Root container sets transform-style: preserve-3d and transform: rotateX(60deg) rotateZ(-45deg) with perspective: 1200px. 2. Multi-Plane Z-Elevation: Interactive module components float on distinct elevation planes using translateZ(12px), elevating to translateZ(28px) on hover while casting dynamic offset drop-shadows (box-shadow: -12px 12px 24px rgba(0,0,0,0.65)). 3. Continuous Rotary Potentiometers: Circular controls with radial pointer drag tracking (clamped to 270deg total sweep), styled with machined knurling using repeating-conic-gradient and crisp 1px indicator ticks. 4. Machined Industrial Palette: Anodized graphite (#1E2024), bead-blasted aluminum (#40444C), phosphor amber (#FFB300), and matte recessed chassis grooves (#0F1012). 5. Physical Detents: Pointer drag calculates discrete 10% steps with subtle transform bounce on threshold crossings.",
+  "relevantTechnologies": [
+    "CSS transform-style: preserve-3d & perspective",
+    "CSS translateZ elevation & dynamic shadow casting",
+    "PointerEvent radial angle tracking (Math.atan2)",
+    "repeating-conic-gradient for knurled metal dials",
+    "CSS Custom Properties (--knob-rotation)"
+  ],
+  "performanceConsiderations": "Executes entirely within GPU composited transform layers without reflows or Canvas rendering loops. Knob rotation is driven by single CSS custom properties updated via PointerEvents.",
+  "accessibilityRequirements": "Every rotary dial and switch binds to standard keyboard controls (Arrow Up/Right to increment, Arrow Down/Left to decrement, Home/End for min/max), provides ARIA role='slider' with aria-valuenow and aria-valuetext, and collapses into a flat accessible control strip under prefers-reduced-motion.",
+  "sourceReference": {
+    "type": "prompt",
+    "title": "Ricardo Package Reference Prompt",
+    "date": "2026-10-24T13:00:00.000Z"
+  },
+  "validationStatus": "reviewed",
+  "targetSkill": "three-dimensional-web",
+  "isExemptFromNoGlow": false
+}

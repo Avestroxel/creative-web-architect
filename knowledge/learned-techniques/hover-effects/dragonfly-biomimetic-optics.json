@@ -1,0 +1,39 @@
+{
+  "id": "dragonfly-biomimetic-optics",
+  "name": "Dragonfly Biomimetic Optics & Agile Kinematics",
+  "description": "Inspired by the compound optics and structural iridescence of the dragonfly. Replaces static glass with angle-dependent thin-film interference sheens, skeletal wireframe structures, and ultra-agile, zero-latency micro-interactions that mimic biomimetic aerial hovering.",
+  "category": "hover-effects",
+  "tags": [
+    "biomimetic",
+    "iridescent-optics",
+    "dragonfly",
+    "agile-hover",
+    "skeletal-grid",
+    "thin-film"
+  ],
+  "designPhilosophy": "Nature engineers perfection through lightweight structural efficiency. The dragonfly achieves effortless equilibrium through compound lenses and ultra-thin chitinous membranes. In digital design, this translates to gossamer hairline framing, angle-dependent light dispersion, and instantaneous physical feedback without heavy visual weight.",
+  "appropriateUseCases": [
+    "Aerospace and autonomous robotics showcases",
+    "High-precision optical and laser technology products",
+    "Biomimetic architecture and generative design portfolios",
+    "Ultra-lightweight performance-critical web interfaces"
+  ],
+  "implementationApproach": "1. Thin-film iridescent sheen: dynamic radial gradient calculating pointer azimuth angle to interpolate subtle cyan (#38BDF8), lavender (#C084FC), and emerald (#34D399) spectral shifts at less than 8% opacity. 2. Skeletal subgrid: 0.5px hairline dividers resembling wing venation patterns. 3. Agile Kinematics: High-frequency damped spring (stiffness: 380, damping: 26) with zero input delay for hover states.",
+  "relevantTechnologies": [
+    "CSS Custom Properties",
+    "Radial Gradients",
+    "Spring Kinematics",
+    "Hardware-Accelerated Transforms",
+    "Vector SVG Venation"
+  ],
+  "performanceConsiderations": "Hardware composited via translate3d and opacity. Gradients rendered on pseudo-elements with will-change: transform during active gesture.",
+  "accessibilityRequirements": "Full keyboard Tab navigation with high-contrast hairline focus rings. Automatic static fallback under prefers-reduced-motion.",
+  "sourceReference": {
+    "type": "prompt",
+    "title": "Dragonfly Biomimetic Prompt",
+    "date": "2026-10-23T00:54:00.000Z"
+  },
+  "validationStatus": "reviewed",
+  "targetSkill": "hover-interaction-design",
+  "isExemptFromNoGlow": false
+}

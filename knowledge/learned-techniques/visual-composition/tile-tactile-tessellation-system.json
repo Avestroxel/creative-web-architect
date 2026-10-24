@@ -1,0 +1,41 @@
+{
+  "id": "tile-tactile-tessellation-system",
+  "name": "Tile Tactile Tessellation, Grout Hairlines & Modular Slate",
+  "description": "Architectural grid framework derived from ceramic tile tessellation, honed slate materiality, and precision grout hairlines. Features interlocking proportional modules (1:1, 1:2, 2:1, 2:2), 1px structural container gap lines, micro-beveled inner shadow relief, and haptic physical depression kinematics.",
+  "category": "visual-composition",
+  "tags": [
+    "tile",
+    "tessellation",
+    "bento-evolution",
+    "grout-hairlines",
+    "tactile-slate",
+    "modular-grid",
+    "css-subgrid",
+    "haptic-press"
+  ],
+  "designPhilosophy": "Rejecting detached, floating card clutter in favor of an interlocking architectural facade. Inspired by Roman mosaics and Dieter Rams modular industrial design, surfaces behave as physical ceramic tiles embedded in a structural substrate, prioritizing geometric unity, tactile micro-relief, and dignified materiality over artificial float.",
+  "appropriateUseCases": [
+    "High-density developer portals, API documentation, and engineering telemetry hubs",
+    "Architecture and industrial design monographs showcasing modular works",
+    "Fintech executive dashboards and multi-instrument trading terminals",
+    "Bento-style product feature showcases demanding structural coherence"
+  ],
+  "implementationApproach": "1. Grout Hairline Grid: Container employs an ultra-subtle divider color as its background (e.g. rgba(255,255,255,0.07)) with display: grid and gap: 1px, using the grid gap itself as a flawless hairline grout seam without border overlap artifacts. 2. Tactile Ceramic Relief: Tiles feature subtle dual-stop inset shading (inset 0 1px 0 rgba(255,255,255,0.06), inset 0 -1px 0 rgba(0,0,0,0.5)) giving a machined, beveled ceramic edge. 3. Proportional Tessellation Ratios: Modules enforce strict aspect ratios (1:1 cube, 2:1 landscape slab, 1:2 vertical pillar, 2:2 focal anchor) using CSS subgrid. 4. Haptic Micro-Depression: On active state, tiles depress 1px (transform: translateY(1px) scale(0.997)) accompanied by deepened inner shadow to emulate physical switch depression. 5. Slate/Porcelain Palette: Honed slate (#121417), basalt (#0A0C0E), and bone porcelain (#EAE6DF) typography.",
+  "relevantTechnologies": [
+    "CSS Grid & CSS Subgrid",
+    "CSS aspect-ratio",
+    "Dual-stop inset box-shadow bevels",
+    "Haptic active transforms",
+    "Modular CSS Custom Properties"
+  ],
+  "performanceConsiderations": "Uses CSS gap and subgrid layout without nested DOM wrapper duplication. Hover and press states strictly transform translateY and scale via GPU compositing, maintaining 60fps.",
+  "accessibilityRequirements": "Ensures all interactive tiles support keyboard focus rings (offset 2px with high contrast) and maintain 12:1 typography contrast on slate surfaces.",
+  "sourceReference": {
+    "type": "prompt",
+    "title": "Tile Package Reference Prompt",
+    "date": "2026-10-23T01:07:00.000Z"
+  },
+  "validationStatus": "reviewed",
+  "targetSkill": "layout-composition",
+  "isExemptFromNoGlow": false
+}

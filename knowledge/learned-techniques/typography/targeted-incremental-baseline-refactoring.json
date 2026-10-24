@@ -1,0 +1,31 @@
+{
+  "id": "targeted-incremental-baseline-refactoring",
+  "name": "Targeted Incremental Baseline Refactoring",
+  "description": "When applying follow-up creative changes (copywriting, typography scales, colorways, sections, or interactive features), preserve the delivered architectural structure, styling system, and motion tokens as the baseline. Prefer small, targeted, non-destructive delta edits over regenerating the entire site.",
+  "category": "typography",
+  "tags": [
+    "typography",
+    "layout thrashing"
+  ],
+  "designPhilosophy": "When applying follow-up creative changes (copywriting, typography scales, colorways, sections, or interactive features), preserve the delivered architectural structure, styling system, and motion tokens as the baseline",
+  "appropriateUseCases": [
+    "High-end editorial showcases",
+    "Luxury brand digital experiences",
+    "Responsive interaction-rich web applications"
+  ],
+  "implementationApproach": "Preserve working component boundaries, avoid layout thrashing, and maintain local dev server review synchronization after each meaningful iteration.",
+  "relevantTechnologies": [
+    "CSS3",
+    "Modern DOM"
+  ],
+  "performanceConsiderations": "Utilize translate3d, will-change sparingly, and clamp animation timelines under 600ms.",
+  "accessibilityRequirements": "Provide prefers-reduced-motion override and ensure WCAG 2.1 AA keyboard focus visibility.",
+  "sourceReference": {
+    "type": "prompt",
+    "title": "Haoqi Prompt Workflow",
+    "date": "2026-10-22T21:21:35.266Z"
+  },
+  "validationStatus": "imported",
+  "targetSkill": "typography",
+  "isExemptFromNoGlow": false
+}

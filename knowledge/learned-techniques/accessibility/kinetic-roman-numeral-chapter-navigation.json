@@ -1,0 +1,33 @@
+{
+  "id": "kinetic-roman-numeral-chapter-navigation",
+  "name": "Kinetic Roman Numeral Chapter Navigation",
+  "description": "Choreograph roman numeral scene markers (e.g., I, II, III, IV) with letter-by-letter kinetic stagger reveals. As each project scrolls into the viewport, animate line-height and opacity using cubic-bezier(0.16, 1, 0.3, 1) easing.",
+  "category": "accessibility",
+  "tags": [
+    "accessibility",
+    "scroll",
+    "typography",
+    "prefers-reduced-motion"
+  ],
+  "designPhilosophy": "Choreograph roman numeral scene markers (e.g., I, II, III, IV) with letter-by-letter kinetic stagger reveals",
+  "appropriateUseCases": [
+    "High-end editorial showcases",
+    "Luxury brand digital experiences",
+    "Responsive interaction-rich web applications"
+  ],
+  "implementationApproach": "Include automatic prefers-reduced-motion fallback that delivers instant static typography for users requiring vestibular accessibility.",
+  "relevantTechnologies": [
+    "CSS3",
+    "Modern DOM"
+  ],
+  "performanceConsiderations": "Utilize translate3d, will-change sparingly, and clamp animation timelines under 600ms.",
+  "accessibilityRequirements": "Provide prefers-reduced-motion override and ensure WCAG 2.1 AA keyboard focus visibility.",
+  "sourceReference": {
+    "type": "prompt",
+    "title": "Cinema Editorial Showcase",
+    "date": "2026-10-22T21:16:03.335Z"
+  },
+  "validationStatus": "imported",
+  "targetSkill": "motion-accessibility",
+  "isExemptFromNoGlow": false
+}

@@ -1,0 +1,38 @@
+{
+  "id": "sticky-stacking-card-deck-scale-decay",
+  "name": "Sticky Stacking Card Deck with Scale Decay & Viewport Pinning",
+  "description": "Transforms a sequence of project cards into an overlapping physical card deck. Each card pins to a sticky viewport threshold while subsequent cards stack over it, applying a subtle scale reduction (targetScale = 1 - (total - 1 - i) * 0.03) to create physical depth without 3D meshes.",
+  "category": "scroll-animations",
+  "tags": [
+    "sticky-stack",
+    "card-deck",
+    "scale-decay",
+    "scroll-transform",
+    "framer-motion",
+    "viewport-pinning"
+  ],
+  "designPhilosophy": "Transforming a linear sequence of portfolio projects into an overlapping physical card deck. Rather than scrolling projects off-screen into void, each card pins to a sticky viewport threshold while subsequent cards stack over it, applying a subtle scale reduction to create physical depth and visual hierarchy without complex 3D meshes.",
+  "appropriateUseCases": [
+    "Creative portfolio project showcases and case study indexes",
+    "Pricing tiers and multi-step feature walkthroughs",
+    "Product specifications and layered narrative storytelling",
+    "Auteur agency work archives"
+  ],
+  "implementationApproach": "1. Sticky Container Architecture: Place each card inside an h-[85vh] container with position: sticky and top offset: top: calc(6rem + index * 28px). 2. Scale Decay Formula: Bind scale to scroll progress through each card's container using targetScale = 1 - (totalCards - 1 - index) * 0.03. As card n+1 scrolls in, card n scales down smoothly to targetScale. 3. Architectural Overlap: Cards feature pronounced border-radius (rounded-[40px] to rounded-[60px]) and 1px to 2px hairline borders, ensuring stacked card headers remain distinct. 4. Negative Section Overlap: Next section uses negative margin (-mt-14) to pull over the final stacked card seamlessly.",
+  "relevantTechnologies": [
+    "CSS position: sticky",
+    "Framer Motion useScroll & useTransform",
+    "CSS transform: scale() & translate3d()",
+    "Viewport-relative units (vh, clamp)"
+  ],
+  "performanceConsiderations": "Transform and scale animations are hardware-accelerated. Uses passive scroll observation and isolates each card's layout boundary to prevent scroll jank.",
+  "accessibilityRequirements": "When prefers-reduced-motion is enabled, disables the sticky scale decay and presents cards in a standard natural vertical block flow with clear heading landmarks.",
+  "sourceReference": {
+    "type": "prompt",
+    "title": "Jack 3D Creator Portfolio Prompt",
+    "date": "2026-10-23T01:16:00.000Z"
+  },
+  "validationStatus": "reviewed",
+  "targetSkill": "advanced-scroll-animation",
+  "isExemptFromNoGlow": false
+}

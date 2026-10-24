@@ -1,0 +1,19 @@
+{
+  "name": "@cwa/example-motion-laboratory",
+  "version": "0.2.0",
+  "description": "Interactive laboratory demonstrating refined motion design, spring micro-interactions, subtle buttons, and the No-Glow architectural visual policy",
+  "type": "module",
+  "scripts": {
+    "dev": "npx -y serve . -p 3004",
+    "preview": "npx -y serve . -p 3004"
+  },
+  "keywords": [
+    "motion-design",
+    "interaction-engineering",
+    "no-glow-policy",
+    "spring-physics",
+    "magnetic-button",
+    "refined-liquid-glass",
+    "scroll-storytelling"
+  ]
+}

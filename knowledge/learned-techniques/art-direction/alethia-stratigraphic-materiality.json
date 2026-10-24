@@ -1,0 +1,39 @@
+{
+  "id": "alethia-stratigraphic-materiality",
+  "name": "Alethia Stratigraphic Materiality & Geospatial Truth",
+  "description": "Derived from the Greek 'Alētheia' (unconcealed truth) and terrestrial geology. Eliminates artificial surface gloss in favor of honest mineral textures (obsidian, basalt, raw terra-cotta), stratigraphic elevation cross-sections, and topographic scroll contouring.",
+  "category": "art-direction",
+  "tags": [
+    "geological",
+    "stratigraphic",
+    "mineral-palette",
+    "alethia-earth",
+    "topography",
+    "honest-materials"
+  ],
+  "designPhilosophy": "True permanence is geological. By treating digital space as stratigraphic layers rather than synthetic screens, designs ground themselves in raw, unvarnished reality. Typography mirrors carved stone inscriptions, color palettes derive from earth pigments, and navigation mimics geological elevation cross-sections.",
+  "appropriateUseCases": [
+    "Environmental research and planetary climate showcases",
+    "High-end architectural monographs and sustainable design studios",
+    "Geological, luxury mineral, and ceramic atelier websites",
+    "Earth observation data telemetry dashboards"
+  ],
+  "implementationApproach": "1. Terrestrial Mineral Palette: Basalt Charcoal (#0B0C0E), Raw Slate (#16181D), Ochre Mineral Accent (#C28E52), and Sandstone White (#F5F2EB). 2. Stratigraphic Layer Transitions: Layered depth reveals where sections overlap like geological strata using subtle mask-image linear gradients. 3. Topographical Contour Vectors: SVG elevation curves with scroll-scrubbed stroke-dashoffset.",
+  "relevantTechnologies": [
+    "CSS Grid Layering",
+    "SVG Stroke-Dashoffset",
+    "Mask-Image Gradients",
+    "Terrestrial Color Tokens",
+    "IntersectionObserver"
+  ],
+  "performanceConsiderations": "Vector contour paths simplified to fewer than 50 anchor points each to maintain zero GPU rasterization overhead.",
+  "accessibilityRequirements": "Text contrast ratio exceeding 12:1 against raw slate and basalt backgrounds. Full screen reader landmark hierarchy.",
+  "sourceReference": {
+    "type": "prompt",
+    "title": "Alethia Earth Reference",
+    "date": "2026-10-23T00:54:00.000Z"
+  },
+  "validationStatus": "reviewed",
+  "targetSkill": "premium-visual-direction",
+  "isExemptFromNoGlow": false
+}

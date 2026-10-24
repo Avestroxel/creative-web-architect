@@ -1,0 +1,40 @@
+{
+  "id": "oscs-spatial-control-surface",
+  "name": "O-SCS Spatial Control Surface & Precision HUD Docking",
+  "description": "Ergonomic spatial control surface featuring magnetic panel docking, 3D viewport orientation gizmo, matrix3d spatial camera transformations, and mission-critical telemetry reticles without noisy blur or neon bloom.",
+  "category": "ui-components",
+  "tags": [
+    "spatial-ui",
+    "hud-docking",
+    "control-surface",
+    "matrix3d",
+    "o-scs",
+    "telemetry-gizmo",
+    "magnetic-dock"
+  ],
+  "designPhilosophy": "Mission-critical operations demand total spatial clarity and ergonomic control. Derived from aerospace command consoles and 3D spatial coordinates, O-SCS treats the interface as a physical instrument panel: modular magnetic docking surfaces, interactive XYZ vector orientation axes, and razor-sharp hairline crosshairs that provide instantaneous feedback without decorative visual noise.",
+  "appropriateUseCases": [
+    "Satellite constellation operations and orbital telemetry consoles",
+    "Complex 3D modeling tools, spatial robotics, and CAD web applications",
+    "High-throughput server infrastructure and distributed network monitors",
+    "Industrial automation and scientific laboratory instrumentation interfaces"
+  ],
+  "implementationApproach": "1. Magnetic HUD Docking: Floating control pods calculate proximity within a 48px snap threshold to viewport edges, smoothly transitioning into docked layout columns using CSS grid and spring damping. 2. Spatial Orientation Gizmo: Lightweight 2D/3D Canvas vector reticle displaying real-time Roll, Pitch, Yaw, and camera matrix3d transforms. 3. Industrial Contrast Reticles: 0.5px hairline crosshairs (rgba(255, 255, 255, 0.1)) with discrete state beacons (Emerald #34D399, Ice Cyan #38BDF8, Amber #F59E0B) strictly adhering to the No-Glow Architectural Policy.",
+  "relevantTechnologies": [
+    "CSS matrix3d Transforms",
+    "Vector Canvas Gizmo",
+    "CSS Grid Docking Zones",
+    "Spring Snap Kinematics",
+    "Monospace Telemetry (JetBrains Mono)"
+  ],
+  "performanceConsiderations": "Snap calculations throttled via ResizeObserver and pointermove event listeners with passive: true. Coordinates rendered via hardware-accelerated transforms without triggering reflows.",
+  "accessibilityRequirements": "Full keyboard navigation (Arrow keys and Tab) for repositioning docking pods with live ARIA announcements for docked/floating states.",
+  "sourceReference": {
+    "type": "prompt",
+    "title": "O-SCS Spatial Package Reference",
+    "date": "2026-10-23T01:02:00.000Z"
+  },
+  "validationStatus": "reviewed",
+  "targetSkill": "dashboard-design",
+  "isExemptFromNoGlow": false
+}

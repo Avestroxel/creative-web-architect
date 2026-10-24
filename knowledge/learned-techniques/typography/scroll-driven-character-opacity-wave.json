@@ -1,0 +1,38 @@
+{
+  "id": "scroll-driven-character-opacity-wave",
+  "name": "Scroll-Driven Character Opacity Wave & Fluid Editorial Stagger",
+  "description": "Directs editorial reading focus by progressively illuminating text character-by-character as the user scrolls. Characters transition from ambient opacity 0.2 to full opacity 1.0 based on viewport progress, eliminating layout shift with ghost spans.",
+  "category": "typography",
+  "tags": [
+    "character-opacity",
+    "scroll-driven-text",
+    "editorial-stagger",
+    "fluid-typography",
+    "reading-focus"
+  ],
+  "designPhilosophy": "Directing editorial focus through progressive typographic illumination. Instead of confronting the reader with a static block of text, words start in an ambient, subdued state (opacity 0.2) and illuminate character-by-character to full opacity (1.0) as the user scrolls through the reading zone, creating a captivating sense of active reading cadence.",
+  "appropriateUseCases": [
+    "Manifesto statements, personal about intros, and philosophical mission copy",
+    "High-end editorial storytelling and design agency vision statements",
+    "Legal, ethical, or architectural value propositions requiring deliberate visitor attention",
+    "Product launch introductory paragraphs"
+  ],
+  "implementationApproach": "1. Split Character Parsing: Tokenize paragraph into words and individual character spans. 2. Ghost Baseline Layout: Pair each character with an invisible layout placeholder (opacity: 0) and an absolutely positioned animated character span to prevent inline wrap shifting. 3. Scroll Progress Mapping: Track container scroll progress using Framer Motion useScroll with target element offset ['start 0.8', 'end 0.2']. 4. Normalized Character Threshold: Compute start and end progress range for character index i: start = i / totalChars, end = (i + 1) / totalChars. 5. Opacity Interpolation: Map progress from [start, end] to opacity [0.2, 1.0], using will-change: opacity.",
+  "relevantTechnologies": [
+    "Framer Motion useScroll & useTransform",
+    "Inline character splitting",
+    "CSS will-change: opacity",
+    "Typography clamp() scaling",
+    "ARIA text accessibility patterns"
+  ],
+  "performanceConsiderations": "Only animates opacity, never altering geometry or line-height. Renders lightweight spans without re-parsing text on subsequent scrolls.",
+  "accessibilityRequirements": "Parent container retains full plain text in aria-label to ensure screen readers read the sentence continuously without stuttering across individual character spans. Honors prefers-reduced-motion by rendering all characters at opacity 1.0 immediately.",
+  "sourceReference": {
+    "type": "prompt",
+    "title": "Jack 3D Creator Portfolio Prompt",
+    "date": "2026-10-23T01:16:00.000Z"
+  },
+  "validationStatus": "reviewed",
+  "targetSkill": "typography",
+  "isExemptFromNoGlow": false
+}

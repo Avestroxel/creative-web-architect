@@ -1,0 +1,243 @@
+/**
+ * @cwa/effects — Refined Liquid Glass & Premium Motion CSS
+ *
+ * Implements the "No-Glow Default" physical realism policy.
+ * Refined optical materials, subtle directional shadows, hairline borders,
+ * tactile switches, and spring micro-interactions.
+ */
+
+:root {
+  /* Refined Liquid Glass Optics (Crisp & Controlled) */
+  --lg-blur-subtle: 12px;
+  --lg-blur-base: 20px;
+  --lg-blur-deep: 28px;
+
+  --lg-saturate: 140%;
+  --lg-contrast: 102%;
+
+  /* Neutral Matte Finishes */
+  --lg-bg-matte-dark: rgba(18, 20, 28, 0.72);
+  --lg-bg-matte-light: rgba(255, 255, 255, 0.75);
+  --lg-bg-charcoal: rgba(12, 13, 18, 0.82);
+
+  /* Hairline Specular Borders (0.5px / 1px without glow) */
+  --lg-border-hairline-dark: rgba(255, 255, 255, 0.08);
+  --lg-border-hairline-light: rgba(0, 0, 0, 0.08);
+  --lg-specular-edge: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+
+  /* Directional Architectural Shadows (No neon blobs) */
+  --lg-shadow-subtle: 0 2px 8px -2px rgba(0, 0, 0, 0.08);
+  --lg-shadow-card: 0 8px 24px -4px rgba(0, 0, 0, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  --lg-shadow-elevated: 0 16px 40px -6px rgba(0, 0, 0, 0.24), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+
+  /* Controlled highlight coordinates (updated via mouse movement) */
+  --glass-highlight-x: 50%;
+  --glass-highlight-y: 50%;
+  --glass-highlight-radius: 240px;
+  --glass-highlight-opacity: 0.08; /* Subtle reflection, not blinding neon */
+}
+
+/* Base Refined Glass Class */
+.lg-glass {
+  backdrop-filter: blur(var(--lg-blur-base)) saturate(var(--lg-saturate));
+  -webkit-backdrop-filter: blur(var(--lg-blur-base)) saturate(var(--lg-saturate));
+  border: 1px solid var(--lg-border-hairline-light);
+  background: var(--lg-bg-matte-light);
+  box-shadow: var(--lg-shadow-card);
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lg-glass-dark {
+  background: var(--lg-bg-matte-dark);
+  border-color: var(--lg-border-hairline-dark);
+  box-shadow: var(--lg-shadow-elevated);
+  color: hsl(0 0% 95%);
+}
+
+.lg-matte {
+  background: var(--lg-bg-charcoal);
+  backdrop-filter: blur(var(--lg-blur-base));
+  -webkit-backdrop-filter: blur(var(--lg-blur-base));
+  border: 1px solid var(--lg-border-hairline-dark);
+  box-shadow: var(--lg-shadow-card);
+}
+
+/* Refined Button Micro-interactions */
+.lg-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: inherit;
+  font-size: 0.92rem;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.16s cubic-bezier(0.2, 0.9, 0.3, 1),
+              background-color 0.16s ease,
+              border-color 0.16s ease;
+}
+
+.lg-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.lg-button:active:not(:disabled) {
+  transform: translateY(0.5px) scale(0.99);
+}
+
+.lg-button:focus-visible {
+  outline: 2px solid hsl(220 10% 60%);
+  outline-offset: 2px;
+}
+
+/* Direction-Aware Hover Fill */
+.btn-direction-hover {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-direction-hover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(100%);
+  transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: -1;
+}
+
+.btn-direction-hover:hover::before {
+  transform: translateY(0);
+}
+
+/* Sliding Split-Label Button */
+.btn-sliding-label {
+  display: inline-flex;
+  overflow: hidden;
+  height: 2.5rem;
+  padding: 0 1.25rem;
+  align-items: center;
+}
+
+.btn-sliding-label .label-inner {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.22s cubic-bezier(0.2, 0.9, 0.3, 1);
+}
+
+.btn-sliding-label:hover .label-inner {
+  transform: translateY(-50%);
+}
+
+.btn-sliding-label .label-default,
+.btn-sliding-label .label-hover {
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* Refined Micro Switch */
+.lg-switch-track {
+  width: 44px;
+  height: 24px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  padding: 2px;
+  border: 1px solid var(--lg-border-hairline-dark);
+  cursor: pointer;
+  transition: background-color 0.2s cubic-bezier(0.2, 0.9, 0.3, 1);
+  position: relative;
+}
+
+.lg-switch-track[data-checked="true"] {
+  background: #3B82F6;
+  border-color: #3B82F6;
+}
+
+.lg-switch-thumb {
+  width: 18px;
+  height: 18px;
+  background: #FFFFFF;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.lg-switch-track[data-checked="true"] .lg-switch-thumb {
+  transform: translateX(20px);
+}
+
+/* Segmented Control */
+.lg-segmented-control {
+  display: inline-flex;
+  padding: 3px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--lg-border-hairline-dark);
+  border-radius: 10px;
+  position: relative;
+}
+
+.lg-segment-item {
+  position: relative;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-muted, #9CA3AF);
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 7px;
+  transition: color 0.16s ease;
+  z-index: 2;
+}
+
+.lg-segment-item.active {
+  color: #FFFFFF;
+}
+
+.lg-segment-pill {
+  position: absolute;
+  top: 3px;
+  bottom: 3px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 7px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.22s cubic-bezier(0.2, 0.9, 0.3, 1);
+  z-index: 1;
+}
+
+/* Modal Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUpSubtle {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Reduced Motion Safety */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

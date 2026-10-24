@@ -1,0 +1,5 @@
+# Ignore temporary files in the incoming dropzone
+incoming/*.tmp
+incoming/*.temp
+private/
+*.secret

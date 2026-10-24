@@ -1,0 +1,41 @@
+{
+  "id": "romanelli-kinetic-viewport-and-inertial-distortion",
+  "name": "Romanelli Kinetic Viewport, Inertial Velocity Warp & Monochromatic Editorial Noir",
+  "description": "Auteur portfolio architecture inspired by Italian creative developer Mirko Romanelli. Features an ephemeral cursor-anchored preview portal, velocity-driven skew transforms, seamless full-screen canvas transitions, and stark monochromatic typography with extreme scale contrast.",
+  "category": "page-transitions",
+  "tags": [
+    "romanelli",
+    "cursor-portal",
+    "velocity-skew",
+    "inertial-warp",
+    "monochromatic-noir",
+    "page-transition",
+    "lerp-physics",
+    "editorial-typography"
+  ],
+  "designPhilosophy": "Digital auteurism rooted in Italian editorial confidence. Eliminates static thumbnail grids in favor of an interactive index where previews are ephemeral portals tethered to the visitor's movement. Replaces superficial decoration with strict typographic contrast, velocity-driven inertia, and fluid state morphing.",
+  "appropriateUseCases": [
+    "Design director, creative developer, and auteur portfolio platforms",
+    "Haute couture fashion lookbooks and digital exhibition monographs",
+    "Elite digital design studios and architectural retrospective catalogs",
+    "Award-winning creative showcases (Awwwards/FWA style)"
+  ],
+  "implementationApproach": "1. Inertial Lerp Preview Portal: Floating preview window tracked via linear interpolation (lerp factor 0.08) on mouse coordinates, scaling up seamlessly when hovering index rows. 2. Velocity-Driven Physics: Mouse velocity delta (dx, dy) mapped to subtle dynamic skew and rotation (clamped between -4deg and +4deg) to convey tactile momentum. 3. Full-Screen Morph Transition: On click, the cursor portal smoothly unpins from cursor coordinates and interpolates its bounding rect to 100vw x 100vh using FLIP (First, Last, Invert, Play) technique before triggering route change. 4. Monochromatic Contrast: Strict palette of Obsidian Black (#070707), Stark Bone (#F3F3F3), and 0.5px hairline dividers (#1F1F1F) with massive display type contrasted against 10px tracked uppercase metadata.",
+  "relevantTechnologies": [
+    "FLIP animation technique",
+    "Linear interpolation (lerp) loop",
+    "PointerEvent velocity tracking",
+    "CSS matrix3d and transform: skew",
+    "Hardware-accelerated will-change: transform"
+  ],
+  "performanceConsiderations": "The lerp calculation runs inside a single requestAnimationFrame loop that auto-suspends when velocity drops below 0.001 to eliminate idle CPU drain. Hardware compositing ensures 60-120fps fluid tracking.",
+  "accessibilityRequirements": "Provides full keyboard accessibility with static focus preview placement; strictly disables velocity skew and smooths transitions to standard cross-fades when prefers-reduced-motion is active.",
+  "sourceReference": {
+    "type": "prompt",
+    "title": "Mirko Romanelli Package Reference Prompt",
+    "date": "2026-10-23T01:10:00.000Z"
+  },
+  "validationStatus": "reviewed",
+  "targetSkill": "page-transitions",
+  "isExemptFromNoGlow": false
+}

@@ -1,0 +1,40 @@
+{
+  "id": "izanami-shadow-and-ink",
+  "name": "Izanami Shadow-Craft, Sumi Ink Dispersion & Ma Spacing",
+  "description": "Japanese aesthetic architecture inspired by 'In Praise of Shadows' (In-ei Raisan). Features deep Urushi lacquer black, Kinpaku gold foil leafing, meditative Ma negative space, and organic Sumi-e fluid ink displacement filters.",
+  "category": "creative-storytelling",
+  "tags": [
+    "japanese-minimalism",
+    "in-praise-of-shadows",
+    "sumi-ink",
+    "ma-spacing",
+    "izanami",
+    "lacquer-black",
+    "kinpaku-gold"
+  ],
+  "designPhilosophy": "True elegance exists in the shadow, not in garish illumination. Tanizaki taught that Japanese beauty is born from the interplay of deep shadows and soft textures. The Izanami pattern replaces cheap neon glow with lacquered darkness, subtle gold reflections, and intentional Ma (the contemplative void between objects).",
+  "appropriateUseCases": [
+    "High-end tea ateliers, traditional ceramicists, and artisanal Japanese craft showcases",
+    "Luxury fashion editorial monographs and contemporary haute couture portfolios",
+    "Fine dining, Michelin-starred omakase, and culinary journey narratives",
+    "Mindfulness platforms, contemplative architecture, and cultural museums"
+  ],
+  "implementationApproach": "1. Urushi & Kinpaku Colorway: Deep Urushi Lacquer (#060709), Charcoal Ink (#181A20), Washi Off-White (#F7F5F0), and Subdued Kinpaku Gold (#C5A059) at low saturation. 2. Ma (Spacious Void): Enforcing 45% minimum negative space around editorial titles to establish quiet visual weight. 3. Sumi-e Ink Dispersion: Hardware-composited SVG feTurbulence and feDisplacementMap filter applied to image reveals, smoothly animating scale from 28 to 0 to simulate ink soaking into dampened washi paper. 4. Hybrid Vertical Typography: Asymmetric vertical kicker column (writing-mode: vertical-rl; text-orientation: mixed) paired with horizontal editorial typography.",
+  "relevantTechnologies": [
+    "CSS writing-mode: vertical-rl",
+    "SVG feTurbulence & feDisplacementMap",
+    "Urushi Lacquer Tokens",
+    "Asymmetrical CSS Grid",
+    "Ma Spacing Formulas"
+  ],
+  "performanceConsiderations": "SVG displacement map animated using CSS custom properties with will-change: filter, clamped strictly under 450ms duration to prevent frame drops.",
+  "accessibilityRequirements": "Vertical text tags configured with appropriate reading direction and aria-label fallbacks. Contrast ratio between washi typography and lacquer black exceeding 15:1.",
+  "sourceReference": {
+    "type": "prompt",
+    "title": "Izanami Package Reference Prompt",
+    "date": "2026-10-23T01:04:00.000Z"
+  },
+  "validationStatus": "reviewed",
+  "targetSkill": "layout-composition",
+  "isExemptFromNoGlow": false
+}

@@ -1,0 +1,41 @@
+{
+  "id": "twofour-seven-artists-sonic-telemetry",
+  "name": "247 Artists Sonic Telemetry, Global Studio Time & Roster Waveforms",
+  "description": "Analog recording studio telemetry architecture derived from international artist rosters and 24/7 music collectives. Features precision decibel VU meters, zero-latency inline audio waveform scrubbers, live multi-timezone studio status badges, and tactile brushed aluminum materiality.",
+  "category": "micro-interactions",
+  "tags": [
+    "sonic-telemetry",
+    "audio-roster",
+    "247-artists",
+    "vu-meter",
+    "world-clock",
+    "vinyl-materiality",
+    "micro-interactions",
+    "tabular-nums"
+  ],
+  "designPhilosophy": "Translating the authentic tactile atmosphere of 24/7 analog recording studios into digital editorial space. Replaces noisy visual clutter with authentic hardware telemetry: precision decibel meters, synchronized audio waveform scrubbers, live global studio timezones, and tactile discographic cataloging.",
+  "appropriateUseCases": [
+    "Independent record labels, artist management collectives, and music publishing houses",
+    "Podcast networks, digital audio workstations (DAW), and sound designer portfolios",
+    "Creative agencies operating across international timezones with dynamic creator rosters",
+    "Music festival schedules, live performance showcases, and streaming radio hubs"
+  ],
+  "implementationApproach": "1. Analog VU Meter Micro-Interactions: Real-time CSS custom property-driven decibel meters (--db-level) with staggered LED segment bars that pulse rhythmically without expensive WebGL overhead. 2. Inline Audio Waveform Scrubber: Compact 48px waveform strip using Canvas 2D or SVG polyline path with interactive scrub head and monospace tabular-num timecode readout. 3. Global Studio Clocks (24/7 Synchrony): Multi-timezone status ticker showing studio availability badges (e.g. 'Tokyo 07:11 IN STUDIO', 'London 22:11 MASTERING'). 4. Studio Hardware Palette: Velvet studio black (#090A0C), Brushed Aluminum (#D0D4DC), Studio Amber (#D97706), and Tally Green (#10B981) confined strictly to 3px status indicators without diffuse neon blooms.",
+  "relevantTechnologies": [
+    "Web Audio API (AnalyserNode / AudioContext)",
+    "Canvas 2D Waveform Rendering",
+    "CSS Custom Properties for Level Meters",
+    "font-variant-numeric: tabular-nums",
+    "ARIA Live Regions for Audio State"
+  ],
+  "performanceConsiderations": "Audio visualizer loops are tied strictly to active playback and suspended when paused. Waveform canvases use path caching to prevent redundant repaints.",
+  "accessibilityRequirements": "Provides explicit keyboard controls (Space to play/pause, Left/Right arrows to seek +/- 5s), visible focus rings, non-autoplay enforcement, and screen-reader announcements via aria-live.",
+  "sourceReference": {
+    "type": "prompt",
+    "title": "247 Artists Package Reference Prompt",
+    "date": "2026-10-23T01:12:00.000Z"
+  },
+  "validationStatus": "reviewed",
+  "targetSkill": "motion-design",
+  "isExemptFromNoGlow": false
+}

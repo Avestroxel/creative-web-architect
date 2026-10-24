@@ -1,0 +1,32 @@
+{
+  "id": "magnetic-project-index-pill",
+  "name": "Magnetic Project Index Pill",
+  "description": "Engineer an ergonomic floating index pill that subtly shifts position when the cursor enters within a 120px threshold radius. Apply dampened spring physics with a spring constant of 0.28 and mass damping of 0.85, gently returning to origin on mouse exit.",
+  "category": "button-interactions",
+  "tags": [
+    "button-interactions",
+    "cursor",
+    "wcag"
+  ],
+  "designPhilosophy": "Engineer an ergonomic floating index pill that subtly shifts position when the cursor enters within a 120px threshold radius",
+  "appropriateUseCases": [
+    "High-end editorial showcases",
+    "Luxury brand digital experiences",
+    "Responsive interaction-rich web applications"
+  ],
+  "implementationApproach": "Provide full keyboard Tab focus with visible high-contrast hairline focus rings for WCAG 2.1 AA compliance.",
+  "relevantTechnologies": [
+    "CSS3",
+    "Modern DOM"
+  ],
+  "performanceConsiderations": "Utilize translate3d, will-change sparingly, and clamp animation timelines under 600ms.",
+  "accessibilityRequirements": "Provide prefers-reduced-motion override and ensure WCAG 2.1 AA keyboard focus visibility.",
+  "sourceReference": {
+    "type": "prompt",
+    "title": "Cinema Editorial Showcase",
+    "date": "2026-10-22T21:16:03.335Z"
+  },
+  "validationStatus": "imported",
+  "targetSkill": "premium-button-interactions",
+  "isExemptFromNoGlow": false
+}

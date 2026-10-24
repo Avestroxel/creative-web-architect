@@ -1,0 +1,32 @@
+{
+  "id": "masked-video-clip-path-reveals",
+  "name": "Masked Video Clip-Path Reveals",
+  "description": "Implement scroll-synchronized polygonal clip-path reveals that expand film stills from a 4:5 vertical editorial portrait into an expansive 16:9 cinematic landscape as the user scrolls into view. Use hardware-accelerated CSS clip-path polygon transitions driven by requestAnimationFrame without causing layout recalculations or layout shifts..",
+  "category": "scroll-animations",
+  "tags": [
+    "scroll-animations",
+    "scroll",
+    "clip-path",
+    "requestanimationframe"
+  ],
+  "designPhilosophy": "Implement scroll-synchronized polygonal clip-path reveals that expand film stills from a 4:5 vertical editorial portrait into an expansive 16:9 cinematic landscape as the user scrolls into view",
+  "appropriateUseCases": [
+    "High-end editorial showcases",
+    "Luxury brand digital experiences",
+    "Responsive interaction-rich web applications"
+  ],
+  "implementationApproach": "Implement scroll-synchronized polygonal clip-path reveals that expand film stills from a 4:5 vertical editorial portrait into an expansive 16:9 cinematic landscape as the user scrolls into view. Use hardware-accelerated CSS clip-path polygon transitions driven by requestAnimationFrame without causing layout recalculations or layout shifts..",
+  "relevantTechnologies": [
+    "clip-path"
+  ],
+  "performanceConsiderations": "Utilize translate3d, will-change sparingly, and clamp animation timelines under 600ms.",
+  "accessibilityRequirements": "Provide prefers-reduced-motion override and ensure WCAG 2.1 AA keyboard focus visibility.",
+  "sourceReference": {
+    "type": "prompt",
+    "title": "Cinema Editorial Showcase",
+    "date": "2026-10-22T21:16:03.335Z"
+  },
+  "validationStatus": "imported",
+  "targetSkill": "advanced-scroll-animation",
+  "isExemptFromNoGlow": false
+}

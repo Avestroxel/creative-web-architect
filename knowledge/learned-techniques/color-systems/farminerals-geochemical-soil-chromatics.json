@@ -1,0 +1,39 @@
+{
+  "id": "farminerals-geochemical-soil-chromatics",
+  "name": "Farminerals Geochemical Soil Chromatography & Agronomic Terroir Materiality",
+  "description": "Agronomic visual architecture derived from geochemical soil remineralization and volcanic geology. Employs the scientific Munsell Soil Color system (humus loam, terracotta silt, basalt, calcified chalk), pulverized mineral micro-texture, and laboratory Certificate of Analysis (CoA) batch telemetry.",
+  "category": "color-systems",
+  "tags": [
+    "soil-chromatography",
+    "munsell-color",
+    "mineral-palette",
+    "farminerals",
+    "terroir",
+    "earth-pigments",
+    "agronomy"
+  ],
+  "designPhilosophy": "Grounded in agronomic geochemistry and the Munsell Soil Color system. Replaces generic eco-green cliches with authentic geological chromatics: rich humus loam (#1C1814), raw terracotta (#B65C38), volcanic basalt silt (#262320), and calcified chalk (#FAF7F2). Balances raw agricultural earthiness with clinical laboratory precision to convey unadulterated regenerative soil health.",
+  "appropriateUseCases": [
+    "Regenerative agriculture, organic viticulture, and farm-to-table culinary platforms",
+    "Artisanal mineral skincare, clay wellness, and geological wellness apothecaries",
+    "Sustainable agronomy tech, soil telemetry diagnostics, and biochar carbon sequestration",
+    "High-end artisanal coffee and cacao single-origin terroir showcases"
+  ],
+  "implementationApproach": "1. Munsell Soil Color Tokens: Strict CSS custom property hierarchy based on geological soil horizons: Horizon O (Humus Loam #1C1814), Horizon A (Rich Clay #3B2E24), Horizon B (Terracotta Silt #B65C38), and Horizon C (Basalt Mineral #262320) contrasted against Laboratory Chalk (#FAF7F2). 2. Granulometry Micro-Texture: Subtle SVG feTurbulence filter applied to card backgrounds (frequency 0.85, opacity 0.035) simulating pulverized 200-mesh rock dust powder. 3. Certificate of Analysis (CoA) Data Tiles: Monospace batch telemetry badges ('Batch #8492-VOLCANIC', 'pH 6.8 Balanced', '68 Trace Minerals') using tabular numerals and 0.5px hairline soil-tone borders. 4. Stratigraphic Horizon Dividers: Asymmetrical organic curves separating page sections with layered SVG contours evoking soil depth profiles.",
+  "relevantTechnologies": [
+    "CSS Custom Properties with Munsell Chroma scales",
+    "SVG feTurbulence for micro-granular rock dust noise",
+    "Monospace tabular numerals (tabular-nums)",
+    "Stratigraphic SVG sectional masks"
+  ],
+  "performanceConsiderations": "Uses a tiny 64x64 pre-rendered repeatable SVG noise tile to avoid expensive continuous shader execution while maintaining crisp retinal texture.",
+  "accessibilityRequirements": "All text combinations strictly maintain a minimum 7:1 contrast ratio against soil-loam backgrounds, verified under WCAG AAA guidelines for editorial reading.",
+  "sourceReference": {
+    "type": "prompt",
+    "title": "Farminerals Package Reference Prompt",
+    "date": "2026-10-23T01:18:00.000Z"
+  },
+  "validationStatus": "reviewed",
+  "targetSkill": "design-system",
+  "isExemptFromNoGlow": false
+}

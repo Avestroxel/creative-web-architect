@@ -1,0 +1,40 @@
+{
+  "id": "cylindrical-curved-carousel-quad-projection",
+  "name": "Cylindrical Curved Carousel Projection & Dynamic Rounded Quad Geometry",
+  "description": "Mathematical inside-of-a-cylinder carousel projection that dynamically curves, scales, and offsets cards based on normalized radial distance to center. Uses non-linear edge height scaling, rounded trapezoidal clip-path quads, frame-relative units, and 1:1 pointer drag with momentum coasting.",
+  "category": "visual-composition",
+  "tags": [
+    "cylindrical-projection",
+    "carousel",
+    "curved-geometry",
+    "clip-path-path",
+    "reelmark",
+    "momentum-inertia",
+    "frame-units"
+  ],
+  "designPhilosophy": "Simulating the immersive curvature of viewing media from within an architectural cylinder without heavy WebGL 3D meshes. By calculating card dimensions and vertical edge heights from normalized distance to screen center, cards naturally bow, flare outward at screen edges, and preserve harmonic spacing.",
+  "appropriateUseCases": [
+    "Video and media creator marketplaces and portfolio reels",
+    "Immersive panoramic hero sections and product card showcases",
+    "Virtual gallery exhibitions and film screening carousels",
+    "High-fashion and lookbook horizontal browsing experiences"
+  ],
+  "implementationApproach": "1. Normalized Radial Distance: For any card at horizontal position x, compute d = |x - 720| / 706. 2. Non-linear Width & Spacing: Width = (170 + 48 * d^2)u. Center position x = 720 + t * (1 + 0.083 * (t/706)^2), preventing edge card compression and maintaining a 26u gap. 3. Asymmetric Quad Edge Height: Each vertical edge height = (280 + 92 * q^2.6)u, where q is the specific edge's normalized coordinate. 4. Vertical Center Bow: Y_center = (687 - 12 * d^2)u. 5. Per-Frame Path Clipping: Generate clip-path: path() with 15u rounded corners connecting the trapezoidal vertices. 6. Fling & Momentum Kinematics: 1:1 pointer drag, coasting with 95%/sec exponential velocity decay, resuming 50u/sec ambient drift.",
+  "relevantTechnologies": [
+    "CSS clip-path: path()",
+    "Web Animations API clock (duration: 1e9)",
+    "Exponential decay physics",
+    "PointerEvent pointer capture",
+    "Frame-relative unit scaling (--u = min(100vw/1440, 100vh/1080))"
+  ],
+  "performanceConsiderations": "Clip-path path strings are generated in JavaScript and applied with will-change: clip-path. Calculations use fast closed-form arithmetic and avoid DOM layout queries.",
+  "accessibilityRequirements": "Full prefers-reduced-motion support: collapses curved geometry into a standard horizontal accessible card list with keyboard arrow navigation and disables auto-drift.",
+  "sourceReference": {
+    "type": "prompt",
+    "title": "Reelmark Hero Reference Prompt",
+    "date": "2026-10-23T01:14:00.000Z"
+  },
+  "validationStatus": "reviewed",
+  "targetSkill": "cinematic-motion",
+  "isExemptFromNoGlow": false
+}

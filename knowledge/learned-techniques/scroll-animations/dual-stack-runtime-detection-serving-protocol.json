@@ -1,0 +1,32 @@
+{
+  "id": "dual-stack-runtime-detection-serving-protocol",
+  "name": "Dual-Stack Runtime Detection & Serving Protocol",
+  "description": "When inspecting scaffolded or delivered project packages, analyze whether the archive is a framework project (containing package.json) or a clean static web package (HTML, CSS, JS assets). Never invent or force an unnecessary React/Next.js framework scaffolding if the delivered project is already a complete, fast static site; conversely, never flatten an existing React/Next.js component structure into static HTML.",
+  "category": "scroll-animations",
+  "tags": [
+    "scroll-animations",
+    "clip-path"
+  ],
+  "designPhilosophy": "When inspecting scaffolded or delivered project packages, analyze whether the archive is a framework project (containing package.json) or a clean static web package (HTML, CSS, JS assets)",
+  "appropriateUseCases": [
+    "High-end editorial showcases",
+    "Luxury brand digital experiences",
+    "Responsive interaction-rich web applications"
+  ],
+  "implementationApproach": "Always serve static web packages through a local HTTP server rather than raw file:// protocol to ensure ES module imports, SVG clip-path filters, Web Audio, and asset paths resolve cleanly.",
+  "relevantTechnologies": [
+    "React",
+    "clip-path",
+    "SVG"
+  ],
+  "performanceConsiderations": "Utilize translate3d, will-change sparingly, and clamp animation timelines under 600ms.",
+  "accessibilityRequirements": "Provide prefers-reduced-motion override and ensure WCAG 2.1 AA keyboard focus visibility.",
+  "sourceReference": {
+    "type": "prompt",
+    "title": "Haoqi Prompt Workflow",
+    "date": "2026-10-22T21:21:35.266Z"
+  },
+  "validationStatus": "imported",
+  "targetSkill": "advanced-scroll-animation",
+  "isExemptFromNoGlow": false
+}

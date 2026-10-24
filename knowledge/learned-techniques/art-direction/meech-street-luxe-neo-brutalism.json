@@ -1,0 +1,40 @@
+{
+  "id": "meech-street-luxe-neo-brutalism",
+  "name": "Meech Street-Luxe Neo-Brutalism, Draggable Holographic Artifacts & Industrial Stencils",
+  "description": "Raw street-luxe visual architecture fusing underground culture with high-fashion editorial discipline. Features physics-based draggable holographic stickers, raw asphalt and concrete textures, industrial gaffer tape clip-path masks, and flash-photography contrast.",
+  "category": "art-direction",
+  "tags": [
+    "street-luxe",
+    "neo-brutalism",
+    "draggable-stickers",
+    "meech",
+    "stencil-mask",
+    "asphalt-noir",
+    "culture-drop"
+  ],
+  "designPhilosophy": "Merging the raw, gritty energy of underground streetwear and skate culture with high-fashion luxury editorial discipline. Replaces sterile corporate minimalism with tactile cultural artifacts: physics-based draggable holographic stickers, raw asphalt/concrete textures, industrial gaffer tape clip-path masks, and flash-photography contrast.",
+  "appropriateUseCases": [
+    "Streetwear labels, sneaker drops, and contemporary fashion lookbooks",
+    "Hip-hop, electronic, and urban music artist landing pages",
+    "Skateboarding, extreme sports, and youth culture apparel platforms",
+    "Creative directors and multidisciplinary designers targeting cultural institutions"
+  ],
+  "implementationApproach": "1. Asphalt & Platinum Palette: Deep asphalt noir (#0B0B0D), raw concrete (#1A1B1E), stencil paper off-white (#EDEBE8), and platinum chrome foil (#D8DCE3). 2. Draggable Holographic Stickers: Interactive badge elements with PointerEvent drag tracking, damped spring physics on release (spring constant 0.35, damping 0.75), and dynamic tilt angles. 3. Industrial Stencil & Gaffer Tape Masking: Irregular torn-edge and tape masks generated using CSS clip-path polygon coordinates, framing case study media with an analog zine aesthetic. 4. Controlled Ephemeral Glitch: 120ms chromatic aberration on hover (:hover { text-shadow: -1.5px 0 #FF0055, 1.5px 0 #00E5FF; }) immediately settling into ultra-crisp stillness. 5. Drop Telemetry: Monospace metadata badges ('DROP 004', 'ARCHIVE CATALOG', 'MANUFACTURED IN NYC') using 10px uppercase type and 0.5px hairline dividers.",
+  "relevantTechnologies": [
+    "CSS clip-path: polygon() for stencil masks",
+    "PointerEvent pointer capture & momentum springs",
+    "CSS custom properties for sticker tilt (--tilt-deg)",
+    "Tabular monospace numbers for drop telemetry",
+    "Hardware-composited will-change: transform"
+  ],
+  "performanceConsiderations": "Draggable stickers run via transform: translate3d without triggering layout reflows. Pointer listeners are bound only during active interaction and unbind on pointerup.",
+  "accessibilityRequirements": "All interactive stickers feature clear keyboard focus rings, are accessible via Tab order, and can be pinned/reset with a single keyboard action. Color contrast between stencil text and asphalt backgrounds exceeds 14:1.",
+  "sourceReference": {
+    "type": "prompt",
+    "title": "Meech Package Reference Prompt",
+    "date": "2026-10-24T13:08:00.000Z"
+  },
+  "validationStatus": "reviewed",
+  "targetSkill": "premium-visual-direction",
+  "isExemptFromNoGlow": false
+}

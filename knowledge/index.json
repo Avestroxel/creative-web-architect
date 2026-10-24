@@ -1,0 +1,474 @@
+{
+  "version": "1.0.0",
+  "updatedAt": "2026-10-24T13:08:00.000Z",
+  "totalTechniques": 23,
+  "categories": {
+    "typography": 4,
+    "scroll-animations": 4,
+    "accessibility": 1,
+    "button-interactions": 1,
+    "hover-effects": 1,
+    "art-direction": 2,
+    "three-dimensional-web": 2,
+    "ui-components": 1,
+    "creative-storytelling": 1,
+    "visual-composition": 2,
+    "page-transitions": 1,
+    "micro-interactions": 1,
+    "performance-engineering": 1,
+    "color-systems": 1
+  },
+  "techniques": [
+    {
+      "id": "mission-architectural-philosophy",
+      "name": "Mission & Architectural Philosophy",
+      "description": "Create a high-end auteur cinematography showcase inspired by 35mm archival film and Swiss editorial typography. Enforce architectural restraint: avoid cheap neon glows, oversaturated gradients, and childish AI aesthetic defaults.",
+      "category": "typography",
+      "tags": [
+        "typography",
+        "editorial serif",
+        "serif",
+        "obsidian",
+        "aesthetic"
+      ],
+      "validationStatus": "imported",
+      "targetSkill": "typography",
+      "sourceReference": {
+        "type": "prompt",
+        "title": "Cinema Editorial Showcase",
+        "date": "2026-10-22T21:16:03.335Z"
+      }
+    },
+    {
+      "id": "masked-video-clip-path-reveals",
+      "name": "Masked Video Clip-Path Reveals",
+      "description": "Implement scroll-synchronized polygonal clip-path reveals that expand film stills from a 4:5 vertical editorial portrait into an expansive 16:9 cinematic landscape as the user scrolls into view. Use hardware-accelerated CSS clip-path polygon transitions driven by requestAnimationFrame without causing layout recalculations or layout shifts..",
+      "category": "scroll-animations",
+      "tags": [
+        "scroll-animations",
+        "scroll",
+        "clip-path",
+        "requestanimationframe"
+      ],
+      "validationStatus": "imported",
+      "targetSkill": "advanced-scroll-animation",
+      "sourceReference": {
+        "type": "prompt",
+        "title": "Cinema Editorial Showcase",
+        "date": "2026-10-22T21:16:03.335Z"
+      }
+    },
+    {
+      "id": "kinetic-roman-numeral-chapter-navigation",
+      "name": "Kinetic Roman Numeral Chapter Navigation",
+      "description": "Choreograph roman numeral scene markers (e.g., I, II, III, IV) with letter-by-letter kinetic stagger reveals. As each project scrolls into the viewport, animate line-height and opacity using cubic-bezier(0.16, 1, 0.3, 1) easing.",
+      "category": "accessibility",
+      "tags": [
+        "accessibility",
+        "scroll",
+        "typography",
+        "prefers-reduced-motion"
+      ],
+      "validationStatus": "imported",
+      "targetSkill": "motion-accessibility",
+      "sourceReference": {
+        "type": "prompt",
+        "title": "Cinema Editorial Showcase",
+        "date": "2026-10-22T21:16:03.335Z"
+      }
+    },
+    {
+      "id": "magnetic-project-index-pill",
+      "name": "Magnetic Project Index Pill",
+      "description": "Engineer an ergonomic floating index pill that subtly shifts position when the cursor enters within a 120px threshold radius. Apply dampened spring physics with a spring constant of 0.28 and mass damping of 0.85, gently returning to origin on mouse exit.",
+      "category": "button-interactions",
+      "tags": [
+        "button-interactions",
+        "cursor",
+        "wcag"
+      ],
+      "validationStatus": "imported",
+      "targetSkill": "premium-button-interactions",
+      "sourceReference": {
+        "type": "prompt",
+        "title": "Cinema Editorial Showcase",
+        "date": "2026-10-22T21:16:03.335Z"
+      }
+    },
+    {
+      "id": "inertia-horizontal-film-pan",
+      "name": "Inertia Horizontal Film Pan",
+      "description": "Build a horizontal timeline strip showcasing film project frames using CSS subgrid and translate3d transforms. Synchronize progress with native scroll timelines without using wheel event preventDefault or fake smooth-scrolling hijackers, ensuring trackpads, mouse wheels, and mobile touch gestures remain completely natural.",
+      "category": "scroll-animations",
+      "tags": [
+        "scroll-animations",
+        "scroll",
+        "timeline",
+        "horizontal",
+        "60 fps",
+        "grid"
+      ],
+      "validationStatus": "imported",
+      "targetSkill": "advanced-scroll-animation",
+      "sourceReference": {
+        "type": "prompt",
+        "title": "Cinema Editorial Showcase",
+        "date": "2026-10-22T21:16:03.335Z"
+      }
+    },
+    {
+      "id": "dual-stack-runtime-detection-serving-protocol",
+      "name": "Dual-Stack Runtime Detection & Serving Protocol",
+      "description": "When inspecting scaffolded or delivered project packages, analyze whether the archive is a framework project (containing package.json) or a clean static web package (HTML, CSS, JS assets). Never invent or force an unnecessary React/Next.js framework scaffolding if the delivered project is already a complete, fast static site; conversely, never flatten an existing React/Next.js component structure into static HTML.",
+      "category": "scroll-animations",
+      "tags": [
+        "scroll-animations",
+        "clip-path"
+      ],
+      "validationStatus": "imported",
+      "targetSkill": "advanced-scroll-animation",
+      "sourceReference": {
+        "type": "prompt",
+        "title": "Haoqi Prompt Workflow",
+        "date": "2026-10-22T21:21:35.266Z"
+      }
+    },
+    {
+      "id": "targeted-incremental-baseline-refactoring",
+      "name": "Targeted Incremental Baseline Refactoring",
+      "description": "When applying follow-up creative changes (copywriting, typography scales, colorways, sections, or interactive features), preserve the delivered architectural structure, styling system, and motion tokens as the baseline. Prefer small, targeted, non-destructive delta edits over regenerating the entire site.",
+      "category": "typography",
+      "tags": [
+        "typography",
+        "layout thrashing"
+      ],
+      "validationStatus": "imported",
+      "targetSkill": "typography",
+      "sourceReference": {
+        "type": "prompt",
+        "title": "Haoqi Prompt Workflow",
+        "date": "2026-10-22T21:21:35.266Z"
+      }
+    },
+    {
+      "id": "dragonfly-biomimetic-optics",
+      "name": "Dragonfly Biomimetic Optics & Agile Kinematics",
+      "description": "Inspired by the compound optics and structural iridescence of the dragonfly. Replaces static glass with angle-dependent thin-film interference sheens, skeletal wireframe structures, and ultra-agile, zero-latency micro-interactions that mimic biomimetic aerial hovering.",
+      "category": "hover-effects",
+      "tags": [
+        "biomimetic",
+        "iridescent-optics",
+        "dragonfly",
+        "agile-hover",
+        "skeletal-grid"
+      ],
+      "validationStatus": "reviewed",
+      "targetSkill": "hover-interaction-design",
+      "sourceReference": {
+        "type": "prompt",
+        "title": "Dragonfly Biomimetic Prompt",
+        "date": "2026-10-23T00:54:00.000Z"
+      }
+    },
+    {
+      "id": "alethia-stratigraphic-materiality",
+      "name": "Alethia Stratigraphic Materiality & Geospatial Truth",
+      "description": "Derived from the Greek 'Alētheia' (unconcealed truth) and terrestrial geology. Eliminates artificial surface gloss in favor of honest mineral textures (obsidian, basalt, raw terra-cotta), stratigraphic elevation cross-sections, and topographic scroll contouring.",
+      "category": "art-direction",
+      "tags": [
+        "geological",
+        "stratigraphic",
+        "mineral-palette",
+        "alethia-earth",
+        "topography"
+      ],
+      "validationStatus": "reviewed",
+      "targetSkill": "premium-visual-direction",
+      "sourceReference": {
+        "type": "prompt",
+        "title": "Alethia Earth Reference",
+        "date": "2026-10-23T00:54:00.000Z"
+      }
+    },
+    {
+      "id": "alethia-geospatial-telemetry",
+      "name": "Alethia Geospatial Telemetry & Orthographic Earth Projections",
+      "description": "Scientific geospatial HUD and restrained 3D orthographic Earth projection. Features Great-Circle trigonometric wireframe coordinates, elevation counters, solar terminator lighting, and latitude/longitude spatial markers without noisy neon clutter.",
+      "category": "three-dimensional-web",
+      "tags": [
+        "geospatial",
+        "earth-canvas",
+        "orthographic-globe",
+        "coordinates-hud",
+        "alethia"
+      ],
+      "validationStatus": "reviewed",
+      "targetSkill": "three-dimensional-web",
+      "sourceReference": {
+        "type": "prompt",
+        "title": "Alethia Earth Reference Prompt",
+        "date": "2026-10-23T00:58:00.000Z"
+      }
+    },
+    {
+      "id": "oscs-spatial-control-surface",
+      "name": "O-SCS Spatial Control Surface & Precision HUD Docking",
+      "description": "Ergonomic spatial control surface featuring magnetic panel docking, 3D viewport orientation gizmo, matrix3d spatial camera transformations, and mission-critical telemetry reticles without noisy blur or neon bloom.",
+      "category": "ui-components",
+      "tags": [
+        "spatial-ui",
+        "hud-docking",
+        "control-surface",
+        "matrix3d",
+        "o-scs"
+      ],
+      "validationStatus": "reviewed",
+      "targetSkill": "dashboard-design",
+      "sourceReference": {
+        "type": "prompt",
+        "title": "O-SCS Spatial Package Reference",
+        "date": "2026-10-23T01:02:00.000Z"
+      }
+    },
+    {
+      "id": "izanami-shadow-and-ink",
+      "name": "Izanami Shadow-Craft, Sumi Ink Dispersion & Ma Spacing",
+      "description": "Japanese aesthetic architecture inspired by 'In Praise of Shadows' (In-ei Raisan). Features deep Urushi lacquer black, Kinpaku gold foil leafing, meditative Ma negative space, and organic Sumi-e fluid ink displacement filters.",
+      "category": "creative-storytelling",
+      "tags": [
+        "japanese-minimalism",
+        "in-praise-of-shadows",
+        "sumi-ink",
+        "ma-spacing",
+        "izanami"
+      ],
+      "validationStatus": "reviewed",
+      "targetSkill": "layout-composition",
+      "sourceReference": {
+        "type": "prompt",
+        "title": "Izanami Package Reference Prompt",
+        "date": "2026-10-23T01:04:00.000Z"
+      }
+    },
+    {
+      "id": "tile-tactile-tessellation-system",
+      "name": "Tile Tactile Tessellation, Grout Hairlines & Modular Slate",
+      "description": "Architectural grid framework derived from ceramic tile tessellation, honed slate materiality, and precision grout hairlines. Features interlocking proportional modules (1:1, 1:2, 2:1, 2:2), 1px structural container gap lines, micro-beveled inner shadow relief, and haptic physical depression kinematics.",
+      "category": "visual-composition",
+      "tags": [
+        "tile",
+        "tessellation",
+        "bento-evolution",
+        "grout-hairlines",
+        "tactile-slate"
+      ],
+      "validationStatus": "reviewed",
+      "targetSkill": "layout-composition",
+      "sourceReference": {
+        "type": "prompt",
+        "title": "Tile Package Reference Prompt",
+        "date": "2026-10-23T01:07:00.000Z"
+      }
+    },
+    {
+      "id": "romanelli-kinetic-viewport-and-inertial-distortion",
+      "name": "Romanelli Kinetic Viewport, Inertial Velocity Warp & Monochromatic Editorial Noir",
+      "description": "Auteur portfolio architecture inspired by Italian creative developer Mirko Romanelli. Features an ephemeral cursor-anchored preview portal, velocity-driven skew transforms, seamless full-screen canvas transitions, and stark monochromatic typography with extreme scale contrast.",
+      "category": "page-transitions",
+      "tags": [
+        "romanelli",
+        "cursor-portal",
+        "velocity-skew",
+        "inertial-warp",
+        "monochromatic-noir"
+      ],
+      "validationStatus": "reviewed",
+      "targetSkill": "page-transitions",
+      "sourceReference": {
+        "type": "prompt",
+        "title": "Mirko Romanelli Package Reference Prompt",
+        "date": "2026-10-23T01:10:00.000Z"
+      }
+    },
+    {
+      "id": "twofour-seven-artists-sonic-telemetry",
+      "name": "247 Artists Sonic Telemetry, Global Studio Time & Roster Waveforms",
+      "description": "Analog recording studio telemetry architecture derived from international artist rosters and 24/7 music collectives. Features precision decibel VU meters, zero-latency inline audio waveform scrubbers, live multi-timezone studio status badges, and tactile brushed aluminum materiality.",
+      "category": "micro-interactions",
+      "tags": [
+        "sonic-telemetry",
+        "audio-roster",
+        "247-artists",
+        "vu-meter",
+        "world-clock",
+        "vinyl-materiality"
+      ],
+      "validationStatus": "reviewed",
+      "targetSkill": "motion-design",
+      "sourceReference": {
+        "type": "prompt",
+        "title": "247 Artists Package Reference Prompt",
+        "date": "2026-10-23T01:12:00.000Z"
+      }
+    },
+    {
+      "id": "cylindrical-curved-carousel-quad-projection",
+      "name": "Cylindrical Curved Carousel Projection & Dynamic Rounded Quad Geometry",
+      "description": "Mathematical inside-of-a-cylinder carousel projection that dynamically curves, scales, and offsets cards based on normalized radial distance to center. Uses non-linear edge height scaling, rounded trapezoidal clip-path quads, frame-relative units, and 1:1 pointer drag with momentum coasting.",
+      "category": "visual-composition",
+      "tags": [
+        "cylindrical-projection",
+        "carousel",
+        "curved-geometry",
+        "clip-path-path",
+        "reelmark"
+      ],
+      "validationStatus": "reviewed",
+      "targetSkill": "cinematic-motion",
+      "sourceReference": {
+        "type": "prompt",
+        "title": "Reelmark Hero Reference Prompt",
+        "date": "2026-10-23T01:14:00.000Z"
+      }
+    },
+    {
+      "id": "video-atlas-single-stream-grid-sync",
+      "name": "Video Atlas Single-Stream Grid Sync & Viewport Tile Offsetting",
+      "description": "High-performance video architecture that packs multiple synchronized video clips into a single 5x2 composite video texture (atlas). Eliminates multi-video network thrashing and mobile GPU decoder limits by downloading one shared media stream and offsetting viewports geometrically.",
+      "category": "performance-engineering",
+      "tags": [
+        "video-atlas",
+        "single-stream",
+        "performance",
+        "memory-optimization",
+        "reelmark"
+      ],
+      "validationStatus": "reviewed",
+      "targetSkill": "performance-optimization",
+      "sourceReference": {
+        "type": "prompt",
+        "title": "Reelmark Hero Reference Prompt",
+        "date": "2026-10-23T01:14:00.000Z"
+      }
+    },
+    {
+      "id": "sticky-stacking-card-deck-scale-decay",
+      "name": "Sticky Stacking Card Deck with Scale Decay & Viewport Pinning",
+      "description": "Transforms a sequence of project cards into an overlapping physical card deck. Each card pins to a sticky viewport threshold while subsequent cards stack over it, applying a subtle scale reduction (targetScale = 1 - (total - 1 - i) * 0.03) to create physical depth without 3D meshes.",
+      "category": "scroll-animations",
+      "tags": [
+        "sticky-stack",
+        "card-deck",
+        "scale-decay",
+        "scroll-transform",
+        "framer-motion"
+      ],
+      "validationStatus": "reviewed",
+      "targetSkill": "advanced-scroll-animation",
+      "sourceReference": {
+        "type": "prompt",
+        "title": "Jack 3D Creator Portfolio Prompt",
+        "date": "2026-10-23T01:16:00.000Z"
+      }
+    },
+    {
+      "id": "scroll-driven-character-opacity-wave",
+      "name": "Scroll-Driven Character Opacity Wave & Fluid Editorial Stagger",
+      "description": "Directs editorial reading focus by progressively illuminating text character-by-character as the user scrolls. Characters transition from ambient opacity 0.2 to full opacity 1.0 based on viewport progress, eliminating layout shift with ghost spans.",
+      "category": "typography",
+      "tags": [
+        "character-opacity",
+        "scroll-driven-text",
+        "editorial-stagger",
+        "fluid-typography"
+      ],
+      "validationStatus": "reviewed",
+      "targetSkill": "typography",
+      "sourceReference": {
+        "type": "prompt",
+        "title": "Jack 3D Creator Portfolio Prompt",
+        "date": "2026-10-23T01:16:00.000Z"
+      }
+    },
+    {
+      "id": "farminerals-geochemical-soil-chromatics",
+      "name": "Farminerals Geochemical Soil Chromatography & Agronomic Terroir Materiality",
+      "description": "Agronomic visual architecture derived from geochemical soil remineralization and volcanic geology. Employs the scientific Munsell Soil Color system (humus loam, terracotta silt, basalt, calcified chalk), pulverized mineral micro-texture, and laboratory Certificate of Analysis (CoA) batch telemetry.",
+      "category": "color-systems",
+      "tags": [
+        "soil-chromatography",
+        "munsell-color",
+        "mineral-palette",
+        "farminerals",
+        "terroir"
+      ],
+      "validationStatus": "reviewed",
+      "targetSkill": "design-system",
+      "sourceReference": {
+        "type": "prompt",
+        "title": "Farminerals Package Reference Prompt",
+        "date": "2026-10-23T01:18:00.000Z"
+      }
+    },
+    {
+      "id": "ricardo-isometric-mechanical-console",
+      "name": "Ricardo Isometric Spatial Console, Rotary Potentiometers & Multi-Plane Z-Elevation",
+      "description": "Tactile industrial hardware console architecture utilizing pure isometric CSS 3D projections (rotateX 60deg, rotateZ -45deg), multi-plane Z-axis elevation on hover, authentic rotary potentiometer dials with knurled metal textures, and physical detent physics.",
+      "category": "three-dimensional-web",
+      "tags": [
+        "isometric-3d",
+        "mechanical-console",
+        "rotary-knob",
+        "ricardo",
+        "z-elevation"
+      ],
+      "validationStatus": "reviewed",
+      "targetSkill": "three-dimensional-web",
+      "sourceReference": {
+        "type": "prompt",
+        "title": "Ricardo Package Reference Prompt",
+        "date": "2026-10-24T13:00:00.000Z"
+      }
+    },
+    {
+      "id": "typolove-kinetic-variable-typography-and-specimen-craft",
+      "name": "Typo Love Kinetic Variable Font Axes, Glyph Morphing & Specimen Architecture",
+      "description": "Architectural typographic system celebrating letterforms as dynamic structures. Employs multi-axis variable font interpolations (weight, width, slant), cursor proximity weight waves, OpenType discretionary ligatures, typographic proof bounding boxes, and strict 8px baseline rhythm.",
+      "category": "typography",
+      "tags": [
+        "variable-fonts",
+        "kinetic-typography",
+        "glyph-morphing",
+        "typolove",
+        "specimen-architecture"
+      ],
+      "validationStatus": "reviewed",
+      "targetSkill": "typography",
+      "sourceReference": {
+        "type": "prompt",
+        "title": "Typo Love Package Reference Prompt",
+        "date": "2026-10-24T13:05:00.000Z"
+      }
+    },
+    {
+      "id": "meech-street-luxe-neo-brutalism",
+      "name": "Meech Street-Luxe Neo-Brutalism, Draggable Holographic Artifacts & Industrial Stencils",
+      "description": "Raw street-luxe visual architecture fusing underground culture with high-fashion editorial discipline. Features physics-based draggable holographic stickers, raw asphalt and concrete textures, industrial gaffer tape clip-path masks, and flash-photography contrast.",
+      "category": "art-direction",
+      "tags": [
+        "street-luxe",
+        "neo-brutalism",
+        "draggable-stickers",
+        "meech",
+        "stencil-mask"
+      ],
+      "validationStatus": "reviewed",
+      "targetSkill": "premium-visual-direction",
+      "sourceReference": {
+        "type": "prompt",
+        "title": "Meech Package Reference Prompt",
+        "date": "2026-10-24T13:08:00.000Z"
+      }
+    }
+  ]
+}

@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creative Web Architect // Official AI Creative Engineering Toolkit</title>
+  <meta name="description" content="Official website for Creative Web Architect — the open-source AI creative engineering toolkit for generating exceptional, responsive, and performance-optimized websites from minimal descriptions. Created by Anas Hashim.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body class="cwa-official-body">
+
+  <!-- =========================================================================
+       1. NAVIGATION HEADER (STICKY GLASS HUD)
+       ========================================================================= -->
+  <header class="cwa-header" id="main-header">
+    <div class="header-container">
+      <a href="#hero" class="brand-monogram-wrap" aria-label="Creative Web Architect Home">
+        <span class="brand-monogram">CWA</span>
+        <div class="brand-text">
+          <span class="brand-title">Creative Web Architect</span>
+          <span class="brand-badge">OPEN SOURCE • v0.2.0</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="desktop-nav" aria-label="Primary Navigation">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#capabilities" class="nav-link">Capabilities</a>
+        <a href="#styles" class="nav-link">Design Styles</a>
+        <a href="#how-it-works" class="nav-link">How It Works</a>
+        <a href="#environments" class="nav-link">Environments</a>
+        <a href="#install" class="nav-link">Installation</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+      </nav>
+
+      <!-- Action Group -->
+      <div class="header-actions">
+        <a href="https://github.com/Avestroxel/creative-web-architect" class="cwa-btn btn-ghost" target="_blank" rel="noopener noreferrer">
+          <svg class="github-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+          <span>GitHub</span>
+          <span class="external-arrow">↗</span>
+        </a>
+        <a href="#install" class="cwa-btn btn-primary">
+          <span>Get Started</span>
+          <span class="btn-arrow">→</span>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Slide-Down Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#about" class="mob-link">About</a>
+      <a href="#capabilities" class="mob-link">Capabilities</a>
+      <a href="#styles" class="mob-link">Design Styles</a>
+      <a href="#how-it-works" class="mob-link">How It Works</a>
+      <a href="#environments" class="mob-link">Supported Environments</a>
+      <a href="#install" class="mob-link">Installation</a>
+      <a href="#faq" class="mob-link">FAQ</a>
+      <a href="https://github.com/Avestroxel/creative-web-architect" class="mob-link highlight" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       2. HERO SECTION
+       ========================================================================= -->
+  <main>
+    <section class="hero-section" id="hero">
+      <div class="hero-bg-canvas-wrap">
+        <canvas id="hero-3d-canvas" aria-hidden="true"></canvas>
+      </div>
+
+      <div class="hero-content">
+        <div class="hero-pill-badge">
+          <span class="pulse-dot"></span>
+          <span class="pill-text">OPEN-SOURCE AI CREATIVE WEB DEVELOPMENT AGENT</span>
+        </div>
+
+        <h1 class="hero-headline">
+          Your Vision.<br>
+          <span class="headline-gradient">Beyond Ordinary Web Design.</span>
+        </h1>
+
+        <p class="hero-subtext">
+          Creative Web Architect brings art direction, advanced motion, interactive 3D, and intelligent frontend engineering together to help turn simple ideas into extraordinary digital experiences.
+        </p>
+
+        <!-- 1-Click CLI Quickstart Command -->
+        <div class="hero-install-box" id="hero-install">
+          <div class="cli-input-wrapper">
+            <span class="cli-prompt">$</span>
+            <code class="cli-command" id="cli-cmd-hero">npx @creative-web-architect/cli init</code>
+          </div>
+          <button class="copy-trigger-btn" id="copy-btn-hero" aria-label="Copy CLI init command">
+            <span class="copy-text">Copy</span>
+          </button>
+        </div>
+
+        <div class="hero-cta-group">
+          <a href="#install" class="cwa-btn btn-primary btn-lg">
+            <span>Get Started</span>
+            <span class="btn-arrow">→</span>
+          </a>
+          <a href="#capabilities" class="cwa-btn btn-secondary btn-lg">
+            <span>Explore Capabilities</span>
+          </a>
+        </div>
+
+        <!-- Telemetry & Credibility Bar -->
+        <div class="hero-telemetry">
+          <div class="telemetry-item">
+            <span class="telemetry-val">36</span>
+            <span class="telemetry-lbl">Modular Agent Skills</span>
+          </div>
+          <div class="telemetry-divider"></div>
+          <div class="telemetry-item">
+            <span class="telemetry-val">60 FPS</span>
+            <span class="telemetry-lbl">Performance Budget</span>
+          </div>
+          <div class="telemetry-divider"></div>
+          <div class="telemetry-item">
+            <span class="telemetry-val">No-Glow</span>
+            <span class="telemetry-lbl">Architectural Restraint</span>
+          </div>
+          <div class="telemetry-divider"></div>
+          <div class="telemetry-item">
+            <span class="telemetry-val">MIT</span>
+            <span class="telemetry-lbl">Open-Source License</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         3. ABOUT THE AGENT
+         ========================================================================= -->
+    <section class="cwa-section about-section" id="about">
+      <div class="section-container">
+        <div class="section-badge-wrap">
+          <span class="section-kicker">ABOUT THE AGENT</span>
+          <h2 class="section-title">An Intelligent Creative Engineering Partner</h2>
+          <p class="section-lead">
+            Creative Web Architect is a modular, open-source agent toolkit designed to equip your existing AI coding environments with authentic design intelligence and production frontend rigor.
+          </p>
+        </div>
+
+        <!-- Clarification Banner -->
+        <div class="clarification-callout">
+          <div class="callout-icon">ℹ</div>
+          <div class="callout-body">
+            <strong>Toolkit Architecture Notice:</strong>
+            Creative Web Architect is not a separate newly trained foundation model. It is an open-source system of 36 Agent Skills, design tokens, kinematic physics, and component engines that connects to compatible AI coding tools (Google Antigravity, Claude Code, Cursor, Gemini CLI) to elevate their web design and implementation capabilities.
+          </div>
+        </div>
+
+        <!-- Disciplines Grid -->
+        <div class="disciplines-grid">
+          <div class="discipline-card">
+            <span class="card-num">01</span>
+            <h3>Creative Director</h3>
+            <p>Deconstructs short briefs to identify core audience, brand archetypes, aesthetic tension, and storytelling arcs.</p>
+          </div>
+          <div class="discipline-card">
+            <span class="card-num">02</span>
+            <h3>Digital Art Director</h3>
+            <p>Curates distinctive typographic hierarchy, fluid clamp() scales, optical kerning, and mature monochrome palettes.</p>
+          </div>
+          <div class="discipline-card">
+            <span class="card-num">03</span>
+            <h3>Motion Designer</h3>
+            <p>Engineers spring-damped physics (0.28 damping factor), magnetic cursor attraction, directional reveals, and scroll storytelling.</p>
+          </div>
+          <div class="discipline-card">
+            <span class="card-num">04</span>
+            <h3>3D & WebGL Engineer</h3>
+            <p>Orchestrates Three.js scenes, camera orbits, canvas wireframes, procedural GLSL shaders, and GLTF asset optimization.</p>
+          </div>
+          <div class="discipline-card">
+            <span class="card-num">05</span>
+            <h3>Frontend Architect</h3>
+            <p>Produces clean, modular, accessible TypeScript, semantic HTML5, modern CSS layers, and zero unnecessary dependencies.</p>
+          </div>
+          <div class="discipline-card">
+            <span class="card-num">06</span>
+            <h3>Performance Specialist</h3>
+            <p>Enforces strict Core Web Vitals targets: LCP ≤ 2.5s, INP ≤ 200ms, CLS ≤ 0.1, and guaranteed 60 FPS hardware acceleration.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         4. CREATIVE CAPABILITIES (7 PILLARS)
+         ========================================================================= -->
+    <section class="cwa-section capabilities-section" id="capabilities">
+      <div class="section-container">
+        <div class="section-badge-wrap">
+          <span class="section-kicker">CAPABILITIES</span>
+          <h2 class="section-title">Engineered for Distinction</h2>
+          <p class="section-lead">
+            Seven unified pillars designed to break free from cookie-cutter AI templates and repetitive neon cards.
+          </p>
+        </div>
+
+        <div class="capabilities-grid">
+          <!-- Pillar 1 -->
+          <article class="capability-card cap-large">
+            <div class="card-meta">
+              <span class="cap-tag">PILLAR 01</span>
+              <span class="cap-status">Active</span>
+            </div>
+            <h3>Intelligent Art Direction</h3>
+            <p>
+              Autonomous creative direction that develops original visual concepts, typography pairings, color systems, and spatial compositions tailored to the specific brand personality rather than generic defaults.
+            </p>
+            <div class="cap-pills">
+              <span>Typography Scales</span>
+              <span>Visual Composition</span>
+              <span>Editorial Balance</span>
+              <span>Content Voice</span>
+            </div>
+          </article>
+
+          <!-- Pillar 2 -->
+          <article class="capability-card">
+            <div class="card-meta">
+              <span class="cap-tag">PILLAR 02</span>
+              <span class="cap-status">Active</span>
+            </div>
+            <h3>Advanced Motion Design</h3>
+            <p>
+              Kinematic spring curves, magnetic button tracking, directional hover overlays, sliding split-labels, and chapter-based pinned scroll narratives with zero layout thrashing.
+            </p>
+            <div class="cap-pills">
+              <span>Damped Springs</span>
+              <span>Scroll Scrubbing</span>
+              <span>Zero-Thrash Accordions</span>
+            </div>
+          </article>
+
+          <!-- Pillar 3 -->
+          <article class="capability-card">
+            <div class="card-meta">
+              <span class="cap-tag">PILLAR 03</span>
+              <span class="cap-status">Active</span>
+            </div>
+            <h3>Three-Dimensional Experiences</h3>
+            <p>
+              Lightweight Three.js scenes, interactive canvas wireframes, orthographic product staging, camera choreography, and procedural fragment shaders with automatic fallback.
+            </p>
+            <div class="cap-pills">
+              <span>Three.js</span>
+              <span>GLTF Compression</span>
+              <span>Camera Choreography</span>
+            </div>
+          </article>
+
+          <!-- Pillar 4 -->
+          <article class="capability-card">
+            <div class="card-meta">
+              <span class="cap-tag">PILLAR 04</span>
+              <span class="cap-status">Active</span>
+            </div>
+            <h3>Refined Liquid Glass</h3>
+            <p>
+              Physically believable frosted optics featuring 20px blur, 140% saturation compensation, delicate 0.5px hairline specular borders, and restrained pointer tilt without neon bloom.
+            </p>
+            <div class="cap-pills">
+              <span>Specular Highlights</span>
+              <span>Optical Refraction</span>
+              <span>No Neon Bloom</span>
+            </div>
+          </article>
+
+          <!-- Pillar 5 -->
+          <article class="capability-card">
+            <div class="card-meta">
+              <span class="cap-tag">PILLAR 05</span>
+              <span class="cap-status">Active</span>
+            </div>
+            <h3>Responsive Architecture</h3>
+            <p>
+              Fluid viewport clamp() formulas, CSS container queries, ergonomic touch targets (≥44px), and adaptive navigation layouts that effortlessly scale across mobile, tablet, and ultra-wide screens.
+            </p>
+            <div class="cap-pills">
+              <span>Fluid Typography</span>
+              <span>Container Queries</span>
+              <span>Touch Optimization</span>
+            </div>
+          </article>
+
+          <!-- Pillar 6 -->
+          <article class="capability-card">
+            <div class="card-meta">
+              <span class="cap-tag">PILLAR 06</span>
+              <span class="cap-status">Active</span>
+            </div>
+            <h3>Performance Engineering</h3>
+            <p>
+              Built-in Core Web Vitals telemetry, GPU-composited translate3d animations, debounced event handlers, efficient requestAnimationFrame loops, and automatic prefers-reduced-motion compliance.
+            </p>
+            <div class="cap-pills">
+              <span>LCP ≤ 2.5s</span>
+              <span>INP ≤ 200ms</span>
+              <span>CLS ≤ 0.1</span>
+            </div>
+          </article>
+
+          <!-- Pillar 7 -->
+          <article class="capability-card cap-wide">
+            <div class="card-meta">
+              <span class="cap-tag">PILLAR 07</span>
+              <span class="cap-status">Active</span>
+            </div>
+            <h3>Persistent Knowledge Ingestion & Skill Expansion</h3>
+            <p>
+              A repository-based knowledge engine that analyzes external reference prompts, extracts structured engineering techniques, prevents duplicate bloat, detects policy conflicts, and continuously expands your agent's practical capabilities.
+            </p>
+            <div class="cap-pills">
+              <span>Safe Prompt Sanitization</span>
+              <span>Conflict Detection</span>
+              <span>Master Indexing</span>
+              <span>Selective Retrieval</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         5. DESIGN STYLES SHOWCASE
+         ========================================================================= -->
+    <section class="cwa-section styles-section" id="styles">
+      <div class="section-container">
+        <div class="section-badge-wrap">
+          <span class="section-kicker">AESTHETIC INTELLIGENCE</span>
+          <h2 class="section-title">Diverse Design Language</h2>
+          <p class="section-lead">
+            The agent draws upon a curated catalog of 42+ distinctive aesthetics, adapting visual composition to match your project's authentic brand DNA.
+          </p>
+        </div>
+
+        <!-- Interactive Style Picker Tabs -->
+        <div class="style-tabs-container">
+          <div class="style-tab-bar" role="tablist" aria-label="Design Style Selector">
+            <button class="style-tab active" data-style="luxury" role="tab" aria-selected="true">Luxury Editorial</button>
+            <button class="style-tab" data-style="minimal" role="tab" aria-selected="false">Swiss International</button>
+            <button class="style-tab" data-style="cinematic" role="tab" aria-selected="false">Cinematic Product</button>
+            <button class="style-tab" data-style="bento" role="tab" aria-selected="false">Experimental Bento</button>
+            <button class="style-tab" data-style="telemetry" role="tab" aria-selected="false">Obsidian Telemetry</button>
+            <button class="style-tab" data-style="glass" role="tab" aria-selected="false">Refined Glass</button>
+          </div>
+
+          <!-- Dynamic Style Preview Stage -->
+          <div class="style-stage glass-card" id="style-preview-stage">
+            <div class="style-preview-content" id="style-preview-body">
+              <!-- Dynamically populated by JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         6. HOW IT WORKS
+         ========================================================================= -->
+    <section class="cwa-section workflow-section" id="how-it-works">
+      <div class="section-container">
+        <div class="section-badge-wrap">
+          <span class="section-kicker">WORKFLOW</span>
+          <h2 class="section-title">From Prompt to Production in 5 Steps</h2>
+          <p class="section-lead">
+            How Creative Web Architect turns brief descriptions into complete, production-grade web experiences.
+          </p>
+        </div>
+
+        <div class="steps-flow">
+          <!-- Step 1 -->
+          <div class="flow-step">
+            <div class="step-indicator">
+              <span class="step-num">01</span>
+              <span class="step-line"></span>
+            </div>
+            <div class="step-content">
+              <h4>Install Toolkit</h4>
+              <p>Initialize CWA in your project root using the CLI or clone the repository to equip your agent with the 36 creative skills.</p>
+              <code>npx @creative-web-architect/cli init</code>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="flow-step">
+            <div class="step-indicator">
+              <span class="step-num">02</span>
+              <span class="step-line"></span>
+            </div>
+            <div class="step-content">
+              <h4>Describe Your Vision</h4>
+              <p>Provide a one-sentence brief in your AI coding chat describing what you want to build.</p>
+              <div class="prompt-sample">"Build a luxury horology timepiece website with 3D canvas wireframe and pinned scroll storytelling."</div>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="flow-step">
+            <div class="step-indicator">
+              <span class="step-num">03</span>
+              <span class="step-line"></span>
+            </div>
+            <div class="step-content">
+              <h4>Autonomous Creation</h4>
+              <p>The agent loads the appropriate skills, formulates art direction, establishes design tokens, selects typography, and generates clean code.</p>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="flow-step">
+            <div class="step-indicator">
+              <span class="step-num">04</span>
+              <span class="step-line"></span>
+            </div>
+            <div class="step-content">
+              <h4>Natural Language Refinement</h4>
+              <p>Ask for targeted adjustments using conversational natural language:</p>
+              <ul class="refine-list">
+                <li>"Refine typography to Swiss editorial serif"</li>
+                <li>"Enforce No-Glow policy on cards"</li>
+                <li>"Add magnetic pull to CTA buttons"</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="flow-step">
+            <div class="step-indicator">
+              <span class="step-num">05</span>
+            </div>
+            <div class="step-content">
+              <h4>Validate & Deliver</h4>
+              <p>Run automated diagnostics, verify 60 FPS performance, audit accessibility, and prepare the project for deployment.</p>
+              <code>cwa doctor</code>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         7. SUPPORTED AI CODING ENVIRONMENTS
+         ========================================================================= -->
+    <section class="cwa-section env-section" id="environments">
+      <div class="section-container">
+        <div class="section-badge-wrap">
+          <span class="section-kicker">INTEGRATION</span>
+          <h2 class="section-title">Works With Your AI Coding Environment</h2>
+          <p class="section-lead">
+            Designed as an open, model-agnostic system. Works with leading AI coding tools using standard markdown instructions and Agent Skills.
+          </p>
+        </div>
+
+        <div class="environments-table-wrap">
+          <table class="env-table">
+            <thead>
+              <tr>
+                <th>Environment</th>
+                <th>Integration Method</th>
+                <th>Status</th>
+                <th>Skill Path</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Google Antigravity</strong></td>
+                <td>Native Agent Skills & Rules</td>
+                <td><span class="status-badge verified">Verified Active</span></td>
+                <td><code>.agents/skills/</code></td>
+              </tr>
+              <tr>
+                <td><strong>Claude Code</strong></td>
+                <td>Agent Skills & CLAUDE.md</td>
+                <td><span class="status-badge compatible">Compatible</span></td>
+                <td><code>.claude/skills/</code></td>
+              </tr>
+              <tr>
+                <td><strong>Cursor</strong></td>
+                <td>Custom Rules & Skills</td>
+                <td><span class="status-badge compatible">Compatible</span></td>
+                <td><code>.cursor/skills/</code></td>
+              </tr>
+              <tr>
+                <td><strong>Gemini CLI</strong></td>
+                <td>Agent Skills & GEMINI.md</td>
+                <td><span class="status-badge compatible">Compatible</span></td>
+                <td><code>.gemini/skills/</code></td>
+              </tr>
+              <tr>
+                <td><strong>GitHub Copilot</strong></td>
+                <td>Custom Instructions</td>
+                <td><span class="status-badge compatible">Compatible</span></td>
+                <td><code>.github/copilot-instructions.md</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         8. REAL-WORLD PRODUCTION TEMPLATES & EXAMPLES
+         ========================================================================= -->
+    <section class="cwa-section templates-section" id="templates">
+      <div class="section-container">
+        <div class="section-badge-wrap">
+          <span class="section-kicker">VERIFIED DELIVERABLES</span>
+          <h2 class="section-title">Production Templates & Laboratories</h2>
+          <p class="section-lead">
+            Explore working implementations built with the Creative Web Architect toolkit.
+          </p>
+        </div>
+
+        <div class="production-grid">
+          <!-- Template 1 -->
+          <article class="prod-card">
+            <div class="prod-header">
+              <span class="prod-category">Luxury Automotive</span>
+              <span class="prod-badge">Working Template</span>
+            </div>
+            <h4>Aether Apex Hyper-GT</h4>
+            <p>Interactive 3D wireframe vehicle canvas, live telemetry counters, bespoke colorway switcher, and Web Audio API electric propulsion acoustic simulator.</p>
+            <div class="prod-footer">
+              <a href="../../templates/luxury-automotive/index.html" class="cwa-btn btn-ghost" target="_blank" rel="noopener noreferrer">Launch Experience ↗</a>
+              <span class="prod-tech">HTML5 • Canvas • Web Audio</span>
+            </div>
+          </article>
+
+          <!-- Template 2 -->
+          <article class="prod-card">
+            <div class="prod-header">
+              <span class="prod-category">Infrastructure SaaS</span>
+              <span class="prod-badge">Working Template</span>
+            </div>
+            <h4>Nebula AI Telemetry</h4>
+            <p>Real-time distributed GPU cluster telemetry dashboard with live Canvas throughput graphs, floating Liquid Glass dock, and Cmd+K command palette.</p>
+            <div class="prod-footer">
+              <a href="../../templates/modern-dashboard/index.html" class="cwa-btn btn-ghost" target="_blank" rel="noopener noreferrer">Launch Experience ↗</a>
+              <span class="prod-tech">Canvas 2D • Keyboard UX</span>
+            </div>
+          </article>
+
+          <!-- Template 3 -->
+          <article class="prod-card">
+            <div class="prod-header">
+              <span class="prod-category">Creative Portfolio</span>
+              <span class="prod-badge">Working Template</span>
+            </div>
+            <h4>Kaelen Voss Studio</h4>
+            <p>Spring-smoothed custom mouse follower, filterable archive grid, performance-driven case study modals, and direct contact drawer.</p>
+            <div class="prod-footer">
+              <a href="../../templates/creative-portfolio/index.html" class="cwa-btn btn-ghost" target="_blank" rel="noopener noreferrer">Launch Experience ↗</a>
+              <span class="prod-tech">Liquid Glass • Spring Physics</span>
+            </div>
+          </article>
+
+          <!-- Laboratory 4 -->
+          <article class="prod-card highlight-card">
+            <div class="prod-header">
+              <span class="prod-category">Interactive Laboratory</span>
+              <span class="prod-badge">Interactive Suite</span>
+            </div>
+            <h4>Motion Design Laboratory</h4>
+            <p>Interactive testing suite demonstrating magnetic buttons, direction-aware hover, fluid segmented tabs, 60 FPS live telemetry, and No-Glow horology.</p>
+            <div class="prod-footer">
+              <a href="../motion-laboratory/index.html" class="cwa-btn btn-primary" target="_blank" rel="noopener noreferrer">Open Laboratory ↗</a>
+              <span class="prod-tech">Live Physics • 6 Demos</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         9. INSTALLATION & SETUP GUIDE
+         ========================================================================= -->
+    <section class="cwa-section install-section" id="install">
+      <div class="section-container">
+        <div class="section-badge-wrap">
+          <span class="section-kicker">GETTING STARTED</span>
+          <h2 class="section-title">Installation & Setup</h2>
+          <p class="section-lead">
+            Get up and running with Creative Web Architect in minutes.
+          </p>
+        </div>
+
+        <div class="install-panel glass-card">
+          <!-- Install Method Tabs -->
+          <div class="install-tabs" role="tablist">
+            <button class="install-tab active" data-tab="cli" role="tab" aria-selected="true">CLI Installer (Automated)</button>
+            <button class="install-tab" data-tab="git" role="tab" aria-selected="false">Git Clone (Development)</button>
+            <button class="install-tab" data-tab="doctor" role="tab" aria-selected="false">Diagnostic Verification</button>
+          </div>
+
+          <!-- Tab Content 1: CLI -->
+          <div class="install-tab-content active" id="tab-cli">
+            <p class="install-desc">Initialize Creative Web Architect in your current project workspace. The CLI automatically detects your active AI coding tool:</p>
+            <div class="code-block-wrap">
+              <pre><code><span class="code-comment"># 1. Initialize CWA configuration</span>
+npx @creative-web-architect/cli init
+
+<span class="code-comment"># 2. Install all 36 Agent Skills</span>
+npx @creative-web-architect/cli install
+
+<span class="code-comment"># 3. Verify health and environment</span>
+npx @creative-web-architect/cli doctor</code></pre>
+              <button class="copy-code-btn" data-clipboard="npx @creative-web-architect/cli init && npx @creative-web-architect/cli install">Copy</button>
+            </div>
+          </div>
+
+          <!-- Tab Content 2: Git -->
+          <div class="install-tab-content" id="tab-git">
+            <p class="install-desc">Clone the repository directly for local development and access to the complete monorepo packages:</p>
+            <div class="code-block-wrap">
+              <pre><code><span class="code-comment"># 1. Clone the repository</span>
+git clone https://github.com/Avestroxel/creative-web-architect.git
+cd creative-web-architect
+
+<span class="code-comment"># 2. Install dependencies across workspaces</span>
+pnpm install
+
+<span class="code-comment"># 3. Build core, cli, and effects packages</span>
+pnpm build
+
+<span class="code-comment"># 4. Run test suite</span>
+pnpm test</code></pre>
+              <button class="copy-code-btn" data-clipboard="git clone https://github.com/Avestroxel/creative-web-architect.git && cd creative-web-architect && pnpm install && pnpm build">Copy</button>
+            </div>
+          </div>
+
+          <!-- Tab Content 3: Doctor -->
+          <div class="install-tab-content" id="tab-doctor">
+            <p class="install-desc">Verify that all 36 Agent Skills have valid frontmatter metadata and are registered with your AI environment:</p>
+            <div class="code-block-wrap">
+              <pre><code><span class="code-comment"># Run the diagnostic doctor suite</span>
+node packages/cli/dist/index.js doctor
+
+<span class="code-output">✔ Node.js v22.18.0
+✔ Configuration: cwa.config.json found
+✔ Skills: 36 skill(s) installed and validated
+✔ AGENTS.md present
+✔ All checks passed!</span></code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         10. FREQUENTLY ASKED QUESTIONS (FAQ)
+         ========================================================================= -->
+    <section class="cwa-section faq-section" id="faq">
+      <div class="section-container">
+        <div class="section-badge-wrap">
+          <span class="section-kicker">QUESTIONS & ANSWERS</span>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <p class="section-lead">
+            Accurate, transparent answers about what Creative Web Architect is and how it functions.
+          </p>
+        </div>
+
+        <div class="faq-accordion" id="faq-list">
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="true">
+              <span>What is Creative Web Architect?</span>
+              <span class="faq-chevron">▼</span>
+            </button>
+            <div class="faq-content">
+              <p>Creative Web Architect is an open-source AI creative engineering toolkit. It equips compatible AI coding environments with autonomous art direction, 36 modular Agent Skills, motion physics, Liquid Glass components, and performance engineering rules.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>Is it a standalone AI foundation model?</span>
+              <span class="faq-chevron">▼</span>
+            </button>
+            <div class="faq-content">
+              <p>No. Creative Web Architect is not a newly trained foundation model. It is an agentic engineering architecture that works with compatible AI models (Claude, Gemini, GPT) running within your preferred coding agent (Google Antigravity, Claude Code, Cursor, Gemini CLI).</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>Is Creative Web Architect open source?</span>
+              <span class="faq-chevron">▼</span>
+            </button>
+            <div class="faq-content">
+              <p>Yes. Creative Web Architect is distributed as open-source software under the MIT License. You are free to inspect, modify, and redistribute the code under the terms of the MIT license while respecting the author's copyright.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>Can beginners without deep frontend experience use it?</span>
+              <span class="faq-chevron">▼</span>
+            </button>
+            <div class="faq-content">
+              <p>Yes. You only need to describe what you want in simple plain English (e.g. "Build an editorial luxury watch site"). The connected AI agent loads the appropriate skills to architect the layout, typography, animations, and code structure autonomously.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>What is the "No-Glow Architectural Policy"?</span>
+              <span class="faq-chevron">▼</span>
+            </button>
+            <div class="faq-content">
+              <p>By default, Creative Web Architect prohibits cheap neon glows, oversaturated gradients, and childish AI aesthetic defaults. Instead, it enforces mature architectural restraint: matte charcoal surfaces, hairline borders, and pure typographic hierarchy.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>Does it support 3D scenes and WebGL?</span>
+              <span class="faq-chevron">▼</span>
+            </button>
+            <div class="faq-content">
+              <p>Yes. The toolkit includes specialized skills for Three.js, React Three Fiber, camera choreography, GLTF asset optimization, and procedural GLSL fragment shaders.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>Can I customize or add my own skills?</span>
+              <span class="faq-chevron">▼</span>
+            </button>
+            <div class="faq-content">
+              <p>Yes. Creative Web Architect features a built-in Knowledge Ingestion and Skill Expansion system. You can ingest reference prompts using <code>cwa ingest</code> to create or update custom skills in the <code>skills/</code> directory.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>Can I use this for commercial client projects?</span>
+              <span class="faq-chevron">▼</span>
+            </button>
+            <div class="faq-content">
+              <p>Yes. Under the terms of the MIT License, websites generated with Creative Web Architect can be used for commercial client work, products, portfolios, and SaaS applications.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>Does the toolkit require an AI API key?</span>
+              <span class="faq-chevron">▼</span>
+            </button>
+            <div class="faq-content">
+              <p>The CWA toolkit itself runs entirely locally on your machine and does not charge for or require an extra API key. It leverages the AI coding tool or CLI you already use.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       11. OFFICIAL FOOTER WITH AUTHOR & COPYRIGHT ATTRIBUTION
+       ========================================================================= -->
+  <footer class="cwa-footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="brand-monogram">CWA</span>
+          <span class="footer-title">Creative Web Architect</span>
+          <p class="footer-tagline">"From a simple idea to an extraordinary web experience."</p>
+        </div>
+
+        <div class="footer-nav-col">
+          <h5>Toolkit</h5>
+          <a href="#about">About the Agent</a>
+          <a href="#capabilities">Creative Capabilities</a>
+          <a href="#styles">Design Styles</a>
+          <a href="#how-it-works">How It Works</a>
+        </div>
+
+        <div class="footer-nav-col">
+          <h5>Resources</h5>
+          <a href="#install">Installation Guide</a>
+          <a href="#environments">Supported Environments</a>
+          <a href="#faq">Frequently Asked Questions</a>
+          <a href="../motion-laboratory/index.html" target="_blank">Motion Laboratory</a>
+        </div>
+
+        <div class="footer-nav-col">
+          <h5>Open Source</h5>
+          <a href="https://github.com/Avestroxel/creative-web-architect" target="_blank" rel="noopener noreferrer">GitHub Repository ↗</a>
+          <a href="https://github.com/Avestroxel/creative-web-architect/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">MIT License ↗</a>
+          <a href="https://github.com/Avestroxel/creative-web-architect/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">Contributing Guide ↗</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="copyright-notice">
+          <strong>Created by Anas Hashim.</strong><br>
+          Copyright &copy; 2026 Anas Hashim. All rights reserved.
+        </div>
+        <div class="license-badge">
+          Open-Source Software distributed under the MIT License.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>

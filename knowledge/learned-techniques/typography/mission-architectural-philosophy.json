@@ -1,0 +1,34 @@
+{
+  "id": "mission-architectural-philosophy",
+  "name": "Mission & Architectural Philosophy",
+  "description": "Create a high-end auteur cinematography showcase inspired by 35mm archival film and Swiss editorial typography. Enforce architectural restraint: avoid cheap neon glows, oversaturated gradients, and childish AI aesthetic defaults.",
+  "category": "typography",
+  "tags": [
+    "typography",
+    "editorial serif",
+    "serif",
+    "obsidian",
+    "aesthetic"
+  ],
+  "designPhilosophy": "Create a high-end auteur cinematography showcase inspired by 35mm archival film and Swiss editorial typography",
+  "appropriateUseCases": [
+    "High-end editorial showcases",
+    "Luxury brand digital experiences",
+    "Responsive interaction-rich web applications"
+  ],
+  "implementationApproach": "Instead, emphasize deep obsidian backgrounds (#090A0F), subtle matte graphite card elevations (#12141C), warm off-white editorial serif typography (#F3F4F6), and 0.5px hairline metallic dividers.",
+  "relevantTechnologies": [
+    "CSS3",
+    "Modern DOM"
+  ],
+  "performanceConsiderations": "Utilize translate3d, will-change sparingly, and clamp animation timelines under 600ms.",
+  "accessibilityRequirements": "Provide prefers-reduced-motion override and ensure WCAG 2.1 AA keyboard focus visibility.",
+  "sourceReference": {
+    "type": "prompt",
+    "title": "Cinema Editorial Showcase",
+    "date": "2026-10-22T21:16:03.335Z"
+  },
+  "validationStatus": "imported",
+  "targetSkill": "typography",
+  "isExemptFromNoGlow": false
+}

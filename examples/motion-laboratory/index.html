@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CWA Motion Laboratory // Premium Motion & Refined Visual Design</title>
+  <meta name="description" content="Interactive laboratory demonstrating refined motion design, subtle tactile buttons, spring micro-interactions, and the No-Glow architectural visual policy.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../packages/effects/src/liquid-glass/liquid-glass.css">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body class="motion-lab-body">
+  <!-- Top Refined Navigation Header -->
+  <header class="lab-header">
+    <div class="header-inner">
+      <div class="brand">
+        <span class="brand-monogram">CWA</span>
+        <span class="brand-name">Motion Design Laboratory</span>
+        <span class="version-tag">v0.2.0 REFINED</span>
+      </div>
+
+      <!-- Real-Time Performance & Accessibility Telemetry -->
+      <div class="telemetry-bar">
+        <div class="fps-meter">
+          <span class="pulse-indicator"></span>
+          <span class="fps-label">FPS:</span>
+          <strong id="live-fps" class="fps-val">60.0</strong>
+        </div>
+
+        <div class="reduced-motion-toggle">
+          <label class="toggle-wrap">
+            <input type="checkbox" id="simulate-reduced-motion">
+            <span class="toggle-text">Reduced Motion</span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Lab Overview Banner -->
+  <section class="intro-section">
+    <div class="intro-wrap">
+      <span class="section-tag">ENGINEERED ELEGANCE // NO-GLOW POLICY</span>
+      <h1 class="intro-title">Mature Motion. Architectural Restraint.</h1>
+      <p class="intro-desc">
+        Eliminating cheap neon glows, oversaturated gradients, and childish animations in favor of physically believable materials, spring-damped micro-interactions, and cinematic scroll choreography.
+      </p>
+
+      <!-- Demo Quick Navigation -->
+      <nav class="demo-nav" aria-label="Laboratory Demos">
+        <a href="#demo-buttons" class="demo-nav-link">Buttons Laboratory</a>
+        <a href="#demo-controls" class="demo-nav-link">Micro-Interactions</a>
+        <a href="#demo-glass" class="demo-nav-link">Refined Liquid Glass</a>
+        <a href="#demo-dark" class="demo-nav-link">Premium Dark Mode</a>
+        <a href="#demo-story" class="demo-nav-link">Scroll Storytelling</a>
+      </nav>
+    </div>
+  </section>
+
+  <main>
+    <!-- DEMO B: Button Interaction Laboratory -->
+    <section id="demo-buttons" class="lab-section">
+      <div class="section-header">
+        <span class="section-badge">DEMO B</span>
+        <h2 class="section-title">Button Interaction Laboratory</h2>
+        <p class="section-sub">Subtle, tactile, accessible button patterns without glowing outlines or particle bursts.</p>
+      </div>
+
+      <div class="button-grid">
+        <!-- Pattern 1: Subtle Magnetic Button -->
+        <div class="lab-card">
+          <div class="card-head">
+            <span class="pattern-num">01</span>
+            <h4>Subtle Magnetic Attraction</h4>
+          </div>
+          <p class="card-caption">Smoothly tracks cursor proximity with dampened spring pull and soft return.</p>
+          <div class="button-stage">
+            <button class="lab-btn btn-magnetic" id="magnetic-demo-btn">
+              <span>Magnetic Inquire</span>
+              <span class="arrow-glyph">→</span>
+            </button>
+          </div>
+          <span class="tech-note">Spring Damping: 0.25 • Radius: 120px</span>
+        </div>
+
+        <!-- Pattern 2: Direction-Aware Hover Reveal -->
+        <div class="lab-card">
+          <div class="card-head">
+            <span class="pattern-num">02</span>
+            <h4>Direction-Aware Hover Reveal</h4>
+          </div>
+          <p class="card-caption">Calculates cursor entry angle (-180° to 180°) and slides a delicate neutral under-surface.</p>
+          <div class="button-stage">
+            <button class="lab-btn btn-directional" id="directional-demo-btn">
+              <span class="direction-fill"></span>
+              <span class="btn-text">Directional Surface</span>
+            </button>
+          </div>
+          <span class="tech-note" id="direction-readout">Enter from any edge to test</span>
+        </div>
+
+        <!-- Pattern 3: Sliding Split-Label -->
+        <div class="lab-card">
+          <div class="card-head">
+            <span class="pattern-num">03</span>
+            <h4>Sliding Split-Label</h4>
+          </div>
+          <p class="card-caption">Default label translates up 100% on hover, revealing secondary action text without layout shift.</p>
+          <div class="button-stage">
+            <button class="lab-btn btn-split-slide">
+              <span class="split-inner">
+                <span class="split-line default-line">Reserve Allocation →</span>
+                <span class="split-line hover-line">Limited Series // 042 →</span>
+              </span>
+            </button>
+          </div>
+          <span class="tech-note">Zero Layout Shift • 200ms Cubic-Bezier</span>
+        </div>
+
+        <!-- Pattern 4: Morphing State Button -->
+        <div class="lab-card">
+          <div class="card-head">
+            <span class="pattern-num">04</span>
+            <h4>State Morphing Transition</h4>
+          </div>
+          <p class="card-caption">Smooth transition between Idle, Processing spinner, and Confirmed checkmark with ARIA announcement.</p>
+          <div class="button-stage">
+            <button class="lab-btn btn-morph" id="morph-demo-btn">
+              <span class="morph-label">Confirm Wire Transfer</span>
+            </button>
+          </div>
+          <span class="tech-note">Click to trigger 1.8s state sequence</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEMO C: Micro-Interaction Playground -->
+    <section id="demo-controls" class="lab-section">
+      <div class="section-header">
+        <span class="section-badge">DEMO C</span>
+        <h2 class="section-title">Micro-Interaction Playground</h2>
+        <p class="section-sub">Switches, segmented tabs, sliders, and accordions with physical spring feedback.</p>
+      </div>
+
+      <div class="controls-grid">
+        <!-- Control 1: Spring Switch -->
+        <div class="lab-card">
+          <div class="card-head">
+            <span class="pattern-num">01</span>
+            <h4>Spring Toggle Switch</h4>
+          </div>
+          <p class="card-caption">Snappy thumb travel with micro track deformation and accessible ARIA role="switch".</p>
+          <div class="control-stage">
+            <label class="switch-item">
+              <button type="button" role="switch" aria-checked="false" class="interactive-switch" id="demo-switch-1">
+                <span class="switch-thumb"></span>
+              </button>
+              <span class="switch-label">Volumetric Audio Refraction</span>
+            </label>
+            <label class="switch-item">
+              <button type="button" role="switch" aria-checked="true" class="interactive-switch active" id="demo-switch-2">
+                <span class="switch-thumb"></span>
+              </button>
+              <span class="switch-label">High-Dynamic Contrast Mode</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Control 2: Segmented Tabs -->
+        <div class="lab-card">
+          <div class="card-head">
+            <span class="pattern-num">02</span>
+            <h4>Fluid Segmented Control</h4>
+          </div>
+          <p class="card-caption">Shared sliding pill indicator tracking active tab dimensions with keyboard arrow navigation.</p>
+          <div class="control-stage">
+            <div class="segmented-control-demo" id="demo-segmented">
+              <span class="segmented-pill" id="segmented-pill"></span>
+              <button class="segment-btn active" data-index="0">Analytics</button>
+              <button class="segment-btn" data-index="1">Sensors</button>
+              <button class="segment-btn" data-index="2">Security</button>
+            </div>
+            <div class="segment-status" id="segment-status">Current Active View: Analytics</div>
+          </div>
+        </div>
+
+        <!-- Control 3: Tactile Range Slider -->
+        <div class="lab-card">
+          <div class="card-head">
+            <span class="pattern-num">03</span>
+            <h4>Tactile Range Slider</h4>
+          </div>
+          <p class="card-caption">Smooth value tracking with active thumb expansion and precision reading.</p>
+          <div class="control-stage">
+            <div class="slider-wrapper">
+              <div class="slider-header">
+                <span>Optical Dispersion</span>
+                <strong id="slider-readout">42%</strong>
+              </div>
+              <input type="range" min="0" max="100" value="42" class="custom-slider" id="demo-slider">
+            </div>
+          </div>
+        </div>
+
+        <!-- Control 4: Smooth Accordion -->
+        <div class="lab-card">
+          <div class="card-head">
+            <span class="pattern-num">04</span>
+            <h4>Zero-Thrash Accordion</h4>
+          </div>
+          <p class="card-caption">Smooth height expansion with rotated chevron without layout recalculation stutter.</p>
+          <div class="control-stage">
+            <div class="accordion-demo">
+              <div class="accordion-item" id="acc-item-1">
+                <button class="accordion-trigger" aria-expanded="true">
+                  <span>How does the No-Glow policy function?</span>
+                  <span class="acc-chevron">▼</span>
+                </button>
+                <div class="accordion-content">
+                  <p>By enforcing hairline borders, matte charcoal surfaces, and controlled neutral contrast, designs maintain high editorial luxury rather than looking like oversaturated AI gaming art.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEMO D: Refined Liquid Glass -->
+    <section id="demo-glass" class="lab-section">
+      <div class="section-header">
+        <span class="section-badge">DEMO D</span>
+        <h2 class="section-title">Refined Liquid Glass Controls</h2>
+        <p class="section-sub">Physically believable frosted optics with subtle specular edge lighting and zero neon bloom.</p>
+      </div>
+
+      <div class="glass-showcase-stage">
+        <!-- Refined Glass Floating HUD -->
+        <div class="refined-glass-card" id="glass-specimen">
+          <div class="glass-specimen-header">
+            <div class="specimen-badge">PRECISION-MILLED OPTICS</div>
+            <span class="specimen-id">LEVEL 02 // REFINED</span>
+          </div>
+          <h3 class="specimen-title">Subtle Refraction & Specular Edge</h3>
+          <p class="specimen-desc">
+            Unlike excessive AI glassmorphism that paints bright blue blur over text, refined Liquid Glass maintains 95% contrast readability with 20px blur and delicate 0.5px hairline border highlights.
+          </p>
+          <div class="glass-metrics">
+            <div class="g-metric">
+              <span class="gm-val">20px</span>
+              <span class="gm-label">Optical Blur</span>
+            </div>
+            <div class="g-metric">
+              <span class="gm-val">140%</span>
+              <span class="gm-label">Saturate Filter</span>
+            </div>
+            <div class="g-metric">
+              <span class="gm-val">0.08</span>
+              <span class="gm-label">Specular Sheen</span>
+            </div>
+          </div>
+          <div class="glass-action-row">
+            <button class="lab-btn btn-glass-refined">Refined Glass Action</button>
+            <span class="glass-status">Pointer Sheen Active</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEMO E: Premium Dark Website -->
+    <section id="demo-dark" class="lab-section">
+      <div class="section-header">
+        <span class="section-badge">DEMO E</span>
+        <h2 class="section-title">Premium Dark Website: Vesper & Co.</h2>
+        <p class="section-sub">Proving dark mode can look deeply luxurious with obsidian, charcoal, and warm off-white typography without neon.</p>
+      </div>
+
+      <div class="horology-stage">
+        <div class="horology-header">
+          <span class="horology-tag">ATELIER D'HORLOGERIE // GENÈVE</span>
+          <h3 class="horology-title">The Monolith Tourbillon</h3>
+          <p class="horology-quote">"True prestige whispers through restraint. We eliminate superfluous illumination to reveal the uncompromising geometry of hand-finished titanium."</p>
+        </div>
+
+        <div class="horology-grid">
+          <div class="horology-card">
+            <span class="h-spec">CALIBRE V-84</span>
+            <h4>Manual-Wind Spatial Escapement</h4>
+            <p>Twin coaxial balance wheels vibrating at 21,600 vph with 72-hour power reserve.</p>
+          </div>
+          <div class="horology-card">
+            <span class="h-spec">MATERIALITY</span>
+            <h4>Grade 5 Micro-Bead Blasted Titanium</h4>
+            <p>Matte non-reflective casing with diamond-polished chamfered edges.</p>
+          </div>
+          <div class="horology-card">
+            <span class="h-spec">ALLOCATION</span>
+            <h4>Bespoke Edition of 24 Pieces</h4>
+            <p>Each timepiece hand-assembled and tested under 6-position chronometric variance.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEMO A & F: Premium Scroll Storytelling & Performance Suite -->
+    <section id="demo-story" class="lab-section">
+      <div class="section-header">
+        <span class="section-badge">DEMO A & F</span>
+        <h2 class="section-title">Scroll Storytelling & Performance Suite</h2>
+        <p class="section-sub">Section pinning, line-by-line choreography, and 60 FPS frame rate stability.</p>
+      </div>
+
+      <div class="story-container" id="story-track">
+        <div class="story-sticky-frame">
+          <div class="story-card-inner">
+            <div class="story-meta">
+              <span class="chapter-indicator" id="story-chapter-label">CHAPTER 01 // 03</span>
+              <div class="progress-bar-wrap">
+                <span class="progress-fill" id="story-progress-bar"></span>
+              </div>
+            </div>
+
+            <h3 class="story-headline" id="story-headline">
+              Chapter 1: The Geometry of Absence
+            </h3>
+
+            <p class="story-text" id="story-text">
+              Great creative engineering begins by stripping away the unnecessary. When we remove decorative neon glow, we make space for pure typographic hierarchy, physical materials, and intentional interaction.
+            </p>
+
+            <div class="story-footer">
+              <span class="scroll-prompt">Scroll down to advance chapter →</span>
+              <span class="frame-budget-badge">Frametime: ~16.6ms (60 FPS)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="lab-footer">
+    <div class="footer-inner">
+      <span>Creative Web Architect // Premium Motion & Refined Visual Design System</span>
+      <span>Open Source Under MIT License</span>
+    </div>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+{
+  "id": "typolove-kinetic-variable-typography-and-specimen-craft",
+  "name": "Typo Love Kinetic Variable Font Axes, Glyph Morphing & Specimen Architecture",
+  "description": "Architectural typographic system celebrating letterforms as dynamic structures. Employs multi-axis variable font interpolations (weight, width, slant), cursor proximity weight waves, OpenType discretionary ligatures, typographic proof bounding boxes, and strict 8px baseline rhythm.",
+  "category": "typography",
+  "tags": [
+    "variable-fonts",
+    "kinetic-typography",
+    "glyph-morphing",
+    "typolove",
+    "specimen-architecture",
+    "baseline-grid",
+    "ligatures"
+  ],
+  "designPhilosophy": "Celebrating letterforms as primary architectural structures rather than passive body copy. Inspired by Swiss International Typography and the Type Directors Club, Typo Love employs dynamic multi-axis variable font interpolations, interactive glyph specimen bounding boxes, discretionary ligature craft, and cursor-reactive typographic weight waves.",
+  "appropriateUseCases": [
+    "Digital font foundries, type design studios, and typography specimen showcases",
+    "High-fashion editorial monographs, haute couture lookbooks, and luxury publication platforms",
+    "Creative directors, copywriters, and auteur portfolio headers",
+    "Cultural festivals, biennial art exhibitions, and design conferences"
+  ],
+  "implementationApproach": "1. Multi-Axis Variable Font Interpolation: CSS font-variation-settings driven by CSS custom properties (--wght: 100 to 900, --wdth: 75 to 125, --slnt: -12 to 0). 2. Cursor Proximity Weight Wave: A lightweight PointerEvent listener calculates distance between cursor and character midpoints, smoothly scaling character weight from 300 to 900 via a gaussian falloff curve (radius: 180px). 3. Discretionary Ligatures & OpenType Features: font-feature-settings: 'dlig' 1, 'liga' 1, 'calt' 1, 'swsh' 1 with high-contrast serif/grotesque pairings. 4. Typographic Specimen Proof Marks: Monospaced metadata tags (e.g. 'U+0041 · 120pt · Kerning: -0.04em') and 0.5px vermilion proof bounding boxes (#E53935). 5. Mathematical Baseline Grid: Enforcing an 8px vertical rhythm rhythmically locking font-size and line-height across fluid viewport scaling.",
+  "relevantTechnologies": [
+    "OpenType Variable Fonts (WOFF2)",
+    "CSS font-variation-settings & font-feature-settings",
+    "PointerEvent spatial proximity math",
+    "CSS subgrid for tabular specimen alignment",
+    "8px baseline vertical rhythm"
+  ],
+  "performanceConsiderations": "Runs variable axis adjustments on CSS custom properties on individual character spans rather than triggering full layout recalculations. Uses requestAnimationFrame with distance clamping to eliminate idle work.",
+  "accessibilityRequirements": "Maintains semantic heading hierarchies (H1-H6) and plain text continuity for screen readers regardless of letter-by-letter span splitting. Preserves minimum WCAG AAA contrast (21:1 on ivory/noir) and locks variable axes to static defaults when prefers-reduced-motion is detected.",
+  "sourceReference": {
+    "type": "prompt",
+    "title": "Typo Love Package Reference Prompt",
+    "date": "2026-10-24T13:05:00.000Z"
+  },
+  "validationStatus": "reviewed",
+  "targetSkill": "typography",
+  "isExemptFromNoGlow": false
+}
