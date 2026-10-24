@@ -6,7 +6,7 @@
 [![Node Version](https://img.shields.io/badge/Node->=18.0.0-brightgreen.svg)](https://nodejs.org/)
 
 > **Autonomous AI Creative Engineering System & Toolkit.**  
-> Equips AI coding environments (Antigravity, Cursor, Claude Code, Gemini CLI) with **36 specialized skills**, **36 learned architectural techniques**, and strict **anti-generic mandates** to craft Awwwards-caliber digital experiences with zero manual copy-pasting.
+> Equips AI coding environments (Antigravity, Cursor, Claude Code, Gemini CLI) with **36 specialized skills**, **37 learned architectural techniques**, and strict **anti-generic mandates** to craft Awwwards-caliber digital experiences with zero manual copy-pasting.
 
 ---
 
@@ -54,7 +54,7 @@ Open your project folder in **Antigravity**, **Cursor**, or **Claude Code**, and
 | Dimension | Count / Policy | Scope & Capability |
 | :--- | :--- | :--- |
 | **Specialized Skills** | **36 Skills** | Creative direction, Liquid Glass, spring kinematics, Three.js 3D, and Core Web Vitals QA. |
-| **Learned Techniques** | **36 Techniques** | Mathematically indexed patterns extracted from award-winning digital experiences. |
+| **Learned Techniques** | **37 Techniques** | Mathematically indexed patterns extracted from award-winning digital experiences. |
 | **Production Templates** | **4 Templates** | Standalone single-file verified deliverables (KIMI F1, Soda 3D, Melli Honeybee, Hyper-GT). |
 | **Lighting Policy** | **Zero-Glow** | Eliminates cheap purple neon halos in favor of matte obsidian, hairline contrast, and quiet luxury. |
 | **Runtime & License** | **100% Local / MIT** | Free, open source, zero external API keys required, running entirely on your local machine. |
@@ -76,9 +76,9 @@ All 36 skills are installed in `.agents/skills/<skill-name>/SKILL.md`:
 
 ---
 
-## 36 Learned Architectural Techniques (Summary)
+## 37 Learned Architectural Techniques (Summary)
 
-All 36 techniques are indexed in `knowledge/index.json` and detailed in `knowledge/learned-techniques/`:
+All 37 techniques are indexed in `knowledge/index.json` and detailed in `knowledge/learned-techniques/`:
 
 | Index | Technique Slug | Core Engineering Focus |
 | :---: | :--- | :--- |
@@ -118,6 +118,7 @@ All 36 techniques are indexed in `knowledge/index.json` and detailed in `knowled
 | **34** | `curvature-time-dilated-circuit-trace` | Curvature-coupled velocity modulation (braking in corners, accelerating on straights) with dual-gradient heat filament. |
 | **35** | `packed-delta-lattice-halftone-matrix` | 8,000+ point coordinate field delta-compressed to 16KB with O(1) queries and reticle chequerboard squaring. |
 | **36** | `depth-parallax-normal-relighting-burn` | Single-quad UV depth map displacement with normal map relighting and procedural dissolution burn. |
+| **37** | `tactile-button-physics-and-micro-kinematics` | 7 signature micro-interaction architectures (Curved Meniscus Wave Fill, Cipher Decryption Jitter, Physical 3D Mechanical Plate, Difference Blend Wipe, Opposing Kinetic Arrow Swap). |
 
 ---
 

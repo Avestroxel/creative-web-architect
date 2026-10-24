@@ -86,8 +86,8 @@ export async function handleInit(targetPath?: string, options: InitOptions = {})
 
   logBlank();
 
-  // Step 3: Auto-Install 36 Learned Techniques & Knowledge Base
-  log(LogLevel.INFO, 'Installing Knowledge Base (36 Learned Architectural Techniques)...');
+  // Step 3: Auto-Install 37 Learned Techniques & Knowledge Base
+  log(LogLevel.INFO, 'Installing Knowledge Base (37 Learned Architectural Techniques)...');
   const bundledKnowledgeDir = getBundledDir('knowledge');
   const targetKnowledgeDir = resolve(projectDir, 'knowledge');
   const targetAgentsKnowledgeDir = resolve(projectDir, '.agents', 'knowledge');
@@ -143,7 +143,7 @@ When asked to build, design, or scaffold any website, page, or component:
 
 ---
 
-## 36 LEARNED ARCHITECTURAL TECHNIQUES (INSTALLED IN KNOWLEDGE/)
+## 37 LEARNED ARCHITECTURAL TECHNIQUES (INSTALLED IN KNOWLEDGE/)
 
 In every project, you MUST inspect and autonomously apply 2 to 4 complementary techniques from your local \`knowledge/index.json\`:
 
@@ -183,6 +183,7 @@ In every project, you MUST inspect and autonomously apply 2 to 4 complementary t
 34. **Curvature-Time-Dilated Circuit Trace Kinematics** (\`curvature-time-dilated-circuit-trace\`): Curvature-coupled velocity modulation along 2D/3D polylines (braking into corners, accelerating down straights), paired with a dual-gradient heat filament and distance-gated marker pop flares.
 35. **Packed-Delta Lattice Halftone Matrix** (\`packed-delta-lattice-halftone-matrix\`): 8,000+ point coordinate field delta-compressed into compact row/col strings with O(1) queries, offscreen canvas baking, and interactive crosshair reticles squaring into dynamic chequerboards.
 36. **Depth-Parallax Normal Relighting & Dissolve Burn** (\`depth-parallax-normal-relighting-burn\`): Single-quad UV depth map displacement with Lambertian normal map relighting toward cursor coordinates, combined with a height/noise procedural dissolution burn with luminous boundary edge glow.
+37. **Tactile Button Physics & Micro-Kinematic Interaction Library** (\`tactile-button-physics-and-micro-kinematics\`): 7 signature interaction architectures (Curved Meniscus Wave Fill, Cipher Decryption Jitter, Physical 3D Mechanical Plate, Difference Blend Wipe, Opposing Kinetic Arrow Swap, Sliding Icon Drawer, and Swiss Hairline Notches) governed by spring kinematics and zero-repaint compositing.
 
 ---
 
@@ -201,7 +202,7 @@ Use the specialized skills in \`.agents/skills/\` for specific phases:
 ## EXECUTION WORKFLOW
 
 1. **Understand Intent**: Analyze the brief, brand identity, and audience.
-2. **Select Techniques**: Choose 2–4 signature techniques from the 36 learned techniques.
+2. **Select Techniques**: Choose 2–4 signature techniques from the 37 learned techniques.
 3. **Execute High Craft**: Implement clean, semantic code with custom CSS properties, hardware-accelerated transforms, and high-contrast typography.
 4. **Zero-Glow Enforcement**: Check against the No-Glow policy before delivery.
 5. **Serve & Review**: Ensure localhost serving runs cleanly with zero console errors.
@@ -225,7 +226,7 @@ Use the specialized skills in \`.agents/skills/\` for specific phases:
   log(LogLevel.SUCCESS, '🎉 Creative Web Architect successfully initialized!');
   log(LogLevel.INFO, 'Every AI agent in this folder is now powered by:');
   log(LogLevel.INFO, '  • 36 Specialized Creative Agent Skills in .agents/skills/');
-  log(LogLevel.INFO, '  • 36 Learned Architectural Techniques in knowledge/');
+  log(LogLevel.INFO, '  • 37 Learned Architectural Techniques in knowledge/');
   log(LogLevel.INFO, '  • Strict No-Glow & Awwwards-grade Master Directives in AGENTS.md');
   logBlank();
   log(LogLevel.INFO, 'To start building: Open this folder in Antigravity and prompt your agent!');

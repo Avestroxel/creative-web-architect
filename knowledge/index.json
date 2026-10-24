@@ -1,12 +1,12 @@
 {
   "version": "1.0.0",
   "updatedAt": "2026-10-24T19:25:00.000Z",
-  "totalTechniques": 36,
+  "totalTechniques": 37,
   "categories": {
     "typography": 4,
     "scroll-animations": 7,
     "accessibility": 1,
-    "button-interactions": 1,
+    "button-interactions": 2,
     "hover-effects": 2,
     "art-direction": 2,
     "three-dimensional-web": 7,
@@ -727,6 +727,28 @@
         "type": "prompt",
         "title": "KIMI GRIDO1 Racing Systems Prompt",
         "date": "2026-10-24T19:25:00.000Z"
+      }
+    },
+    {
+      "id": "tactile-button-physics-and-micro-kinematics",
+      "name": "Tactile Button Physics & Micro-Kinematic Interaction Library",
+      "description": "Codifies 7 signature micro-interaction architectures: Curved Meniscus Wave Fill, Cipher Decryption Jitter, Physical 3D Mechanical Plate, Difference Blend Wipe, Opposing Kinetic Arrow Swap, Sliding Icon Drawer, and Swiss Hairline Notches.",
+      "category": "button-interactions",
+      "tags": [
+        "buttons",
+        "micro-interactions",
+        "hover-physics",
+        "tactile",
+        "meniscus-wave",
+        "cipher-decryption",
+        "kinetic-swap"
+      ],
+      "validationStatus": "reviewed",
+      "targetSkill": "premium-button-interactions",
+      "sourceReference": {
+        "type": "prompt",
+        "title": "Tactile Button Physics & Micro-Kinematics Suite",
+        "date": "2026-10-24T20:45:00.000Z"
       }
     }
   ]
