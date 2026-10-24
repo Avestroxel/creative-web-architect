@@ -56,17 +56,31 @@ body.cwa-official-body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Subtle architectural background texture without neon blobs */
+/* Interactive 3D Dotted Matrix Canvas Background */
+#canvas-dots-3d {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Subtle architectural background texture */
 body.cwa-official-body::before {
   content: '';
   position: fixed;
   inset: 0;
   background-image: 
-    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.03) 0%, transparent 60%),
-    radial-gradient(circle at 100% 50%, rgba(56, 189, 248, 0.015) 0%, transparent 40%),
-    radial-gradient(circle at 0% 100%, rgba(212, 175, 55, 0.015) 0%, transparent 40%);
+    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.02) 0%, transparent 60%);
   pointer-events: none;
   z-index: 0;
+}
+
+.cwa-header, main, .cwa-footer {
+  position: relative;
+  z-index: 1;
 }
 
 /* Base Glassmorphism utility */
@@ -1195,10 +1209,170 @@ code {
 }
 
 /* ==========================================================================
+   INJECTION ASSETS GRID
+   ========================================================================== */
+.injection-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.injection-card {
+  padding: 1.6rem 1.4rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-hairline);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.injection-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-specular);
+}
+
+.injection-badge {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--accent-gold);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.injection-card h4 {
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+  color: #FFFFFF;
+}
+
+.injection-card p {
+  font-size: 0.86rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.injection-files {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--accent-emerald);
+  background: rgba(255, 255, 255, 0.03);
+  padding: 0.45rem 0.65rem;
+  border-radius: 6px;
+  border: 1px solid var(--border-hairline);
+}
+
+/* ==========================================================================
+   27 LEARNED ARCHITECTURAL TECHNIQUES DIRECTORY
+   ========================================================================== */
+.tech-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.tech-filter-btn {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-hairline);
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.tech-filter-btn:hover,
+.tech-filter-btn.active {
+  background: #FFFFFF;
+  color: #08090D;
+  border-color: #FFFFFF;
+}
+
+.techniques-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.technique-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-hairline);
+  border-radius: 12px;
+  padding: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.technique-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-specular);
+}
+
+.tech-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+
+.tech-slug {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--accent-cyan);
+}
+
+.tech-category-pill {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  padding: 0.2rem 0.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  color: var(--text-muted);
+}
+
+.technique-card h4 {
+  font-size: 1.02rem;
+  margin-bottom: 0.4rem;
+  color: #FFFFFF;
+}
+
+.technique-card p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin-bottom: 0.8rem;
+  flex-grow: 1;
+}
+
+.tech-source {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--accent-gold);
+  border-top: 1px solid var(--border-hairline);
+  padding-top: 0.6rem;
+}
+
+/* Copied button state */
+.copy-code-btn.copied,
+.copy-trigger-btn.copied {
+  background: #34D399 !important;
+  color: #000000 !important;
+  border-color: #34D399 !important;
+}
+
+/* ==========================================================================
    RESPONSIVE BREAKPOINTS
    ========================================================================== */
 @media (max-width: 1024px) {
-  .disciplines-grid, .capabilities-grid {
+  .disciplines-grid, .capabilities-grid, .injection-grid, .techniques-grid {
     grid-template-columns: repeat(2, 1fr);
   }
   .cap-large, .cap-wide {
@@ -1230,7 +1404,7 @@ code {
   .telemetry-divider {
     display: none;
   }
-  .disciplines-grid, .capabilities-grid, .production-grid {
+  .disciplines-grid, .capabilities-grid, .production-grid, .injection-grid, .techniques-grid {
     grid-template-columns: 1fr;
   }
   .cap-large, .cap-wide {

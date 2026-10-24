@@ -1,174 +1,220 @@
 /**
  * Creative Web Architect — Official Website Logic
- * Handles interactive 3D hero canvas, style switcher, clipboard utilities,
- * mobile drawer toggle, and accessible FAQ accordions.
+ * Features:
+ *  1. Interactive 3D Dotted Matrix Background (Canvas 3D perspective tilt & wave)
+ *  2. Multi-Platform CLI Installation Tabs (Windows, pnpm, macOS/Linux, in-place)
+ *  3. 27 Learned Architectural Techniques Filter & Explorer
+ *  4. 1-Click Clipboard Utilities
+ *  5. Design Styles Interactive Showcase
+ *  6. Accessible FAQ Accordions & Mobile Navigation
+ *
+ * Created by Anas Hashim. Copyright © 2026 Anas Hashim. All rights reserved.
  */
 
 (function () {
   'use strict';
 
   document.addEventListener('DOMContentLoaded', () => {
-    initHero3DCanvas();
+    init3DDottedBackground();
     initClipboardButtons();
-    initStyleShowcase();
     initInstallationTabs();
+    initTechniquesFilter();
+    initStyleShowcase();
     initFaqAccordion();
     initMobileNav();
   });
 
   // =========================================================================
-  // 1. INTERACTIVE 3D HERO CANVAS (LIGHTWEIGHT GEOMETRIC CRYSTAL)
+  // 1. INTERACTIVE 3D DOTTED MATRIX BACKGROUND (CANVAS PERSPECTIVE TILT)
   // =========================================================================
-  function initHero3DCanvas() {
-    const canvas = document.getElementById('hero-3d-canvas');
+  function init3DDottedBackground() {
+    const canvas = document.getElementById('canvas-dots-3d');
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    let width = (canvas.width = canvas.parentElement.clientWidth || 720);
-    let height = (canvas.height = 480);
+    let width = (canvas.width = window.innerWidth);
+    let height = (canvas.height = window.innerHeight);
 
-    window.addEventListener('resize', () => {
-      width = canvas.width = canvas.parentElement.clientWidth || 720;
-      height = canvas.height = 480;
-    });
+    // High-DPI sharp rendering
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    function resize() {
+      width = window.innerWidth;
+      height = window.innerHeight;
+      canvas.width = width * dpr;
+      canvas.height = height * dpr;
+      ctx.scale(dpr, dpr);
+    }
+    resize();
+    window.addEventListener('resize', resize);
 
-    // 3D Icosahedron vertices definition
-    const t = (1.0 + Math.sqrt(5.0)) / 2.0;
-    const vertices = [
-      [-1, t, 0], [1, t, 0], [-1, -t, 0], [1, -t, 0],
-      [0, -1, t], [0, 1, t], [0, -1, -t], [0, 1, -t],
-      [t, 0, -1], [t, 0, 1], [-t, 0, -1], [-t, 0, 1]
-    ].map(([x, y, z]) => {
-      const len = Math.hypot(x, y, z);
-      return [x / len * 170, y / len * 170, z / len * 170];
-    });
+    // Generate 3D grid of matrix points (50 columns x 32 rows)
+    const cols = 48;
+    const rows = 32;
+    const spacingX = 64;
+    const spacingZ = 64;
+    const startX = -((cols - 1) * spacingX) / 2;
+    const startZ = -((rows - 1) * spacingZ) / 2 + 250;
 
-    // Edges connecting vertices
-    const edges = [
-      [0, 11], [0, 5], [0, 1], [0, 7], [0, 10],
-      [1, 5], [1, 7], [1, 8], [1, 9],
-      [2, 11], [2, 4], [2, 6], [2, 10], [2, 3],
-      [3, 4], [3, 9], [3, 8], [3, 6],
-      [4, 5], [4, 9], [4, 11],
-      [5, 9], [5, 11],
-      [6, 7], [6, 8], [6, 10],
-      [7, 8], [7, 10],
-      [8, 9],
-      [10, 11]
-    ];
+    const points = [];
+    for (let r = 0; r < rows; r++) {
+      for (let c = 0; c < cols; c++) {
+        points.push({
+          x: startX + c * spacingX,
+          baseY: 130, // Elevation relative to camera
+          z: startZ + r * spacingZ,
+          gx: c,
+          gz: r,
+        });
+      }
+    }
 
-    let rotX = 0.4;
-    let rotY = 0.5;
-    let targetRotX = 0.4;
-    let targetRotY = 0.5;
+    // Mouse tracking with smooth inertial damping
+    let mouseX = width / 2;
+    let mouseY = height / 2;
+    let targetRotX = 0.38;
+    let targetRotY = 0.0;
+    let currentRotX = 0.38;
+    let currentRotY = 0.0;
+    let targetPanX = 0;
+    let targetPanY = 0;
+    let currentPanX = 0;
+    let currentPanY = 0;
 
-    // Smooth mouse parallax rotation
     window.addEventListener('mousemove', (e) => {
-      const normX = (e.clientX / window.innerWidth) * 2 - 1;
-      const normY = (e.clientY / window.innerHeight) * 2 - 1;
-      targetRotY = normX * 0.9;
-      targetRotX = -normY * 0.9;
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      const nx = (mouseX / width) * 2 - 1; // -1 to +1
+      const ny = (mouseY / height) * 2 - 1; // -1 to +1
+
+      targetRotY = nx * 0.42; // Yaw rotation
+      targetRotX = 0.38 + ny * 0.25; // Pitch rotation
+      targetPanX = -nx * 50;
+      targetPanY = -ny * 30;
     });
 
-    function render3D() {
-      // Inertial rotation
-      rotX += (targetRotX - rotX) * 0.05 + 0.002;
-      rotY += (targetRotY - rotY) * 0.05 + 0.003;
+    let time = 0;
+
+    function render() {
+      time += 0.016;
+
+      // Inertial interpolation (Lerp)
+      currentRotX += (targetRotX - currentRotX) * 0.045;
+      currentRotY += (targetRotY - currentRotY) * 0.045;
+      currentPanX += (targetPanX - currentPanX) * 0.045;
+      currentPanY += (targetPanY - currentPanY) * 0.045;
 
       ctx.clearRect(0, 0, width, height);
 
-      const cosX = Math.cos(rotX);
-      const sinX = Math.sin(rotX);
-      const cosY = Math.cos(rotY);
-      const sinY = Math.sin(rotY);
+      const cosY = Math.cos(currentRotY);
+      const sinY = Math.sin(currentRotY);
+      const cosX = Math.cos(currentRotX);
+      const sinX = Math.sin(currentRotX);
 
-      const projected = vertices.map(([x, y, z]) => {
-        // Rotate around Y
-        const x1 = x * cosY + z * sinY;
-        const z1 = -x * sinY + z * cosY;
-        // Rotate around X
-        const y2 = y * cosX - z1 * sinX;
-        const z2 = y * sinX + z1 * cosX;
+      const fov = 750;
+      const cx = width / 2 + currentPanX;
+      const cy = height * 0.54 + currentPanY;
 
-        // Perspective projection
-        const fov = 500;
-        const distance = fov + z2;
-        const scale = fov / distance;
-        return [
-          width / 2 + x1 * scale,
-          height / 2 + y2 * scale,
-          scale,
-          z2
-        ];
-      });
+      const projected = [];
 
-      // Draw wireframe edges
-      ctx.lineWidth = 1;
-      for (const [i, j] of edges) {
-        const p1 = projected[i];
-        const p2 = projected[j];
-        const avgZ = (p1[3] + p2[3]) / 2;
-        const alpha = Math.max(0.08, Math.min(0.55, (avgZ + 170) / 340));
+      for (let i = 0; i < points.length; i++) {
+        const p = points[i];
+        // Organic 3D wave undulation
+        const wave = Math.sin(time * 1.3 + p.gx * 0.15 + p.gz * 0.12) * 30
+                   + Math.cos(time * 0.8 + p.gx * 0.08 - p.gz * 0.09) * 16;
+        const py = p.baseY + wave;
 
-        ctx.strokeStyle = `rgba(255, 255, 255, ${alpha.toFixed(3)})`;
-        ctx.beginPath();
-        ctx.moveTo(p1[0], p1[1]);
-        ctx.lineTo(p2[0], p2[1]);
-        ctx.stroke();
+        // 3D Rotation Matrix: Yaw (Y) then Pitch (X)
+        const x1 = p.x * cosY + p.z * sinY;
+        const z1 = -p.x * sinY + p.z * cosY;
+
+        const y2 = py * cosX - z1 * sinX;
+        const z2 = py * sinX + z1 * cosX + 850; // Camera Z offset
+
+        if (z2 > 50) {
+          const scale = fov / z2;
+          const sx = cx + x1 * scale;
+          const sy = cy + y2 * scale;
+
+          // Interactive mouse proximity in 2D projected space
+          const dx = sx - mouseX;
+          const dy = sy - mouseY;
+          const dist = Math.hypot(dx, dy);
+          let highlight = 0;
+          let repelX = 0;
+          let repelY = 0;
+
+          if (dist < 135) {
+            const prox = 1 - dist / 135;
+            highlight = prox;
+            repelX = (dx / (dist || 1)) * prox * 15;
+            repelY = (dy / (dist || 1)) * prox * 15;
+          }
+
+          projected.push({
+            sx: sx + repelX,
+            sy: sy + repelY,
+            scale,
+            z: z2,
+            highlight,
+          });
+        }
       }
 
-      // Draw subtle vertex nodes
-      for (const p of projected) {
-        ctx.fillStyle = 'rgba(212, 175, 55, 0.45)'; // Subtle Champagne node
+      // Sort by depth (painters algorithm)
+      projected.sort((a, b) => b.z - a.z);
+
+      // Render dots
+      for (let i = 0; i < projected.length; i++) {
+        const pt = projected[i];
+        const baseAlpha = Math.max(0.06, Math.min(0.65, 1.0 - (pt.z - 350) / 1600));
+        const radius = Math.max(0.7, (1.8 + pt.highlight * 2.2) * pt.scale);
+
+        if (pt.highlight > 0) {
+          // Highlighted dot near mouse (Champagne gold)
+          const alpha = Math.min(1.0, baseAlpha + pt.highlight * 0.65);
+          ctx.fillStyle = `rgba(212, 175, 55, ${alpha.toFixed(3)})`;
+        } else {
+          // Ambient dot (Platinum off-white)
+          ctx.fillStyle = `rgba(226, 232, 240, ${baseAlpha.toFixed(3)})`;
+        }
+
         ctx.beginPath();
-        ctx.arc(p[0], p[1], 2.5 * p[2], 0, Math.PI * 2);
+        ctx.arc(pt.sx, pt.sy, radius, 0, Math.PI * 2);
         ctx.fill();
       }
 
-      requestAnimationFrame(render3D);
+      requestAnimationFrame(render);
     }
 
-    render3D();
+    requestAnimationFrame(render);
   }
 
   // =========================================================================
   // 2. CLIPBOARD UTILITIES
   // =========================================================================
   function initClipboardButtons() {
-    const heroBtn = document.getElementById('copy-btn-hero');
-    const heroCmd = document.getElementById('cli-cmd-hero');
-
-    if (heroBtn && heroCmd) {
-      heroBtn.addEventListener('click', () => {
-        navigator.clipboard.writeText(heroCmd.textContent.trim()).then(() => {
-          heroBtn.textContent = 'Copied!';
-          heroBtn.style.background = '#34D399';
-          heroBtn.style.color = '#000';
-          setTimeout(() => {
-            heroBtn.textContent = 'Copy';
-            heroBtn.style.background = '';
-            heroBtn.style.color = '';
-          }, 2000);
-        });
-      });
-    }
-
-    const copyButtons = document.querySelectorAll('.copy-code-btn');
+    const copyButtons = document.querySelectorAll('.copy-code-btn, .copy-trigger-btn');
     copyButtons.forEach((btn) => {
       btn.addEventListener('click', () => {
-        const textToCopy = btn.getAttribute('data-clipboard');
+        let textToCopy = btn.getAttribute('data-clipboard');
+        if (!textToCopy) {
+          const targetId = btn.getAttribute('data-target');
+          if (targetId) {
+            const el = document.getElementById(targetId);
+            if (el) textToCopy = el.textContent.trim();
+          }
+        }
+
         if (!textToCopy) return;
 
         navigator.clipboard.writeText(textToCopy).then(() => {
           const original = btn.textContent;
           btn.textContent = 'Copied!';
-          btn.style.background = '#34D399';
-          btn.style.color = '#000';
+          btn.classList.add('copied');
           setTimeout(() => {
             btn.textContent = original;
-            btn.style.background = '';
-            btn.style.color = '';
+            btn.classList.remove('copied');
           }, 2000);
         });
       });
@@ -176,7 +222,62 @@
   }
 
   // =========================================================================
-  // 3. INTERACTIVE DESIGN STYLE SHOWCASE
+  // 3. MULTI-PLATFORM INSTALLATION TABS
+  // =========================================================================
+  function initInstallationTabs() {
+    const tabs = document.querySelectorAll('.install-tab');
+    const contents = document.querySelectorAll('.install-tab-content');
+
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        tabs.forEach((t) => {
+          t.classList.remove('active');
+          t.setAttribute('aria-selected', 'false');
+        });
+        contents.forEach((c) => c.classList.remove('active'));
+
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
+
+        const tabKey = tab.getAttribute('data-tab');
+        const targetContent = document.getElementById(`tab-${tabKey}`);
+        if (targetContent) {
+          targetContent.classList.add('active');
+        }
+      });
+    });
+  }
+
+  // =========================================================================
+  // 4. 27 LEARNED ARCHITECTURAL TECHNIQUES FILTER
+  // =========================================================================
+  function initTechniquesFilter() {
+    const filterBtns = document.querySelectorAll('.tech-filter-btn');
+    const cards = document.querySelectorAll('.technique-card');
+
+    if (!filterBtns.length || !cards.length) return;
+
+    filterBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.getAttribute('data-filter') || 'all';
+
+        cards.forEach((card) => {
+          const category = card.getAttribute('data-category');
+          if (filter === 'all' || category === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  }
+
+  // =========================================================================
+  // 5. INTERACTIVE DESIGN STYLE SHOWCASE
   // =========================================================================
   function initStyleShowcase() {
     const styleData = {
@@ -314,34 +415,7 @@
   }
 
   // =========================================================================
-  // 4. INSTALLATION TABS
-  // =========================================================================
-  function initInstallationTabs() {
-    const tabs = document.querySelectorAll('.install-tab');
-    const contents = document.querySelectorAll('.install-tab-content');
-
-    tabs.forEach((tab) => {
-      tab.addEventListener('click', () => {
-        tabs.forEach((t) => {
-          t.classList.remove('active');
-          t.setAttribute('aria-selected', 'false');
-        });
-        contents.forEach((c) => c.classList.remove('active'));
-
-        tab.classList.add('active');
-        tab.setAttribute('aria-selected', 'true');
-
-        const tabKey = tab.getAttribute('data-tab');
-        const targetContent = document.getElementById(`tab-${tabKey}`);
-        if (targetContent) {
-          targetContent.classList.add('active');
-        }
-      });
-    });
-  }
-
-  // =========================================================================
-  // 5. ACCESSIBLE FAQ ACCORDION
+  // 6. ACCESSIBLE FAQ ACCORDION
   // =========================================================================
   function initFaqAccordion() {
     const faqItems = document.querySelectorAll('.faq-item');
@@ -386,7 +460,7 @@
   }
 
   // =========================================================================
-  // 6. MOBILE NAVIGATION DRAWER TOGGLE
+  // 7. MOBILE NAVIGATION DRAWER TOGGLE
   // =========================================================================
   function initMobileNav() {
     const toggle = document.getElementById('mobile-menu-toggle');
@@ -400,7 +474,6 @@
       toggle.setAttribute('aria-expanded', String(!isOpen));
     });
 
-    // Close on link click
     const links = menu.querySelectorAll('.mob-link');
     links.forEach((link) => {
       link.addEventListener('click', () => {
@@ -410,5 +483,5 @@
     });
   }
 
-  console.log('[Creative Web Architect] Official product website online. Created by Anas Hashim.');
+  console.log('[Creative Web Architect] Official website online. 3D Dot Matrix background initialized. Created by Anas Hashim.');
 })();
