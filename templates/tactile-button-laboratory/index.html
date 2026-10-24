@@ -1645,9 +1645,6 @@
       <button class="hud-btn" id="themeToggle" aria-label="Toggle Theme">
         <span id="themeIcon">☀️</span> Theme
       </button>
-      <button class="hud-btn" id="soundToggle" aria-label="Toggle Haptic Audio">
-        <span id="soundIcon">🔊</span> Audio: ON
-      </button>
     </div>
   </header>
 
@@ -2205,36 +2202,12 @@
 
   <div class="haptic-toast" id="hapticToast">Tactile Haptic Feedback Triggered</div>
 
-  <!-- Laboratory Runtime Logic -->
+  <!-- Laboratory Runtime Logic (Silent by Default: Zero Unrequested Audio) -->
   <script>
-    // Audio synthesizer for physical click feedback
-    let audioCtx = null;
-    let soundEnabled = true;
-
-    function playHapticClick(freq = 600, duration = 0.04) {
-      if (!soundEnabled) return;
-      try {
-        if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-        if (audioCtx.state === 'suspended') audioCtx.resume();
-        const osc = audioCtx.createOscillator();
-        const gain = audioCtx.createGain();
-        osc.type = "sine";
-        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
-        osc.frequency.exponentialRampToValueAtTime(120, audioCtx.currentTime + duration);
-        gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
-        osc.connect(gain);
-        gain.connect(audioCtx.destination);
-        osc.start();
-        osc.stop(audioCtx.currentTime + duration);
-      } catch (e) {}
-    }
-
-    // Attach click feedback to all interactive buttons
+    // Attach visual interaction feedback to all interactive buttons
     document.querySelectorAll("button, .d-iso, .cube-extrusion, .btn-liquid-reservoir, .btn-swiss-cross, .btn-slot-flip, .biometric-container").forEach(el => {
       el.addEventListener("click", () => {
-        playHapticClick(750, 0.05);
-        showToast("Haptic Click: " + (el.innerText || "Component").slice(0, 15));
+        showToast("Interaction: " + (el.innerText || "Component").slice(0, 18));
       });
     });
 
@@ -2246,17 +2219,6 @@
       const next = current === "light" ? "dark" : "light";
       document.documentElement.setAttribute("data-theme", next);
       themeIcon.textContent = next === "light" ? "🌙" : "☀️";
-      playHapticClick(450, 0.03);
-    });
-
-    // Audio Toggle
-    const soundBtn = document.getElementById("soundToggle");
-    const soundIcon = document.getElementById("soundIcon");
-    soundBtn.addEventListener("click", () => {
-      soundEnabled = !soundEnabled;
-      soundIcon.textContent = soundEnabled ? "🔊" : "🔇";
-      soundBtn.innerHTML = `<span>${soundIcon.textContent}</span> Audio: ${soundEnabled ? 'ON' : 'OFF'}`;
-      if (soundEnabled) playHapticClick(800, 0.04);
     });
 
     // Filter Logic
@@ -2274,7 +2236,6 @@
             card.style.display = "none";
           }
         });
-        playHapticClick(500, 0.02);
       });
     });
 
@@ -2285,7 +2246,6 @@
         b.addEventListener("click", () => {
           const pressed = b.getAttribute("aria-pressed") === "true";
           b.setAttribute("aria-pressed", String(!pressed));
-          playHapticClick(pressed ? 300 : 900, 0.06);
         });
       }
     });
@@ -2305,11 +2265,9 @@
       const bio = document.getElementById("bioContainer");
       if (!bio || bio.classList.contains("scanning") || bio.classList.contains("verified")) return;
       bio.classList.add("scanning");
-      playHapticClick(400, 0.1);
       setTimeout(() => {
         bio.classList.remove("scanning");
         bio.classList.add("verified");
-        playHapticClick(1000, 0.08);
         setTimeout(() => {
           bio.classList.remove("verified");
         }, 2500);
@@ -2384,7 +2342,6 @@
       modalHtml.textContent = data.html;
       modalCss.textContent = data.css;
       modal.classList.add("open");
-      playHapticClick(650, 0.03);
     }
 
     function closeModal() {

@@ -14,8 +14,9 @@ By default, every project created or upgraded with Creative Web Architect must e
 - **NO** unnecessary neon glow, blurry colored blobs, or glowing borders on every card.
 - **NO** oversaturated neon gradients, fake bloom, or cyber-rainbow backgrounds.
 - **NO** excessive bouncing or distracting continuous particle bursts.
+- **NO** unrequested sound, background audio, sound effects, or Web Audio synthesizers (all websites and components must be 100% silent by default).
 - **YES** controlled neutral contrast, matte obsidian/charcoal surfaces, hairline (0.5px–1px) borders, refined typography, and spring-damped micro-interactions.
-- *Exceptions:* Neon or high-intensity cyber aesthetics are permitted only when explicitly requested by the user or clearly dictated by the brand.
+- *Exceptions:* Neon or high-intensity cyber aesthetics, as well as sound/audio features, are permitted ONLY when explicitly requested by the user or clearly dictated by the brand brief.
 
 ## How to Use Skills
 
@@ -123,7 +124,7 @@ Follow this strict 5-step development workflow:
 2. **Accessible Skeleton:** Write semantic HTML5 structure with `<header>`, `<main>`, `<section>`, `<footer>`, `<dialog>`, and skip link.
 3. **Hero Interaction Layer:** Mount the primary technique (e.g. Dual-Image Canvas brush trail, Model-Viewer, or Flight path).
 4. **Physical Kinematics:** Attach spring-damped micro-interactions (tactile button wave fill, cipher decryption, magnetic attraction).
-5. **Accessibility & Core Web Vitals:** Verify `prefers-reduced-motion: reduce`, disable hover springs on touch devices, and ensure zero layout shift.
+5. **Accessibility, Audio Restraint & Core Web Vitals:** Verify `prefers-reduced-motion: reduce`, disable hover springs on touch devices, ensure zero layout shift, and enforce ZERO unrequested sound or audio.
 
 ## Key Principles
 
@@ -134,6 +135,7 @@ Follow this strict 5-step development workflow:
 - Measure performance with real tools, don't fabricate numbers
 - Never commit secrets, API keys, or copyrighted assets
 - Never silently overwrite existing user files
+- **Strict Audio Policy (Silent by Default):** Never synthesize, generate, or attach audio, sound effects, background music, or Web Audio to any website, component, or template unless the user EXPLICITLY and SPECIFICALLY requests sound. Every website and component must be 100% silent by default.
 
 ## Packages
 

@@ -58,6 +58,7 @@ Open your project folder in **Antigravity**, **Cursor**, or **Claude Code**, and
 | **Archetype Matrix** | **10 Archetypes** | Automated classification engine mapping any brief to complementary techniques & palettes. |
 | **Production Templates** | **9 Templates** | Standalone single-file verified deliverables (Tactile Button Laboratory, Loopstack, Baseline Tennis, Laocoön Bronze, Lumora Studio, KIMI F1, Soda 3D, Melli Honeybee, Hyper-GT). |
 | **Lighting Policy** | **Zero-Glow** | Eliminates cheap purple neon halos in favor of matte obsidian, hairline contrast, and quiet luxury. |
+| **Audio Policy** | **Silent by Default** | 100% silent unless sound/audio is explicitly requested by the user. Zero unrequested Web Audio synthesizers. |
 | **Runtime & License** | **100% Local / MIT** | Free, open source, zero external API keys required, running entirely on your local machine. |
 
 ---
