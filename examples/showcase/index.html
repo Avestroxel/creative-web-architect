@@ -4,10 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Creative Web Architect // Official AI Creative Engineering Toolkit</title>
-  <meta name="description" content="Official website for Creative Web Architect — the open-source AI creative engineering toolkit for generating exceptional, responsive, and performance-optimized websites from minimal descriptions. Created by Anas Hashim.">
+  <meta name="description" content="Official website for Creative Web Architect — the open-source AI creative engineering toolkit equipping your AI coding environments with 36 specialized skills and 36 architectural techniques. Created by Anas Hashim.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Lenis for ultra-smooth scrolling -->
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js"></script>
   <link rel="stylesheet" href="./style.css">
 </head>
 <body class="cwa-official-body">
@@ -32,11 +34,9 @@
 
       <!-- Desktop Navigation Links -->
       <nav class="desktop-nav" aria-label="Primary Navigation">
-        <a href="#about" class="nav-link">About</a>
-        <a href="#install" class="nav-link">Download & CLI</a>
-        <a href="#techniques" class="nav-link">36 Techniques</a>
-        <a href="#capabilities" class="nav-link">36 Skills</a>
-        <a href="#styles" class="nav-link">Design Styles</a>
+        <a href="#overview" class="nav-link">Overview</a>
+        <a href="#download-setup" class="nav-link">Download &amp; CLI</a>
+        <a href="#architecture" class="nav-link">Architecture</a>
         <a href="#templates" class="nav-link">Templates</a>
         <a href="#faq" class="nav-link">FAQ</a>
       </nav>
@@ -50,7 +50,7 @@
           <span>GitHub</span>
           <span class="external-arrow">↗</span>
         </a>
-        <a href="#install" class="cwa-btn btn-primary">
+        <a href="#download-setup" class="cwa-btn btn-primary">
           <span>Get Started</span>
           <span class="btn-arrow">→</span>
         </a>
@@ -65,11 +65,9 @@
 
     <!-- Mobile Slide-Down Menu -->
     <div class="mobile-menu" id="mobile-menu">
-      <a href="#about" class="mob-link">About</a>
-      <a href="#install" class="mob-link">Download & CLI</a>
-      <a href="#techniques" class="mob-link">36 Techniques</a>
-      <a href="#capabilities" class="mob-link">36 Skills</a>
-      <a href="#styles" class="mob-link">Design Styles</a>
+      <a href="#overview" class="mob-link">Overview</a>
+      <a href="#download-setup" class="mob-link">Download &amp; CLI</a>
+      <a href="#architecture" class="mob-link">Architecture</a>
       <a href="#templates" class="mob-link">Templates</a>
       <a href="#faq" class="mob-link">FAQ</a>
       <a href="https://github.com/Avestroxel/creative-web-architect" class="mob-link highlight" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a>
@@ -82,43 +80,43 @@
   <main>
     <section class="hero-section" id="hero">
       <div class="hero-content">
-        <div class="hero-pill-badge">
+        <div class="hero-pill-badge reveal-item">
           <span class="pulse-dot"></span>
           <span class="pill-text">AUTONOMOUS AI CREATIVE ENGINEERING SYSTEM</span>
         </div>
 
-        <h1 class="hero-headline">
+        <h1 class="hero-headline reveal-item">
           Your Vision.<br>
           <span class="headline-gradient">Beyond Ordinary Web Design.</span>
         </h1>
 
-        <p class="hero-subtext">
-          Creative Web Architect equips your AI coding tools with 36 specialized skills, 36 award-winning architectural techniques, and strict anti-generic mandates. Initialize any project folder via terminal with zero manual copy-pasting.
+        <p class="hero-subtext reveal-item">
+          Creative Web Architect equips your AI coding environments with autonomous creative direction, 36 specialized skills, and 36 learned architectural techniques. Initialize any project folder via terminal with zero manual copy-pasting.
         </p>
 
         <!-- 1-Click CLI Quickstart Command -->
-        <div class="hero-install-box" id="hero-install">
+        <div class="hero-install-box reveal-item" id="hero-install">
           <div class="cli-input-wrapper">
             <span class="cli-prompt">&gt;</span>
-            <code class="cli-command" id="cli-cmd-hero">.\cwa.cmd init "C:\Path\To\YourProject"</code>
+            <code class="cli-command" id="cli-cmd-hero">cwa init "C:\Path\To\YourProject"</code>
           </div>
           <button class="copy-trigger-btn" id="copy-btn-hero" data-target="cli-cmd-hero" aria-label="Copy CLI init command">
             <span class="copy-text">Copy</span>
           </button>
         </div>
 
-        <div class="hero-cta-group">
-          <a href="#install" class="cwa-btn btn-primary btn-lg">
-            <span>Download & Setup Guide</span>
+        <div class="hero-cta-group reveal-item">
+          <a href="#download-setup" class="cwa-btn btn-primary btn-lg">
+            <span>Download &amp; Setup Guide</span>
             <span class="btn-arrow">→</span>
           </a>
-          <a href="#techniques" class="cwa-btn btn-secondary btn-lg">
-            <span>Explore 36 Techniques</span>
+          <a href="#templates" class="cwa-btn btn-secondary btn-lg">
+            <span>View Templates ↗</span>
           </a>
         </div>
 
-        <!-- Telemetry & Credibility Bar -->
-        <div class="hero-telemetry">
+        <!-- High-Impact Telemetry Bar -->
+        <div class="hero-telemetry reveal-item reveal-group">
           <div class="telemetry-item">
             <span class="telemetry-val">36</span>
             <span class="telemetry-lbl">Specialized Skills</span>
@@ -130,144 +128,176 @@
           </div>
           <div class="telemetry-divider"></div>
           <div class="telemetry-item">
+            <span class="telemetry-val">4</span>
+            <span class="telemetry-lbl">Master Templates</span>
+          </div>
+          <div class="telemetry-divider"></div>
+          <div class="telemetry-item">
             <span class="telemetry-val">1-Command</span>
-            <span class="telemetry-lbl">Folder Injection</span>
+            <span class="telemetry-lbl">CLI Injection</span>
           </div>
           <div class="telemetry-divider"></div>
           <div class="telemetry-item">
-            <span class="telemetry-val">No-Glow</span>
+            <span class="telemetry-val">Zero-Glow</span>
             <span class="telemetry-lbl">Architectural Policy</span>
-          </div>
-          <div class="telemetry-divider"></div>
-          <div class="telemetry-item">
-            <span class="telemetry-val">MIT</span>
-            <span class="telemetry-lbl">Open-Source License</span>
           </div>
         </div>
       </div>
     </section>
 
     <!-- =========================================================================
-         3. ABOUT THE AGENT & PHILOSOPHY
+         3. OVERVIEW & PHILOSOPHY
          ========================================================================= -->
-    <section class="cwa-section about-section" id="about">
+    <section class="cwa-section overview-section" id="overview">
       <div class="section-container">
-        <div class="section-badge-wrap">
-          <span class="section-kicker">ABOUT THE AGENT</span>
+        <div class="section-badge-wrap reveal-item">
+          <span class="section-kicker">SYSTEM OVERVIEW</span>
           <h2 class="section-title">An Intelligent Creative Engineering Partner</h2>
           <p class="section-lead">
-            Creative Web Architect is an open-source autonomous agent toolkit created by Anas Hashim. It connects to your existing AI coding environments (Antigravity, Cursor, Claude Code, Gemini CLI) to elevate their web design and implementation capabilities.
+            Creative Web Architect is an open-source autonomous agent toolkit created by Anas Hashim. It connects to your local AI coding tools (Antigravity, Cursor, Claude Code, Gemini CLI) to elevate their web design, typography, and kinematics.
           </p>
         </div>
 
         <!-- Clarification Banner -->
-        <div class="clarification-callout">
+        <div class="clarification-callout reveal-item">
           <div class="callout-icon">ℹ</div>
           <div class="callout-body">
             <strong>Architecture Notice:</strong>
-            Creative Web Architect is not an expensive cloud API or black-box foundation model. It is an open-source engineering framework containing 36 specialized Agent Skills, 36 learned architectural techniques from award-winning sites, kinematic physics, and strict anti-generic directives that run directly on your local machine.
+            Creative Web Architect runs 100% locally on your machine with zero cloud API subscriptions. It injects modular Agent Skills, learned architectural patterns, kinematic spring physics, and strict anti-generic directives directly into your workspace.
           </div>
         </div>
 
-        <!-- Disciplines Grid -->
-        <div class="disciplines-grid">
-          <div class="discipline-card">
+        <!-- High-Level Disciplines Grid -->
+        <div class="disciplines-grid reveal-group">
+          <div class="discipline-card reveal-item">
             <span class="card-num">01</span>
-            <h3>Creative Director</h3>
-            <p>Deconstructs short briefs to identify core audience, brand archetypes, aesthetic tension, and storytelling arcs.</p>
+            <h3>Creative Direction</h3>
+            <p>Deconstructs short briefs to identify brand archetypes, aesthetic tension, and narrative pacing.</p>
           </div>
-          <div class="discipline-card">
+          <div class="discipline-card reveal-item">
             <span class="card-num">02</span>
-            <h3>Digital Art Director</h3>
-            <p>Curates distinctive typographic hierarchy, fluid clamp() scales, optical kerning, and mature monochrome palettes.</p>
+            <h3>Digital Art Direction</h3>
+            <p>Curates distinctive typographic hierarchy, fluid clamp() scales, and mature monochrome palettes.</p>
           </div>
-          <div class="discipline-card">
+          <div class="discipline-card reveal-item">
             <span class="card-num">03</span>
-            <h3>Motion Designer</h3>
-            <p>Engineers spring-damped physics, magnetic cursor attraction, directional reveals, and scroll storytelling.</p>
+            <h3>Motion &amp; Kinematics</h3>
+            <p>Engineers spring-damped physics, magnetic cursor attraction, directional reveals, and smooth scroll.</p>
           </div>
-          <div class="discipline-card">
+          <div class="discipline-card reveal-item">
             <span class="card-num">04</span>
-            <h3>3D & WebGL Engineer</h3>
-            <p>Orchestrates Three.js scenes, camera orbits, canvas wireframes, procedural GLSL shaders, and GLTF asset optimization.</p>
+            <h3>3D &amp; Spatial Web</h3>
+            <p>Orchestrates Three.js scenes, camera orbits, canvas wireframes, procedural GLSL, and GLTF models.</p>
           </div>
-          <div class="discipline-card">
+          <div class="discipline-card reveal-item">
             <span class="card-num">05</span>
-            <h3>Frontend Architect</h3>
-            <p>Produces clean, modular, accessible TypeScript, semantic HTML5, modern CSS layers, and zero unnecessary dependencies.</p>
+            <h3>Frontend Architecture</h3>
+            <p>Produces clean, modular TypeScript, semantic HTML5, modern CSS layers, and zero unnecessary dependencies.</p>
           </div>
-          <div class="discipline-card">
+          <div class="discipline-card reveal-item">
             <span class="card-num">06</span>
-            <h3>Performance Specialist</h3>
-            <p>Enforces strict Core Web Vitals targets: LCP ≤ 2.5s, INP ≤ 200ms, CLS ≤ 0.1, and guaranteed 60 FPS hardware acceleration.</p>
+            <h3>Performance &amp; QA</h3>
+            <p>Enforces strict Core Web Vitals targets: LCP ≤ 2.5s, INP ≤ 200ms, CLS ≤ 0.1, and 60 FPS hardware acceleration.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- =========================================================================
-         4. DOWNLOAD & CLI INITIALIZATION HUB (CORE WORKFLOW)
+         4. DOWNLOAD & CLI INITIALIZATION HUB (چۆنیەتی داونلۆد کردن و کارپێکردن)
          ========================================================================= -->
-    <section class="cwa-section install-section" id="install">
+    <section class="cwa-section install-section" id="download-setup">
       <div class="section-container">
-        <div class="section-badge-wrap">
+        <div class="section-badge-wrap reveal-item">
           <span class="section-kicker">TERMINAL WORKFLOW</span>
-          <h2 class="section-title">Download & Instant Project Initialization</h2>
+          <h2 class="section-title">How to Download and Run in Any Folder</h2>
           <p class="section-lead">
-            Clone once from GitHub, then use a single terminal command to inject all skills, techniques, and directives into any folder without copy-pasting.
+            Clone once from GitHub, then use a single terminal command to inject all skills, techniques, and directives into any folder without manual copy-pasting.
           </p>
         </div>
 
-        <div class="install-panel glass-card">
+        <!-- 4-Step Visual Workflow -->
+        <div class="workflow-steps-grid reveal-group">
+          <div class="workflow-step-card reveal-item">
+            <div class="step-badge">STEP 01</div>
+            <h4>Download &amp; Build</h4>
+            <p>Clone the repository from GitHub and run the build command once to prepare the toolchain.</p>
+            <code>git clone ... &amp;&amp; pnpm build</code>
+          </div>
+          <div class="workflow-step-card reveal-item">
+            <div class="step-badge">STEP 02</div>
+            <h4>Global Link</h4>
+            <p>Link the <code>cwa</code> CLI globally on your system so you can run it from any terminal.</p>
+            <code>npm link packages/cli</code>
+          </div>
+          <div class="workflow-step-card reveal-item">
+            <div class="step-badge">STEP 03</div>
+            <h4>Initialize Target</h4>
+            <p>Run <code>cwa init</code> targeting your project folder to inject all skills and knowledge.</p>
+            <code>cwa init "C:\Path\To\Project"</code>
+          </div>
+          <div class="workflow-step-card reveal-item">
+            <div class="step-badge">STEP 04</div>
+            <h4>Start Building</h4>
+            <p>Open that folder in Antigravity or Cursor and prompt your AI agent to build your website.</p>
+            <code>Prompt your Agent!</code>
+          </div>
+        </div>
+
+        <div class="install-panel glass-card reveal-item">
           <!-- Install Method Tabs -->
           <div class="install-tabs" role="tablist">
-            <button class="install-tab active" data-tab="windows" role="tab" aria-selected="true">Windows (PowerShell / CMD)</button>
-            <button class="install-tab" data-tab="pnpm" role="tab" aria-selected="false">Cross-Platform (pnpm)</button>
+            <button class="install-tab active" data-tab="global" role="tab" aria-selected="true">Global CLI (Recommended)</button>
+            <button class="install-tab" data-tab="windows" role="tab" aria-selected="false">Windows Direct (cwa.cmd)</button>
             <button class="install-tab" data-tab="unix" role="tab" aria-selected="false">macOS / Linux</button>
             <button class="install-tab" data-tab="inplace" role="tab" aria-selected="false">In-Place (Current Folder)</button>
           </div>
 
-          <!-- Tab Content 1: Windows -->
-          <div class="install-tab-content active" id="tab-windows">
-            <p class="install-desc">On Windows, clone the repository once, build it, then run <code>.\cwa.cmd init</code> pointing directly to your desired target folder:</p>
+          <!-- Tab Content 1: Global CLI -->
+          <div class="install-tab-content active" id="tab-global">
+            <p class="install-desc">Clone the repository, build it once, and link the <code>cwa</code> command globally so you can use it in any terminal across your entire machine:</p>
             <div class="code-block-wrap">
-              <pre><code><span class="code-comment"># Step 1: Clone from GitHub & build once</span>
+              <pre><code><span class="code-comment"># 1. Clone repository from GitHub &amp; build once</span>
 git clone https://github.com/Avestroxel/creative-web-architect.git
 cd creative-web-architect
-pnpm install
-pnpm build
+pnpm install &amp;&amp; pnpm build
 
-<span class="code-comment"># Step 2: Initialize ANY target project folder in 1 command</span>
-.\cwa.cmd init "C:\Users\YourName\Desktop\my-new-project"</code></pre>
-              <button class="copy-code-btn" data-clipboard="git clone https://github.com/Avestroxel/creative-web-architect.git&#10;cd creative-web-architect&#10;pnpm install&#10;pnpm build&#10;.\cwa.cmd init &quot;C:\Path\To\YourProject&quot;">Copy</button>
+<span class="code-comment"># 2. Link CLI globally on your computer (run once)</span>
+npm link packages/cli
+
+<span class="code-comment"># 3. Now initialize ANY folder on your computer in 1 second</span>
+cwa init "C:\Users\YourName\Desktop\my-new-project"</code></pre>
+              <button class="copy-code-btn" data-clipboard="git clone https://github.com/Avestroxel/creative-web-architect.git&#10;cd creative-web-architect&#10;pnpm install &amp;&amp; pnpm build&#10;npm link packages/cli&#10;cwa init &quot;C:\Path\To\YourProject&quot;">Copy</button>
             </div>
           </div>
 
-          <!-- Tab Content 2: pnpm -->
-          <div class="install-tab-content" id="tab-pnpm">
-            <p class="install-desc">Using pnpm from inside the cloned repository to initialize any directory on your computer:</p>
+          <!-- Tab Content 2: Windows Direct -->
+          <div class="install-tab-content" id="tab-windows">
+            <p class="install-desc">On Windows, you can also run the bundled <code>.\cwa.cmd</code> executable directly without global linking:</p>
             <div class="code-block-wrap">
-              <pre><code><span class="code-comment"># Run cwa init via pnpm targeting your folder</span>
-pnpm cwa init "C:\Users\YourName\Desktop\my-new-project"
+              <pre><code><span class="code-comment"># Step 1: Clone &amp; build</span>
+git clone https://github.com/Avestroxel/creative-web-architect.git
+cd creative-web-architect
+pnpm install &amp;&amp; pnpm build
 
-<span class="code-comment"># Run doctor to verify health</span>
-pnpm cwa doctor</code></pre>
-              <button class="copy-code-btn" data-clipboard="pnpm cwa init &quot;C:\Users\YourName\Desktop\my-new-project&quot;">Copy</button>
+<span class="code-comment"># Step 2: Initialize target directory</span>
+.\cwa.cmd init "C:\Users\YourName\Desktop\my-new-project"</code></pre>
+              <button class="copy-code-btn" data-clipboard="git clone https://github.com/Avestroxel/creative-web-architect.git&#10;cd creative-web-architect&#10;pnpm install &amp;&amp; pnpm build&#10;.\cwa.cmd init &quot;C:\Path\To\YourProject&quot;">Copy</button>
             </div>
           </div>
 
           <!-- Tab Content 3: macOS / Linux -->
           <div class="install-tab-content" id="tab-unix">
-            <p class="install-desc">On macOS or Linux, use the native executable script <code>./cwa</code>:</p>
+            <p class="install-desc">On macOS or Linux, execute the native executable script <code>./cwa</code>:</p>
             <div class="code-block-wrap">
-              <pre><code><span class="code-comment"># Step 1: Clone & build</span>
+              <pre><code><span class="code-comment"># Step 1: Clone &amp; build</span>
 git clone https://github.com/Avestroxel/creative-web-architect.git
 cd creative-web-architect
-pnpm install && pnpm build
+pnpm install &amp;&amp; pnpm build
 
 <span class="code-comment"># Step 2: Initialize target directory</span>
 ./cwa init /path/to/my-new-project</code></pre>
-              <button class="copy-code-btn" data-clipboard="git clone https://github.com/Avestroxel/creative-web-architect.git && cd creative-web-architect && pnpm install && pnpm build && ./cwa init /path/to/my-new-project">Copy</button>
+              <button class="copy-code-btn" data-clipboard="git clone https://github.com/Avestroxel/creative-web-architect.git &amp;&amp; cd creative-web-architect &amp;&amp; pnpm install &amp;&amp; pnpm build &amp;&amp; ./cwa init /path/to/my-new-project">Copy</button>
             </div>
           </div>
 
@@ -278,40 +308,40 @@ pnpm install && pnpm build
               <pre><code><span class="code-comment"># Initialize inside current working directory</span>
 cwa init .
 
-<span class="code-comment"># Or run directly via Node</span>
-node /path/to/creative-web-architect/packages/cli/dist/index.js init .</code></pre>
+<span class="code-comment"># Or verify system health</span>
+cwa doctor</code></pre>
               <button class="copy-code-btn" data-clipboard="cwa init .">Copy</button>
             </div>
           </div>
         </div>
 
         <!-- What Gets Automatically Injected -->
-        <h3 style="margin-top: 3rem; margin-bottom: 0.5rem; font-size: 1.3rem;">What Gets Automatically Injected Into Your Target Folder:</h3>
-        <p style="margin-bottom: 1.5rem; color: var(--text-secondary);">The CLI writes and configures all necessary assets instantly with zero manual intervention:</p>
+        <h3 class="reveal-item" style="margin-top: 3rem; margin-bottom: 0.5rem; font-size: 1.3rem;">What Gets Automatically Injected Into Your Target Folder:</h3>
+        <p class="reveal-item" style="margin-bottom: 1.5rem; color: var(--text-secondary);">The CLI writes and configures all necessary assets instantly with zero manual intervention:</p>
 
-        <div class="injection-grid">
-          <div class="injection-card">
+        <div class="injection-grid reveal-group">
+          <div class="injection-card reveal-item">
             <span class="injection-badge">DIRECTORY // 36 SKILLS</span>
             <h4>.agents/skills/ &amp; ./skills/</h4>
             <p>All 36 specialized Agent Skills with YAML frontmatter, covering art direction, motion, 3D WebGL, and visual QA.</p>
             <div class="injection-files">36 SKILL.md packages ready</div>
           </div>
 
-          <div class="injection-card">
+          <div class="injection-card reveal-item">
             <span class="injection-badge">KNOWLEDGE // 36 TECHNIQUES</span>
             <h4>knowledge/ &amp; .agents/knowledge/</h4>
             <p>The complete architectural repository of 36 techniques learned from award-winning sites with master index.json.</p>
             <div class="injection-files">36 learned techniques + index.json</div>
           </div>
 
-          <div class="injection-card">
+          <div class="injection-card reveal-item">
             <span class="injection-badge">DIRECTIVES // ZERO GENERIC</span>
             <h4>AGENTS.md &amp; GEMINI.md</h4>
             <p>Strict Anti-Generic Mandate and No-Glow Architectural Policy enforcing Awwwards-grade execution on any AI model.</p>
             <div class="injection-files">AGENTS.md + GEMINI.md</div>
           </div>
 
-          <div class="injection-card">
+          <div class="injection-card reveal-item">
             <span class="injection-badge">CONFIG // AI ENVIRONMENTS</span>
             <h4>cwa.config.json</h4>
             <p>Environment auto-detection configuration for Google Antigravity, Cursor, Claude Code, and Gemini CLI.</p>
@@ -322,671 +352,130 @@ node /path/to/creative-web-architect/packages/cli/dist/index.js init .</code></p
     </section>
 
     <!-- =========================================================================
-         5. THE 36 LEARNED ARCHITECTURAL TECHNIQUES DIRECTORY
+         5. ARCHITECTURE & METRICS (ژمارەکان بە ڕوونی و سادەیی)
          ========================================================================= -->
-    <section class="cwa-section techniques-section" id="techniques">
+    <section class="cwa-section architecture-section" id="architecture">
       <div class="section-container">
-        <div class="section-badge-wrap">
-          <span class="section-kicker">KNOWLEDGE REPOSITORY</span>
-          <h2 class="section-title">36 Learned Architectural Techniques</h2>
+        <div class="section-badge-wrap reveal-item">
+          <span class="section-kicker">SYSTEM CAPABILITIES</span>
+          <h2 class="section-title">Architectural Power by the Numbers</h2>
           <p class="section-lead">
-            Every initialized project includes these 36 production techniques learned directly from award-winning sites. AI agents inspect this directory and autonomously apply 2 to 4 complementary techniques on every build.
+            Creative Web Architect equips your AI models with curated, battle-tested intelligence instead of generic boilerplate.
           </p>
         </div>
 
-        <!-- Category Filters -->
-        <div class="tech-filters">
-          <button class="tech-filter-btn active" data-filter="all">All (36)</button>
-          <button class="tech-filter-btn" data-filter="scroll-animations">Scroll &amp; Kinematics</button>
-          <button class="tech-filter-btn" data-filter="typography">Typography</button>
-          <button class="tech-filter-btn" data-filter="three-dimensional-web">3D &amp; Spatial Web</button>
-          <button class="tech-filter-btn" data-filter="ui-components">UI Components &amp; HUD</button>
-          <button class="tech-filter-btn" data-filter="hover-effects">Hover &amp; Physics</button>
-          <button class="tech-filter-btn" data-filter="performance-engineering">Performance Engineering</button>
-          <button class="tech-filter-btn" data-filter="art-direction">Art Direction &amp; Storytelling</button>
-        </div>
-
-        <!-- Techniques Cards Grid -->
-        <div class="techniques-grid">
-          <!-- 1. Izanami -->
-          <article class="technique-card" data-category="art-direction">
-            <div class="tech-header">
-              <span class="tech-slug">izanami-shadow-and-ink</span>
-              <span class="tech-category-pill">Storytelling</span>
-            </div>
-            <h4>Izanami Shadow-Craft &amp; Sumi Ink</h4>
-            <p>Urushi lacquer black (#060709), Kinpaku gold (#C5A059), 45% Ma void space, and SVG feTurbulence organic sumi ink reveals.</p>
-            <div class="tech-source">Source: Izanami Heritage</div>
-          </article>
-
-          <!-- 2. Reelmark Curved Projection -->
-          <article class="technique-card" data-category="three-dimensional-web">
-            <div class="tech-header">
-              <span class="tech-slug">cylindrical-curved-carousel-quad-projection</span>
-              <span class="tech-category-pill">3D &amp; Geometry</span>
-            </div>
-            <h4>Reelmark Cylindrical Curved Projection</h4>
-            <p>Curved quad carousel geometry using distance formula d = |x - 720| / 706, non-linear width expansion, and dynamic rounded quad clip-path: path().</p>
-            <div class="tech-source">Source: Reelmark Studio</div>
-          </article>
-
-          <!-- 3. Reelmark Video Atlas -->
-          <article class="technique-card" data-category="performance-engineering">
-            <div class="tech-header">
-              <span class="tech-slug">video-atlas-single-stream-grid-sync</span>
-              <span class="tech-category-pill">Performance</span>
-            </div>
-            <h4>Video Atlas Single-Stream Sync</h4>
-            <p>Packs 10 video clips into a single 5x2 composite video texture, slashing network requests by 90% and eliminating mobile video decoder crashes.</p>
-            <div class="tech-source">Source: Reelmark Studio</div>
-          </article>
-
-          <!-- 4. Mainframe Queue-Gated Video Scrubbing -->
-          <article class="technique-card" data-category="performance-engineering">
-            <div class="tech-header">
-              <span class="tech-slug">queue-gated-mouse-scrub-video-kinematics</span>
-              <span class="tech-category-pill">Performance</span>
-            </div>
-            <h4>Queue-Gated Mouse Video Scrubbing</h4>
-            <p>Background video playback scrubbed via horizontal mouse movement with an onSeeked anti-flood queue latch preventing decode pipeline stutter.</p>
-            <div class="tech-source">Source: Mainframe Agency</div>
-          </article>
-
-          <!-- 5. Mainframe Conversational Action Triage -->
-          <article class="technique-card" data-category="ui-components">
-            <div class="tech-header">
-              <span class="tech-slug">conversational-action-triage-and-optical-blur</span>
-              <span class="tech-category-pill">UI Components</span>
-            </div>
-            <h4>Conversational Action Triage &amp; Blur</h4>
-            <p>Intentional optical blur (filter: blur(4px)) on secondary copy paired with conversational action pills and instant 1-click clipboard feedback.</p>
-            <div class="tech-source">Source: Mainframe Agency</div>
-          </article>
-
-          <!-- 6. Jack Sticky Card Deck -->
-          <article class="technique-card" data-category="scroll-animations">
-            <div class="tech-header">
-              <span class="tech-slug">sticky-stacking-card-deck-scale-decay</span>
-              <span class="tech-category-pill">Scroll Kinematics</span>
-            </div>
-            <h4>Sticky Stacking Card Deck</h4>
-            <p>Stacking project cards with scale decay formula targetScale = 1 - (total - 1 - i) * 0.03 and sticky viewport pinning without layout jitter.</p>
-            <div class="tech-source">Source: Jack Showcase</div>
-          </article>
-
-          <!-- 7. Jack Scroll Character Opacity Wave -->
-          <article class="technique-card" data-category="typography">
-            <div class="tech-header">
-              <span class="tech-slug">scroll-driven-character-opacity-wave</span>
-              <span class="tech-category-pill">Typography</span>
-            </div>
-            <h4>Scroll Character Opacity Wave</h4>
-            <p>Editorial headline text illuminated character-by-character from opacity 0.2 to 1.0 directly tied to scroll progress with zero layout shifts.</p>
-            <div class="tech-source">Source: Jack Showcase</div>
-          </article>
-
-          <!-- 8. Jack Damped Magnetic Cursor -->
-          <article class="technique-card" data-category="hover-effects">
-            <div class="tech-header">
-              <span class="tech-slug">damped-magnetic-cursor-follow-physics</span>
-              <span class="tech-category-pill">Hover Physics</span>
-            </div>
-            <h4>Damped Magnetic Cursor Follow</h4>
-            <p>150px proximity threshold pulling hero elements toward cursor with asymmetric spring timing (0.3s snap in / 0.6s release out).</p>
-            <div class="tech-source">Source: Jack Showcase</div>
-          </article>
-
-          <!-- 9. Jack Dual-Row Opposing Marquee -->
-          <article class="technique-card" data-category="scroll-animations">
-            <div class="tech-header">
-              <span class="tech-slug">dual-row-scroll-coupled-marquee-kinematics</span>
-              <span class="tech-category-pill">Scroll Kinematics</span>
-            </div>
-            <h4>Dual-Row Opposing Marquee</h4>
-            <p>Vertical page scroll directly coupled to counter-directional horizontal marquee rows, creating bidirectional kinetic energy.</p>
-            <div class="tech-source">Source: Jack Showcase</div>
-          </article>
-
-          <!-- 10. Ricardo Isometric Console -->
-          <article class="technique-card" data-category="three-dimensional-web">
-            <div class="tech-header">
-              <span class="tech-slug">ricardo-isometric-mechanical-console</span>
-              <span class="tech-category-pill">3D &amp; Spatial Web</span>
-            </div>
-            <h4>Ricardo Isometric Mechanical Console</h4>
-            <p>Pure CSS 3D isometric diorama (rotateX 60deg, rotateZ -45deg), multi-plane Z-elevation, and knurled metal rotary potentiometer knobs.</p>
-            <div class="tech-source">Source: Ricardo Console</div>
-          </article>
-
-          <!-- 11. Typo Love Variable Typography -->
-          <article class="technique-card" data-category="typography">
-            <div class="tech-header">
-              <span class="tech-slug">typolove-kinetic-variable-typography</span>
-              <span class="tech-category-pill">Typography</span>
-            </div>
-            <h4>Kinetic Variable Typography</h4>
-            <p>Dynamic multi-axis variable fonts (wght, wdth, slnt), cursor proximity weight waves, and authentic OpenType ligatures.</p>
-            <div class="tech-source">Source: Typo Love</div>
-          </article>
-
-          <!-- 12. Meech Street-Luxe Neo-Brutalism -->
-          <article class="technique-card" data-category="art-direction">
-            <div class="tech-header">
-              <span class="tech-slug">meech-street-luxe-neo-brutalism</span>
-              <span class="tech-category-pill">Art Direction</span>
-            </div>
-            <h4>Meech Street-Luxe Neo-Brutalism</h4>
-            <p>Asphalt noir palette, draggable physics-based holographic stickers, and industrial gaffer tape stencil masks.</p>
-            <div class="tech-source">Source: Meech Luxe</div>
-          </article>
-
-          <!-- 13. Farminerals Soil Chromatics -->
-          <article class="technique-card" data-category="art-direction">
-            <div class="tech-header">
-              <span class="tech-slug">farminerals-geochemical-soil-chromatics</span>
-              <span class="tech-category-pill">Color Systems</span>
-            </div>
-            <h4>Geochemical Soil Chromatics</h4>
-            <p>Scientific Munsell soil palette (humus loam, terracotta, basalt silt, chalk) and subtle mineral micro-textures.</p>
-            <div class="tech-source">Source: Farminerals</div>
-          </article>
-
-          <!-- 14. Tile Tactile Tessellation -->
-          <article class="technique-card" data-category="ui-components">
-            <div class="tech-header">
-              <span class="tech-slug">tile-tactile-tessellation-system</span>
-              <span class="tech-category-pill">UI Components</span>
-            </div>
-            <h4>Tile Tactile Tessellation &amp; Grout</h4>
-            <p>1px structural container gap lines, micro-beveled slate inner shadows, and tactile physical depression on click.</p>
-            <div class="tech-source">Source: Tile System</div>
-          </article>
-
-          <!-- 15. Romanelli Kinetic Viewport -->
-          <article class="technique-card" data-category="scroll-animations">
-            <div class="tech-header">
-              <span class="tech-slug">romanelli-kinetic-viewport-and-distortion</span>
-              <span class="tech-category-pill">Page Transitions</span>
-            </div>
-            <h4>Romanelli Kinetic Viewport &amp; Skew</h4>
-            <p>Cursor-anchored preview portal with velocity-driven skew transforms (-4deg to +4deg) and full-screen FLIP page transitions.</p>
-            <div class="tech-source">Source: Romanelli Arch</div>
-          </article>
-
-          <!-- 16. 247 Artists Sonic Telemetry -->
-          <article class="technique-card" data-category="ui-components">
-            <div class="tech-header">
-              <span class="tech-slug">twofour-seven-artists-sonic-telemetry</span>
-              <span class="tech-category-pill">UI Components</span>
-            </div>
-            <h4>Sonic Telemetry &amp; VU Meters</h4>
-            <p>Real-time analog decibel VU meters, zero-latency audio waveform scrubbers, and global multi-timezone studio status tickers.</p>
-            <div class="tech-source">Source: 247 Artists</div>
-          </article>
-
-          <!-- 17. Dragonfly Biomimetic Optics -->
-          <article class="technique-card" data-category="hover-effects">
-            <div class="tech-header">
-              <span class="tech-slug">dragonfly-biomimetic-optics</span>
-              <span class="tech-category-pill">Hover Effects</span>
-            </div>
-            <h4>Dragonfly Biomimetic Optics</h4>
-            <p>Thin-film angle-dependent iridescence, skeletal 0.5px hairline grid, and zero-latency agile hover kinematics.</p>
-            <div class="tech-source">Source: Dragonfly Vision</div>
-          </article>
-
-          <!-- 18. Alethia Geospatial Telemetry -->
-          <article class="technique-card" data-category="three-dimensional-web">
-            <div class="tech-header">
-              <span class="tech-slug">alethia-geospatial-telemetry</span>
-              <span class="tech-category-pill">3D &amp; Spatial Web</span>
-            </div>
-            <h4>Alethia Geospatial Telemetry</h4>
-            <p>Orthographic 3D wireframe Earth projection, spherical coordinates HUD, and real-time elevation counters.</p>
-            <div class="tech-source">Source: Alethia Systems</div>
-          </article>
-
-          <!-- 19. O-SCS Spatial Control Surface -->
-          <article class="technique-card" data-category="ui-components">
-            <div class="tech-header">
-              <span class="tech-slug">oscs-spatial-control-surface</span>
-              <span class="tech-category-pill">UI Components</span>
-            </div>
-            <h4>O-SCS Spatial Control Surface</h4>
-            <p>Aerospace telemetry HUD, magnetic panel docking, and matrix3d orientation coordinate gizmo.</p>
-            <div class="tech-source">Source: O-SCS Avionics</div>
-          </article>
-
-          <!-- 20. Mission Editorial Philosophy -->
-          <article class="technique-card" data-category="typography">
-            <div class="tech-header">
-              <span class="tech-slug">mission-architectural-philosophy</span>
-              <span class="tech-category-pill">Typography</span>
-            </div>
-            <h4>Mission Editorial Philosophy</h4>
-            <p>Archival 35mm film discipline, Swiss editorial typography, and disciplined structural restraint.</p>
-            <div class="tech-source">Source: Mission Arch</div>
-          </article>
-
-          <!-- 21. Masked Video Clip-Path Reveals -->
-          <article class="technique-card" data-category="scroll-animations">
-            <div class="tech-header">
-              <span class="tech-slug">masked-video-clip-path-reveals</span>
-              <span class="tech-category-pill">Scroll Kinematics</span>
-            </div>
-            <h4>Masked Video Clip-Path Reveals</h4>
-            <p>Scroll-synchronized polygonal clip-path reveals expanding portrait stills into full landscape viewports.</p>
-            <div class="tech-source">Source: Visual Reveals</div>
-          </article>
-
-          <!-- 22. Inertia Horizontal Film Pan -->
-          <article class="technique-card" data-category="scroll-animations">
-            <div class="tech-header">
-              <span class="tech-slug">inertia-horizontal-film-pan</span>
-              <span class="tech-category-pill">Scroll Kinematics</span>
-            </div>
-            <h4>Inertia Horizontal Film Pan</h4>
-            <p>Frictionless horizontal timeline pan without scroll hijacking, maintaining native momentum feel.</p>
-            <div class="tech-source">Source: Film Archive</div>
-          </article>
-
-          <!-- 23. Kinetic Roman Numeral Navigation -->
-          <article class="technique-card" data-category="ui-components">
-            <div class="tech-header">
-              <span class="tech-slug">kinetic-roman-numeral-navigation</span>
-              <span class="tech-category-pill">UI Components</span>
-            </div>
-            <h4>Kinetic Roman Numeral Navigation</h4>
-            <p>Staggered kinetic reveals for chapter markers with active scroll waypoint tracking.</p>
-            <div class="tech-source">Source: Chapter Index</div>
-          </article>
-
-          <!-- 24. Dual-Stack Runtime Detection -->
-          <article class="technique-card" data-category="performance-engineering">
-            <div class="tech-header">
-              <span class="tech-slug">dual-stack-runtime-detection</span>
-              <span class="tech-category-pill">Performance</span>
-            </div>
-            <h4>Dual-Stack Runtime Serving</h4>
-            <p>Zero-dependency fast static web runtime vs framework intelligence, dynamically serving the lightest payload.</p>
-            <div class="tech-source">Source: Protocol Spec</div>
-          </article>
-
-          <!-- 25. Targeted Incremental Refactoring -->
-          <article class="technique-card" data-category="typography">
-            <div class="tech-header">
-              <span class="tech-slug">targeted-incremental-refactoring</span>
-              <span class="tech-category-pill">Typography</span>
-            </div>
-            <h4>Targeted Incremental Refactoring</h4>
-            <p>Non-destructive delta edits preserving baseline motion tokens and preventing visual regression.</p>
-            <div class="tech-source">Source: Core Architecture</div>
-          </article>
-
-          <!-- 26. Alethia Stratigraphic Materiality -->
-          <article class="technique-card" data-category="art-direction">
-            <div class="tech-header">
-              <span class="tech-slug">alethia-stratigraphic-materiality</span>
-              <span class="tech-category-pill">Art Direction</span>
-            </div>
-            <h4>Stratigraphic Materiality</h4>
-            <p>Mineral color palette and geological cross-sections translated into layered UI elevations.</p>
-            <div class="tech-source">Source: Alethia Systems</div>
-          </article>
-
-          <!-- 27. Magnetic Project Index Pill -->
-          <article class="technique-card" data-category="hover-effects">
-            <div class="tech-header">
-              <span class="tech-slug">magnetic-project-index-pill</span>
-              <span class="tech-category-pill">Hover Effects</span>
-            </div>
-            <h4>Magnetic Project Index Pill</h4>
-            <p>Floating navigation pill with dampened spring physics and cursor velocity tracking.</p>
-            <div class="tech-source">Source: Index HUD</div>
-          </article>
-
-          <!-- 28. Scroll-Driven 3D GLTF Flight Path -->
-          <article class="technique-card" data-category="three-dimensional-web">
-            <div class="tech-header">
-              <span class="tech-slug">scroll-driven-3d-gltf-flight-path</span>
-              <span class="tech-category-pill">3D &amp; Spatial Web</span>
-            </div>
-            <h4>Scroll-Driven 3D GLTF Flight Path &amp; Banking</h4>
-            <p>Normalized viewport keyframes, hold-and-dive transition kinematics, and velocity-coupled Euler banking (pitch coupled to vertical velocity, roll coupled to lateral velocity).</p>
-            <div class="tech-source">Source: Melli 3D Artistry</div>
-          </article>
-
-          <!-- 29. Procedural Wing Flutter & Ghosting -->
-          <article class="technique-card" data-category="three-dimensional-web">
-            <div class="tech-header">
-              <span class="tech-slug">procedural-wing-flutter-and-ghosting</span>
-              <span class="tech-category-pill">3D &amp; Spatial Web</span>
-            </div>
-            <h4>Procedural Wing Flutter &amp; Ghosting</h4>
-            <p>Luminance alpha thresholding on black-background textures, root hinge offsets, and 3-tier phase ghosting for zero-cost biological motion blur.</p>
-            <div class="tech-source">Source: Melli 3D Artistry</div>
-          </article>
-
-          <!-- 30. Scroll-Synchronized Flora Parallax -->
-          <article class="technique-card" data-category="scroll-animations">
-            <div class="tech-header">
-              <span class="tech-slug">scroll-synchronized-flora-parallax</span>
-              <span class="tech-category-pill">Scroll Kinematics</span>
-            </div>
-            <h4>Flora Parallax &amp; Theme Triage</h4>
-            <p>Decoupled velocity and rotational parallax on botanical diorama layers with dynamic viewport probe sampling to toggle dark/light theme on fixed UI chrome.</p>
-            <div class="tech-source">Source: Melli 3D Artistry</div>
-          </article>
-
-          <!-- 31. Model-Viewer Cursor Tilt & Forcefield Repulsion -->
-          <article class="technique-card" data-category="three-dimensional-web">
-            <div class="tech-header">
-              <span class="tech-slug">model-viewer-cursor-tilt-and-forcefield-repulsion</span>
-              <span class="tech-category-pill">3D &amp; Spatial Web</span>
-            </div>
-            <h4>Model-Viewer Cursor Tilt &amp; Forcefield Repulsion</h4>
-            <p>Real-time camera orbit tilt tracking mouse coordinates with 0.05 lerp smoothing coupled with radial vector repulsion field (r=400px, F=-80) deflecting floating micro-entities.</p>
-            <div class="tech-source">Source: Soda Flavor Chromatics</div>
-          </article>
-
-          <!-- 32. Shader-Warmed Texture Swap & Entity Implosion -->
-          <article class="technique-card" data-category="three-dimensional-web">
-            <div class="tech-header">
-              <span class="tech-slug">shader-warmed-texture-swap-and-entity-implosion</span>
-              <span class="tech-category-pill">3D &amp; Spatial Web</span>
-            </div>
-            <h4>Shader-Warmed Texture Swap &amp; Entity Implosion</h4>
-            <p>1-frame pre-render shader warm-up preventing GPU stalls on texture swaps, choreographed with 720° spin blur and inward scale-to-zero model implosion/explosion.</p>
-            <div class="tech-source">Source: Soda Flavor Chromatics</div>
-          </article>
-
-          <!-- 33. Three-Tier Depth-Layered Parallax Staging -->
-          <article class="technique-card" data-category="scroll-animations">
-            <div class="tech-header">
-              <span class="tech-slug">three-tier-depth-layered-parallax-staging</span>
-              <span class="tech-category-pill">Visual Composition</span>
-            </div>
-            <h4>Three-Tier Depth-Layered Parallax Staging</h4>
-            <p>Opposing depth parallax multipliers (FG +60px, BG -30px, Far -15px) orchestrating 2.5D visual depth around fixed 3D centerpieces without layout recalculation.</p>
-            <div class="tech-source">Source: Soda Flavor Chromatics</div>
-          </article>
-
-          <!-- 34. Curvature-Time-Dilated Circuit Trace Kinematics -->
-          <article class="technique-card" data-category="scroll-animations">
-            <div class="tech-header">
-              <span class="tech-slug">curvature-time-dilated-circuit-trace</span>
-              <span class="tech-category-pill">Kinematics &amp; Motion</span>
-            </div>
-            <h4>Curvature-Time-Dilated Circuit Trace Kinematics</h4>
-            <p>Non-linear velocity modulation along 2D/3D polylines derived from local curvature turn angles (braking into corners, accelerating along straights), paired with dual-gradient thermal filaments and marker shockwave flares.</p>
-            <div class="tech-source">Source: KIMI GRIDO1 Racing Systems</div>
-          </article>
-
-          <!-- 35. Packed-Delta Lattice Halftone Matrix -->
-          <article class="technique-card" data-category="performance-engineering">
-            <div class="tech-header">
-              <span class="tech-slug">packed-delta-lattice-halftone-matrix</span>
-              <span class="tech-category-pill">Performance &amp; Scale</span>
-            </div>
-            <h4>Packed-Delta Lattice Halftone Matrix &amp; Reticle</h4>
-            <p>Delta-compressed row/col string encoding for 8,000+ geometric coordinates with O(1) proximity queries, offscreen canvas baking, and interactive crosshair reticles squaring circular dots into dynamic chequerboards.</p>
-            <div class="tech-source">Source: KIMI GRIDO1 Racing Systems</div>
-          </article>
-
-          <!-- 36. Depth-Parallax Normal Relighting & Dissolve Burn -->
-          <article class="technique-card" data-category="three-dimensional-web">
-            <div class="tech-header">
-              <span class="tech-slug">depth-parallax-normal-relighting-burn</span>
-              <span class="tech-category-pill">3D &amp; Spatial Web</span>
-            </div>
-            <h4>Depth-Parallax Normal Relighting &amp; Dissolve Burn</h4>
-            <p>Single-quad UV depth map displacement with pointer-coupled Lambertian normal map relighting, combined with a height/noise procedural dissolution burn with luminous boundary edge emission.</p>
-            <div class="tech-source">Source: KIMI GRIDO1 Racing Systems</div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================================================================
-         6. CREATIVE CAPABILITIES (THE 36 AGENT SKILLS)
-         ========================================================================= -->
-    <section class="cwa-section capabilities-section" id="capabilities">
-      <div class="section-container">
-        <div class="section-badge-wrap">
-          <span class="section-kicker">36 AGENT SKILLS</span>
-          <h2 class="section-title">Engineered for Distinction</h2>
-          <p class="section-lead">
-            Seven unified pillars designed to break free from cookie-cutter AI templates and repetitive neon cards.
-          </p>
-        </div>
-
-        <div class="capabilities-grid">
-          <!-- Pillar 1 -->
-          <article class="capability-card cap-large">
-            <div class="card-meta">
-              <span class="cap-tag">PILLAR 01</span>
-              <span class="cap-status">Active</span>
-            </div>
-            <h3>Intelligent Art Direction</h3>
-            <p>
-              Autonomous creative direction that develops original visual concepts, typography pairings, color systems, and spatial compositions tailored to the specific brand personality rather than generic defaults.
+        <!-- Bento Metrics Grid -->
+        <div class="metrics-bento-grid reveal-group">
+          <!-- Metric 1: 36 Skills -->
+          <div class="bento-metric-card reveal-item">
+            <div class="bento-metric-num">36</div>
+            <div class="bento-metric-title">Specialized Agent Skills</div>
+            <p class="bento-metric-desc">
+              Standardized skill packages covering Creative Direction, Liquid Glass materials, Spring Kinematics, Three.js 3D WebGL, Core Web Vitals, and Visual QA.
             </p>
-            <div class="cap-pills">
-              <span>Typography Scales</span>
-              <span>Visual Composition</span>
-              <span>Editorial Balance</span>
-              <span>Content Voice</span>
+            <div class="bento-tag-pills">
+              <span>Art Direction</span>
+              <span>Motion Physics</span>
+              <span>3D WebGL</span>
+              <span>Visual QA</span>
             </div>
-          </article>
-
-          <!-- Pillar 2 -->
-          <article class="capability-card">
-            <div class="card-meta">
-              <span class="cap-tag">PILLAR 02</span>
-              <span class="cap-status">Active</span>
-            </div>
-            <h3>Advanced Motion Design</h3>
-            <p>
-              Kinematic spring curves, magnetic button tracking, directional hover overlays, sliding split-labels, and chapter-based pinned scroll narratives with zero layout thrashing.
-            </p>
-            <div class="cap-pills">
-              <span>Damped Springs</span>
-              <span>Scroll Scrubbing</span>
-              <span>Zero-Thrash Accordions</span>
-            </div>
-          </article>
-
-          <!-- Pillar 3 -->
-          <article class="capability-card">
-            <div class="card-meta">
-              <span class="cap-tag">PILLAR 03</span>
-              <span class="cap-status">Active</span>
-            </div>
-            <h3>Three-Dimensional Experiences</h3>
-            <p>
-              Lightweight Three.js scenes, interactive canvas wireframes, orthographic product staging, camera choreography, and procedural fragment shaders with automatic fallback.
-            </p>
-            <div class="cap-pills">
-              <span>Three.js</span>
-              <span>GLTF Compression</span>
-              <span>Camera Choreography</span>
-            </div>
-          </article>
-
-          <!-- Pillar 4 -->
-          <article class="capability-card">
-            <div class="card-meta">
-              <span class="cap-tag">PILLAR 04</span>
-              <span class="cap-status">Active</span>
-            </div>
-            <h3>Refined Liquid Glass</h3>
-            <p>
-              Physically believable frosted optics featuring 20px blur, 140% saturation compensation, delicate 0.5px hairline specular borders, and restrained pointer tilt without neon bloom.
-            </p>
-            <div class="cap-pills">
-              <span>Specular Highlights</span>
-              <span>Optical Refraction</span>
-              <span>No Neon Bloom</span>
-            </div>
-          </article>
-
-          <!-- Pillar 5 -->
-          <article class="capability-card">
-            <div class="card-meta">
-              <span class="cap-tag">PILLAR 05</span>
-              <span class="cap-status">Active</span>
-            </div>
-            <h3>Responsive Architecture</h3>
-            <p>
-              Fluid viewport clamp() formulas, CSS container queries, ergonomic touch targets (≥44px), and adaptive navigation layouts that effortlessly scale across mobile, tablet, and ultra-wide screens.
-            </p>
-            <div class="cap-pills">
-              <span>Fluid Typography</span>
-              <span>Container Queries</span>
-              <span>Touch Optimization</span>
-            </div>
-          </article>
-
-          <!-- Pillar 6 -->
-          <article class="capability-card">
-            <div class="card-meta">
-              <span class="cap-tag">PILLAR 06</span>
-              <span class="cap-status">Active</span>
-            </div>
-            <h3>Performance Engineering</h3>
-            <p>
-              Built-in Core Web Vitals telemetry, GPU-composited translate3d animations, debounced event handlers, efficient requestAnimationFrame loops, and automatic prefers-reduced-motion compliance.
-            </p>
-            <div class="cap-pills">
-              <span>LCP ≤ 2.5s</span>
-              <span>INP ≤ 200ms</span>
-              <span>CLS ≤ 0.1</span>
-            </div>
-          </article>
-
-          <!-- Pillar 7 -->
-          <article class="capability-card cap-wide">
-            <div class="card-meta">
-              <span class="cap-tag">PILLAR 07</span>
-              <span class="cap-status">Active</span>
-            </div>
-            <h3>Persistent Knowledge Ingestion &amp; Skill Expansion</h3>
-            <p>
-              A repository-based knowledge engine that analyzes external reference prompts, extracts structured engineering techniques, prevents duplicate bloat, detects policy conflicts, and continuously expands your agent's practical capabilities.
-            </p>
-            <div class="cap-pills">
-              <span>Safe Prompt Sanitization</span>
-              <span>Conflict Detection</span>
-              <span>Master Indexing</span>
-              <span>Selective Retrieval</span>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================================================================
-         7. DESIGN STYLES SHOWCASE
-         ========================================================================= -->
-    <section class="cwa-section styles-section" id="styles">
-      <div class="section-container">
-        <div class="section-badge-wrap">
-          <span class="section-kicker">AESTHETIC INTELLIGENCE</span>
-          <h2 class="section-title">Diverse Design Language</h2>
-          <p class="section-lead">
-            The agent draws upon a curated catalog of 42+ distinctive aesthetics, adapting visual composition to match your project's authentic brand DNA.
-          </p>
-        </div>
-
-        <div class="style-showcase-panel glass-card">
-          <div class="style-tabs" role="tablist">
-            <button class="style-tab active" data-style="luxury" role="tab" aria-selected="true">Luxury Editorial</button>
-            <button class="style-tab" data-style="minimal" role="tab" aria-selected="false">Swiss Modernist</button>
-            <button class="style-tab" data-style="cinematic" role="tab" aria-selected="false">Cinematic Product</button>
-            <button class="style-tab" data-style="bento" role="tab" aria-selected="false">Experimental Bento</button>
-            <button class="style-tab" data-style="telemetry" role="tab" aria-selected="false">Obsidian Telemetry</button>
-            <button class="style-tab" data-style="glass" role="tab" aria-selected="false">Refined Liquid Glass</button>
           </div>
 
-          <div class="style-preview-content" id="style-preview-body">
-            <!-- Dynamically populated via app.js -->
+          <!-- Metric 2: 36 Techniques -->
+          <div class="bento-metric-card reveal-item">
+            <div class="bento-metric-num">36</div>
+            <div class="bento-metric-title">Learned Architectural Techniques</div>
+            <p class="bento-metric-desc">
+              Curated engineering patterns extracted from award-winning digital experiences: Curvature Traces, Delta-Packed Halftones, Sticky Stacks, and Normal Relighting.
+            </p>
+            <div class="bento-tag-pills">
+              <span>Curvature Trace</span>
+              <span>Delta Halftone</span>
+              <span>Sticky Stack</span>
+              <span>Normal Relighting</span>
+            </div>
+          </div>
+
+          <!-- Metric 3: 4 Templates -->
+          <div class="bento-metric-card reveal-item">
+            <div class="bento-metric-num">4</div>
+            <div class="bento-metric-title">Master Production Templates</div>
+            <p class="bento-metric-desc">
+              Full-featured, verified standalone single-file deliverables demonstrating Three.js, Google Model-Viewer, Lenis smooth scrolling, and bespoke kinematics.
+            </p>
+            <div class="bento-tag-pills">
+              <span>KIMI F1</span>
+              <span>Soda 3D</span>
+              <span>Melli Honeybee</span>
+              <span>Hyper-GT</span>
+            </div>
+          </div>
+
+          <!-- Metric 4: Zero Glow Policy -->
+          <div class="bento-metric-card reveal-item">
+            <div class="bento-metric-num">0</div>
+            <div class="bento-metric-title">Cheap Neon Glow Policy</div>
+            <p class="bento-metric-desc">
+              Architectural restraint eliminating childish AI aesthetics (radioactive purple blooms and blurry cards) in favor of obsidian surfaces, tactile contrast, and 0.5px hairlines.
+            </p>
+            <div class="bento-tag-pills">
+              <span>Obsidian Surfaces</span>
+              <span>Hairline Borders</span>
+              <span>High Contrast</span>
+              <span>Quiet Luxury</span>
+            </div>
+          </div>
+
+          <!-- Metric 5: 100% Local & Free -->
+          <div class="bento-metric-card reveal-item bento-wide">
+            <div class="bento-split-content">
+              <div>
+                <div class="bento-metric-num">100%</div>
+                <div class="bento-metric-title">Local Execution &amp; Zero Cloud API Fees</div>
+                <p class="bento-metric-desc">
+                  Creative Web Architect runs entirely on your local file system under the open-source MIT License. No proprietary tokens, no external telemetry, and no lock-in.
+                </p>
+              </div>
+              <div class="bento-action-wrap">
+                <a href="#download-setup" class="cwa-btn btn-primary">Initialize Folder →</a>
+                <span class="bento-subtext">MIT Licensed • 100% Free Forever</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- =========================================================================
-         8. REAL-WORLD PRODUCTION TEMPLATES & EXAMPLES
+         6. REAL-WORLD PRODUCTION TEMPLATES & EXAMPLES
          ========================================================================= -->
     <section class="cwa-section templates-section" id="templates">
       <div class="section-container">
-        <div class="section-badge-wrap">
+        <div class="section-badge-wrap reveal-item">
           <span class="section-kicker">VERIFIED DELIVERABLES</span>
           <h2 class="section-title">Production Templates &amp; Laboratories</h2>
           <p class="section-lead">
-            Explore working implementations built with the Creative Web Architect toolkit.
+            Explore working standalone implementations built with the Creative Web Architect toolkit.
           </p>
         </div>
 
-        <div class="production-grid">
-          <!-- Template 1 -->
-          <article class="prod-card">
+        <div class="production-grid reveal-group">
+          <!-- Template 1: KIMI — GRIDO1 Racing Systems -->
+          <article class="prod-card reveal-item highlight-card">
             <div class="prod-header">
-              <span class="prod-category">Luxury Automotive</span>
-              <span class="prod-badge">Working Template</span>
+              <span class="prod-category">F1 Driver Experience</span>
+              <span class="prod-badge">Featured Standalone</span>
             </div>
-            <h4>Aether Apex Hyper-GT</h4>
-            <p>Interactive 3D wireframe vehicle canvas, live telemetry counters, bespoke colorway switcher, and Web Audio API electric propulsion acoustic simulator.</p>
+            <h4>KIMI — GRIDO1 Racing Systems</h4>
+            <p>Auteur F1 driver platform for Kimi Antonelli featuring sticky stack receding (0.9 scale, 0.55 black shade), chequered flag noise dissolves, curvature-braked 6-second circuit trace, and 8,004-dot halftone matrix.</p>
             <div class="prod-footer">
-              <a href="../../templates/luxury-automotive/index.html" class="cwa-btn btn-ghost" target="_blank" rel="noopener noreferrer">Launch Experience ↗</a>
-              <span class="prod-tech">HTML5 • Canvas • Web Audio</span>
+              <a href="../../templates/kimi-racing-systems/index.html" class="cwa-btn btn-primary" target="_blank" rel="noopener noreferrer">Launch Experience ↗</a>
+              <span class="prod-tech">Three.js 0.185 • Lenis • Kinematics</span>
             </div>
           </article>
 
-          <!-- Template 2 -->
-          <article class="prod-card">
-            <div class="prod-header">
-              <span class="prod-category">Infrastructure SaaS</span>
-              <span class="prod-badge">Working Template</span>
-            </div>
-            <h4>Nebula AI Telemetry</h4>
-            <p>Real-time distributed GPU cluster telemetry dashboard with live Canvas throughput graphs, floating Liquid Glass dock, and Cmd+K command palette.</p>
-            <div class="prod-footer">
-              <a href="../../templates/modern-dashboard/index.html" class="cwa-btn btn-ghost" target="_blank" rel="noopener noreferrer">Launch Experience ↗</a>
-              <span class="prod-tech">Canvas 2D • Keyboard UX</span>
-            </div>
-          </article>
-
-          <!-- Template 3 -->
-          <article class="prod-card">
-            <div class="prod-header">
-              <span class="prod-category">Creative Portfolio</span>
-              <span class="prod-badge">Working Template</span>
-            </div>
-            <h4>Kaelen Voss Studio</h4>
-            <p>Spring-smoothed custom mouse follower, filterable archive grid, performance-driven case study modals, and direct contact drawer.</p>
-            <div class="prod-footer">
-              <a href="../../templates/creative-portfolio/index.html" class="cwa-btn btn-ghost" target="_blank" rel="noopener noreferrer">Launch Experience ↗</a>
-              <span class="prod-tech">Liquid Glass • Spring Physics</span>
-            </div>
-          </article>
-
-          <!-- Template 4: Melli 3D Artistry -->
-          <article class="prod-card">
-            <div class="prod-header">
-              <span class="prod-category">3D Motion &amp; Artistry</span>
-              <span class="prod-badge">Working Template</span>
-            </div>
-            <h4>Melli — Master 3D Artistry</h4>
-            <p>Scroll-driven photoreal 3D bumblebee flight path with velocity-coupled banking physics, procedural luminance-alpha wing flutter, and botanical diorama parallax.</p>
-            <div class="prod-footer">
-              <a href="../../templates/melli-master-3d-artistry/index.html" class="cwa-btn btn-ghost" target="_blank" rel="noopener noreferrer">Launch Experience ↗</a>
-              <span class="prod-tech">Three.js • GLTF • Kinematics</span>
-            </div>
-          </article>
-
-          <!-- Template 5: Diet Soda Flavor Chromatics -->
-          <article class="prod-card">
+          <!-- Template 2: Diet Soda Flavor Chromatics -->
+          <article class="prod-card reveal-item">
             <div class="prod-header">
               <span class="prod-category">3D Product Experience</span>
               <span class="prod-badge">Working Template</span>
@@ -999,31 +488,31 @@ node /path/to/creative-web-architect/packages/cli/dist/index.js init .</code></p
             </div>
           </article>
 
-          <!-- Template 6: KIMI — GRIDO1 Racing Systems -->
-          <article class="prod-card">
+          <!-- Template 3: Melli 3D Artistry -->
+          <article class="prod-card reveal-item">
             <div class="prod-header">
-              <span class="prod-category">F1 Driver Experience</span>
+              <span class="prod-category">3D Motion &amp; Artistry</span>
               <span class="prod-badge">Working Template</span>
             </div>
-            <h4>KIMI — GRIDO1 Racing Systems</h4>
-            <p>Auteur F1 driver platform for Kimi Antonelli featuring sticky stack receding (0.9 scale, 0.55 black shade), chequered flag noise dissolves, curvature-braked 6-second circuit trace, and 8,004-dot halftone matrix.</p>
+            <h4>Melli — Master 3D Artistry</h4>
+            <p>Scroll-driven photoreal 3D bumblebee flight path with velocity-coupled banking physics, procedural luminance-alpha wing flutter, and botanical diorama parallax.</p>
             <div class="prod-footer">
-              <a href="../../templates/kimi-racing-systems/index.html" class="cwa-btn btn-ghost" target="_blank" rel="noopener noreferrer">Launch Experience ↗</a>
-              <span class="prod-tech">Three.js • Lenis • Kinematics</span>
+              <a href="../../templates/melli-master-3d-artistry/index.html" class="cwa-btn btn-ghost" target="_blank" rel="noopener noreferrer">Launch Experience ↗</a>
+              <span class="prod-tech">Three.js 0.160 • GLTF • Kinematics</span>
             </div>
           </article>
 
-          <!-- Laboratory 7 -->
-          <article class="prod-card highlight-card">
+          <!-- Template 4: Aether Apex Hyper-GT -->
+          <article class="prod-card reveal-item">
             <div class="prod-header">
-              <span class="prod-category">Interactive Laboratory</span>
-              <span class="prod-badge">Interactive Suite</span>
+              <span class="prod-category">Luxury Automotive</span>
+              <span class="prod-badge">Working Template</span>
             </div>
-            <h4>Motion Design Laboratory</h4>
-            <p>Interactive testing suite demonstrating magnetic buttons, direction-aware hover, fluid segmented tabs, 60 FPS live telemetry, and No-Glow horology.</p>
+            <h4>Aether Apex Hyper-GT</h4>
+            <p>Interactive 3D wireframe vehicle canvas, live telemetry counters, bespoke colorway switcher, and Web Audio API electric propulsion acoustic simulator.</p>
             <div class="prod-footer">
-              <a href="../motion-laboratory/index.html" class="cwa-btn btn-primary" target="_blank" rel="noopener noreferrer">Open Laboratory ↗</a>
-              <span class="prod-tech">Live Physics • 6 Demos</span>
+              <a href="../../templates/luxury-automotive/index.html" class="cwa-btn btn-ghost" target="_blank" rel="noopener noreferrer">Launch Experience ↗</a>
+              <span class="prod-tech">HTML5 • Canvas • Web Audio</span>
             </div>
           </article>
         </div>
@@ -1031,11 +520,11 @@ node /path/to/creative-web-architect/packages/cli/dist/index.js init .</code></p
     </section>
 
     <!-- =========================================================================
-         9. FREQUENTLY ASKED QUESTIONS (FAQ)
+         7. FREQUENTLY ASKED QUESTIONS (FAQ)
          ========================================================================= -->
     <section class="cwa-section faq-section" id="faq">
       <div class="section-container">
-        <div class="section-badge-wrap">
+        <div class="section-badge-wrap reveal-item">
           <span class="section-kicker">QUESTIONS &amp; ANSWERS</span>
           <h2 class="section-title">Frequently Asked Questions</h2>
           <p class="section-lead">
@@ -1043,14 +532,14 @@ node /path/to/creative-web-architect/packages/cli/dist/index.js init .</code></p
           </p>
         </div>
 
-        <div class="faq-accordion" id="faq-list">
+        <div class="faq-accordion reveal-item" id="faq-list">
           <div class="faq-item">
             <button class="faq-trigger" aria-expanded="true">
               <span>What is Creative Web Architect?</span>
               <span class="faq-chevron">▼</span>
             </button>
             <div class="faq-content">
-              <p>Creative Web Architect is an open-source AI creative engineering toolkit created by Anas Hashim. It equips compatible AI coding environments with autonomous art direction, 36 modular Agent Skills, motion physics, Liquid Glass components, and performance engineering rules.</p>
+              <p>Creative Web Architect is an open-source AI creative engineering toolkit created by Anas Hashim. It equips compatible AI coding environments with autonomous art direction, 36 modular Agent Skills, motion physics, and 36 learned architectural techniques.</p>
             </div>
           </div>
 
@@ -1060,7 +549,7 @@ node /path/to/creative-web-architect/packages/cli/dist/index.js init .</code></p
               <span class="faq-chevron">▼</span>
             </button>
             <div class="faq-content">
-              <p>Simply clone this repository from GitHub once and run <code>.\cwa.cmd init "C:\Path\To\YourProject"</code> on Windows (or <code>./cwa init /path/to/project</code> on Mac/Linux). It automatically injects all 36 skills, all 27 learned techniques, and the master AGENTS.md / GEMINI.md directives into that folder in seconds.</p>
+              <p>Simply clone this repository from GitHub once, build it, and link it via <code>npm link packages/cli</code>. Then in any directory, run <code>cwa init "C:\Path\To\YourProject"</code>. It automatically injects all 36 skills, all 36 learned techniques, and the master AGENTS.md / GEMINI.md directives into that folder in seconds.</p>
             </div>
           </div>
 
@@ -1100,7 +589,7 @@ node /path/to/creative-web-architect/packages/cli/dist/index.js init .</code></p
               <span class="faq-chevron">▼</span>
             </button>
             <div class="faq-content">
-              <p>The CWA toolkit itself runs entirely locally on your machine and does not charge for or require an extra API key. It leverages the AI coding tool or CLI you already use.</p>
+              <p>The CWA toolkit itself runs entirely locally on your machine and does not charge for or require an extra API key. It leverages the AI coding tool (Antigravity, Cursor, Claude Code, Gemini CLI) you already use.</p>
             </div>
           </div>
         </div>
@@ -1109,7 +598,7 @@ node /path/to/creative-web-architect/packages/cli/dist/index.js init .</code></p
   </main>
 
   <!-- =========================================================================
-       10. OFFICIAL FOOTER WITH AUTHOR & COPYRIGHT ATTRIBUTION
+       8. OFFICIAL FOOTER WITH AUTHOR & COPYRIGHT ATTRIBUTION
        ========================================================================= -->
   <footer class="cwa-footer">
     <div class="footer-container">
@@ -1122,25 +611,25 @@ node /path/to/creative-web-architect/packages/cli/dist/index.js init .</code></p
 
         <div class="footer-nav-col">
           <h5>Toolkit</h5>
-          <a href="#about">About the Agent</a>
-          <a href="#install">Download &amp; CLI</a>
-          <a href="#techniques">27 Techniques</a>
-          <a href="#capabilities">36 Skills</a>
+          <a href="#overview">System Overview</a>
+          <a href="#download-setup">Download &amp; CLI</a>
+          <a href="#architecture">36 Skills &amp; Techniques</a>
+          <a href="#templates">Production Templates</a>
         </div>
 
         <div class="footer-nav-col">
           <h5>Resources</h5>
-          <a href="#styles">Design Styles</a>
-          <a href="#templates">Templates</a>
           <a href="#faq">Frequently Asked Questions</a>
-          <a href="../motion-laboratory/index.html" target="_blank">Motion Laboratory</a>
+          <a href="../../templates/kimi-racing-systems/index.html" target="_blank">KIMI F1 Template</a>
+          <a href="../../templates/soda-flavor-chromatics/index.html" target="_blank">Soda 3D Template</a>
+          <a href="../../templates/melli-master-3d-artistry/index.html" target="_blank">Melli 3D Template</a>
         </div>
 
         <div class="footer-nav-col">
           <h5>Open Source</h5>
           <a href="https://github.com/Avestroxel/creative-web-architect" target="_blank" rel="noopener noreferrer">GitHub Repository ↗</a>
           <a href="https://github.com/Avestroxel/creative-web-architect/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">MIT License ↗</a>
-          <a href="https://github.com/Avestroxel/creative-web-architect/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">Contributing Guide ↗</a>
+          <a href="https://github.com/Avestroxel/creative-web-architect/blob/main/README.md" target="_blank" rel="noopener noreferrer">Documentation ↗</a>
         </div>
       </div>
 
