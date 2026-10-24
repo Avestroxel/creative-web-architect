@@ -154,7 +154,7 @@ Always check dependency compatibility before installing.
 
 ---
 
-## 41 LEARNED ARCHITECTURAL TECHNIQUES (INSTALLED IN KNOWLEDGE/)
+## 42 LEARNED ARCHITECTURAL TECHNIQUES (INSTALLED IN KNOWLEDGE/)
 
 In every project, you MUST inspect and autonomously apply 2 to 4 complementary techniques from your local `knowledge/index.json`:
 
@@ -199,5 +199,6 @@ In every project, you MUST inspect and autonomously apply 2 to 4 complementary t
 39. **Chiaroscuro Sculptural Orbit, Molten Liquid-Bronze Wave Shader & Forge Spark Turbulence** (`chiaroscuro-bronze-wave-shader-and-spark-turbulence`): Cinematic 3D WebGL stage combining 360° scroll-driven camera orbit around an auto-centered, noble bronze sculpture, a camera-parented liquid-bronze GLSL wave shader migrating from molten copper to sapphire blue, and 450 velocity-turbulent additive forge spark particles.
 40. **Adaptive Rem Grid with Physics-Gated Reveals & Ghost Typography** (`adaptive-rem-grid-with-physics-gated-reveals-and-ghost-typography`): Comprehensive responsive architecture pairing a dual-directional viewport-relative rem grid with a curtain-sliding physics loader, Lenis smooth scroll-lock integration, stacked card container insets, spring-driven text clip-masks, and multi-axis ghost typography with slide-triggered re-reveals.
 41. **Single-Viewport Atmospheric Video Bleeding, Dual-Entity Lagging Cursor & Masked Blur-Up Reveals** (`single-viewport-video-bleed-and-dual-cursor-kinematics`): Single-screen non-scrolling full-viewport layout (overflow: hidden), looping video backdrop faded with inverted top gradient, un-blurred dual-masked typography reveals (word slide-up and letter slide-in from left), pulsing neon-green beacon dot (#39FF14), and dual-coordinate cursor kinematics (instant ring + 0.08 LERP glassmorphism pill with button-hover suppression).
+42. **Hyper-Tactile Button Foundry: Biometric, Gooey SVG, Neumorphic Stamp & Multi-Axis CSS Kinematics** (`hyper-tactile-button-foundry-and-micro-physics`): Comprehensive suite of 24 hyper-tactile interaction architectures spanning biometric fingerprint scanning with container morphing, organic SVG gooey matrix filters, 8-tier multi-box-shadow neumorphic squish, single-element pure CSS 3D isometric polygon bevels, CSS Motion Path rotary corner brackets, dual-wave liquid meniscuses, difference blend inversion toggles, and cursor-tracked parallax glassmorphism.
 
 

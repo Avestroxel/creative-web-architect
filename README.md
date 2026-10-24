@@ -54,9 +54,9 @@ Open your project folder in **Antigravity**, **Cursor**, or **Claude Code**, and
 | Dimension | Count / Policy | Scope & Capability |
 | :--- | :--- | :--- |
 | **Specialized Skills** | **36 Skills** | Creative direction, Liquid Glass, spring kinematics, Three.js 3D, and Core Web Vitals QA. |
-| **Learned Techniques** | **41 Techniques** | Mathematically indexed patterns extracted from award-winning digital experiences. |
+| **Learned Techniques** | **42 Techniques** | Mathematically indexed patterns extracted from award-winning digital experiences. |
 | **Archetype Matrix** | **10 Archetypes** | Automated classification engine mapping any brief to complementary techniques & palettes. |
-| **Production Templates** | **8 Templates** | Standalone single-file verified deliverables (Loopstack, Baseline Tennis, Laocoön Bronze, Lumora Studio, KIMI F1, Soda 3D, Melli Honeybee, Hyper-GT). |
+| **Production Templates** | **9 Templates** | Standalone single-file verified deliverables (Tactile Button Laboratory, Loopstack, Baseline Tennis, Laocoön Bronze, Lumora Studio, KIMI F1, Soda 3D, Melli Honeybee, Hyper-GT). |
 | **Lighting Policy** | **Zero-Glow** | Eliminates cheap purple neon halos in favor of matte obsidian, hairline contrast, and quiet luxury. |
 | **Runtime & License** | **100% Local / MIT** | Free, open source, zero external API keys required, running entirely on your local machine. |
 
@@ -77,9 +77,9 @@ All 36 skills are installed in `.agents/skills/<skill-name>/SKILL.md`:
 
 ---
 
-## 39 Learned Architectural Techniques (Summary)
+## 42 Learned Architectural Techniques (Summary)
 
-All 39 techniques are indexed in `knowledge/index.json` and detailed in `knowledge/learned-techniques/`:
+All 42 techniques are indexed in `knowledge/index.json` and detailed in `knowledge/learned-techniques/`:
 
 | Index | Technique Slug | Core Engineering Focus |
 | :---: | :--- | :--- |
@@ -124,19 +124,21 @@ All 39 techniques are indexed in `knowledge/index.json` and detailed in `knowled
 | **39** | `chiaroscuro-bronze-wave-shader-and-spark-turbulence` | Cinematic 3D WebGL stage combining 360° scroll camera orbit around bronze sculpture, molten GLSL wave shader, and 450 forge sparks. |
 | **40** | `adaptive-rem-grid-with-physics-gated-reveals-and-ghost-typography` | Dual-directional adaptive rem grid, curtain-sliding physics loader, Lenis scroll lock, and multi-axis ghost typography. |
 | **41** | `single-viewport-video-bleed-and-dual-cursor-kinematics` | Single-screen full-viewport lock, looping video bleeding into black, dual-entity LERP cursor, and un-blur masked reveals. |
+| **42** | `hyper-tactile-button-foundry-and-micro-physics` | Comprehensive 24-architecture suite: biometric scan morphing, organic gooey SVG filters, 8-tier neumorphic stamp, and CSS Motion Path rotary brackets. |
 
 ---
 
 ## Standalone Master Templates
 
-1. **Loopstack — Footer Hero Landing** (`templates/loopstack-footer-hero/index.html`): Pure CSS/JS single-viewport moment, looping flower video with soft top gradient bleed, dual-entity LERP cursor with glassmorphism pill, word-by-word headline un-blur, and 21.9vw letter-by-letter slide-in wordmark.
-2. **Baseline — Tennis Club & Academy** (`templates/baseline-tennis-club/index.html`): Lenis smooth-scroll, curtain physics loader, adaptive rem grid, 4-word ghost typography with opposing X parallax, coach & collection carousels, spring micro-interactions, contact modal.
-3. **Laocoön — Bronze and Time** (`templates/laocoon-bronze-and-time/index.html`): Three.js 0.160, 360° camera orbit, liquid-bronze to sapphire GLSL wave shader, 450 forge sparks, per-character blur-up reveals, 900vh scroll.
-4. **Lumora — Design & Engineering Studio** (`templates/lumora-design-studio/index.html`): Lenis smooth-scroll, liquid dual-image canvas reveal, rem adaptive grid, 3-digit intro loader, Onest typography, interactive portfolio & request modal.
-5. **KIMI — GRIDO1 Racing Systems** (`templates/kimi-racing-systems/index.html`): Three.js 0.185 + Lenis, Curvature-dilated circuit trace, 8,004-dot halftone matrix, sticky stack recede (scale 0.9, shade 0.55).
-6. **Diet Soda — Flavor Chromatics** (`templates/soda-flavor-chromatics/index.html`): Google model-viewer 3D, cursor tilt, 400px forcefield repulsion, shader-warmed texture swaps.
-7. **Melli — Master 3D Artistry** (`templates/melli-master-3d-artistry/index.html`): Three.js 0.160 bumblebee, flight path kinematics, alpha threshold wing flutter, diorama parallax.
-8. **Aether Apex Hyper-GT** (`templates/luxury-automotive/index.html`): Interactive 3D vehicle wireframe canvas, live telemetry, electric propulsion Web Audio.
+1. **Tactile Button Laboratory** (`templates/tactile-button-laboratory/index.html`): 24 interactive button architectures categorized into Biometrics, 3D Skeuomorphic Extrusions, Gooey SVG Filters, Conic Shimmer Engines, and Kinetic Multi-Layer Wipes with live click feedback and dark/light switching.
+2. **Loopstack — Footer Hero Landing** (`templates/loopstack-footer-hero/index.html`): Pure CSS/JS single-viewport moment, looping flower video with soft top gradient bleed, dual-entity LERP cursor with glassmorphism pill, word-by-word headline un-blur, and 21.9vw letter-by-letter slide-in wordmark.
+3. **Baseline — Tennis Club & Academy** (`templates/baseline-tennis-club/index.html`): Lenis smooth-scroll, curtain physics loader, adaptive rem grid, 4-word ghost typography with opposing X parallax, coach & collection carousels, spring micro-interactions, contact modal.
+4. **Laocoön — Bronze and Time** (`templates/laocoon-bronze-and-time/index.html`): Three.js 0.160, 360° camera orbit, liquid-bronze to sapphire GLSL wave shader, 450 forge sparks, per-character blur-up reveals, 900vh scroll.
+5. **Lumora — Design & Engineering Studio** (`templates/lumora-design-studio/index.html`): Lenis smooth-scroll, liquid dual-image canvas reveal, rem adaptive grid, 3-digit intro loader, Onest typography, interactive portfolio & request modal.
+6. **KIMI — GRIDO1 Racing Systems** (`templates/kimi-racing-systems/index.html`): Three.js 0.185 + Lenis, Curvature-dilated circuit trace, 8,004-dot halftone matrix, sticky stack recede (scale 0.9, shade 0.55).
+7. **Diet Soda — Flavor Chromatics** (`templates/soda-flavor-chromatics/index.html`): Google model-viewer 3D, cursor tilt, 400px forcefield repulsion, shader-warmed texture swaps.
+8. **Melli — Master 3D Artistry** (`templates/melli-master-3d-artistry/index.html`): Three.js 0.160 bumblebee, flight path kinematics, alpha threshold wing flutter, diorama parallax.
+9. **Aether Apex Hyper-GT** (`templates/luxury-automotive/index.html`): Interactive 3D vehicle wireframe canvas, live telemetry, electric propulsion Web Audio.
 
 ---
 

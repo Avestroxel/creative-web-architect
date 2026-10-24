@@ -1,0 +1,2399 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tactile Button Laboratory // Hyper-Kinematic Interaction Foundry</title>
+  <meta name="description" content="24 responsive, hardware-accelerated button architectures spanning Biometrics, 3D Skeuomorphic Extrusions, Gooey SVG Filters, Conic Shimmer Engines, and Kinetic Multi-Layer Wipes.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@500;700;900&family=Montserrat:wght@500;700;800&family=Righteous&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* =========================================================================
+       LABORATORY SYSTEM DESIGN TOKENS & RESET
+       ========================================================================= */
+    :root {
+      --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: "Space Mono", monospace;
+      --bg-lab: #08090C;
+      --bg-panel: #101218;
+      --bg-panel-border: rgba(255, 255, 255, 0.08);
+      --text-main: #F4F6F9;
+      --text-muted: #8E96A4;
+      --accent-cyan: #00F2FE;
+      --accent-green: #39FF14;
+      --stage-bg: #151821;
+      --stage-border: rgba(255, 255, 255, 0.06);
+      --card-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.6);
+      --ease-spring: cubic-bezier(0.25, 1, 0.5, 1);
+      --spring-bouncy: cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    [data-theme="light"] {
+      --bg-lab: #F1F4F9;
+      --bg-panel: #FFFFFF;
+      --bg-panel-border: rgba(0, 0, 0, 0.08);
+      --text-main: #14171F;
+      --text-muted: #626978;
+      --accent-cyan: #0284C7;
+      --accent-green: #15803D;
+      --stage-bg: #E8ECF3;
+      --stage-border: rgba(0, 0, 0, 0.08);
+      --card-shadow: 0 12px 30px -8px rgba(0, 0, 0, 0.07);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-lab);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      min-height: 100vh;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      transition: background-color 0.4s var(--ease-spring), color 0.4s var(--ease-spring);
+      overflow-x: hidden;
+      padding-bottom: 6rem;
+    }
+
+    /* Ambient background grid */
+    .lab-grid-bg {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.35;
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    }
+
+    [data-theme="light"] .lab-grid-bg {
+      opacity: 0.6;
+      background-image: 
+        linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+    }
+
+    /* Top HUD Header */
+    .lab-hud {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      background: color-mix(in srgb, var(--bg-lab) 80%, transparent);
+      border-bottom: 1px solid var(--bg-panel-border);
+      padding: 1rem 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .hud-branding {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .hud-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.3rem 0.65rem;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-radius: 999px;
+      background: rgba(0, 242, 254, 0.1);
+      color: var(--accent-cyan);
+      border: 1px solid rgba(0, 242, 254, 0.3);
+    }
+
+    .hud-badge::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent-cyan);
+      box-shadow: 0 0 8px var(--accent-cyan);
+    }
+
+    .hud-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+    }
+
+    .hud-meta {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .hud-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .hud-btn {
+      appearance: none;
+      border: 1px solid var(--bg-panel-border);
+      background: var(--bg-panel);
+      color: var(--text-main);
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s ease;
+    }
+
+    .hud-btn:hover {
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+      transform: translateY(-1px);
+    }
+
+    /* Filter Navigation */
+    .lab-filter-bar {
+      position: relative;
+      z-index: 10;
+      max-width: 1400px;
+      margin: 2rem auto 0;
+      padding: 0 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .filter-pill {
+      appearance: none;
+      background: var(--bg-panel);
+      border: 1px solid var(--bg-panel-border);
+      color: var(--text-muted);
+      padding: 0.5rem 1.15rem;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .filter-pill:hover {
+      color: var(--text-main);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .filter-pill.active {
+      background: var(--text-main);
+      color: var(--bg-lab);
+      border-color: var(--text-main);
+    }
+
+    /* Main Grid */
+    .lab-container {
+      position: relative;
+      z-index: 10;
+      max-width: 1400px;
+      margin: 2.5rem auto 0;
+      padding: 0 2rem;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+      gap: 2rem;
+    }
+
+    @media (max-width: 480px) {
+      .cards-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Card Wrapper */
+    .button-card {
+      background: var(--bg-panel);
+      border: 1px solid var(--bg-panel-border);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s var(--ease-spring), border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .button-card:hover {
+      border-color: rgba(0, 242, 254, 0.35);
+      transform: translateY(-3px);
+      box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.7);
+    }
+
+    .card-header {
+      padding: 1.25rem 1.5rem 0.85rem;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      border-bottom: 1px solid var(--bg-panel-border);
+    }
+
+    .card-title-group h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .card-idx {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--accent-cyan);
+      opacity: 0.85;
+    }
+
+    .card-category-tag {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+    }
+
+    /* Stage Area for Button Mount */
+    .card-stage {
+      flex: 1;
+      min-height: 220px;
+      background: var(--stage-bg);
+      border-bottom: 1px solid var(--stage-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2.5rem 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Stage specific theming overrides if a button strictly requires light or dark canvas */
+    .card-stage.force-dark {
+      background: #0D1117 !important;
+      color: #FFFFFF;
+    }
+
+    .card-stage.force-light {
+      background: #E5E9F0 !important;
+      color: #111111;
+    }
+
+    .card-stage.force-black {
+      background: #000000 !important;
+      color: #FFFFFF;
+    }
+
+    .card-stage.force-purple {
+      background: #250B35 !important;
+      color: #FFFFFF;
+    }
+
+    .card-footer {
+      padding: 1rem 1.5rem;
+      background: color-mix(in srgb, var(--bg-panel) 90%, black 10%);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .card-desc {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    .inspect-btn {
+      appearance: none;
+      border: 1px solid var(--bg-panel-border);
+      background: transparent;
+      color: var(--text-main);
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      padding: 0.35rem 0.75rem;
+      border-radius: 6px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+
+    .inspect-btn:hover {
+      background: var(--accent-cyan);
+      color: #000;
+      border-color: var(--accent-cyan);
+    }
+
+    /* Feedback notification */
+    .haptic-toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: #00F2FE;
+      color: #000;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 0.65rem 1.25rem;
+      border-radius: 8px;
+      box-shadow: 0 10px 25px rgba(0, 242, 254, 0.4);
+      z-index: 1000;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s var(--ease-spring);
+      pointer-events: none;
+    }
+
+    .haptic-toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* =========================================================================
+       THE 24 BUTTON ARCHITECTURES (STYLES INLINED)
+       ========================================================================= */
+
+    /* -------------------------------------------------------------
+       1. SKEUOMORPHIC CONCAVE BEVEL PUSH
+       ------------------------------------------------------------- */
+    .btn-concave-push {
+      all: unset;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      position: relative;
+      border-radius: 999px;
+      background-color: rgba(0, 0, 0, 0.75);
+      font-size: 1.25rem;
+      box-shadow:
+        -0.15em -0.15em 0.15em -0.075em rgba(5, 5, 5, 0.25),
+        0.0375em 0.0375em 0.0675em 0 rgba(5, 5, 5, 0.1);
+    }
+    .btn-concave-push::after {
+      content: "";
+      position: absolute;
+      z-index: 0;
+      width: calc(100% + 0.3em);
+      height: calc(100% + 0.3em);
+      top: -0.15em;
+      left: -0.15em;
+      border-radius: inherit;
+      background: linear-gradient(-135deg, rgba(5, 5, 5, 0.5), transparent 20%, transparent 100%);
+      filter: blur(0.0125em);
+      opacity: 0.25;
+      mix-blend-mode: multiply;
+    }
+    .btn-concave-push .button-outer {
+      position: relative;
+      z-index: 1;
+      border-radius: inherit;
+      transition: box-shadow 300ms ease;
+      will-change: box-shadow;
+      box-shadow:
+        0 0.05em 0.05em -0.01em rgba(5, 5, 5, 1),
+        0 0.01em 0.01em -0.01em rgba(5, 5, 5, 0.5),
+        0.15em 0.3em 0.1em -0.01em rgba(5, 5, 5, 0.25);
+    }
+    .btn-concave-push:hover .button-outer {
+      box-shadow: 0 0 0 0 rgba(5, 5, 5, 1);
+    }
+    .btn-concave-push .button-inner {
+      position: relative;
+      z-index: 1;
+      border-radius: inherit;
+      padding: 0.9em 1.6em;
+      background-image: linear-gradient(135deg, rgba(230, 230, 230, 1), rgba(180, 180, 180, 1));
+      transition: box-shadow 300ms ease, clip-path 250ms ease, transform 250ms ease;
+      clip-path: inset(0 0 0 0 round 999px);
+      box-shadow:
+        0 0 0 0 inset rgba(5, 5, 5, 0.1),
+        -0.05em -0.05em 0.05em 0 inset rgba(5, 5, 5, 0.25),
+        0 0 0.05em 0.2em inset rgba(255, 255, 255, 0.25),
+        0.025em 0.05em 0.1em 0 inset rgba(255, 255, 255, 1);
+    }
+    .btn-concave-push:hover .button-inner {
+      clip-path: inset(clamp(1px, 0.0625em, 2px) round 999px);
+      box-shadow:
+        0.1em 0.15em 0.05em 0 inset rgba(5, 5, 5, 0.75),
+        0.25em 0.25em 0.2em 0 inset rgba(5, 5, 5, 0.5);
+    }
+    .btn-concave-push .button-inner span {
+      position: relative;
+      z-index: 4;
+      font-weight: 600;
+      color: rgba(0, 0, 0, 0);
+      background-image: linear-gradient(135deg, rgba(25, 25, 25, 1), rgba(75, 75, 75, 1));
+      -webkit-background-clip: text;
+      background-clip: text;
+      display: block;
+      transition: transform 250ms ease;
+    }
+    .btn-concave-push:hover .button-inner span,
+    .btn-concave-push:active .button-inner {
+      transform: scale(0.975);
+    }
+
+    /* -------------------------------------------------------------
+       2. TACTILE POWER ON/OFF SWITCH
+       ------------------------------------------------------------- */
+    .power-switch-container {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .power-btn {
+      --hue: 223;
+      --sat: 10%;
+      --hue2: 223;
+      --sat2: 90%;
+      --light2: 60%;
+      --primary: hsl(var(--hue2), var(--sat2), var(--light2));
+      --trans-dur: 0.3s;
+      --trans-timing2: cubic-bezier(0.42, -1.84, 0.42, 1.84);
+      --trans-timing3: cubic-bezier(0.42, 0, 0.42, 1.84);
+      background-image: linear-gradient(hsl(var(--hue), var(--sat), 80%), hsl(var(--hue), var(--sat), 85%));
+      border-radius: 50%;
+      border: 0;
+      box-shadow: 0 0 0.25em hsl(var(--hue), var(--sat), 55%) inset, 0 0.125em 0.125em hsl(var(--hue), var(--sat), 90%);
+      cursor: pointer;
+      position: relative;
+      width: 5.5rem;
+      height: 5.5rem;
+      transition: box-shadow var(--trans-dur) ease-in-out;
+      outline: transparent;
+    }
+    .power-btn:before, .power-btn:after {
+      border-radius: inherit;
+      content: "";
+      display: block;
+      position: absolute;
+    }
+    .power-btn:before {
+      background-image: linear-gradient(hsl(var(--hue), var(--sat), 90%), hsl(var(--hue), var(--sat), 80%));
+      box-shadow: 0 0.45em 0.45em 0.15em hsla(var(--hue), 0%, 0%, 0.3);
+      top: 0.75rem;
+      left: 0.75rem;
+      width: 4rem;
+      height: 4rem;
+      transition: box-shadow var(--trans-dur) var(--trans-timing2), transform var(--trans-dur) var(--trans-timing2);
+    }
+    .power-btn:after {
+      background-color: hsl(var(--hue), var(--sat), 75%);
+      top: 1.5rem;
+      left: 1.5rem;
+      width: 2.5rem;
+      height: 2.5rem;
+      transition: background-color var(--trans-dur) ease-in-out, transform var(--trans-dur) var(--trans-timing2);
+    }
+    .power-btn .btn__icon {
+      position: absolute;
+      top: calc(50% - 0.75rem);
+      left: calc(50% - 0.75rem);
+      width: 1.5rem;
+      height: 1.5rem;
+      z-index: 1;
+      transition: filter var(--trans-dur) ease;
+    }
+    .power-btn .btn__icon g {
+      stroke: hsl(var(--hue), var(--sat), 70%);
+      transition: stroke var(--trans-dur) ease;
+    }
+    .power-btn[aria-pressed="true"]:before {
+      box-shadow: 0 0.2em 0.2em 0 hsla(var(--hue), 0%, 0%, 0.3);
+      transform: scale(0.96);
+    }
+    .power-btn[aria-pressed="true"]:after {
+      background-color: hsl(var(--hue), var(--sat), 90%);
+      transform: scale(0.96);
+    }
+    .power-btn[aria-pressed="true"] .btn__icon {
+      filter: drop-shadow(0 0 0.25em var(--primary));
+    }
+    .power-btn[aria-pressed="true"] .btn__icon g {
+      stroke: var(--primary);
+    }
+
+    /* Dark power button */
+    .power-btn.col--dark {
+      background-image: linear-gradient(hsl(var(--hue), var(--sat), 10%), hsl(var(--hue), var(--sat), 15%));
+      box-shadow: 0 0 0.25em hsl(var(--hue), var(--sat), 5%) inset, 0 0.125em 0.125em hsl(var(--hue), var(--sat), 25%);
+    }
+    .power-btn.col--dark:before {
+      background-image: linear-gradient(hsl(var(--hue), var(--sat), 20%), hsl(var(--hue), var(--sat), 10%));
+      box-shadow: 0 0.45em 0.45em 0.15em hsla(var(--hue), 0%, 0%, 0.7);
+    }
+    .power-btn.col--dark:after {
+      background-color: hsl(var(--hue), var(--sat), 10%);
+    }
+
+    /* -------------------------------------------------------------
+       3. SINGLE-ELEMENT PURE CSS 3D ISOMETRIC POLYGONS
+       ------------------------------------------------------------- */
+    .iso-poly-cluster {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.25rem;
+    }
+    .d-iso {
+      display: inline-block;
+      font-size: 1.15rem;
+      font-weight: 700;
+      cursor: pointer;
+      user-select: none;
+    }
+    .d-iso-1 {
+      --b: 3px;
+      --c: 16px;
+      --g: calc(var(--c) * 0.707);
+      padding: 8px 16px;
+      color: #00F2FE;
+      transition: 0.4s;
+      border: solid transparent;
+      border-width: var(--b) var(--b) calc(var(--c) + var(--b)) calc(var(--c) + var(--b));
+      background:
+        linear-gradient(-45deg, transparent var(--g), rgba(255, 255, 255, 0.6) 0) left / var(--c) 100%,
+        linear-gradient(135deg, transparent var(--g), rgba(255, 255, 255, 0.3) 0) bottom / 100% var(--c),
+        conic-gradient(from -90deg at top var(--b) right var(--b), currentColor 270deg, transparent 0),
+        conic-gradient(from 90deg at bottom calc(var(--c) + var(--b)) left calc(var(--c) + var(--b)), currentColor 270deg, transparent 0);
+      background-repeat: no-repeat;
+      background-origin: border-box;
+      transform: translate(calc(var(--c) / -1), calc(var(--c) / 1));
+      clip-path: polygon(var(--c) 0%, 100% 0%, 100% calc(100% - var(--c)), var(--c) calc(100% - var(--c)));
+    }
+    .d-iso-1:hover {
+      transform: translate(0, 0);
+      clip-path: polygon(0% var(--c), var(--c) 0%, 100% 0%, 100% calc(100% - var(--c)), calc(100% - var(--c)) 100%, 0% 100%);
+    }
+
+    .d-iso-5 {
+      --d: 12px;
+      padding: 8px 16px 8px calc(16px + var(--d));
+      color: #FFF;
+      background: linear-gradient(rgba(255, 255, 255, 0.25) 0 0) left / var(--d) 100% no-repeat;
+      clip-path: polygon(var(--d) 3px, var(--d) 0, 100% 0, 100% 100%, var(--d) 100%, var(--d) calc(100% - 3px));
+      transform: perspective(800px) rotateY(0deg);
+      transition: 0.35s ease;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    .d-iso-5:hover {
+      background-color: #00F2FE;
+      color: #000;
+      clip-path: polygon(0px 3px, var(--d) 0, 100% 0, 100% 100%, var(--d) 100%, 0 calc(100% - 3px));
+      transform: perspective(800px) rotateY(32deg);
+    }
+
+    /* -------------------------------------------------------------
+       4. TWO-TONE ISOMETRIC EXTRUSION BLOCK
+       ------------------------------------------------------------- */
+    .cube-extrusion {
+      --c: #00F2FE;
+      --b: 0.1em;
+      --d: 16px;
+      --h: 1.3em;
+      --_s: calc(var(--d) + var(--b));
+      font-size: 1.5rem;
+      font-weight: 700;
+      line-height: var(--h);
+      color: #0000;
+      text-shadow: 0 calc(-1 * var(--_t, 0em)) var(--c), 0 calc(var(--h) - var(--_t, 0em)) #fff;
+      border: solid #0000;
+      overflow: hidden;
+      border-width: var(--b) var(--b) var(--_s) var(--_s);
+      background:
+        linear-gradient(var(--c) 0 0) 100% 100% / 101% var(--_p, 0%) no-repeat,
+        conic-gradient(at left var(--d) bottom var(--d), #0000 90deg, rgba(255, 255, 255, 0.3) 0 225deg, rgba(255, 255, 255, 0.6) 0) border-box,
+        conic-gradient(at left var(--_s) bottom var(--_s), #0000 90deg, var(--c) 0) 0 100% / calc(100% - var(--b)) calc(100% - var(--b)) border-box;
+      transform: translate(calc(var(--d) / -1), var(--d));
+      clip-path: polygon(var(--d) 0%, 100% 0%, 100% calc(100% - var(--d)), var(--d) calc(100% - var(--d)));
+      transition: 0.45s;
+      cursor: pointer;
+      padding: 0 0.4em;
+    }
+    .cube-extrusion:hover {
+      transform: translate(0, 0);
+      clip-path: polygon(0% var(--d), var(--d) 0%, 100% 0%, 100% calc(100% - var(--d)), calc(100% - var(--d)) 100%, 0% 100%);
+      --_t: var(--h);
+      --_p: 105%;
+    }
+
+    /* -------------------------------------------------------------
+       5. MULTI-LAYER STACKING DECK ("Paste Link")
+       ------------------------------------------------------------- */
+    .btn-layer-deck {
+      --bg-color-1: #121212;
+      --bg-color-2: #ffd433;
+      --bg-color-3: #ff90e8;
+      --padding: 0.8rem 2.8rem;
+      --step: 0.38rem;
+      --active: 0;
+      color: white;
+      border-radius: 6px;
+      position: relative;
+      cursor: pointer;
+      font-family: var(--font-mono);
+      font-weight: bold;
+      font-size: 0.95rem;
+      border: 0;
+      background: transparent;
+      padding: 0;
+    }
+    .btn-layer-deck:is(:hover, :focus-visible) {
+      --active: 1;
+    }
+    .btn-layer-deck:active {
+      --active: 0.4;
+    }
+    .btn-layer-deck span:first-of-type {
+      padding: var(--padding);
+    }
+    .btn-layer-deck span:not(:first-of-type) {
+      position: absolute;
+    }
+    .btn-layer-deck [aria-hidden="true"] {
+      color: transparent;
+    }
+    .btn-layer-deck span {
+      inset: 0;
+      display: grid;
+      background: var(--bg);
+      place-items: center;
+      transition: 0.22s var(--ease-spring);
+      border: 2px solid #000;
+      border-radius: 6px;
+      translate: calc((var(--active) * var(--coefficient, 0)) * (var(--step) * -1))
+                 calc((var(--active) * var(--coefficient, 0)) * (var(--step) * -1));
+    }
+    .btn-layer-deck span:nth-of-type(1) { --bg: var(--bg-color-3); }
+    .btn-layer-deck span:nth-of-type(2) { --coefficient: 1; --bg: var(--bg-color-2); }
+    .btn-layer-deck span:nth-of-type(3) { --coefficient: 2; --bg: var(--bg-color-1); color: #fff; }
+
+    /* -------------------------------------------------------------
+       6. CYBERPUNK SCI-FI HUD BRACKET ("Press me")
+       ------------------------------------------------------------- */
+    .btn-cyber-hud {
+      --btn-font-size: 0.95rem;
+      --btn-text-color: hsla(96.67deg, 81.15%, 47.84%, 1);
+      --btn-outline-color: hsla(96.67deg, 81.15%, 47.84%, 0.4);
+      --btn-front-bgc: hsla(96deg, 37.04%, 10.59%, 0.3);
+      --btn-front-bgc--hover: hsla(96deg, 37.04%, 10.59%, 0.85);
+      position: relative;
+      padding: 0.85rem 2.2rem;
+      color: var(--btn-text-color);
+      text-transform: uppercase;
+      letter-spacing: 0.35em;
+      font-family: "Orbitron", sans-serif;
+      font-weight: 700;
+      cursor: pointer;
+      background: transparent;
+      border: 0;
+      user-select: none;
+    }
+    .btn-cyber-hud::before, .btn-cyber-hud::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      outline: 1px dashed var(--btn-outline-color);
+      width: 100%;
+      height: 100%;
+      transition: 250ms all ease;
+    }
+    .btn-cyber-hud::before {
+      transform: translate(-0.6rem, -0.6rem);
+    }
+    .btn-cyber-hud::after {
+      background-color: var(--btn-front-bgc);
+      outline-style: solid;
+    }
+    .btn-cyber-hud .btn__inner::before, .btn-cyber-hud .btn__inner::after {
+      content: "";
+      border: 1px dashed var(--btn-outline-color);
+      border-left: 0;
+      border-right: 0;
+      width: 0.8rem;
+      height: calc(100% + 2px);
+      position: absolute;
+      top: -0.4rem;
+      transform: translateX(var(--translateX, 0)) skewY(var(--skewY, 45deg));
+      transition: 250ms all ease;
+    }
+    .btn-cyber-hud .btn__inner::before { left: -0.8rem; }
+    .btn-cyber-hud .btn__inner::after { left: calc(100% - 0.8rem); }
+    .btn-cyber-hud .btn__text {
+      z-index: 1;
+      position: relative;
+      display: inline-block;
+      transition: 250ms all ease;
+    }
+    .btn-cyber-hud:hover::before { transform: translate(0.6rem, -0.6rem); }
+    .btn-cyber-hud:hover::after { background-color: var(--btn-front-bgc--hover); }
+    .btn-cyber-hud:hover .btn__inner::before, .btn-cyber-hud:hover .btn__inner::after {
+      --translateX: 0.6rem;
+      --skewY: -45deg;
+    }
+    .btn-cyber-hud:active::after, .btn-cyber-hud:active .btn__text {
+      transform: translate(0.3rem, -0.3rem);
+    }
+
+    /* -------------------------------------------------------------
+       7. SQUISHY NEUMORPHIC 3D STAMP ("Squishy")
+       ------------------------------------------------------------- */
+    .btn-squishy-stamp {
+      position: relative;
+      background-color: #F0F0F0;
+      border: 0;
+      color: #242424;
+      border-radius: 0.5em;
+      font-size: 1.5rem;
+      padding: 0.4em 1.2em;
+      font-weight: 700;
+      text-shadow: 0 0.0625em 0 #fff;
+      box-shadow:
+        inset 0 0.0625em 0 0 #f4f4f4,
+        0 0.0625em 0 0 #efefef,
+        0 0.125em 0 0 #ececec,
+        0 0.25em 0 0 #e0e0e0,
+        0 0.3125em 0 0 #dedede,
+        0 0.375em 0 0 #dcdcdc,
+        0 0.425em 0 0 #cacaca,
+        0 0.425em 0.5em 0 #cecece;
+      transition: 0.22s ease;
+      cursor: pointer;
+    }
+    .btn-squishy-stamp:hover, .btn-squishy-stamp:active {
+      transform: translateY(0.225em);
+      box-shadow:
+        inset 0 0.03em 0 0 #f4f4f4,
+        0 0.03em 0 0 #efefef,
+        0 0.0625em 0 0 #ececec,
+        0 0.125em 0 0 #e0e0e0,
+        0 0.2em 0 0 #dcdcdc,
+        0 0.225em 0 0 #cacaca,
+        0 0.225em 0.375em 0 #cecece;
+    }
+
+    /* -------------------------------------------------------------
+       8. ORGANIC SVG GOOEY FILTER BLOB ("Gooey Button")
+       ------------------------------------------------------------- */
+    @property --goo-hue {
+      syntax: "<angle>";
+      initial-value: 170deg;
+      inherits: false;
+    }
+    .btn-gooey {
+      --hue: 170deg;
+      --x: 50;
+      --y: 50;
+      --button: hsl(var(--hue), 70%, 65%);
+      background: transparent;
+      color: #0E0A12;
+      font-weight: 700;
+      font-size: 1.15rem;
+      position: relative;
+      padding: 1.2rem 2.2rem;
+      border: none;
+      cursor: pointer;
+      isolation: isolate;
+      transition: transform 0.3s var(--ease-spring);
+    }
+    .btn-gooey:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      filter: blur(8px) url(#lab-goo) drop-shadow(0 0.25em 0.5em rgba(0, 0, 0, 0.4));
+      background-image:
+        linear-gradient(0deg, var(--button), var(--button)),
+        radial-gradient(
+          40% 70% at calc(var(--x) * 1%) calc(var(--y) * 1%),
+          hsla(var(--hue), 80%, 80%, 0.9) 0%,
+          transparent 90%
+        );
+      background-clip: content-box, border-box;
+      padding: 16px;
+      z-index: -1;
+      border-radius: 999px;
+    }
+    .btn-gooey:hover {
+      transform: scale(1.05);
+    }
+
+    /* -------------------------------------------------------------
+       9. HAPTIC BEACON & PERSPECTIVE TRAY ("View Offers")
+       ------------------------------------------------------------- */
+    .btn-haptic-wrapper {
+      --width: 220px;
+      --height: 56px;
+      --padding: 6px;
+      --border-radius: 20px;
+      --dot-size: 8px;
+      --hue: 142deg;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: var(--width);
+      height: var(--height);
+      border-radius: var(--border-radius);
+      background-color: rgba(0, 0, 0, 0.08);
+      box-shadow:
+        1px 1px 2px 0 rgba(255, 255, 255, 0.4),
+        2px 2px 4px rgba(0, 0, 0, 0.1) inset;
+      perspective: 150px;
+      user-select: none;
+    }
+    .btn-haptic-wrapper .btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: calc(100% - 2 * var(--padding));
+      height: calc(100% - 2 * var(--padding));
+      padding: 0 1.2rem;
+      border-radius: calc(var(--border-radius) - var(--padding));
+      border: none;
+      cursor: pointer;
+      background: linear-gradient(rgba(255, 255, 255, 0.15), rgba(0, 0, 0, 0.05)), #E4E4E4;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.25s var(--spring-bouncy), filter 0.25s ease;
+    }
+    .btn-haptic-wrapper .btn-txt {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #333;
+    }
+    .btn-haptic-wrapper .dot {
+      width: var(--dot-size);
+      height: var(--dot-size);
+      border-radius: 50%;
+      background-color: hsla(var(--hue), 100%, 50%, 1);
+      box-shadow: 0 0 10px 2px hsla(var(--hue), 80%, 50%, 0.6);
+      animation: pulse-dot 1.2s ease-in-out infinite;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 0.3; transform: scale(0.9); }
+      50% { opacity: 1; transform: scale(1.2); }
+    }
+    .btn-haptic-wrapper .btn:hover {
+      transform: translate3d(0, -2px, 2px);
+      filter: drop-shadow(0 4px 12px hsla(var(--hue), 70%, 60%, 0.5));
+    }
+    .btn-haptic-wrapper .btn:active {
+      transform: translate3d(0, 0, -2px);
+    }
+
+    /* -------------------------------------------------------------
+       10. CONTAINER-QUERY CHEVRON WIPE ("Book a demo")
+       ------------------------------------------------------------- */
+    .btn-chevron-wipe {
+      height: 48px;
+      padding: 0;
+      display: inline-grid;
+      border-radius: 8px;
+      border: 2px solid #000;
+      cursor: pointer;
+      position: relative;
+      background: #000;
+      color: #FFF;
+      font-weight: 600;
+      outline: none;
+      overflow: hidden;
+    }
+    .btn-chevron-wipe .container {
+      width: 48px;
+      height: 100%;
+      background: hsl(75 100% 65%);
+      position: absolute;
+      left: 0;
+      transition: width 0.3s ease;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #000;
+    }
+    .btn-chevron-wipe:hover .container {
+      width: 100%;
+    }
+    .btn-chevron-wipe .btn-label {
+      padding: 0 1.5rem 0 calc(48px + 1.2rem);
+      display: grid;
+      place-items: center;
+      height: 100%;
+      font-size: 0.95rem;
+      z-index: 1;
+    }
+
+    /* -------------------------------------------------------------
+       11. CSS CONIC SHIMMER SPARK BORDER ("Shim Shimmer")
+       ------------------------------------------------------------- */
+    .btn-conic-shimmer {
+      --cut: 2px;
+      --active: 0;
+      background: #181524;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border: 0;
+      cursor: pointer;
+      padding: 0.85em 1.8em;
+      border-radius: 999px;
+      position: relative;
+      color: #FFF;
+      display: inline-grid;
+      place-items: center;
+      transition: transform 0.25s ease;
+    }
+    .btn-conic-shimmer::before {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      border-radius: inherit;
+      background: conic-gradient(from 0deg, transparent 0 330deg, #00F2FE 360deg);
+      animation: spin-spark 2s linear infinite;
+      z-index: 0;
+    }
+    .btn-conic-shimmer .inner-backdrop {
+      position: absolute;
+      inset: 2px;
+      background: #120F1D;
+      border-radius: inherit;
+      z-index: 1;
+    }
+    .btn-conic-shimmer .shimmer-text {
+      position: relative;
+      z-index: 2;
+      background: linear-gradient(90deg, #FFFFFF, #9CA3AF);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    @keyframes spin-spark {
+      to { transform: rotate(360deg); }
+    }
+    .btn-conic-shimmer:hover {
+      transform: scale(1.05);
+    }
+
+    /* -------------------------------------------------------------
+       12. BESPOKE SHINY CTA GRADIENT ANGLE
+       ------------------------------------------------------------- */
+    @property --cta-angle {
+      syntax: "<angle>";
+      initial-value: 0deg;
+      inherits: false;
+    }
+    .btn-shiny-cta {
+      --cta-angle: 0deg;
+      position: relative;
+      border-radius: 999px;
+      padding: 0.95rem 2.2rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid transparent;
+      color: #FFFFFF;
+      background:
+        linear-gradient(#0E1017, #0E1017) padding-box,
+        conic-gradient(from var(--cta-angle), transparent, #00F2FE 20%, #FFF 40%, #00F2FE 60%, transparent 80%) border-box;
+      box-shadow: 0 8px 24px -4px rgba(0, 242, 254, 0.3);
+      animation: rotate-cta-angle 3.5s linear infinite;
+      transition: transform 0.25s ease;
+    }
+    @keyframes rotate-cta-angle {
+      to { --cta-angle: 360deg; }
+    }
+    .btn-shiny-cta:hover {
+      transform: translateY(-2px) scale(1.03);
+    }
+
+    /* -------------------------------------------------------------
+       13. LIQUID MENISCUS WAVE RESERVOIR ("HOVER ME")
+       ------------------------------------------------------------- */
+    .btn-liquid-reservoir {
+      width: 190px;
+      padding: 16px 24px;
+      position: relative;
+      display: block;
+      text-decoration: none;
+      overflow: hidden;
+      text-align: center;
+      border-radius: 8px;
+      background: #141416;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .btn-liquid-reservoir span {
+      position: relative;
+      z-index: 2;
+      color: #FFF;
+      font-family: "Righteous", cursive, sans-serif;
+      font-size: 1rem;
+      letter-spacing: 4px;
+      transition: color 0.3s ease;
+    }
+    .btn-liquid-reservoir .wave {
+      width: 200px;
+      height: 200px;
+      background-color: #2D3748;
+      position: absolute;
+      left: 50%;
+      margin-left: -100px;
+      top: 100%;
+      border-radius: 40%;
+      transition: top 0.5s ease;
+      animation: wave-spin 6s linear infinite;
+      z-index: 1;
+    }
+    .btn-liquid-reservoir:hover .wave {
+      top: -30%;
+      background-color: #00F2FE;
+    }
+    .btn-liquid-reservoir:hover span {
+      color: #000;
+    }
+    @keyframes wave-spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    /* -------------------------------------------------------------
+       14. REPEATING DIAGONAL SLANTED STRIPE MARQUEE
+       ------------------------------------------------------------- */
+    .btn-slanted-marquee {
+      --color1: #00F2FE;
+      --color2: #38EF7D;
+      width: 220px;
+      height: 64px;
+      border-radius: 12px;
+      border: 2px solid var(--color1);
+      cursor: pointer;
+      font-family: var(--font-sans);
+      font-size: 1.4rem;
+      font-weight: 800;
+      text-align: center;
+      background: repeating-linear-gradient(
+        45deg,
+        var(--color1),
+        var(--color1) 20px,
+        var(--color2) 20px,
+        var(--color2) 40px
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: move-stripes 25s linear infinite;
+      transition: all 0.35s ease;
+    }
+    .btn-slanted-marquee:hover {
+      background: var(--color1);
+      color: #000;
+      -webkit-background-clip: border-box;
+      background-clip: border-box;
+      transform: scale(1.04);
+      box-shadow: 0 12px 24px -6px rgba(0, 242, 254, 0.4);
+    }
+    @keyframes move-stripes {
+      from { background-position: 0 0; }
+      to { background-position: 800px 0; }
+    }
+
+    /* -------------------------------------------------------------
+       15. BIOMETRIC FINGERPRINT SCAN & MORPH ("LOGIN")
+       ------------------------------------------------------------- */
+    .biometric-container {
+      align-items: center;
+      background: #000;
+      border-radius: 40px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+      display: flex;
+      height: 64px;
+      justify-content: center;
+      position: relative;
+      width: 170px;
+      cursor: pointer;
+      user-select: none;
+      transition: width 0.4s var(--ease-spring);
+    }
+    .biometric-container .text {
+      color: white;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 2px;
+      transition: opacity 300ms;
+    }
+    .biometric-container .fingerprint {
+      position: absolute;
+      opacity: 0;
+      stroke: #777;
+      transition: opacity 0.3s;
+      width: 48px;
+      height: 48px;
+    }
+    .biometric-container .ok {
+      position: absolute;
+      opacity: 0;
+      width: 36px;
+      height: 36px;
+    }
+    .biometric-container.scanning {
+      width: 64px;
+    }
+    .biometric-container.scanning .text {
+      opacity: 0;
+    }
+    .biometric-container.scanning .fingerprint {
+      opacity: 1;
+      stroke: #00F2FE;
+      animation: scan-pulse 1s infinite alternate;
+    }
+    .biometric-container.verified {
+      background: #10B981;
+    }
+    .biometric-container.verified .fingerprint {
+      opacity: 0;
+    }
+    .biometric-container.verified .ok {
+      opacity: 1;
+    }
+    @keyframes scan-pulse {
+      from { filter: drop-shadow(0 0 2px #00F2FE); }
+      to { filter: drop-shadow(0 0 10px #00F2FE); }
+    }
+
+    /* -------------------------------------------------------------
+       16. MACINTOSH NEUMORPHIC COMMAND KEY ("command")
+       ------------------------------------------------------------- */
+    .btn-neumorphic-command {
+      width: 140px;
+      height: 140px;
+      border: 3px solid #888888;
+      background-color: #F4F5F6;
+      border-radius: 30px;
+      box-shadow: -6px -12px 24px #ffffff, 6px 12px 20px rgba(0, 0, 0, 0.2);
+      transition: 0.15s ease-in-out;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px;
+    }
+    .btn-neumorphic-command .cmd-icon svg {
+      width: 26px;
+      height: 26px;
+      fill: #888;
+    }
+    .btn-neumorphic-command .cmd-text {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #666;
+    }
+    .btn-neumorphic-command:active {
+      box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.2);
+      transform: scale(0.97);
+    }
+
+    /* -------------------------------------------------------------
+       17. DIFFERENCE BLEND WIPE TOGGLE ("Toggle me")
+       ------------------------------------------------------------- */
+    .diff-toggle-wrap input {
+      display: none;
+    }
+    .diff-toggle-wrap label {
+      display: inline-block;
+      user-select: none;
+      color: #000;
+      font-size: 1.15rem;
+      font-weight: 700;
+      padding: 0.8rem 1.8rem;
+      cursor: pointer;
+      border-radius: 6px;
+      border: 3px solid #000;
+      background: #FFF;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 0 #000;
+      transition: transform 0.1s;
+    }
+    .diff-toggle-wrap label::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      transform: scale(0);
+      transition: transform 0.35s var(--ease-spring);
+      mix-blend-mode: difference;
+      background: radial-gradient(circle at center, #fff 24%, #000 25%, #000 100%);
+    }
+    .diff-toggle-wrap input:checked + label::after {
+      transform: scale(4.2);
+    }
+    .diff-toggle-wrap label:active {
+      transform: translateY(3px);
+      box-shadow: none;
+    }
+
+    /* -------------------------------------------------------------
+       18. GLASSMORPHIC NEON UNDERGLOW TRIO ("Read more")
+       ------------------------------------------------------------- */
+    .btn-neon-underglow {
+      position: relative;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 190px;
+      height: 48px;
+    }
+    .btn-neon-underglow a {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 15px 15px rgba(0, 0, 0, 0.3);
+      border-radius: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      text-decoration: none;
+      color: #FFF;
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 1px;
+      backdrop-filter: blur(12px);
+      transition: letter-spacing 0.3s ease;
+      z-index: 1;
+    }
+    .btn-neon-underglow:hover a {
+      letter-spacing: 2px;
+    }
+    .btn-neon-underglow::before, .btn-neon-underglow::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 30px;
+      height: 6px;
+      background: #00F2FE;
+      box-shadow: 0 0 15px #00F2FE, 0 0 30px #00F2FE;
+      border-radius: 10px;
+      transition: 0.4s ease;
+    }
+    .btn-neon-underglow::before { bottom: -3px; }
+    .btn-neon-underglow::after { top: -3px; }
+    .btn-neon-underglow:hover::before { bottom: 0; width: 75%; height: 50%; border-radius: 30px; }
+    .btn-neon-underglow:hover::after { top: 0; width: 75%; height: 50%; border-radius: 30px; }
+
+    /* -------------------------------------------------------------
+       19. CURVED FILLER BUBBLE WIPE ("ORDER NOW")
+       ------------------------------------------------------------- */
+    .btn-filler-bubble {
+      appearance: none;
+      border: 0;
+      background: #000;
+      color: #FFEFDA;
+      padding: 0 32px;
+      height: 50px;
+      font-size: 0.95rem;
+      border-radius: 10px;
+      overflow: hidden;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      font-weight: 700;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+    .btn-filler-bubble .button__text {
+      position: relative;
+      z-index: 2;
+      transition: color 0.3s ease;
+    }
+    .btn-filler-bubble .button__filler {
+      background: #00F2FE;
+      position: absolute;
+      width: 150%;
+      height: 200%;
+      border-radius: 50%;
+      top: -50%;
+      left: -25%;
+      transform: translate3d(0, 75%, 0);
+      transition: transform 0.4s var(--ease-spring);
+      z-index: 1;
+    }
+    .btn-filler-bubble:hover .button__filler {
+      transform: translate3d(0, 0, 0);
+    }
+    .btn-filler-bubble:hover .button__text {
+      color: #000;
+    }
+
+    /* -------------------------------------------------------------
+       20. ROTARY CORNER BRACKET OFFSET ("Get access")
+       ------------------------------------------------------------- */
+    .btn-rotary-corners {
+      padding: 0.9rem 1.8rem;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      position: relative;
+      border: 0;
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text-main);
+      transition: background 0.3s ease;
+    }
+    .btn-rotary-corners .corners {
+      container-type: size;
+      pointer-events: none;
+      position: absolute;
+      inset: 0;
+    }
+    .btn-rotary-corners .corners span {
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      display: grid;
+      place-items: center;
+      transition: transform 0.3s var(--ease-spring);
+    }
+    .btn-rotary-corners .corners span:nth-child(1) { top: -4px; left: -4px; }
+    .btn-rotary-corners .corners span:nth-child(2) { top: -4px; right: -4px; }
+    .btn-rotary-corners .corners span:nth-child(3) { bottom: -4px; right: -4px; }
+    .btn-rotary-corners .corners span:nth-child(4) { bottom: -4px; left: -4px; }
+    .btn-rotary-corners:hover .corners span:nth-child(1) { transform: translate(12px, 0); }
+    .btn-rotary-corners:hover .corners span:nth-child(2) { transform: translate(0, 12px); }
+    .btn-rotary-corners:hover .corners span:nth-child(3) { transform: translate(-12px, 0); }
+    .btn-rotary-corners:hover .corners span:nth-child(4) { transform: translate(0, -12px); }
+    .btn-rotary-corners:hover {
+      background: rgba(0, 242, 254, 0.15);
+      color: #00F2FE;
+    }
+
+    /* -------------------------------------------------------------
+       21. ASYMMETRIC SWISS CROSS NOTCH ("add")
+       ------------------------------------------------------------- */
+    .btn-swiss-cross {
+      width: 120px;
+      cursor: pointer;
+      position: relative;
+      text-transform: uppercase;
+      color: #503AF6;
+      letter-spacing: 1px;
+      outline: none;
+      text-decoration: none;
+      text-align: center;
+      border-right: 2px solid #503AF6;
+      border-bottom: 2px solid #503AF6;
+      padding: 14px 24px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      background: #FFF;
+      display: inline-block;
+    }
+    .btn-swiss-cross .fl, .btn-swiss-cross .sfl {
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 0;
+      transition: 0.4s var(--ease-spring);
+    }
+    .btn-swiss-cross .fl { background: #503AF6; z-index: 1; }
+    .btn-swiss-cross .sfl { background: #4431D1; z-index: 0; }
+    .btn-swiss-cross:hover .fl, .btn-swiss-cross:hover .sfl { width: 100%; }
+    .btn-swiss-cross p { position: relative; z-index: 2; transition: color 0.3s; }
+    .btn-swiss-cross:hover p { color: #FFF; }
+
+    /* -------------------------------------------------------------
+       22. DUAL-SPHERE MAGNETIC BUBBLE FILL & JITTER ("Pill")
+       ------------------------------------------------------------- */
+    .btn-pill-jitter {
+      position: relative;
+      padding: 8px 24px;
+      height: 52px;
+      outline: none;
+      cursor: pointer;
+      text-transform: uppercase;
+      background-color: #FFFFFF;
+      border: 1px solid rgba(22, 76, 167, 0.6);
+      border-radius: 999px;
+      color: #164CA7;
+      font-weight: 600;
+      font-size: 0.95rem;
+      overflow: hidden;
+      transition: all 0.3s var(--ease-spring);
+    }
+    .btn-pill-jitter:hover {
+      animation: jitter-shake 0.6s ease-in-out both;
+    }
+    @keyframes jitter-shake {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(2.5deg); }
+      50% { transform: rotate(-2.5deg); }
+      75% { transform: rotate(1deg); }
+    }
+
+    /* -------------------------------------------------------------
+       23. VERTICAL SLOT-MACHINE TEXT FLIP ("HOVER / CLICK")
+       ------------------------------------------------------------- */
+    .btn-slot-flip {
+      letter-spacing: 0.1em;
+      cursor: pointer;
+      font-size: 0.95rem;
+      font-weight: 700;
+      line-height: 44px;
+      width: 150px;
+      position: relative;
+      text-decoration: none;
+      text-transform: uppercase;
+      text-align: center;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      color: #000;
+      outline: solid 2px #000;
+      overflow: hidden;
+      background: #FFF;
+      transition: background-color 0.4s;
+    }
+    .btn-slot-flip span {
+      transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
+    }
+    .btn-slot-flip::before {
+      content: attr(data-hover-text);
+      color: #FFFFFF;
+      position: absolute;
+      transform: translateY(500%) scale(-0.1, 20);
+      transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
+    }
+    .btn-slot-flip:hover {
+      background-color: #000;
+    }
+    .btn-slot-flip:hover span {
+      transform: translateY(-400%) scale(-0.1, 20);
+    }
+    .btn-slot-flip:hover::before {
+      transform: translateY(0) scale(1, 1);
+    }
+
+    /* -------------------------------------------------------------
+       24. FROSTED LIQUID GLASS SURFACE WITH CURSOR PARALLAX
+       ------------------------------------------------------------- */
+    .btn-liquid-glass-tilt {
+      --_padding: 0.9rem 1.8rem;
+      --_x-motion: 0px;
+      --_y-motion: 0px;
+      outline: 0;
+      cursor: pointer;
+      font: inherit;
+      color: #00F2FE;
+      font-weight: 600;
+      padding: 0;
+      border: 0;
+      border-radius: 12px;
+      background-color: transparent;
+      position: relative;
+      user-select: none;
+    }
+    .btn-liquid-glass-tilt span {
+      display: block;
+      padding: var(--_padding);
+      border-radius: inherit;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(0, 242, 254, 0.4);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      transform: translate(var(--_x-motion), var(--_y-motion));
+      transition: transform 0.15s ease-out, background 0.3s ease;
+    }
+    .btn-liquid-glass-tilt:hover span {
+      background: rgba(0, 242, 254, 0.15);
+      box-shadow: 0 12px 40px rgba(0, 242, 254, 0.25);
+    }
+
+    /* Spec Inspector Modal */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(8px);
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .modal-backdrop.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .modal-dialog {
+      background: var(--bg-panel);
+      border: 1px solid var(--bg-panel-border);
+      border-radius: 16px;
+      max-width: 760px;
+      width: 100%;
+      max-height: 85vh;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.8);
+      overflow: hidden;
+    }
+    .modal-header {
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid var(--bg-panel-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .modal-header h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+    .modal-close {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 1.5rem;
+      cursor: pointer;
+      line-height: 1;
+    }
+    .modal-body {
+      padding: 1.5rem;
+      overflow-y: auto;
+      flex: 1;
+    }
+    .modal-code-block {
+      background: #080A0E;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 1rem;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: #A5B4FC;
+      overflow-x: auto;
+      white-space: pre;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Hidden SVG Filters -->
+  <svg width="0" height="0" style="position: absolute;">
+    <filter id="lab-goo" x="-50%" y="-50%" width="200%" height="200%">
+      <feComponentTransfer>
+        <feFuncA type="discrete" tableValues="0 1"/>
+      </feComponentTransfer>
+      <feGaussianBlur stdDeviation="5"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="-5 11"/>
+      </feComponentTransfer>
+    </filter>
+  </svg>
+
+  <div class="lab-grid-bg"></div>
+
+  <!-- Laboratory Top HUD -->
+  <header class="lab-hud">
+    <div class="hud-branding">
+      <div class="hud-badge">Technique 42</div>
+      <div>
+        <h1 class="hud-title">TACTILE BUTTON LABORATORY</h1>
+        <p class="hud-meta">24 Micro-Kinematic Architectures // Zero-Dependency Hardware Compositing</p>
+      </div>
+    </div>
+    <div class="hud-controls">
+      <button class="hud-btn" id="themeToggle" aria-label="Toggle Theme">
+        <span id="themeIcon">☀️</span> Theme
+      </button>
+      <button class="hud-btn" id="soundToggle" aria-label="Toggle Haptic Audio">
+        <span id="soundIcon">🔊</span> Audio: ON
+      </button>
+    </div>
+  </header>
+
+  <!-- Filter Navigation Bar -->
+  <nav class="lab-filter-bar" aria-label="Button Categories">
+    <button class="filter-pill active" data-category="all">All Architectures (24)</button>
+    <button class="filter-pill" data-category="biometric">Biometrics & State Morph (3)</button>
+    <button class="filter-pill" data-category="3d">Physical 3D & Neumorphic (6)</button>
+    <button class="filter-pill" data-category="svg">SVG Filter & Conic Shimmer (5)</button>
+    <button class="filter-pill" data-category="kinetic">Kinetic Wipes & Atmospheric (10)</button>
+  </nav>
+
+  <!-- Main Showcase Grid -->
+  <main class="lab-container">
+    <div class="cards-grid" id="cardsGrid">
+
+      <!-- 1. SKEUOMORPHIC CONCAVE BEVEL PUSH -->
+      <article class="button-card" data-category="3d" data-id="concave-bevel">
+        <div class="card-header">
+          <div class="card-title-group">
+            <span class="card-idx">#01</span>
+            <h3>Concave Bevel Push</h3>
+          </div>
+          <span class="card-category-tag">3D Neumorphic</span>
+        </div>
+        <div class="card-stage force-light">
+          <button class="btn-concave-push" aria-label="Concave Push Button">
+            <div class="button-outer">
+              <div class="button-inner">
+                <span>Push</span>
+              </div>
+            </div>
+          </button>
+        </div>
+        <div class="card-footer">
+          <p class="card-desc">Dual multi-stop inset depression with clamp clip-path.</p>
+          <button class="inspect-btn" onclick="inspectSpec('concave-bevel')">Specs ↗</button>
+        </div>
+      </article>
+
+      <!-- 2. TACTILE POWER ON/OFF SWITCH -->
+      <article class="button-card" data-category="biometric" data-id="power-switch">
+        <div class="card-header">
+          <div class="card-title-group">
+            <span class="card-idx">#02</span>
+            <h3>Tactile Power Toggle</h3>
+          </div>
+          <span class="card-category-tag">Biometric & Morph</span>
+        </div>
+        <div class="card-stage">
+          <div class="power-switch-container">
+            <button id="pwrBtn1" class="power-btn" type="button" aria-pressed="false" aria-label="Power Light Mode">
+              <svg class="btn__icon" viewBox="0 0 24 24">
+                <g stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none">
+                  <polyline points="12,1 12,10" />
+                  <circle cx="12" cy="13" r="9" stroke-dasharray="49.48 7.07" stroke-dashoffset="10.6" />
+                </g>
+              </svg>
+            </button>
+            <button id="pwrBtn2" class="power-btn col--dark" type="button" aria-pressed="true" aria-label="Power Dark Mode">
+              <svg class="btn__icon" viewBox="0 0 24 24">
+                <g stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none">
+                  <polyline points="12,1 12,10" />
+                  <circle cx="12" cy="13" r="9" stroke-dasharray="49.48 7.07" stroke-dashoffset="10.6" />
+                </g>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="card-footer">
+          <p class="card-desc">Cubic-bezier depression with SVG glowing phosphor icon.</p>
+          <button class="inspect-btn" onclick="inspectSpec('power-switch')">Specs ↗</button>
+        </div>
+      </article>
+
+      <!-- 3. SINGLE-ELEMENT PURE CSS 3D ISOMETRIC POLYGONS -->
+      <article class="button-card" data-category="3d" data-id="iso-polygons">
+        <div class="card-header">
+          <div class="card-title-group">
+            <span class="card-idx">#03</span>
+            <h3>Single-Element 3D Polygons</h3>
+          </div>
+          <span class="card-category-tag">3D Bevel</span>
+        </div>
+        <div class="card-stage">
+          <div class="iso-poly-cluster">
+            <div class="d-iso d-iso-1">Bevel Extrude</div>
+            <div class="d-iso d-iso-5">3D Perspective</div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <p class="card-desc">Zero pseudo-elements. Pure conic gradient + polygon clip-path.</p>
+          <button class="inspect-btn" onclick="inspectSpec('iso-polygons')">Specs ↗</button>
+        </div>
+      </article>
+
+      <!-- 4. TWO-TONE ISOMETRIC EXTRUSION BLOCK -->
+      <article class="button-card" data-category="3d" data-id="cube-extrusion">
+        <div class="card-header">
+          <div class="card-title-group">
+            <span class="card-idx">#04</span>
+            <h3>Two-Tone Cube Extrusion</h3>
+          </div>
+          <span class="card-category-tag">3D Kinematic</span>
+        </div>
+        <div class="card-stage">
+          <div class="cube-extrusion">Hover Block</div>
+        </div>
+        <div class="card-footer">
+          <p class="card-desc">Calculated conic cube depth with text-shadow sliding.</p>
+          <button class="inspect-btn" onclick="inspectSpec('cube-extrusion')">Specs ↗</button>
+        </div>
+      </article>
+
+      <!-- 5. MULTI-LAYER STACKING DECK -->
+      <article class="button-card" data-category="kinetic" data-id="stacking-deck">
+        <div class="card-header">
+          <div class="card-title-group">
+            <span class="card-idx">#05</span>
+            <h3>Multi-Layer Stacking Deck</h3>
+          </div>
+          <span class="card-category-tag">Kinetic Stack</span>
+        </div>
+        <div class="card-stage force-light">
+          <button class="btn-layer-deck">
+            <span aria-hidden="true">Deploy Code</span>
+            <span></span>
+            <span>Deploy Code</span>
+          </button>
+        </div>
+        <div class="card-footer">
+          <p class="card-desc">Interpolating coefficient offsets across 3 stacked stroke layers.</p>
+          <button class="inspect-btn" onclick="inspectSpec('stacking-deck')">Specs ↗</button>
+        </div>
+      </article>
+
+      <!-- 6. CYBERPUNK SCI-FI HUD BRACKET -->
+      <article class="button-card" data-category="kinetic" data-id="cyber-hud">
+        <div class="card-header">
+          <div class="card-title-group">
+            <span class="card-idx">#06</span>
+            <h3>Cyberpunk HUD Bracket</h3>
+          </div>
+          <span class="card-category-tag">Sci-Fi HUD</span>
+        </div>
+        <div class="card-stage force-dark">
+          <button class="btn-cyber-hud">
+            <span class="btn__inner">
+              <span class="btn__text">ENGAGE HUD</span>
+            </span>
+          </button>
+        </div>
+        <div class="card-footer">
+          <p class="card-desc">Dashed bounding box with 45° skewY animated bracket ears.</p>
+          <button class="inspect-btn" onclick="inspectSpec('cyber-hud')">Specs ↗</button>
+        </div>
+      </article>
+
+      <!-- 7. SQUISHY NEUMORPHIC 3D STAMP -->
+      <article class="button-card" data-category="3d" data-id="squishy-stamp">
+        <div class="card-header">
+          <div class="card-title-group">
+            <span class="card-idx">#07</span>
+            <h3>Squishy 3D Stamp</h3>
+          </div>
+          <span class="card-category-tag">3D Mechanical</span>
+        </div>
+        <div class="card-stage force-light">
+          <button class="btn-squishy-stamp">Squishy</button>
+        </div>
+        <div class="card-footer">
+          <p class="card-desc">8-layer discrete box-shadow extrusion with compression squash.</p>
+          <button class="inspect-btn" onclick="inspectSpec('squishy-stamp')">Specs ↗</button>
+        </div>
+      </article>
+
+      <!-- 8. ORGANIC SVG GOOEY FILTER BLOB -->
+      <article class="button-card" data-category="svg" data-id="gooey-blob">
+        <div class="card-header">
+          <div class="card-title-group">
+            <span class="card-idx">#08</span>
+            <h3>Organic SVG Gooey Blob</h3>
+          </div>
+          <span class="card-category-tag">SVG Filter</span>
+        </div>
+        <div class="card-stage force-dark">
+          <button type="button" class="btn-gooey" id="gooeyBtn">Fluid Vector</button>
+        </div>
+        <div class="card-footer">
+          <p class="card-desc">feGaussianBlur + feComponentTransfer thresholding with cursor follow.</p>
+          <button class="inspect-btn" onclick="inspectSpec('gooey-blob')">Specs ↗</button>
+        </div>
+      </article>
+
+      <!-- 9. HAPTIC BEACON & PERSPECTIVE TRAY -->
+      <article class="button-card" data-category="kinetic" data-id="haptic-beacon">
+        <div class="card-header">
+          <div class="card-title-group">
+            <span class="card-idx">#09</span>
+            <h3>Haptic Beacon Tray</h3>
+          </div>
+          <span class="card-category-tag">Kinetic Tray</span>
+        </div>
+        <div class="card-stage force-light">
+          <div class="btn-haptic-wrapper">
+            <button class="btn">
+              <span class="btn-txt">View Offers</span>
+              <div class="dot pulse"></div>
+            </button>
+          </div>
+        </div>
+        <div class="card-footer">
+          <p class="card-desc">Perspective tray with live status beacon dot and inset lighting.</p>
+          <button class="inspect-btn" onclick="inspectSpec('haptic-beacon')">Specs ↗</button>
+        </div>
+      </article>
+
+      <!-- 10. CONTAINER-QUERY CHEVRON WIPE -->
+      <article class="button-card" data-category="kinetic" data-id="chevron-wipe">
+        <div class="card-header">
+          <div class="card-title-group">
+            <span class="card-idx">#10</span>
+            <h3>Container Chevron Wipe</h3>
+          </div>
+          <span class="card-category-tag">Container Query</span>
+        </div>
+        <div class="card-stage force-light">
+          <button class="btn-chevron-wipe">
+            <span class="container">➔</span>
+            <span class="btn-label">Book a demo</span>
+          </button>
+        </div>
+        <div class="card-footer">
+          <p class="card-desc">Container query width expansion with leading chevron cursor.</p>
+          <button class="inspect-btn" onclick="inspectSpec('chevron-wipe')">Specs ↗</button>
+        </div>
+      </article>
+
+      <!-- 11. CSS CONIC SHIMMER SPARK BORDER -->
+      <article class="button-card" data-category="svg" data-id="conic-shimmer">
+        <div class="card-header">
+          <div class="card-title-group">
+            <span class="card-idx">#11</span>
+            <h3>Conic Shimmer Spark</h3>
+          </div>
+          <span class="card-category-tag">Conic Physics</span>
+        </div>
+        <div class="card-stage force-dark">
+          <button class="btn-conic-shimmer">
+            <span class="inner-backdrop"></span>
+            <span class="shimmer-text">Shim Shimmer</span>
+          </button>
+        </div>
+        <div class="card-footer">
+          <p class="card-desc">360° rotating conic gradient spark border with inset backdrop.</p>
+          <button class="inspect-btn" onclick="inspectSpec('conic-shimmer')">Specs ↗</button>
+        </div>
+      </article>
+
+      <!-- 12. BESPOKE SHINY CTA GRADIENT ANGLE -->
+      <article class="button-card" data-category="svg" data-id="shiny-cta">
+        <div class="card-header">
+          <div class="card-title-group">
+            <span class="card-idx">#12</span>
+            <h3>Bespoke Shiny CTA Sheen</h3>
+          </div>
+          <span class="card-category-tag">@property Angle</span>
+        </div>
+        <div class="card-stage force-dark">
+          <button class="btn-shiny-cta">Get Unlimited Access</button>
+        </div>
+        <div class="card-footer">
+          <p class="card-desc">Registered @property angle driving border sheen illumination.</p>
+          <button class="inspect-btn" onclick="inspectSpec('shiny-cta')">Specs ↗</button>
+        </div>
+      </article>
+
+      <!-- 13. LIQUID MENISCUS WAVE RESERVOIR -->
+      <article class="button-card" data-category="kinetic" data-id="liquid-reservoir">
+        <div class="card-header">
+          <div class="card-title-group">
+            <span class="card-idx">#13</span>
+            <h3>Meniscus Wave Reservoir</h3>
+          </div>
+          <span class="card-category-tag">Liquid Geometry</span>
+        </div>
+        <div class="card-stage force-dark">
+          <a href="#wave" class="btn-liquid-reservoir" onclick="event.preventDefault()">
+            <span>HOVER ME</span>
+            <div class="wave"></div>
+          </a>
+        </div>
+        <div class="card-footer">
+          <p class="card-desc">Rotating dual circular meniscus geometries ascending on hover.</p>
+          <button class="inspect-btn" onclick="inspectSpec('liquid-reservoir')">Specs ↗</button>
+        </div>
+      </article>
+
+      <!-- 14. REPEATING DIAGONAL SLANTED STRIPE MARQUEE -->
+      <article class="button-card" data-category="kinetic" data-id="striped-marquee">
+        <div class="card-header">
+          <div class="card-title-group">
+            <span class="card-idx">#14</span>
+            <h3>Slanted Stripe Marquee</h3>
+          </div>
+          <span class="card-category-tag">Marquee Fill</span>
+        </div>
+        <div class="card-stage">
+          <button class="btn-slanted-marquee">Click me</button>
+        </div>
+        <div class="card-footer">
+          <p class="card-desc">45° striped repeating linear gradient with 25s continuous scroll.</p>
+          <button class="inspect-btn" onclick="inspectSpec('striped-marquee')">Specs ↗</button>
+        </div>
+      </article>
+
+      <!-- 15. BIOMETRIC FINGERPRINT SCAN & MORPH -->
+      <article class="button-card" data-category="biometric" data-id="biometric-login">
+        <div class="card-header">
+          <div class="card-title-group">
+            <span class="card-idx">#15</span>
+            <h3>Biometric Scan & Morph</h3>
+          </div>
+          <span class="card-category-tag">Biometric Scanner</span>
+        </div>
+        <div class="card-stage">
+          <div class="biometric-container" id="bioContainer" onclick="triggerBiometricScan()">
+            <span class="text">LOGIN</span>
+            <svg class="fingerprint" viewBox="0 0 100 100" fill="none" stroke-width="3" stroke-linecap="round">
+              <path d="M 25,57 C 23,49 26,40 31,31 C 38,26 48,25 57,26 C 65,31 70,40 72,50" />
+              <path d="M 28,63 C 28,55 31,45 36,34 C 45,27 55,29 65,33 C 68,43 68,55 68,60" />
+              <path d="M 38,71 C 41,59 40,43 45,34 C 58,32 63,44 63,56" />
+              <path d="M 45,74 C 47,65 52,56 54,45 C 54,35 48,34 45,34" />
+            </svg>
+            <svg class="ok" viewBox="0 0 100 100">
+              <path d="M30 50 L45 65 L70 35" fill="none" stroke="#FFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+        <div class="card-footer">
+          <p class="card-desc">Container width shrink, ridges scan pulse, and verified checkmark.</p>
+          <button class="inspect-btn" onclick="inspectSpec('biometric-login')">Specs ↗</button>
+        </div>
+      </article>
+
+      <!-- 16. MACINTOSH NEUMORPHIC COMMAND KEY -->
+      <article class="button-card" data-category="3d" data-id="mac-command">
+        <div class="card-header">
+          <div class="card-title-group">
+            <span class="card-idx">#16</span>
+            <h3>Neumorphic Command Key</h3>
+          </div>
+          <span class="card-category-tag">3D Keyboard Cap</span>
+        </div>
+        <div class="card-stage force-light">
+          <button class="btn-neumorphic-command" aria-label="Macintosh Command Key">
+            <div class="cmd-icon">
+              <svg viewBox="0 0 24 24"><path d="M18 10V8h-2V6c0-2.21-1.79-4-4-4S8 3.79 8 6v2H6c-2.21 0-4 1.79-4 4s1.79 4 4 4h2v2c0 2.21 1.79 4 4 4s4-1.79 4-4v-2h2c2.21 0 4-1.79 4-4s-1.79-4-4-4zm-8-4c0-1.1.9-2 2-2s2 .9 2 2v2h-4V6zm-4 8c-1.1 0-2-.9-2-2s.9-2 2-2h2v4H6zm8 8c-1.1 0-2-.9-2-2v-2h4v2c0 1.1-.9 2-2 2zm2-6h-4v-4h4v4zm2-2c1.1 0 2 .9 2 2s-.9 2-2 2h-2v-4h2z"/></svg>
+            </div>
+            <span class="cmd-text">command</span>
+          </button>
+        </div>
+        <div class="card-footer">
+          <p class="card-desc">Physical keycap beveling with inset active tactile depression.</p>
+          <button class="inspect-btn" onclick="inspectSpec('mac-command')">Specs ↗</button>
+        </div>
+      </article>
+
+      <!-- 17. DIFFERENCE BLEND WIPE TOGGLE -->
+      <article class="button-card" data-category="kinetic" data-id="diff-toggle">
+        <div class="card-header">
+          <div class="card-title-group">
+            <span class="card-idx">#17</span>
+            <h3>Difference Blend Wipe</h3>
+          </div>
+          <span class="card-category-tag">Mix Blend Mode</span>
+        </div>
+        <div class="card-stage">
+          <div class="diff-toggle-wrap">
+            <input type="checkbox" id="cbLabToggle" />
+            <label for="cbLabToggle">Toggle me</label>
+          </div>
+        </div>
+        <div class="card-footer">
+          <p class="card-desc">Hardware blend-mode inversion expanding radial circle on check.</p>
+          <button class="inspect-btn" onclick="inspectSpec('diff-toggle')">Specs ↗</button>
+        </div>
+      </article>
+
+      <!-- 18. GLASSMORPHIC NEON UNDERGLOW TRIO -->
+      <article class="button-card" data-category="kinetic" data-id="neon-underglow">
+        <div class="card-header">
+          <div class="card-title-group">
+            <span class="card-idx">#18</span>
+            <h3>Glassmorphic Underglow</h3>
+          </div>
+          <span class="card-category-tag">Frosted Neon</span>
+        </div>
+        <div class="card-stage force-purple">
+          <div class="btn-neon-underglow">
+            <a href="#read" onclick="event.preventDefault()">Read more</a>
+          </div>
+        </div>
+        <div class="card-footer">
+          <p class="card-desc">Frosted glass capsule with dual neon underglow beam expansion.</p>
+          <button class="inspect-btn" onclick="inspectSpec('neon-underglow')">Specs ↗</button>
+        </div>
+      </article>
+
+      <!-- 19. CURVED FILLER BUBBLE WIPE -->
+      <article class="button-card" data-category="kinetic" data-id="filler-bubble">
+        <div class="card-header">
+          <div class="card-title-group">
+            <span class="card-idx">#19</span>
+            <h3>Curved Bubble Wipe</h3>
+          </div>
+          <span class="card-category-tag">Liquid Fill</span>
+        </div>
+        <div class="card-stage">
+          <button class="btn-filler-bubble">
+            <span class="button__text">ORDER NOW</span>
+            <div class="button__filler"></div>
+          </button>
+        </div>
+        <div class="card-footer">
+          <p class="card-desc">150% spherical liquid dome ascending on hover with color swap.</p>
+          <button class="inspect-btn" onclick="inspectSpec('filler-bubble')">Specs ↗</button>
+        </div>
+      </article>
+
+      <!-- 20. ROTARY CORNER BRACKET OFFSET -->
+      <article class="button-card" data-category="kinetic" data-id="rotary-corners">
+        <div class="card-header">
+          <div class="card-title-group">
+            <span class="card-idx">#20</span>
+            <h3>Rotary Corner Crosshairs</h3>
+          </div>
+          <span class="card-category-tag">Motion Path</span>
+        </div>
+        <div class="card-stage">
+          <button class="btn-rotary-corners">
+            <span class="corners">
+              <span>+</span>
+              <span>+</span>
+              <span>+</span>
+              <span>+</span>
+            </span>
+            <span>Get Access</span>
+          </button>
+        </div>
+        <div class="card-footer">
+          <p class="card-desc">Perimeter-traveling corner crosshairs translating on hover.</p>
+          <button class="inspect-btn" onclick="inspectSpec('rotary-corners')">Specs ↗</button>
+        </div>
+      </article>
+
+      <!-- 21. ASYMMETRIC SWISS CROSS NOTCH -->
+      <article class="button-card" data-category="kinetic" data-id="swiss-cross">
+        <div class="card-header">
+          <div class="card-title-group">
+            <span class="card-idx">#21</span>
+            <h3>Swiss Cross Notch</h3>
+          </div>
+          <span class="card-category-tag">Swiss Editorial</span>
+        </div>
+        <div class="card-stage force-light">
+          <a class="btn-swiss-cross" href="#add" onclick="event.preventDefault()">
+            <span class="fl"></span>
+            <span class="sfl"></span>
+            <p>ADD ITEM</p>
+          </a>
+        </div>
+        <div class="card-footer">
+          <p class="card-desc">Asymmetric open-edge border with dual sliding curtain wipe.</p>
+          <button class="inspect-btn" onclick="inspectSpec('swiss-cross')">Specs ↗</button>
+        </div>
+      </article>
+
+      <!-- 22. DUAL-SPHERE MAGNETIC BUBBLE FILL & JITTER -->
+      <article class="button-card" data-category="kinetic" data-id="pill-jitter">
+        <div class="card-header">
+          <div class="card-title-group">
+            <span class="card-idx">#22</span>
+            <h3>Micro-Jitter Pill</h3>
+          </div>
+          <span class="card-category-tag">Kinetic Jitter</span>
+        </div>
+        <div class="card-stage force-light">
+          <button class="btn-pill-jitter">Storm Pill</button>
+        </div>
+        <div class="card-footer">
+          <p class="card-desc">Rotational micro-jitter oscillation with high-precision spring damping.</p>
+          <button class="inspect-btn" onclick="inspectSpec('pill-jitter')">Specs ↗</button>
+        </div>
+      </article>
+
+      <!-- 23. VERTICAL SLOT-MACHINE TEXT FLIP -->
+      <article class="button-card" data-category="kinetic" data-id="slot-flip">
+        <div class="card-header">
+          <div class="card-title-group">
+            <span class="card-idx">#23</span>
+            <h3>Vertical Slot Flip</h3>
+          </div>
+          <span class="card-category-tag">Typography Kinetic</span>
+        </div>
+        <div class="card-stage force-light">
+          <a href="#click" class="btn-slot-flip" data-hover-text="CONFIRM" onclick="event.preventDefault()">
+            <span>HOVER ME</span>
+          </a>
+        </div>
+        <div class="card-footer">
+          <p class="card-desc">Slot-machine pseudo text translation with high-aspect scale stretch.</p>
+          <button class="inspect-btn" onclick="inspectSpec('slot-flip')">Specs ↗</button>
+        </div>
+      </article>
+
+      <!-- 24. FROSTED LIQUID GLASS SURFACE WITH CURSOR PARALLAX -->
+      <article class="button-card" data-category="svg" data-id="liquid-glass-tilt">
+        <div class="card-header">
+          <div class="card-title-group">
+            <span class="card-idx">#24</span>
+            <h3>Liquid Glass Parallax</h3>
+          </div>
+          <span class="card-category-tag">Liquid Glass</span>
+        </div>
+        <div class="card-stage force-dark">
+          <button class="btn-liquid-glass-tilt" id="glassTiltBtn">
+            <span>Get Started</span>
+          </button>
+        </div>
+        <div class="card-footer">
+          <p class="card-desc">Cursor coordinate tracking with floating frosted glass tilt plane.</p>
+          <button class="inspect-btn" onclick="inspectSpec('liquid-glass-tilt')">Specs ↗</button>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- Spec Inspector Modal -->
+  <div class="modal-backdrop" id="specModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h4 id="modalTitle">Component Specification</h4>
+        <button class="modal-close" onclick="closeModal()" aria-label="Close dialog">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.75rem;">HTML Integration:</p>
+        <div class="modal-code-block" id="modalHtmlCode"></div>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.75rem;">CSS Architecture:</p>
+        <div class="modal-code-block" id="modalCssCode"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="haptic-toast" id="hapticToast">Tactile Haptic Feedback Triggered</div>
+
+  <!-- Laboratory Runtime Logic -->
+  <script>
+    // Audio synthesizer for physical click feedback
+    let audioCtx = null;
+    let soundEnabled = true;
+
+    function playHapticClick(freq = 600, duration = 0.04) {
+      if (!soundEnabled) return;
+      try {
+        if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        if (audioCtx.state === 'suspended') audioCtx.resume();
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = "sine";
+        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(120, audioCtx.currentTime + duration);
+        gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + duration);
+      } catch (e) {}
+    }
+
+    // Attach click feedback to all interactive buttons
+    document.querySelectorAll("button, .d-iso, .cube-extrusion, .btn-liquid-reservoir, .btn-swiss-cross, .btn-slot-flip, .biometric-container").forEach(el => {
+      el.addEventListener("click", () => {
+        playHapticClick(750, 0.05);
+        showToast("Haptic Click: " + (el.innerText || "Component").slice(0, 15));
+      });
+    });
+
+    // Theme Toggle
+    const themeBtn = document.getElementById("themeToggle");
+    const themeIcon = document.getElementById("themeIcon");
+    themeBtn.addEventListener("click", () => {
+      const current = document.documentElement.getAttribute("data-theme");
+      const next = current === "light" ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", next);
+      themeIcon.textContent = next === "light" ? "🌙" : "☀️";
+      playHapticClick(450, 0.03);
+    });
+
+    // Audio Toggle
+    const soundBtn = document.getElementById("soundToggle");
+    const soundIcon = document.getElementById("soundIcon");
+    soundBtn.addEventListener("click", () => {
+      soundEnabled = !soundEnabled;
+      soundIcon.textContent = soundEnabled ? "🔊" : "🔇";
+      soundBtn.innerHTML = `<span>${soundIcon.textContent}</span> Audio: ${soundEnabled ? 'ON' : 'OFF'}`;
+      if (soundEnabled) playHapticClick(800, 0.04);
+    });
+
+    // Filter Logic
+    const filterPills = document.querySelectorAll(".filter-pill");
+    const cards = document.querySelectorAll(".button-card");
+    filterPills.forEach(pill => {
+      pill.addEventListener("click", () => {
+        filterPills.forEach(p => p.classList.remove("active"));
+        pill.classList.add("active");
+        const category = pill.getAttribute("data-category");
+        cards.forEach(card => {
+          if (category === "all" || card.getAttribute("data-category") === category) {
+            card.style.display = "flex";
+          } else {
+            card.style.display = "none";
+          }
+        });
+        playHapticClick(500, 0.02);
+      });
+    });
+
+    // Power Buttons toggle
+    ["#pwrBtn1", "#pwrBtn2"].forEach(sel => {
+      const b = document.querySelector(sel);
+      if (b) {
+        b.addEventListener("click", () => {
+          const pressed = b.getAttribute("aria-pressed") === "true";
+          b.setAttribute("aria-pressed", String(!pressed));
+          playHapticClick(pressed ? 300 : 900, 0.06);
+        });
+      }
+    });
+
+    // Gooey Button mouse tracking
+    const gooeyBtn = document.getElementById("gooeyBtn");
+    if (gooeyBtn) {
+      gooeyBtn.addEventListener("pointermove", (e) => {
+        const rect = e.target.getBoundingClientRect();
+        e.target.style.setProperty("--x", ((e.clientX - rect.x) / rect.width) * 100);
+        e.target.style.setProperty("--y", ((e.clientY - rect.y) / rect.height) * 100);
+      });
+    }
+
+    // Biometric Scanner trigger
+    function triggerBiometricScan() {
+      const bio = document.getElementById("bioContainer");
+      if (!bio || bio.classList.contains("scanning") || bio.classList.contains("verified")) return;
+      bio.classList.add("scanning");
+      playHapticClick(400, 0.1);
+      setTimeout(() => {
+        bio.classList.remove("scanning");
+        bio.classList.add("verified");
+        playHapticClick(1000, 0.08);
+        setTimeout(() => {
+          bio.classList.remove("verified");
+        }, 2500);
+      }, 1600);
+    }
+
+    // Liquid Glass Tilt Parallax
+    const glassTiltBtn = document.getElementById("glassTiltBtn");
+    if (glassTiltBtn) {
+      glassTiltBtn.addEventListener("mousemove", (e) => {
+        const rect = glassTiltBtn.getBoundingClientRect();
+        const offsetX = (e.clientX - rect.left - rect.width / 2) * 0.25;
+        const offsetY = (e.clientY - rect.top - rect.height / 2) * 0.25;
+        glassTiltBtn.style.setProperty("--_x-motion", `${offsetX}px`);
+        glassTiltBtn.style.setProperty("--_y-motion", `${offsetY}px`);
+      });
+      glassTiltBtn.addEventListener("mouseleave", () => {
+        glassTiltBtn.style.setProperty("--_x-motion", "0px");
+        glassTiltBtn.style.setProperty("--_y-motion", "0px");
+      });
+    }
+
+    // Toast Notification
+    const toast = document.getElementById("hapticToast");
+    let toastTimer = null;
+    function showToast(msg) {
+      if (!toast) return;
+      toast.textContent = msg;
+      toast.classList.add("show");
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toast.classList.remove("show");
+      }, 1600);
+    }
+
+    // Modal Inspector
+    const modal = document.getElementById("specModal");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalHtml = document.getElementById("modalHtmlCode");
+    const modalCss = document.getElementById("modalCssCode");
+
+    const specs = {
+      "concave-bevel": {
+        title: "Skeuomorphic Concave Bevel Push Button",
+        html: `<button class="btn-concave-push">\n  <div class="button-outer">\n    <div class="button-inner">\n      <span>Push</span>\n    </div>\n  </div>\n</button>`,
+        css: `.btn-concave-push {\n  position: relative;\n  border-radius: 999px;\n  box-shadow: -0.15em -0.15em 0.15em rgba(5,5,5,0.25);\n}\n.btn-concave-push:hover .button-inner {\n  clip-path: inset(clamp(1px, 0.0625em, 2px) round 999px);\n}`
+      },
+      "power-switch": {
+        title: "Tactile Power On/Off Toggle Button",
+        html: `<button class="power-btn" type="button" aria-pressed="false">\n  <svg class="btn__icon">...</svg>\n</button>`,
+        css: `.power-btn[aria-pressed="true"]:before {\n  box-shadow: 0 0.2em 0.2em 0 hsla(223, 0%, 0%, 0.3);\n  transform: scale(0.96);\n}`
+      },
+      "gooey-blob": {
+        title: "Organic SVG Gooey Filter Blob Button",
+        html: `<button class="btn-gooey">Fluid Vector</button>\n<svg><filter id="lab-goo">...</filter></svg>`,
+        css: `.btn-gooey:before {\n  filter: blur(8px) url(#lab-goo);\n  background-image: radial-gradient(40% 70% at calc(var(--x)*1%) calc(var(--y)*1%), ...);\n}`
+      },
+      "biometric-login": {
+        title: "Biometric Fingerprint Scan & Morph",
+        html: `<div class="biometric-container" onclick="triggerBiometricScan()">\n  <span class="text">LOGIN</span>\n  <svg class="fingerprint">...</svg>\n  <svg class="ok">...</svg>\n</div>`,
+        css: `.biometric-container.scanning {\n  width: 64px;\n}\n.biometric-container.verified {\n  background: #10B981;\n}`
+      }
+    };
+
+    function inspectSpec(id) {
+      const data = specs[id] || {
+        title: "Component Specs: #" + id,
+        html: `<!-- Embedded component markup for #${id} -->\n<div class="${id}">...</div>`,
+        css: `/* Micro-kinematic styles */\n.${id} { transition: transform 0.3s ease; }`
+      };
+      modalTitle.textContent = data.title;
+      modalHtml.textContent = data.html;
+      modalCss.textContent = data.css;
+      modal.classList.add("open");
+      playHapticClick(650, 0.03);
+    }
+
+    function closeModal() {
+      modal.classList.remove("open");
+    }
+
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) closeModal();
+    });
+  </script>
+</body>
+</html>

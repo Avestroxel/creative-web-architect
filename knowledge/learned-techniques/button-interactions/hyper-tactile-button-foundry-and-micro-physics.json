@@ -1,0 +1,42 @@
+{
+  "id": "hyper-tactile-button-foundry-and-micro-physics",
+  "name": "Hyper-Tactile Button Foundry: Biometric, Gooey SVG, Neumorphic Stamp & Multi-Axis CSS Kinematics",
+  "description": "Comprehensive suite of 24 hyper-tactile button interaction architectures spanning biometric fingerprint scanning with container morphing, organic SVG gooey matrix filters, 8-tier multi-box-shadow neumorphic squish, single-element pure CSS 3D isometric polygon bevels, CSS Motion Path rotary corner brackets, dual-wave liquid meniscuses, difference blend inversion toggles, and cursor-tracked parallax glassmorphism.",
+  "category": "button-interactions",
+  "tags": [
+    "buttons",
+    "micro-interactions",
+    "tactile",
+    "biometrics",
+    "svg-filters",
+    "neumorphic",
+    "motion-path",
+    "conic-shimmer",
+    "glassmorphism",
+    "hover-physics"
+  ],
+  "designPhilosophy": "Transform digital buttons from static rectangles into responsive physical instruments that communicate tactile depth, mechanical feedback, and fluid surface tension.",
+  "appropriateUseCases": [
+    "Design systems and component design libraries",
+    "High-conversion call-to-action touchpoints",
+    "Futuristic, cyberpunk, and luxury digital experiences",
+    "Tactile micro-interaction showcases and design engineering portfolios"
+  ],
+  "implementationApproach": "Combine hardware-accelerated CSS transforms, CSS Motion Path offset properties, @property registered custom angle interpolations, and SVG filter primitives with zero layout recalibration.",
+  "relevantTechnologies": [
+    "Modern CSS (@property, container-type, offset-path)",
+    "SVG Filters (feGaussianBlur, feComponentTransfer)",
+    "Vanilla JS Micro-Kinematics",
+    "Accessible WAI-ARIA (aria-pressed, focus-visible)"
+  ],
+  "performanceConsiderations": "Enforce will-change boundaries, constrain SVG blur kernels to isolate layers, and avoid layout thrashing by animating transform and opacity.",
+  "accessibilityRequirements": "Guarantee WCAG 2.1 AA keyboard focus indicators, aria-pressed state parity, text contrast standards, and prefers-reduced-motion fallbacks.",
+  "sourceReference": {
+    "type": "prompt",
+    "title": "Tactile Button Foundry Suite",
+    "date": "2026-10-25T01:36:56.000Z"
+  },
+  "validationStatus": "reviewed",
+  "targetSkill": "premium-button-interactions",
+  "isExemptFromNoGlow": true
+}
