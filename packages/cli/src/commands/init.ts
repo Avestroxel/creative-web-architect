@@ -86,8 +86,8 @@ export async function handleInit(targetPath?: string, options: InitOptions = {})
 
   logBlank();
 
-  // Step 3: Auto-Install 33 Learned Techniques & Knowledge Base
-  log(LogLevel.INFO, 'Installing Knowledge Base (33 Learned Architectural Techniques)...');
+  // Step 3: Auto-Install 36 Learned Techniques & Knowledge Base
+  log(LogLevel.INFO, 'Installing Knowledge Base (36 Learned Architectural Techniques)...');
   const bundledKnowledgeDir = getBundledDir('knowledge');
   const targetKnowledgeDir = resolve(projectDir, 'knowledge');
   const targetAgentsKnowledgeDir = resolve(projectDir, '.agents', 'knowledge');
@@ -201,7 +201,7 @@ Use the specialized skills in \`.agents/skills/\` for specific phases:
 ## EXECUTION WORKFLOW
 
 1. **Understand Intent**: Analyze the brief, brand identity, and audience.
-2. **Select Techniques**: Choose 2–4 signature techniques from the 27 learned techniques.
+2. **Select Techniques**: Choose 2–4 signature techniques from the 36 learned techniques.
 3. **Execute High Craft**: Implement clean, semantic code with custom CSS properties, hardware-accelerated transforms, and high-contrast typography.
 4. **Zero-Glow Enforcement**: Check against the No-Glow policy before delivery.
 5. **Serve & Review**: Ensure localhost serving runs cleanly with zero console errors.
@@ -225,7 +225,7 @@ Use the specialized skills in \`.agents/skills/\` for specific phases:
   log(LogLevel.SUCCESS, '🎉 Creative Web Architect successfully initialized!');
   log(LogLevel.INFO, 'Every AI agent in this folder is now powered by:');
   log(LogLevel.INFO, '  • 36 Specialized Creative Agent Skills in .agents/skills/');
-  log(LogLevel.INFO, '  • 33 Learned Architectural Techniques in knowledge/');
+  log(LogLevel.INFO, '  • 36 Learned Architectural Techniques in knowledge/');
   log(LogLevel.INFO, '  • Strict No-Glow & Awwwards-grade Master Directives in AGENTS.md');
   logBlank();
   log(LogLevel.INFO, 'To start building: Open this folder in Antigravity and prompt your agent!');
