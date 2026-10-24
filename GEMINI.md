@@ -154,7 +154,7 @@ Always check dependency compatibility before installing.
 
 ---
 
-## 39 LEARNED ARCHITECTURAL TECHNIQUES (INSTALLED IN KNOWLEDGE/)
+## 40 LEARNED ARCHITECTURAL TECHNIQUES (INSTALLED IN KNOWLEDGE/)
 
 In every project, you MUST inspect and autonomously apply 2 to 4 complementary techniques from your local `knowledge/index.json`:
 
@@ -197,5 +197,6 @@ In every project, you MUST inspect and autonomously apply 2 to 4 complementary t
 37. **Tactile Button Physics & Micro-Kinematic Interaction Library** (`tactile-button-physics-and-micro-kinematics`): 7 signature interaction architectures (Curved Meniscus Wave Fill, Cipher Decryption Jitter, Physical 3D Mechanical Plate, Difference Blend Wipe, Opposing Kinetic Arrow Swap, Sliding Icon Drawer, and Swiss Hairline Notches) governed by spring kinematics and zero-repaint compositing.
 38. **Dual-Image Soft-Brush Liquid Cursor Reveal & Adaptive Rem Grid Kinematics** (`dual-image-liquid-cursor-brush-reveal`): Full-bleed dual-image canvas aperture painting an alternate image along the cursor trail with radial gradient brush, destination-out decay with idle ramp, and dynamic source-in cover compositing, paired with a rem-based adaptive grid and scroll-locked 3-digit intro loader.
 39. **Chiaroscuro Sculptural Orbit, Molten Liquid-Bronze Wave Shader & Forge Spark Turbulence** (`chiaroscuro-bronze-wave-shader-and-spark-turbulence`): Cinematic 3D WebGL stage combining 360° scroll-driven camera orbit around an auto-centered, noble bronze sculpture, a camera-parented liquid-bronze GLSL wave shader migrating from molten copper to sapphire blue, and 450 velocity-turbulent additive forge spark particles.
+40. **Adaptive Rem Grid with Physics-Gated Reveals & Ghost Typography** (`adaptive-rem-grid-with-physics-gated-reveals-and-ghost-typography`): Comprehensive responsive architecture pairing a dual-directional viewport-relative rem grid with a curtain-sliding physics loader, Lenis smooth scroll-lock integration, stacked card container insets, spring-driven text clip-masks, and multi-axis ghost typography with slide-triggered re-reveals.
 
 

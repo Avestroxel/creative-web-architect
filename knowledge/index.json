@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
-  "updatedAt": "2026-10-25T00:35:00.000Z",
-  "totalTechniques": 39,
+  "updatedAt": "2026-10-25T00:42:00.000Z",
+  "totalTechniques": 40,
   "categories": {
     "typography": 4,
     "scroll-animations": 7,
@@ -12,7 +12,7 @@
     "three-dimensional-web": 8,
     "ui-components": 2,
     "creative-storytelling": 1,
-    "visual-composition": 3,
+    "visual-composition": 4,
     "page-transitions": 1,
     "micro-interactions": 1,
     "performance-engineering": 3,
@@ -795,6 +795,31 @@
         "type": "prompt",
         "title": "Laocoön — Bronze and Time Prompt",
         "date": "2026-10-25T00:34:00.000Z"
+      }
+    },
+    {
+      "id": "adaptive-rem-grid-with-physics-gated-reveals-and-ghost-typography",
+      "name": "Adaptive Rem Grid with Physics-Gated Reveals & Ghost Typography",
+      "description": "Comprehensive responsive architecture pairing a dual-directional viewport-relative rem grid with a curtain-sliding physics loader, Lenis smooth scroll-lock integration, stacked card container insets, spring-driven text clip-masks, and multi-axis ghost typography with slide-triggered re-reveals.",
+      "category": "visual-composition",
+      "tags": [
+        "adaptive-grid",
+        "rem-scaling",
+        "physics-gated-loader",
+        "curtain-reveal",
+        "lenis-scroll-lock",
+        "ghost-typography",
+        "spring-solver",
+        "clip-mask-reveal",
+        "editorial-cards",
+        "baseline"
+      ],
+      "validationStatus": "reviewed",
+      "targetSkill": "visual-composition",
+      "sourceReference": {
+        "type": "prompt",
+        "title": "Baseline — Tennis Club & Academy Prompt",
+        "date": "2026-10-25T00:41:00.000Z"
       }
     }
   ]

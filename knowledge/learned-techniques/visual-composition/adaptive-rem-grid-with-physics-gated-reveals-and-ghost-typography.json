@@ -1,0 +1,43 @@
+{
+  "id": "adaptive-rem-grid-with-physics-gated-reveals-and-ghost-typography",
+  "name": "Adaptive Rem Grid with Physics-Gated Reveals & Ghost Typography",
+  "description": "Comprehensive responsive architecture pairing a dual-directional viewport-relative rem grid with a curtain-sliding physics loader, Lenis smooth scroll-lock integration, stacked card container insets, spring-driven text clip-masks, and multi-axis ghost typography with slide-triggered re-reveals.",
+  "category": "visual-composition",
+  "tags": [
+    "adaptive-grid",
+    "rem-scaling",
+    "physics-gated-loader",
+    "curtain-reveal",
+    "lenis-scroll-lock",
+    "ghost-typography",
+    "spring-solver",
+    "clip-mask-reveal",
+    "editorial-cards",
+    "baseline"
+  ],
+  "designPhilosophy": "Confidently combines luxury athletic club editorial design with mathematically continuous responsive typography. By combining downward media queries (vw-based root font size below 1920px) with JavaScript upward reduction scaling above 1920px, every card, padding, gap, and display font preserves pixel-perfect proportions across 4K displays down to mobile devices. Stacking rounded container cards inside an inset page frame creates an elegant, tactile sense of depth.",
+  "appropriateUseCases": [
+    "High-end athletic academies, private sports clubs, and luxury fitness resorts",
+    "Membership clubs, boutique studios, and editorial marketing destinations",
+    "Design and architecture studios requiring strict proportional scaling across screens",
+    "Editorial storytelling sites featuring stacked dark/light thematic sections"
+  ],
+  "implementationApproach": "1. Dual-Directional Adaptive Rem Grid: Configure root font-size with media queries (0.833333vw <= 1920px, 1.111111vw <= 1440px, 1.5625vw <= 1024px, 4.444444vw <= 640px), and execute a resize handler for screens > 1920px (reduction = ((1920 - innerWidth) / 1920) * 100 * 0.6666; fontSize = 16 - (16 * reduction) / 100). 2. Gated Physics Loader Curtain: Render a full-screen brand-deep curtain with a tennis wordmark and expanding progress track (easeInOutCubic). Lock Lenis and body scroll during loading. Once ready, animate the curtain translateY(-105%) over 850ms, unlock Lenis, and trigger gated entrance springs on hero headline, stacked tagline, and cards. 3. Plain JS Spring Solver: Implement a minimal rAF spring model (v += (-tension * (x - target) - friction * v) * dt; x += v * dt) for interactive cards, modals, and hover micro-interactions. 4. Ghost Typography with Opposing Parallax: Construct display headlines spanning two rows with ghost-colored and ink-colored words. Map section scroll progress to opposing X-axis translations (top-left -3%->3%, top-right 3%->-3%, bottom-left -2%->4%, bottom-right 4%->-3%). Re-fire clip-mask reveals upon slide navigation. 5. Inset Stacked Card Hierarchy: Wrap sections in an inset main frame (0.5rem mobile / 0.75rem desktop) with rounded-card-lg borders, negative overlap margins (e.g., -2.5rem on facilities), and rich chiaroscuro navy-to-surface transitions.",
+  "relevantTechnologies": [
+    "Lenis Smooth Scroll (v1.1.18+)",
+    "Adaptive REM & Viewport Units (vw, svh)",
+    "Plain JS Runge-Kutta / Euler Spring Physics Solver",
+    "CSS Clip-Path & Overflow Hidden Text Engines",
+    "IntersectionObserver Scroll Triggers"
+  ],
+  "performanceConsiderations": "Uses CSS transform and opacity exclusively for all spring and clip reveals, disables hover interactions on touch/mobile devices (<=768px), stops Lenis during modal/loader presentation to eliminate wasted calculation, and uses will-change sparingly on active parallax elements.",
+  "accessibilityRequirements": "Integrates full focus-visible rings with brand-light accent, traps modal focus with Esc key dismissal, honors prefers-reduced-motion by bypassing curtain transitions and setting instant entrance states, and uses semantic dl, dt, dd for stat metrics.",
+  "sourceReference": {
+    "type": "prompt",
+    "title": "Baseline — Tennis Club & Academy Prompt",
+    "date": "2026-10-25T00:41:00.000Z"
+  },
+  "validationStatus": "reviewed",
+  "targetSkill": "visual-composition",
+  "isExemptFromNoGlow": false
+}
