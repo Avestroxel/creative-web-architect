@@ -75,3 +75,11 @@ export type {
 } from './knowledge-types.js';
 export { DESIGN_MODES, DESIGN_STYLES, STYLE_CATEGORIES } from './constants.js';
 export { resolvePath, isSubPath, createBackup } from './utils.js';
+export {
+  classifyPromptArchetype,
+  validateTechniqueSynergy,
+  ARCHETYPE_DEFINITIONS,
+  type DesignArchetypeId,
+  type ArchetypeDefinition,
+  type ArchetypeRecommendation
+} from './archetype-matrix.js';

@@ -64,15 +64,66 @@ This project contains 36 reusable Agent Skills in the `skills/` directory. Each 
 - **COMPONENT**: Create standalone reusable UI component
 - **AUDIT**: Evaluate and improve an existing implementation
 
-## Decision Framework
+## INTELLIGENT REASONING & TECHNIQUE DECISION MATRIX
 
-1. **Analyze** the request — identify purpose, audience, brand personality
-2. **Select** appropriate skills to load
-3. **Develop** 3 creative directions internally, pick the strongest
-4. **Plan** the technology stack (smallest reliable set of dependencies)
-5. **Implement** with real working code
-6. **Validate** — run builds, check accessibility, measure performance
-7. **Deliver** with a quality summary
+When you receive ANY prompt or user brief, DO NOT randomly pick techniques or guess aesthetics. Follow this strict 5-stage architectural reasoning pipeline:
+
+### STAGE 1: ARCHETYPE CLASSIFICATION (WHAT KIND OF WORLD ARE WE BUILDING?)
+Analyze the user prompt and map it into one of the 10 Signature Creative Archetypes:
+
+1. **Creative Design & Engineering Studio** (Keywords: studio, agency, engineering, digital products, conversion)
+   - *Primary Techniques:* `dual-image-liquid-cursor-brush-reveal`, `damped-magnetic-cursor-follow-physics`, `tactile-button-physics-and-micro-kinematics`
+   - *Supporting:* `scroll-driven-character-opacity-wave`
+   - *Aesthetic Stance:* Warm near-white (`#ffffff`, `#f1f0ee`), deep near-black (`#0a0a0a`), burnt orange (`#b15f2c`), Onest/Inter typography, 0.5px hairlines.
+
+2. **Auteur Cinema & Archival Editorial** (Keywords: cinema, film, 35mm, archival, monograph, editorial)
+   - *Primary Techniques:* `mission-architectural-philosophy`, `masked-video-clip-path-reveals`, `inertia-horizontal-film-pan`, `kinetic-roman-numeral-chapter-navigation`
+   - *Aesthetic Stance:* Obsidian (`#060709`), archival warm cream, high-contrast serif/grotesque pairing, zero neon.
+
+3. **High-Performance Motorsport & Racing** (Keywords: racing, f1, formula, velocity, circuit, telemetry)
+   - *Primary Techniques:* `curvature-time-dilated-circuit-trace`, `packed-delta-lattice-halftone-matrix`, `sticky-stacking-card-deck-scale-decay`, `depth-parallax-normal-relighting-burn`
+   - *Aesthetic Stance:* Matte carbon black (`#07080a`), high-contrast racing red/cyan, 8000+ dot delta halftone, speed-braked circuit polyline.
+
+4. **3D Physical Product & Spatial E-Commerce** (Keywords: beverage, soda, can, bottle, packaging, consumer 3d)
+   - *Primary Techniques:* `model-viewer-cursor-tilt-and-forcefield-repulsion`, `shader-warmed-texture-swap-and-entity-implosion`, `three-tier-depth-layered-parallax-staging`
+   - *Aesthetic Stance:* Deep flavor ambient gradient, 400px pointer repulsion forcefield, shader-warmed model swapping, bubble kinematics.
+
+5. **3D Biological Diorama & Organic Artistry** (Keywords: botanical, bee, honeybee, flora, organic, flight, diorama)
+   - *Primary Techniques:* `scroll-driven-3d-gltf-flight-path-kinematics`, `procedural-multi-layer-alpha-threshold-wing-flutter`, `scroll-synchronized-multidirectional-flora-parallax`
+   - *Aesthetic Stance:* Warm cream (`#FAF7F2`), Three.js GLTF flight path with Euler banking, procedural alpha wings, stem rotation parallax.
+
+6. **Aerospace, Geospatial Telemetry & HUD** (Keywords: satellite, geospatial, earth, coordinates, hud, aerospace)
+   - *Primary Techniques:* `alethia-geospatial-telemetry`, `alethia-stratigraphic-materiality`, `oscs-spatial-control-surface`
+   - *Aesthetic Stance:* Deep basalt (`#090A0F`), 3D orthographic wireframe globe, Great-Circle math, matrix3d panel docking.
+
+7. **Industrial Hardware & Analog Audio Consoles** (Keywords: audio, sound, synthesizer, studio, rotary, knob, vu meter)
+   - *Primary Techniques:* `twofour-seven-artists-sonic-telemetry`, `ricardo-isometric-mechanical-console`, `tactile-button-physics-and-micro-kinematics`
+   - *Aesthetic Stance:* Brushed aluminum, Urushi lacquer, analog VU meters, isometric 3D diorama (rotateX 60deg, rotateZ -45deg), knurled rotary knobs.
+
+8. **Architectural Bento & Honed Slate Tessellation** (Keywords: bento, modular, slate, grout, saas, dashboard, productivity)
+   - *Primary Techniques:* `tile-tactile-tessellation-system`, `conversational-action-triage-and-optical-blur`, `tactile-button-physics-and-micro-kinematics`
+   - *Aesthetic Stance:* 1px ceramic grout hairlines, micro-beveled inner shadow relief, tactile card depression, 4px optical blur.
+
+9. **Japanese Sumi Ink, Urushi & Ma Spacing** (Keywords: japanese, sumi, ink, lacquer, urushi, zen, minimal, ma)
+   - *Primary Techniques:* `izanami-shadow-and-ink`, `mission-architectural-philosophy`, `scroll-driven-character-opacity-wave`
+   - *Aesthetic Stance:* ≥45% Ma negative void, deep Urushi black (`#060709`), Kinpaku gold (`#C5A059`), SVG turbulence ink displacement.
+
+10. **Street-Luxe & Neo-Brutalism** (Keywords: street, streetwear, brutalist, fashion, underground, stickers)
+    - *Primary Techniques:* `meech-street-luxe-neo-brutalism`, `typolove-kinetic-variable-typography-and-specimen-craft`, `romanelli-kinetic-viewport-and-inertial-distortion`
+    - *Aesthetic Stance:* Asphalt noir, raw flash contrast, physics draggable holographic stickers, industrial gaffer tape stencil masks.
+
+### STAGE 2: TECHNIQUE SELECTION & SYNERGY CHECK (WHEN TO USE WHAT)
+- Always combine **2 to 4 complementary techniques** (never overload with 7+ techniques that fight for viewport focus).
+- Pair ONE hero anchor (e.g. Liquid Canvas Brush OR 3D Model Orbit OR Curvature Circuit Trace) with TWO supporting micro-interactions (e.g. Tactile Button Wave + Magnetic Follow Pill).
+- Conflict prevention: Never mix two competing horizontal hijackers or two simultaneous full-screen 3D loops.
+
+### STAGE 3: EXECUTION ORDER (HOW TO BUILD PROPORTIONATELY)
+Follow this strict 5-step development workflow:
+1. **Foundation & Tokens:** Define semantic CSS custom properties (`--ink`, `--surface`, `--line`, `--accent`), adaptive rem grid scales, and zero-glow contrast.
+2. **Accessible Skeleton:** Write semantic HTML5 structure with `<header>`, `<main>`, `<section>`, `<footer>`, `<dialog>`, and skip link.
+3. **Hero Interaction Layer:** Mount the primary technique (e.g. Dual-Image Canvas brush trail, Model-Viewer, or Flight path).
+4. **Physical Kinematics:** Attach spring-damped micro-interactions (tactile button wave fill, cipher decryption, magnetic attraction).
+5. **Accessibility & Core Web Vitals:** Verify `prefers-reduced-motion: reduce`, disable hover springs on touch devices, and ensure zero layout shift.
 
 ## Key Principles
 
@@ -86,17 +137,17 @@ This project contains 36 reusable Agent Skills in the `skills/` directory. Each 
 
 ## Packages
 
-- `@cwa/core` — Skill discovery, configuration, types
+- `@cwa/core` — Skill discovery, configuration, archetype matrix & decision engine
 - `@cwa/cli` — Command-line installer and project tooling
 - `@cwa/effects` — Liquid Glass components, motion utilities, 3D helpers
 
 ## Technology Preferences
 
 Default stack when no constraints exist:
-- TypeScript, React, Vite
+- TypeScript, React, Vite (or Single-File HTML/CSS/JS for standalone deliverables)
 - Modern CSS (custom properties, container queries, @layer)
-- GSAP + ScrollTrigger for complex animation
-- Three.js / React Three Fiber for 3D
+- GSAP + ScrollTrigger or Lenis for smooth motion
+- Three.js / Model-Viewer for 3D
 - Vitest for testing, Playwright for E2E
 
 Always check dependency compatibility before installing.

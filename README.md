@@ -55,6 +55,7 @@ Open your project folder in **Antigravity**, **Cursor**, or **Claude Code**, and
 | :--- | :--- | :--- |
 | **Specialized Skills** | **36 Skills** | Creative direction, Liquid Glass, spring kinematics, Three.js 3D, and Core Web Vitals QA. |
 | **Learned Techniques** | **38 Techniques** | Mathematically indexed patterns extracted from award-winning digital experiences. |
+| **Archetype Matrix** | **10 Archetypes** | Automated classification engine mapping any brief to complementary techniques & palettes. |
 | **Production Templates** | **5 Templates** | Standalone single-file verified deliverables (Lumora Studio, KIMI F1, Soda 3D, Melli Honeybee, Hyper-GT). |
 | **Lighting Policy** | **Zero-Glow** | Eliminates cheap purple neon halos in favor of matte obsidian, hairline contrast, and quiet luxury. |
 | **Runtime & License** | **100% Local / MIT** | Free, open source, zero external API keys required, running entirely on your local machine. |

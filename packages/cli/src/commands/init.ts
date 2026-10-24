@@ -200,13 +200,13 @@ Use the specialized skills in \`.agents/skills/\` for specific phases:
 
 ---
 
-## EXECUTION WORKFLOW
+## 5-STAGE REASONING & EXECUTION PIPELINE
 
-1. **Understand Intent**: Analyze the brief, brand identity, and audience.
-2. **Select Techniques**: Choose 2–4 signature techniques from the 38 learned techniques.
-3. **Execute High Craft**: Implement clean, semantic code with custom CSS properties, hardware-accelerated transforms, and high-contrast typography.
-4. **Zero-Glow Enforcement**: Check against the No-Glow policy before delivery.
-5. **Serve & Review**: Ensure localhost serving runs cleanly with zero console errors.
+1. **Archetype Classification**: Analyze prompt keywords and identify the matching creative archetype (e.g. Studio Engineering, Auteur Cinema, Motorsport, 3D Product, Diorama, Hardware Audio, Bento Slate, Japanese Ma, or Street-Luxe).
+2. **Technique Synergy Selection**: Select 2 to 4 complementary techniques from the 38 learned techniques (1 primary hero anchor + 2 supporting micro-interactions). Verify zero conflicting scroll hijackers or overlapping 3D loops.
+3. **Foundation & Semantic Skeleton**: Define CSS custom properties, adaptive rem grid scales, and semantic HTML5 layout with skip links.
+4. **Physical Kinematics**: Mount the hero canvas/WebGL entity and attach spring-damped micro-interactions (meniscus wave button, cipher decryption, magnetic follow).
+5. **Zero-Glow & Accessibility Gate**: Enforce mature obsidian/hairline contrast (no cheap purple bloom), add prefers-reduced-motion fallbacks, and verify 60 FPS performance.
 
 *Created by Anas Hashim. Copyright © 2026 Anas Hashim. MIT License.*
 `;
