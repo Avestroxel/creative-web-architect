@@ -21,6 +21,10 @@ importers:
         specifier: ^1.2.0
         version: 1.6.1(@types/node@20.19.43)
 
+  examples/motion-laboratory: {}
+
+  examples/showcase: {}
+
   packages/cli:
     dependencies:
       '@cwa/core':
@@ -70,6 +74,12 @@ importers:
       typescript:
         specifier: ^5.3.3
         version: 5.9.3
+
+  templates/creative-portfolio: {}
+
+  templates/luxury-automotive: {}
+
+  templates/modern-dashboard: {}
 
 packages:
 
