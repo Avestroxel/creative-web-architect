@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
-  "updatedAt": "2026-10-24T13:24:00.000Z",
-  "totalTechniques": 25,
+  "updatedAt": "2026-10-24T13:28:00.000Z",
+  "totalTechniques": 27,
   "categories": {
     "typography": 4,
     "scroll-animations": 5,
@@ -10,12 +10,12 @@
     "hover-effects": 2,
     "art-direction": 2,
     "three-dimensional-web": 2,
-    "ui-components": 1,
+    "ui-components": 2,
     "creative-storytelling": 1,
     "visual-composition": 2,
     "page-transitions": 1,
     "micro-interactions": 1,
-    "performance-engineering": 1,
+    "performance-engineering": 2,
     "color-systems": 1
   },
   "techniques": [
@@ -506,6 +506,44 @@
         "type": "prompt",
         "title": "Jack 3D Creator Portfolio Prompt",
         "date": "2026-10-24T13:24:00.000Z"
+      }
+    },
+    {
+      "id": "queue-gated-mouse-scrub-video-kinematics",
+      "name": "Queue-Gated Mouse-Scrub Video Kinematics & Hardware Anti-Flood Seeking",
+      "description": "Interactive video timeline architecture that smoothly scrubs video playback via horizontal mouse velocity. Solves video decoder freeze and frame-drop through an asynchronous onSeeked queue latch that buffers target time mutations without flooding the hardware decoder.",
+      "category": "performance-engineering",
+      "tags": [
+        "video-scrubbing",
+        "anti-flood-seek",
+        "pointer-kinematics",
+        "mainframe"
+      ],
+      "validationStatus": "reviewed",
+      "targetSkill": "performance-optimization",
+      "sourceReference": {
+        "type": "prompt",
+        "title": "Mainframe Creative Agency Prompt",
+        "date": "2026-10-24T13:28:00.000Z"
+      }
+    },
+    {
+      "id": "conversational-action-triage-and-optical-blur",
+      "name": "Conversational Action Pill Triage & Optical Depth-of-Field Layering",
+      "description": "Hero section interaction architecture combining intentional optical blur (filter: blur(4px)) on ambient intro text, cadence-gated typewriter storytelling with stepped cursor, and a responsive triage cluster of action pill buttons with one-click clipboard copy.",
+      "category": "ui-components",
+      "tags": [
+        "action-pills",
+        "optical-blur",
+        "conversational-ui",
+        "mainframe"
+      ],
+      "validationStatus": "reviewed",
+      "targetSkill": "dashboard-design",
+      "sourceReference": {
+        "type": "prompt",
+        "title": "Mainframe Creative Agency Prompt",
+        "date": "2026-10-24T13:28:00.000Z"
       }
     }
   ]

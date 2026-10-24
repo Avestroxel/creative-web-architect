@@ -1,0 +1,39 @@
+{
+  "id": "conversational-action-triage-and-optical-blur",
+  "name": "Conversational Action Pill Triage & Optical Depth-of-Field Layering",
+  "description": "Hero section interaction architecture combining intentional optical blur (filter: blur(4px)) on ambient intro text, cadence-gated typewriter storytelling with stepped cursor, and a responsive triage cluster of action pill buttons with one-click clipboard copy.",
+  "category": "ui-components",
+  "tags": [
+    "action-pills",
+    "optical-blur",
+    "conversational-ui",
+    "mainframe",
+    "typewriter-cadence",
+    "clipboard-copy"
+  ],
+  "designPhilosophy": "Treating hero landing pages as conversational triage stations rather than passive promotional billboards. Leverages intentional optical blur (filter: blur(4px)) on secondary intro metadata to simulate camera lens depth-of-field, paired with typewriter conversational cadence and immediate interactive response pill buttons.",
+  "appropriateUseCases": [
+    "Creative studio and boutique agency intake heroes",
+    "AI agent interaction platforms and concierge onboarding",
+    "Freelance consultant and bespoke service intake portals",
+    "Direct-to-talent casting and recruitment platforms"
+  ],
+  "implementationApproach": "1. Ambient Optical Depth of Field: Intro text uses filter: blur(4px), pointer-events: none, select-none to establish an unfocused ambient camera layer in the background. 2. Cadence-Gated Typewriter: Custom hook reveals characters at 38ms intervals following an initial 600ms contemplation delay, rendered with a stepped 1s blinking cursor that vanishes upon completion. 3. Action Pill Triage Grid: Responsive cluster of high-contrast pill buttons (bg-white text-black, rounded-full, text-14px) offering immediate conversation avenues. 4. One-Click Clipboard Telemetry: Outline pill featuring inline SVG icon and navigator.clipboard.writeText integration with instant tooltip confirmation. 5. Independent Entrance Timing: Action pills slide up 400ms after load without blocking on typewriter text completion.",
+  "relevantTechnologies": [
+    "CSS filter: blur() for depth-of-field",
+    "Navigator.clipboard.writeText API",
+    "CSS animations (step-end blink cursor)",
+    "Custom React useTypewriter hook",
+    "High-contrast pill geometry"
+  ],
+  "performanceConsiderations": "Blur filter is applied strictly to static, non-composited text elements without active animation, ensuring zero GPU overdraw penalties.",
+  "accessibilityRequirements": "Intro blurred text retains full DOM accessibility and aria-hidden='false' for screen readers. Clipboard copy action announces 'Email copied to clipboard' via an aria-live region. All action pills support standard Tab and Enter keyboard activation.",
+  "sourceReference": {
+    "type": "prompt",
+    "title": "Mainframe Creative Agency Prompt",
+    "date": "2026-10-24T13:28:00.000Z"
+  },
+  "validationStatus": "reviewed",
+  "targetSkill": "dashboard-design",
+  "isExemptFromNoGlow": false
+}
