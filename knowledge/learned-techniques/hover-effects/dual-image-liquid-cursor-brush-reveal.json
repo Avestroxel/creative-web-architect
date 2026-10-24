@@ -1,0 +1,40 @@
+{
+  "id": "dual-image-liquid-cursor-brush-reveal",
+  "name": "Dual-Image Soft-Brush Liquid Cursor Reveal & Adaptive Rem Grid Kinematics",
+  "description": "Full-bleed before/after dual-image liquid reveal painting a secondary image along the cursor trail using an offscreen radial-gradient brush, destination-out decay with idle ramp, and dynamic source-in cover compositing, paired with an adaptive rem-based viewport grid and 3-digit intro loader.",
+  "category": "hover-effects",
+  "tags": [
+    "liquid-reveal",
+    "canvas-brush",
+    "cursor-trail",
+    "destination-out",
+    "adaptive-grid",
+    "lumora",
+    "lenis"
+  ],
+  "designPhilosophy": "Transforming static hero photography into an interactive tactile canvas. Moving the pointer paints a soft, feathered aperture revealing an alternate aesthetic beneath (e.g. wireframe, color grade, or behind-the-scenes state), which organically dissolves back into the base image with destination-out decay and idle-ramped clearing. Coupled with proportional rem scaling, typography and layout stay mathematically harmonious across ultrawide monitors and mobile viewports.",
+  "appropriateUseCases": [
+    "Creative studio & engineering agency hero sections",
+    "Before/after photography showcases (retouching, grading, architectural renders)",
+    "Interactive product unveilings and dual-state brand reveals",
+    "Auteur portfolios requiring tactile cursor engagement"
+  ],
+  "implementationApproach": "1. Dual-Image Layering: Mount the base image (beforeSrc) as an LCP <img> with object-fit: cover, overlaid with a transparent <canvas aria-hidden='true'>. 2. Offscreen Buffers: Allocate a 'cover' canvas scaled to container rect × dpr drawing the secondary image (afterSrc) with object-fit: cover math. Allocate a 'brush' canvas square of diameter = ceil(brushRadius * 2 * dpr). 3. Brush Feathering: Render a radial gradient onto the brush canvas with stops at 0 (rgba(255,255,255,1)), 0.55 (rgba(255,255,255,0.82)), and 1 (rgba(255,255,255,0)). 4. Pointer Interpolation: On pointermove, convert client coordinates to canvas space and interpolate intermediate steps (step = max(radius*0.3, 1), up to 60 points) to prevent disjointed stamping during high-velocity mouse swipes. 5. Compositing & Decay: In the rAF tick, apply globalCompositeOperation = 'destination-out' with fillStyle = rgba(0,0,0,fade) where fade increases as idle time climbs. For each point, stamp the brush with source-in clipped cover pixels onto the main canvas. 6. Adaptive Rem Grid: Scale root font-size via CSS vw media queries (1920/1440/1024/360 base widths) and dynamic JS interpolation for viewports > 1920px (FONT_BASE - (FONT_BASE * widthReduction * 0.6666) / 100).",
+  "relevantTechnologies": [
+    "Canvas 2D API (globalCompositeOperation 'destination-out', 'source-in')",
+    "Offscreen Canvas buffers",
+    "PointerEvent & window resize kinematics",
+    "Rem-based adaptive grid with CSS viewport units & JS ultrawide scaling",
+    "Lenis smooth-scroll & scroll-lock state gating"
+  ],
+  "performanceConsiderations": "Caches offscreen canvas buffers, limits dpr to min(devicePixelRatio, 2), throttles idle loop after 120 frames with a clean clearRect, and avoids all DOM layout reflows during pointer movement.",
+  "accessibilityRequirements": "Strictly honors prefers-reduced-motion: reduce by bypassing the canvas rendering loop entirely and leaving the static base image accessible. Ensures cursor trail canvas has pointer-events: none and aria-hidden='true'.",
+  "sourceReference": {
+    "type": "prompt",
+    "title": "Lumora Design & Engineering Studio Prompt",
+    "date": "2026-10-24T23:58:00.000Z"
+  },
+  "validationStatus": "reviewed",
+  "targetSkill": "hover-interaction-design",
+  "isExemptFromNoGlow": false
+}

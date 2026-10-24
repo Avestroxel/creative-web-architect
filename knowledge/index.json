@@ -1,13 +1,13 @@
 {
   "version": "1.0.0",
-  "updatedAt": "2026-10-24T19:25:00.000Z",
-  "totalTechniques": 37,
+  "updatedAt": "2026-10-24T21:00:00.000Z",
+  "totalTechniques": 38,
   "categories": {
     "typography": 4,
     "scroll-animations": 7,
     "accessibility": 1,
     "button-interactions": 2,
-    "hover-effects": 2,
+    "hover-effects": 3,
     "art-direction": 2,
     "three-dimensional-web": 7,
     "ui-components": 2,
@@ -749,6 +749,28 @@
         "type": "prompt",
         "title": "Tactile Button Physics & Micro-Kinematics Suite",
         "date": "2026-10-24T20:45:00.000Z"
+      }
+    },
+    {
+      "id": "dual-image-liquid-cursor-brush-reveal",
+      "name": "Dual-Image Soft-Brush Liquid Cursor Reveal & Adaptive Rem Grid Kinematics",
+      "description": "Full-bleed before/after dual-image liquid reveal painting a secondary image along the cursor trail using an offscreen radial-gradient brush, destination-out decay with idle ramp, and dynamic source-in cover compositing, paired with an adaptive rem-based viewport grid and 3-digit intro loader.",
+      "category": "hover-effects",
+      "tags": [
+        "liquid-reveal",
+        "canvas-brush",
+        "cursor-trail",
+        "destination-out",
+        "adaptive-grid",
+        "lumora",
+        "lenis"
+      ],
+      "validationStatus": "reviewed",
+      "targetSkill": "hover-interaction-design",
+      "sourceReference": {
+        "type": "prompt",
+        "title": "Lumora Design & Engineering Studio Prompt",
+        "date": "2026-10-24T23:58:00.000Z"
       }
     }
   ]
