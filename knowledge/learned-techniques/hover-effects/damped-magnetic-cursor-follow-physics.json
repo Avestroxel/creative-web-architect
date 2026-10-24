@@ -1,0 +1,37 @@
+{
+  "id": "damped-magnetic-cursor-follow-physics",
+  "name": "Damped Magnetic Cursor Follow Physics with Asymmetric Ease Timing",
+  "description": "Ergonomic magnetic interaction that pulls hero elements toward cursor coordinates within a proximity threshold radius (150px) using strength attenuation and asymmetric easing (snappy 0.3s engagement vs viscous 0.6s release).",
+  "category": "hover-effects",
+  "tags": [
+    "magnetic-hover",
+    "cursor-physics",
+    "asymmetric-timing",
+    "hero-portrait",
+    "pointer-tracking"
+  ],
+  "designPhilosophy": "Imbuing hero elements with physical magnetic attraction. Instead of snapping rigidly to pointer coordinates, the element detects cursor presence within an extended proximity threshold radius, pulling its anchor toward the cursor using a strength attenuation factor with asymmetric easing: snappy engagement and dignified viscous return on exit.",
+  "appropriateUseCases": [
+    "Hero section portraits, avatar cutouts, and founder photography",
+    "Primary call-to-action (CTA) buttons and floating navigation pills",
+    "Interactive brand logos and floating 3D stickers",
+    "Cursor-anchored interactive badges"
+  ],
+  "implementationApproach": "1. Proximity Detection Box: Calculate element bounding client rect and expand active hit area by a threshold padding (150px). 2. Center Delta Tracking: When pointer enters the proximity boundary, calculate delta from element center: dx = pointerX - centerX, dy = pointerY - centerY. 3. Strength Attenuation: Apply translate3d(dx / strength, dy / strength, 0) where strength factor (e.g. 3.0 to 4.5) controls displacement amplitude. 4. Asymmetric Transitions: Active tracking employs snappy cubic ease (transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1)), while mouse leave triggers smooth relaxed decay (transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)) to origin (0, 0, 0). 5. Hardware Acceleration: Apply will-change: transform.",
+  "relevantTechnologies": [
+    "PointerEvent movement tracking",
+    "CSS translate3d & will-change: transform",
+    "Asymmetric cubic-bezier transition curves",
+    "Element.getBoundingClientRect() caching"
+  ],
+  "performanceConsiderations": "Throttles mousemove tracking via requestAnimationFrame and pauses calculations immediately once cursor exits the proximity threshold.",
+  "accessibilityRequirements": "Strictly disables magnetic displacement when prefers-reduced-motion is detected or on touch-only mobile devices (PointerEvent pointerType === 'touch'), keeping elements static.",
+  "sourceReference": {
+    "type": "prompt",
+    "title": "Jack 3D Creator Portfolio Prompt",
+    "date": "2026-10-24T13:24:00.000Z"
+  },
+  "validationStatus": "reviewed",
+  "targetSkill": "hover-interaction-design",
+  "isExemptFromNoGlow": false
+}

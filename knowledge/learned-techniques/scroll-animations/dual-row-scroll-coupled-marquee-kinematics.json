@@ -1,0 +1,37 @@
+{
+  "id": "dual-row-scroll-coupled-marquee-kinematics",
+  "name": "Dual-Row Opposing Scroll-Coupled Marquee Kinematics",
+  "description": "Translates vertical scroll position directly into synchronized opposing horizontal motion. Row 1 translates rightward while Row 2 translates leftward using dynamic scroll offsets, passive scroll listeners, and array triplication for seamless infinite looping.",
+  "category": "scroll-animations",
+  "tags": [
+    "scroll-coupled-marquee",
+    "opposing-rows",
+    "scroll-velocity",
+    "passive-scroll",
+    "seamless-loop"
+  ],
+  "designPhilosophy": "Translating vertical page scroll momentum directly into synchronized counter-directional horizontal motion. By coupling two parallel media tiers to vertical scroll position—Row 1 driving rightward while Row 2 drives leftward—the interface produces dynamic parallax tension that feels mechanically driven by the visitor's hand.",
+  "appropriateUseCases": [
+    "Creative portfolio work showcases and client logo strips",
+    "Media asset libraries, animation GIF reels, and design system previews",
+    "E-commerce brand catalogs and partner rosters",
+    "Digital design studio retrospective galleries"
+  ],
+  "implementationApproach": "1. Scroll Offset Formula: Calculate scroll displacement relative to section entry: offset = (window.scrollY - sectionTop + window.innerHeight) * 0.3. 2. Opposing Translation: Apply CSS transform: translateX(offset - baseOffset) to Row 1 (moving right) and transform: translateX(-(offset - baseOffset)) to Row 2 (moving left). 3. Array Tripling for Infinite Loop: Triplicate image arrays to guarantee seamless visual continuity without visible seam jumps during continuous scrolling. 4. Passive Scroll Binding: Attach passive scroll listener with requestAnimationFrame latching to prevent main-thread scroll locking. 5. Uniform Media Cards: Enforce fixed aspect ratio cards (e.g. 420x270, rounded-2xl) with gap-3 spacing.",
+  "relevantTechnologies": [
+    "Window scroll listeners (passive: true)",
+    "CSS translate3d transforms",
+    "requestAnimationFrame ticking",
+    "Array triplication modulo looping"
+  ],
+  "performanceConsiderations": "Uses passive: true on window scroll and updates exclusively transform: translate3d with will-change: transform, maintaining locked 60fps.",
+  "accessibilityRequirements": "Provides static horizontal flex overflow with scrollbars when prefers-reduced-motion is active, allowing visitors to inspect cards without kinetic motion.",
+  "sourceReference": {
+    "type": "prompt",
+    "title": "Jack 3D Creator Portfolio Prompt",
+    "date": "2026-10-24T13:24:00.000Z"
+  },
+  "validationStatus": "reviewed",
+  "targetSkill": "advanced-scroll-animation",
+  "isExemptFromNoGlow": false
+}

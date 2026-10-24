@@ -1,13 +1,13 @@
 {
   "version": "1.0.0",
-  "updatedAt": "2026-10-24T13:08:00.000Z",
-  "totalTechniques": 23,
+  "updatedAt": "2026-10-24T13:24:00.000Z",
+  "totalTechniques": 25,
   "categories": {
     "typography": 4,
-    "scroll-animations": 4,
+    "scroll-animations": 5,
     "accessibility": 1,
     "button-interactions": 1,
-    "hover-effects": 1,
+    "hover-effects": 2,
     "art-direction": 2,
     "three-dimensional-web": 2,
     "ui-components": 1,
@@ -468,6 +468,44 @@
         "type": "prompt",
         "title": "Meech Package Reference Prompt",
         "date": "2026-10-24T13:08:00.000Z"
+      }
+    },
+    {
+      "id": "damped-magnetic-cursor-follow-physics",
+      "name": "Damped Magnetic Cursor Follow Physics with Asymmetric Ease Timing",
+      "description": "Ergonomic magnetic interaction that pulls hero elements toward cursor coordinates within a proximity threshold radius (150px) using strength attenuation and asymmetric easing (snappy 0.3s engagement vs viscous 0.6s release).",
+      "category": "hover-effects",
+      "tags": [
+        "magnetic-hover",
+        "cursor-physics",
+        "asymmetric-timing",
+        "hero-portrait"
+      ],
+      "validationStatus": "reviewed",
+      "targetSkill": "hover-interaction-design",
+      "sourceReference": {
+        "type": "prompt",
+        "title": "Jack 3D Creator Portfolio Prompt",
+        "date": "2026-10-24T13:24:00.000Z"
+      }
+    },
+    {
+      "id": "dual-row-scroll-coupled-marquee-kinematics",
+      "name": "Dual-Row Opposing Scroll-Coupled Marquee Kinematics",
+      "description": "Translates vertical scroll position directly into synchronized opposing horizontal motion. Row 1 translates rightward while Row 2 translates leftward using dynamic scroll offsets, passive scroll listeners, and array triplication for seamless infinite looping.",
+      "category": "scroll-animations",
+      "tags": [
+        "scroll-coupled-marquee",
+        "opposing-rows",
+        "scroll-velocity",
+        "passive-scroll"
+      ],
+      "validationStatus": "reviewed",
+      "targetSkill": "advanced-scroll-animation",
+      "sourceReference": {
+        "type": "prompt",
+        "title": "Jack 3D Creator Portfolio Prompt",
+        "date": "2026-10-24T13:24:00.000Z"
       }
     }
   ]
