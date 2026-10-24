@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
-  "updatedAt": "2026-10-25T00:42:00.000Z",
-  "totalTechniques": 40,
+  "updatedAt": "2026-10-25T00:56:00.000Z",
+  "totalTechniques": 41,
   "categories": {
     "typography": 4,
     "scroll-animations": 7,
@@ -14,7 +14,7 @@
     "creative-storytelling": 1,
     "visual-composition": 4,
     "page-transitions": 1,
-    "micro-interactions": 1,
+    "micro-interactions": 2,
     "performance-engineering": 3,
     "color-systems": 1
   },
@@ -820,6 +820,31 @@
         "type": "prompt",
         "title": "Baseline — Tennis Club & Academy Prompt",
         "date": "2026-10-25T00:41:00.000Z"
+      }
+    },
+    {
+      "id": "single-viewport-video-bleed-and-dual-cursor-kinematics",
+      "name": "Single-Viewport Atmospheric Video Bleeding, Dual-Entity Lagging Cursor & Masked Blur-Up Reveals",
+      "description": "Cinematic single-screen architecture combining a full-viewport looping video background faded through an inverted atmospheric gradient, an un-blurred dual-masked typography entrance engine (word-by-word slide-up and letter-by-letter horizontal slide-in), and dual-coordinate cursor kinematics (zero-latency target ring paired with an inertial LERP-lagging glassmorphism status pill).",
+      "category": "micro-interactions",
+      "tags": [
+        "single-screen",
+        "viewport-lock",
+        "video-bleed",
+        "dual-cursor",
+        "lerp-kinematics",
+        "glassmorphism",
+        "masked-text-reveal",
+        "blur-up",
+        "neon-accent",
+        "loopstack"
+      ],
+      "validationStatus": "reviewed",
+      "targetSkill": "micro-interactions",
+      "sourceReference": {
+        "type": "prompt",
+        "title": "Loopstack Prompt",
+        "date": "2026-10-25T00:55:00.000Z"
       }
     }
   ]

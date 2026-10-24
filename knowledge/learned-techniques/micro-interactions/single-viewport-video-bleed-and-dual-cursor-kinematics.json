@@ -1,0 +1,43 @@
+{
+  "id": "single-viewport-video-bleed-and-dual-cursor-kinematics",
+  "name": "Single-Viewport Atmospheric Video Bleeding, Dual-Entity Lagging Cursor & Masked Blur-Up Reveals",
+  "description": "Cinematic single-screen architecture combining a full-viewport looping video background faded through an inverted atmospheric gradient, an un-blurred dual-masked typography entrance engine (word-by-word slide-up and letter-by-letter horizontal slide-in), and dual-coordinate cursor kinematics (zero-latency target ring paired with an inertial LERP-lagging glassmorphism status pill).",
+  "category": "micro-interactions",
+  "tags": [
+    "single-screen",
+    "viewport-lock",
+    "video-bleed",
+    "dual-cursor",
+    "lerp-kinematics",
+    "glassmorphism",
+    "masked-text-reveal",
+    "blur-up",
+    "neon-accent",
+    "loopstack"
+  ],
+  "designPhilosophy": "Distills a complete brand proposition into an un-scrollable, high-impact single-screen monument. By locking the viewport (overflow: hidden) and bleeding a looping organic video into pure black from above, attention is riveted onto a restrained hierarchy: an editorial serif headline, an inverted hover pill with an oscillating neon-green beacon (#39FF14), a vertically centered minimalist metadata footer, and an oversized 21.9vw foundational wordmark. The interactive cursor pairs an immediate response ring with a floating glass badge that gracefully hides during high-priority interactions.",
+  "appropriateUseCases": [
+    "High-conviction product launch moments, closed beta signups, and coming-soon teasers",
+    "Auteur design agencies, engineering studios, and boutique technology labels",
+    "Single-screen hero landing pages and digital art monographs",
+    "Interactive footer portals and cinematic conclusion screens"
+  ],
+  "implementationApproach": "1. Single-Viewport Lockdown: Set html and body to 100vh with overflow: hidden. Render a looping, muted, playsinline MP4 video occupying the bottom 90% of the viewport (z-index: -1), blended seamlessly into pure black (#000000) using a soft top gradient SVG positioned at top: -30vh (z-index: 0). 2. Dual-Masked Entrance Engine: On DOMContentLoaded, split the hero title into words and wrap each in an overflow: hidden mask with a staggered (0.1s step) inner span animating translateY(105% -> 0%) and blur(20px -> 0px) over 1.3s with cubic-bezier(0.05, 0.9, 0.1, 1). Concurrently, split the massive bottom wordmark into letters wrapped in overflow: hidden masks with a staggered (0.09s step) horizontal slide-in translateX(-105% -> 0%) and un-blur over 1.2s. 3. Dual-Entity Cursor Kinematics: Track clientX and clientY on mousemove. Lock the outer 48px circle ring to raw mouse coordinates (ringX = mouseX), while driving the glassmorphism pill badge through a smooth exponential LERP loop (cardX += (mouseX - cardX) * 0.08). Interpolate visual scale (scale += (targetScale - scale) * 0.15). On button hover, collapse the glass pill to scale(0) while expanding the ring by 1.6x. 4. Pulsing Beacon Dot: Style a 10px neon-green beacon (#39FF14) with dual keyframe animations: an inner core pulse modulating scale (0.85 -> 1.1) and glow box-shadow, and a pseudo-element wave expanding scale (0.6 -> 2.3) with opacity decay.",
+  "relevantTechnologies": [
+    "Vanilla JavaScript (No external libraries)",
+    "Hardware-Accelerated CSS 3D Transforms (translate3d, scale)",
+    "HTML5 Autoplay Looping Video & SVG Radial Gradients",
+    "CSS Backdrop-Filter Glassmorphism (blur: 12px)",
+    "CSS Keyframes (cubic-bezier un-blur mask curves)"
+  ],
+  "performanceConsiderations": "Uses translate3d on requestAnimationFrame to ensure GPU compositing for both cursor layers without layout thrashing. Disables pointer events on both cursor elements (pointer-events: none) and isolates video decoding inside a fixed hardware-accelerated container.",
+  "accessibilityRequirements": "Ensures full semantic structure with main, footer, nav, and button elements, supports native keyboard tab order and focus-visible outlines, provides aria-label metadata on social SVG anchors, and respects prefers-reduced-motion: reduce by dampening entrance blur transitions and beacon wave animations.",
+  "sourceReference": {
+    "type": "prompt",
+    "title": "Loopstack Prompt",
+    "date": "2026-10-25T00:55:00.000Z"
+  },
+  "validationStatus": "reviewed",
+  "targetSkill": "micro-interactions",
+  "isExemptFromNoGlow": false
+}
