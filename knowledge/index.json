@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
-  "updatedAt": "2026-10-24T21:00:00.000Z",
-  "totalTechniques": 38,
+  "updatedAt": "2026-10-25T00:35:00.000Z",
+  "totalTechniques": 39,
   "categories": {
     "typography": 4,
     "scroll-animations": 7,
@@ -9,7 +9,7 @@
     "button-interactions": 2,
     "hover-effects": 3,
     "art-direction": 2,
-    "three-dimensional-web": 7,
+    "three-dimensional-web": 8,
     "ui-components": 2,
     "creative-storytelling": 1,
     "visual-composition": 3,
@@ -771,6 +771,30 @@
         "type": "prompt",
         "title": "Lumora Design & Engineering Studio Prompt",
         "date": "2026-10-24T23:58:00.000Z"
+      }
+    },
+    {
+      "id": "chiaroscuro-bronze-wave-shader-and-spark-turbulence",
+      "name": "Chiaroscuro Sculptural Orbit, Molten Liquid-Bronze Wave Shader & Forge Spark Turbulence",
+      "description": "Cinematic 3D WebGL stage combining 360° scroll-driven camera orbit around an auto-centered, noble bronze sculpture, a camera-parented liquid-bronze GLSL wave shader migrating from molten copper to sapphire blue, and 450 velocity-turbulent additive forge spark particles.",
+      "category": "three-dimensional-web",
+      "tags": [
+        "threejs",
+        "webgl",
+        "chiaroscuro",
+        "liquid-bronze",
+        "glsl-shader",
+        "forge-sparks",
+        "sculpture",
+        "laocoon",
+        "scroll-orbit"
+      ],
+      "validationStatus": "reviewed",
+      "targetSkill": "three-dimensional-web",
+      "sourceReference": {
+        "type": "prompt",
+        "title": "Laocoön — Bronze and Time Prompt",
+        "date": "2026-10-25T00:34:00.000Z"
       }
     }
   ]

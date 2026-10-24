@@ -1,0 +1,42 @@
+{
+  "id": "chiaroscuro-bronze-wave-shader-and-spark-turbulence",
+  "name": "Chiaroscuro Sculptural Orbit, Molten Liquid-Bronze Wave Shader & Forge Spark Turbulence",
+  "description": "Cinematic 3D WebGL stage combining 360° scroll-driven camera orbit around an auto-centered, noble bronze sculpture, a camera-parented liquid-bronze GLSL wave shader migrating from molten copper to sapphire blue, and 450 velocity-turbulent additive forge spark particles.",
+  "category": "three-dimensional-web",
+  "tags": [
+    "threejs",
+    "webgl",
+    "chiaroscuro",
+    "liquid-bronze",
+    "glsl-shader",
+    "forge-sparks",
+    "sculpture",
+    "laocoon",
+    "scroll-orbit"
+  ],
+  "designPhilosophy": "Transforming classical fine art and bronze sculpture into an evocative cinematic experience. Instead of static 3D viewing, the sculpture is staged in deep chiaroscuro darkness (pure black background with subtle fog, high-contrast spotlighting, cool rim silhouette, and warm ground fill), surrounded by molten forge sparks that swirl turbulently with scroll velocity, and anchored by a calm, breathing liquid-metal wave shader plane parented to the camera.",
+  "appropriateUseCases": [
+    "Classical art, museum monographs, and sculptural gallery exhibitions",
+    "Luxury jewelry, horology, and precious metal craftsmanship showcases",
+    "High-end artisanal industrial design and foundry narratives",
+    "Cinematic brand storytelling requiring deep emotional gravitas"
+  ],
+  "implementationApproach": "1. Chiaroscuro 3-Point Lighting: High-intensity SpotLight (18.0) casting PCFSoft shadows from upper right, cool blue DirectionalLight (10.0) from behind-left for silhouette definition, and warm cream fill light (0.8) from below-front. 2. Bounded Auto-Centering Pivot: Wrap GLTF model in a THREE.Group(), calculate initial bounding box, scale max dimension to 3.5 units, update world matrix, compute scaled geometric center, subtract center vector from model position, and offset pivot y = -0.4. 3. Camera-Anchored GLSL Wave Shader: Mount a 30x30 plane at local camera coordinates (z = -8.0, depthWrite: false, depthTest: false). In GLSL, compute 3D hash-based noise, layered sine wave distortions, crisp metallic specular sheen/crest, and scroll-driven color palette migration from molten copper-bronze (shadow 0.001, wave 0.085, crest 0.45) to deep sapphire blue (shadow 0.0004, wave 0.015, crest 0.18). 4. Velocity-Turbulent Forge Sparks: Allocate 450 additive point particles with procedural canvas radial texture (60% molten orange, 40% icy blue). Modulate speed and sway turbulence by scroll velocity (scrollVelocity * 9.0). 5. 360° Camera Orbit & Framing Offset: Compute phi = scroll * 2*PI, radius = 4.2 - sin(scroll*PI)*0.6, y = 0.35 + sin(scroll*PI)*0.8. On the opening slide, ease lookAt lateral offset by -0.9 to frame the statue elegantly beside editorial text.",
+  "relevantTechnologies": [
+    "Three.js (r0.160+)",
+    "GLTFLoader & MeshStandardMaterial (roughness: 0.42, metalness: 0.92)",
+    "Custom GLSL Vertex & Fragment Shaders (THREE.ShaderMaterial)",
+    "Procedural CanvasTexture & THREE.AdditiveBlending Points",
+    "Physical scroll lerp with 900vh tall document"
+  ],
+  "performanceConsiderations": "Bakes spark textures on an offscreen 16x16 canvas, binds shader plane directly as a camera child to eliminate matrix multiplications, uses single-pass hash noise, and caps devicePixelRatio at 2.",
+  "accessibilityRequirements": "Supports native keyboard scroll, respects prefers-reduced-motion: reduce by dampening spark turbulence and shader wave frequency, and preserves high-contrast white/gold editorial typography over black background.",
+  "sourceReference": {
+    "type": "prompt",
+    "title": "Laocoön — Bronze and Time Prompt",
+    "date": "2026-10-25T00:34:00.000Z"
+  },
+  "validationStatus": "reviewed",
+  "targetSkill": "three-dimensional-web",
+  "isExemptFromNoGlow": false
+}

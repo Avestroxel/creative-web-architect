@@ -2,7 +2,7 @@
  * `cwa init [path]` — Initialize Creative Web Architect in any project directory.
  *
  * Automatically detects the environment (Antigravity, Cursor, Claude Code, Gemini CLI),
- * copies all 36 Agent Skills into .agents/skills/, installs the 38 learned design techniques,
+ * copies all 36 Agent Skills into .agents/skills/, installs the 39 learned design techniques,
  * and configures an uncompromising AGENTS.md / GEMINI.md directive to guarantee Awwwards-grade
  * outputs without generic AI defaults.
  */
@@ -86,8 +86,8 @@ export async function handleInit(targetPath?: string, options: InitOptions = {})
 
   logBlank();
 
-  // Step 3: Auto-Install 38 Learned Techniques & Knowledge Base
-  log(LogLevel.INFO, 'Installing Knowledge Base (38 Learned Architectural Techniques)...');
+  // Step 3: Auto-Install 39 Learned Techniques & Knowledge Base
+  log(LogLevel.INFO, 'Installing Knowledge Base (39 Learned Architectural Techniques)...');
   const bundledKnowledgeDir = getBundledDir('knowledge');
   const targetKnowledgeDir = resolve(projectDir, 'knowledge');
   const targetAgentsKnowledgeDir = resolve(projectDir, '.agents', 'knowledge');
@@ -143,7 +143,7 @@ When asked to build, design, or scaffold any website, page, or component:
 
 ---
 
-## 38 LEARNED ARCHITECTURAL TECHNIQUES (INSTALLED IN KNOWLEDGE/)
+## 39 LEARNED ARCHITECTURAL TECHNIQUES (INSTALLED IN KNOWLEDGE/)
 
 In every project, you MUST inspect and autonomously apply 2 to 4 complementary techniques from your local \`knowledge/index.json\`:
 
@@ -185,6 +185,7 @@ In every project, you MUST inspect and autonomously apply 2 to 4 complementary t
 36. **Depth-Parallax Normal Relighting & Dissolve Burn** (\`depth-parallax-normal-relighting-burn\`): Single-quad UV depth map displacement with Lambertian normal map relighting toward cursor coordinates, combined with a height/noise procedural dissolution burn with luminous boundary edge glow.
 37. **Tactile Button Physics & Micro-Kinematic Interaction Library** (\`tactile-button-physics-and-micro-kinematics\`): 7 signature interaction architectures (Curved Meniscus Wave Fill, Cipher Decryption Jitter, Physical 3D Mechanical Plate, Difference Blend Wipe, Opposing Kinetic Arrow Swap, Sliding Icon Drawer, and Swiss Hairline Notches) governed by spring kinematics and zero-repaint compositing.
 38. **Dual-Image Soft-Brush Liquid Cursor Reveal & Adaptive Rem Grid Kinematics** (\`dual-image-liquid-cursor-brush-reveal\`): Full-bleed dual-image canvas aperture painting an alternate image along the cursor trail with radial gradient brush, destination-out decay with idle ramp, and dynamic source-in cover compositing, paired with a rem-based adaptive grid and scroll-locked 3-digit intro loader.
+39. **Chiaroscuro Sculptural Orbit, Molten Liquid-Bronze Wave Shader & Forge Spark Turbulence** (\`chiaroscuro-bronze-wave-shader-and-spark-turbulence\`): Cinematic 3D WebGL stage combining 360° scroll-driven camera orbit around an auto-centered, noble bronze sculpture, a camera-parented liquid-bronze GLSL wave shader migrating from molten copper to sapphire blue, and 450 velocity-turbulent additive forge spark particles.
 
 ---
 
@@ -203,7 +204,7 @@ Use the specialized skills in \`.agents/skills/\` for specific phases:
 ## 5-STAGE REASONING & EXECUTION PIPELINE
 
 1. **Archetype Classification**: Analyze prompt keywords and identify the matching creative archetype (e.g. Studio Engineering, Auteur Cinema, Motorsport, 3D Product, Diorama, Hardware Audio, Bento Slate, Japanese Ma, or Street-Luxe).
-2. **Technique Synergy Selection**: Select 2 to 4 complementary techniques from the 38 learned techniques (1 primary hero anchor + 2 supporting micro-interactions). Verify zero conflicting scroll hijackers or overlapping 3D loops.
+2. **Technique Synergy Selection**: Select 2 to 4 complementary techniques from the 39 learned techniques (1 primary hero anchor + 2 supporting micro-interactions). Verify zero conflicting scroll hijackers or overlapping 3D loops.
 3. **Foundation & Semantic Skeleton**: Define CSS custom properties, adaptive rem grid scales, and semantic HTML5 layout with skip links.
 4. **Physical Kinematics**: Mount the hero canvas/WebGL entity and attach spring-damped micro-interactions (meniscus wave button, cipher decryption, magnetic follow).
 5. **Zero-Glow & Accessibility Gate**: Enforce mature obsidian/hairline contrast (no cheap purple bloom), add prefers-reduced-motion fallbacks, and verify 60 FPS performance.
@@ -227,7 +228,7 @@ Use the specialized skills in \`.agents/skills/\` for specific phases:
   log(LogLevel.SUCCESS, '🎉 Creative Web Architect successfully initialized!');
   log(LogLevel.INFO, 'Every AI agent in this folder is now powered by:');
   log(LogLevel.INFO, '  • 36 Specialized Creative Agent Skills in .agents/skills/');
-  log(LogLevel.INFO, '  • 38 Learned Architectural Techniques in knowledge/');
+  log(LogLevel.INFO, '  • 39 Learned Architectural Techniques in knowledge/');
   log(LogLevel.INFO, '  • Strict No-Glow & Awwwards-grade Master Directives in AGENTS.md');
   logBlank();
   log(LogLevel.INFO, 'To start building: Open this folder in Antigravity and prompt your agent!');
