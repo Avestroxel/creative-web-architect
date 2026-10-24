@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
-  "updatedAt": "2026-10-24T18:38:00.000Z",
-  "totalTechniques": 30,
+  "updatedAt": "2026-10-24T18:55:00.000Z",
+  "totalTechniques": 33,
   "categories": {
     "typography": 4,
     "scroll-animations": 6,
@@ -9,10 +9,10 @@
     "button-interactions": 1,
     "hover-effects": 2,
     "art-direction": 2,
-    "three-dimensional-web": 4,
+    "three-dimensional-web": 6,
     "ui-components": 2,
     "creative-storytelling": 1,
-    "visual-composition": 2,
+    "visual-composition": 3,
     "page-transitions": 1,
     "micro-interactions": 1,
     "performance-engineering": 2,
@@ -604,6 +604,66 @@
         "type": "prompt",
         "title": "Melli Master 3D Artistry Prompt",
         "date": "2026-10-24T18:36:00.000Z"
+      }
+    },
+    {
+      "id": "model-viewer-cursor-tilt-and-forcefield-repulsion",
+      "name": "Model-Viewer Cursor Orbit Tilt & Dynamic Pointer Forcefield Repulsion",
+      "description": "Binds Google <model-viewer> camera orbit to cursor coordinates with exponential lerping, combined with an inverted distance-based physical forcefield that repels surrounding floating 3D/2.5D items within a 400px radius.",
+      "category": "three-dimensional-web",
+      "tags": [
+        "model-viewer",
+        "forcefield",
+        "repulsion",
+        "pointer-physics",
+        "soda"
+      ],
+      "validationStatus": "reviewed",
+      "targetSkill": "three-dimensional-web",
+      "sourceReference": {
+        "type": "prompt",
+        "title": "Soda 3D Beverage Prompt",
+        "date": "2026-10-24T18:55:00.000Z"
+      }
+    },
+    {
+      "id": "shader-warmed-texture-swap-and-entity-implosion",
+      "name": "Shader-Warmed Texture Swap & Coordinated Entity Implosion/Explosion",
+      "description": "Pre-compiles GPU shaders on model load to eliminate texture swap stutter, paired with a dual-phase 720° spin with motion blur at velocity peak, and coordinated entity center-implosion, asset geometry swap, and spring explosion.",
+      "category": "three-dimensional-web",
+      "tags": [
+        "shader-warmup",
+        "texture-swap",
+        "implosion-explosion",
+        "choreography",
+        "soda"
+      ],
+      "validationStatus": "reviewed",
+      "targetSkill": "three-dimensional-web",
+      "sourceReference": {
+        "type": "prompt",
+        "title": "Soda 3D Beverage Prompt",
+        "date": "2026-10-24T18:55:00.000Z"
+      }
+    },
+    {
+      "id": "three-tier-depth-layered-parallax-staging",
+      "name": "Three-Tier Depth-Layered Parallax Staging & Asynchronous Bubble Kinematics",
+      "description": "Creates volumetric stage depth using discrete Z-index elevation planes (leaves -15, background berries -30, product 50, UI 100, foreground berries 110 at +60 parallax), integrated with a lightweight self-cleaning rising bubble particle stream.",
+      "category": "visual-composition",
+      "tags": [
+        "parallax-staging",
+        "depth-sandwich",
+        "bubble-kinematics",
+        "particles",
+        "soda"
+      ],
+      "validationStatus": "reviewed",
+      "targetSkill": "layout-composition",
+      "sourceReference": {
+        "type": "prompt",
+        "title": "Soda 3D Beverage Prompt",
+        "date": "2026-10-24T18:55:00.000Z"
       }
     }
   ]

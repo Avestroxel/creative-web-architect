@@ -103,7 +103,7 @@ Always check dependency compatibility before installing.
 
 ---
 
-## 30 LEARNED ARCHITECTURAL TECHNIQUES (INSTALLED IN KNOWLEDGE/)
+## 33 LEARNED ARCHITECTURAL TECHNIQUES (INSTALLED IN KNOWLEDGE/)
 
 In every project, you MUST inspect and autonomously apply 2 to 4 complementary techniques from your local `knowledge/index.json`:
 
@@ -137,4 +137,8 @@ In every project, you MUST inspect and autonomously apply 2 to 4 complementary t
 28. **Scroll-Driven 3D GLTF Flight Path & Banking** (`scroll-driven-3d-gltf-flight-path-kinematics`): Normalized viewport keyframes, hold-and-dive transition kinematics, and velocity-coupled Euler banking.
 29. **Procedural Multi-Layer Wing Flutter & Ghosting** (`procedural-multi-layer-alpha-threshold-wing-flutter`): Luminance alpha thresholding on black-background textures, root hinge offsets, and 3-tier phase ghosting for zero-cost biological motion blur.
 30. **Scroll-Synchronized Flora Parallax & Theme Triage** (`scroll-synchronized-multidirectional-flora-parallax`): Decoupled velocity and rotational parallax on botanical diorama layers with dynamic viewport probe sampling to toggle dark/light theme on fixed UI chrome.
+31. **Model-Viewer Cursor Tilt & Forcefield Repulsion** (`model-viewer-cursor-tilt-and-forcefield-repulsion`): Google <model-viewer> camera orbit cursor tilt with exponential smoothing lerp coupled with an inverted distance-based physical forcefield that repels surrounding floating 3D/2.5D items within a 400px radius.
+32. **Shader-Warmed Texture Swap & Entity Implosion** (`shader-warmed-texture-swap-and-entity-implosion`): Pre-compiles GPU shaders on model load to eliminate texture swap stutter, paired with a dual-phase 720° spin with motion blur at velocity peak, and coordinated entity center-implosion, asset geometry swap, and spring explosion.
+33. **Three-Tier Depth-Layered Parallax Staging** (`three-tier-depth-layered-parallax-staging`): Creates volumetric stage depth using discrete Z-index elevation planes (leaves -15, background berries -30, product 50, UI 100, foreground berries 110 at +60 parallax), integrated with a lightweight self-cleaning rising bubble particle stream.
+
 
