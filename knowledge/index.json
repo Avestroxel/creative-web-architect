@@ -873,26 +873,26 @@
       }
     },
     {
-      "id": "ui-ux-pro-max-design-intelligence-matrix",
-      "name": "UI/UX Pro Max: 192 Reasoning Profiles, 79 Searchable UI Styles & Multi-Dial Design System Generator",
-      "description": "Exhaustive UI/UX design intelligence architecture integrating 192 product reasoning profiles, 79 searchable UI styles (Soft UI, Neo-Brutalism, Swiss Editorial, Glassmorphism, Kinetic Minimal), 119 UX guidelines, 74 font pairings, and a multi-dial parameter engine (variance, motion intensity, content density) across 22 technology stacks.",
+      "id": "domain-reasoning-matrix-and-style-taxonomy",
+      "name": "Domain Reasoning Matrix & Visual Style Taxonomy: 192 Archetype Profiles, 79 Aesthetic Styles & Multi-Dial Parameter Tuning",
+      "description": "Exhaustive design intelligence architecture integrating 192 domain reasoning profiles, 79 vetted aesthetic UI styles (Soft UI, Neo-Brutalism, Swiss Editorial, Dark Glassmorphism, Kinetic Minimal), 119 UX heuristics across a 10-tier priority ladder, 74 font pairings, and a multi-dial parameter engine (variance, motion intensity, content density) across 22 technology stacks.",
       "category": "art-direction",
       "tags": [
         "design-intelligence",
-        "reasoning-profiles",
-        "ui-styles",
-        "design-system-generator",
-        "variance-dials",
+        "domain-archetypes",
+        "visual-styles",
+        "style-taxonomy",
+        "design-dials",
         "ux-heuristics",
         "font-pairings",
         "multi-stack"
       ],
       "validationStatus": "reviewed",
-      "targetSkill": "ui-ux-pro-max",
+      "targetSkill": "domain-archetype-reasoning",
       "sourceReference": {
-        "type": "repository",
-        "title": "UI UX Pro Max Skill Repository (nextlevelbuilder)",
-        "date": "2026-10-25T22:18:41.000Z"
+        "type": "domain-taxonomy",
+        "title": "Creative Web Architect Native Design Intelligence Engine",
+        "date": "2026-10-25T22:30:00.000Z"
       }
     }
   ]

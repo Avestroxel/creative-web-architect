@@ -6,7 +6,7 @@
 [![Node Version](https://img.shields.io/badge/Node->=18.0.0-brightgreen.svg)](https://nodejs.org/)
 
 > **Autonomous AI Creative Engineering System & Toolkit.**  
-> Equips AI coding environments (Antigravity, Cursor, Claude Code, Gemini CLI) with **36 specialized skills**, **39 learned architectural techniques**, and strict **anti-generic mandates** to craft Awwwards-caliber digital experiences with zero manual copy-pasting.
+> Equips AI coding environments (Antigravity, Cursor, Claude Code, Gemini CLI) with **40 specialized skills**, **43 learned architectural techniques**, and strict **anti-generic mandates** to craft Awwwards-caliber digital experiences with zero manual copy-pasting.
 
 ---
 
@@ -38,8 +38,8 @@ cwa init .
 ```
 
 ### 3. What Gets Injected Automatically
-- **`.agents/skills/` & `skills/`**: All 36 modular Agent Skills ready for Antigravity & AI tools.
-- **`knowledge/` & `.agents/knowledge/`**: All 36 learned architectural techniques with master `index.json`.
+- **`.agents/skills/` & `skills/`**: All 40 modular Agent Skills ready for Antigravity & AI tools.
+- **`knowledge/` & `.agents/knowledge/`**: All 43 learned architectural techniques with master `index.json`.
 - **`AGENTS.md` & `GEMINI.md`**: Master directives enforcing the No-Glow policy and anti-generic visual rules.
 - **`cwa.config.json`**: Multi-environment auto-detection mapping.
 
@@ -53,7 +53,7 @@ Open your project folder in **Antigravity**, **Cursor**, or **Claude Code**, and
 
 | Dimension | Count / Policy | Scope & Capability |
 | :--- | :--- | :--- |
-| **Specialized Skills** | **37 Skills** | UI/UX Pro Max intelligence, Creative direction, Liquid Glass, spring kinematics, Three.js 3D, and Core Web Vitals QA. |
+| **Specialized Skills** | **40 Skills** | Domain reasoning profiles, 79 aesthetic styles, UX heuristics engine, 22 cross-platform stacks, Creative direction, Liquid Glass, Three.js 3D, and Core Web Vitals QA. |
 | **Learned Techniques** | **43 Techniques** | Mathematically indexed patterns extracted from award-winning digital experiences. |
 | **Archetype Matrix** | **10 Archetypes** | Automated classification engine mapping any brief to complementary techniques & palettes. |
 | **Production Templates** | **9 Templates** | Standalone single-file verified deliverables (Tactile Button Laboratory, Loopstack, Baseline Tennis, Laocoön Bronze, Lumora Studio, KIMI F1, Soda 3D, Melli Honeybee, Hyper-GT). |
@@ -63,18 +63,18 @@ Open your project folder in **Antigravity**, **Cursor**, or **Claude Code**, and
 
 ---
 
-## 37 Specialized Agent Skills (Summary)
+## 40 Specialized Agent Skills (Summary)
 
-All 37 skills are installed in `.agents/skills/<skill-name>/SKILL.md`:
+All 40 skills are installed in `.agents/skills/<skill-name>/SKILL.md`:
 
 | Category | Skills Included |
 | :--- | :--- |
-| **Art Direction & Intelligence** | `ui-ux-pro-max`, `brief-interpreter`, `creative-direction`, `premium-visual-direction`, `design-style-selection`, `content-writing`, `image-art-direction` |
+| **Art Direction & Intelligence** | `domain-archetype-reasoning`, `visual-style-taxonomy`, `brief-interpreter`, `creative-direction`, `premium-visual-direction`, `design-style-selection`, `content-writing`, `image-art-direction` |
 | **Design Systems & Materials** | `design-system`, `typography`, `layout-composition`, `liquid-glass`, `refined-liquid-glass`, `no-excessive-glow-policy` |
 | **Motion, Kinematics & Scroll** | `motion-design`, `cinematic-motion`, `advanced-scroll-animation`, `scroll-storytelling`, `hover-interaction-design`, `premium-button-interactions`, `toggle-and-switch-motion`, `page-transitions` |
 | **3D, WebGL & Shaders** | `three-dimensional-web`, `shaders-and-effects` |
-| **Quality, Performance & QA** | `performance-optimization`, `animation-performance`, `accessibility`, `motion-accessibility`, `responsive-design`, `visual-qa`, `visual-motion-qa` |
-| **Domains & Production** | `dashboard-design`, `portfolio-design`, `ecommerce-design`, `cinematic-product-pages`, `website-redesign`, `project-delivery`, `knowledge-ingestion` |
+| **Quality, Performance & QA** | `ux-heuristics-engine`, `performance-optimization`, `animation-performance`, `accessibility`, `motion-accessibility`, `responsive-design`, `visual-qa`, `visual-motion-qa` |
+| **Domains & Production** | `cross-platform-ui-matrix`, `dashboard-design`, `portfolio-design`, `ecommerce-design`, `cinematic-product-pages`, `website-redesign`, `project-delivery`, `knowledge-ingestion` |
 
 ---
 
@@ -126,7 +126,7 @@ All 43 techniques are indexed in `knowledge/index.json` and detailed in `knowled
 | **40** | `adaptive-rem-grid-with-physics-gated-reveals-and-ghost-typography` | Dual-directional adaptive rem grid, curtain-sliding physics loader, Lenis scroll lock, and multi-axis ghost typography. |
 | **41** | `single-viewport-video-bleed-and-dual-cursor-kinematics` | Single-screen full-viewport lock, looping video bleeding into black, dual-entity LERP cursor, and un-blur masked reveals. |
 | **42** | `hyper-tactile-button-foundry-and-micro-physics` | Comprehensive 24-architecture suite: biometric scan morphing, organic gooey SVG filters, 8-tier neumorphic stamp, and CSS Motion Path rotary brackets. |
-| **43** | `ui-ux-pro-max-design-intelligence-matrix` | UI/UX Pro Max: 192 reasoning profiles, 79 searchable UI styles, 119 UX heuristics, 74 font pairings, and multi-dial design tuning. |
+| **43** | `domain-reasoning-matrix-and-style-taxonomy` | 192 domain reasoning profiles, 79 aesthetic styles, 119 UX heuristics across a 10-tier priority ladder, and multi-dial design tuning. |
 
 ---
 

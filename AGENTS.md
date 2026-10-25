@@ -20,11 +20,14 @@ By default, every project created or upgraded with Creative Web Architect must e
 
 ## How to Use Skills
 
-This project contains 37 reusable Agent Skills in the `skills/` directory. Each skill has a `SKILL.md` file with detailed instructions. Load skills on-demand based on the task:
+This project contains 40 reusable Agent Skills in the `skills/` directory. Each skill has a `SKILL.md` file with detailed instructions. Load skills on-demand based on the task:
 
 | Task | Skills to Load |
 |------|---------------|
-| UI/UX intelligence & design systems | `ui-ux-pro-max`, `design-system`, `design-style-selection` |
+| Domain archetype reasoning & layouts | `domain-archetype-reasoning`, `layout-composition`, `brief-interpreter` |
+| Visual style taxonomy & parameter tuning | `visual-style-taxonomy`, `design-style-selection`, `creative-direction` |
+| UX heuristics & accessibility constraints | `ux-heuristics-engine`, `accessibility`, `performance-optimization` |
+| Cross-platform UI translation (22 stacks) | `cross-platform-ui-matrix`, `design-system`, `responsive-design` |
 | Ingest reference prompts & expand skills | `knowledge-ingestion` |
 | Interpret a brief | `brief-interpreter` |
 | Choose art direction | `creative-direction`, `design-style-selection`, `premium-visual-direction` |
@@ -203,6 +206,6 @@ In every project, you MUST inspect and autonomously apply 2 to 4 complementary t
 40. **Adaptive Rem Grid with Physics-Gated Reveals & Ghost Typography** (`adaptive-rem-grid-with-physics-gated-reveals-and-ghost-typography`): Comprehensive responsive architecture pairing a dual-directional viewport-relative rem grid with a curtain-sliding physics loader, Lenis smooth scroll-lock integration, stacked card container insets, spring-driven text clip-masks, and multi-axis ghost typography with slide-triggered re-reveals.
 41. **Single-Viewport Atmospheric Video Bleeding, Dual-Entity Lagging Cursor & Masked Blur-Up Reveals** (`single-viewport-video-bleed-and-dual-cursor-kinematics`): Single-screen non-scrolling full-viewport layout (overflow: hidden), looping video backdrop faded with inverted top gradient, un-blurred dual-masked typography reveals (word slide-up and letter slide-in from left), pulsing neon-green beacon dot (#39FF14), and dual-coordinate cursor kinematics (instant ring + 0.08 LERP glassmorphism pill with button-hover suppression).
 42. **Hyper-Tactile Button Foundry: Biometric, Gooey SVG, Neumorphic Stamp & Multi-Axis CSS Kinematics** (`hyper-tactile-button-foundry-and-micro-physics`): Comprehensive suite of 24 hyper-tactile interaction architectures spanning biometric fingerprint scanning with container morphing, organic SVG gooey matrix filters, 8-tier multi-box-shadow neumorphic squish, single-element pure CSS 3D isometric polygon bevels, CSS Motion Path rotary corner brackets, dual-wave liquid meniscuses, difference blend inversion toggles, and cursor-tracked parallax glassmorphism.
-43. **UI/UX Pro Max: 192 Reasoning Profiles, 79 Searchable UI Styles & Multi-Dial Design System Generator** (`ui-ux-pro-max-design-intelligence-matrix`): Comprehensive design intelligence engine integrating 192 product reasoning profiles, 79 searchable UI styles (Soft UI, Neo-Brutalism, Swiss Editorial, Glassmorphism, Kinetic Minimal), 119 UX guidelines, 74 font pairings, 22 technology stacks, and multi-dial design tuning (variance 1-10, motion intensity 1-10, content density 1-10).
+43. **Domain Reasoning Matrix & Visual Style Taxonomy** (`domain-reasoning-matrix-and-style-taxonomy`): Comprehensive design intelligence engine integrating 192 domain reasoning profiles, 79 vetted aesthetic UI styles (Soft UI, Neo-Brutalism, Swiss Editorial, Dark Glassmorphism, Kinetic Minimal), 119 UX heuristics across a 10-tier priority ladder, 74 font pairings, 22 technology stacks, and multi-dial parameter tuning (variance 1-10, motion intensity 1-10, content density 1-10).
 
 

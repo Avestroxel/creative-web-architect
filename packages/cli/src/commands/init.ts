@@ -2,7 +2,7 @@
  * `cwa init [path]` — Initialize Creative Web Architect in any project directory.
  *
  * Automatically detects the environment (Antigravity, Cursor, Claude Code, Gemini CLI),
- * copies all 36 Agent Skills into .agents/skills/, installs the 39 learned design techniques,
+ * copies all 40 Agent Skills into .agents/skills/, installs the 43 learned design techniques,
  * and configures an uncompromising AGENTS.md / GEMINI.md directive to guarantee Awwwards-grade
  * outputs without generic AI defaults.
  */
@@ -65,8 +65,8 @@ export async function handleInit(targetPath?: string, options: InitOptions = {})
 
   logBlank();
 
-  // Step 2: Auto-Install All 36 Skills into .agents/skills and skills/
-  log(LogLevel.INFO, 'Installing all 36 Creative Web Architect Skills...');
+  // Step 2: Auto-Install All 40 Skills into .agents/skills and skills/
+  log(LogLevel.INFO, 'Installing all 40 Creative Web Architect Skills...');
   const bundledSkillsDir = getBundledDir('skills');
   const targetAgentsSkillsDir = resolve(projectDir, '.agents', 'skills');
   const targetSkillsDir = resolve(projectDir, 'skills');
@@ -78,7 +78,7 @@ export async function handleInit(targetPath?: string, options: InitOptions = {})
       await ensureDir(targetAgentsSkillsDir);
       await copyDir(bundledSkillsDir, targetAgentsSkillsDir);
       await copyDir(bundledSkillsDir, targetSkillsDir);
-      log(LogLevel.SUCCESS, 'Installed 36 Agent Skills to .agents/skills/ and ./skills/');
+      log(LogLevel.SUCCESS, 'Installed 40 Agent Skills to .agents/skills/ and ./skills/');
     }
   } else {
     log(LogLevel.WARN, `Bundled skills directory not found at ${bundledSkillsDir}`);
@@ -86,8 +86,8 @@ export async function handleInit(targetPath?: string, options: InitOptions = {})
 
   logBlank();
 
-  // Step 3: Auto-Install 39 Learned Techniques & Knowledge Base
-  log(LogLevel.INFO, 'Installing Knowledge Base (39 Learned Architectural Techniques)...');
+  // Step 3: Auto-Install 43 Learned Techniques & Knowledge Base
+  log(LogLevel.INFO, 'Installing Knowledge Base (43 Learned Architectural Techniques)...');
   const bundledKnowledgeDir = getBundledDir('knowledge');
   const targetKnowledgeDir = resolve(projectDir, 'knowledge');
   const targetAgentsKnowledgeDir = resolve(projectDir, '.agents', 'knowledge');
@@ -190,19 +190,19 @@ In every project, you MUST inspect and autonomously apply 2 to 4 complementary t
 40. **Adaptive Rem Grid with Physics-Gated Reveals & Ghost Typography** (\`adaptive-rem-grid-with-physics-gated-reveals-and-ghost-typography\`): Comprehensive responsive architecture pairing a dual-directional viewport-relative rem grid with a curtain-sliding physics loader, Lenis smooth scroll-lock integration, stacked card container insets, spring-driven text clip-masks, and multi-axis ghost typography with slide-triggered re-reveals.
 41. **Single-Viewport Atmospheric Video Bleeding, Dual-Entity Lagging Cursor & Masked Blur-Up Reveals** (\`single-viewport-video-bleed-and-dual-cursor-kinematics\`): Single-screen non-scrolling full-viewport layout (overflow: hidden), looping video backdrop faded with inverted top gradient, un-blurred dual-masked typography reveals (word slide-up and letter slide-in from left), pulsing neon-green beacon dot (#39FF14), and dual-coordinate cursor kinematics (instant ring + 0.08 LERP glassmorphism pill with button-hover suppression).
 42. **Hyper-Tactile Button Foundry: Biometric, Gooey SVG, Neumorphic Stamp & Multi-Axis CSS Kinematics** (\`hyper-tactile-button-foundry-and-micro-physics\`): Comprehensive suite of 24 hyper-tactile interaction architectures spanning biometric fingerprint scanning with container morphing, organic SVG gooey matrix filters, 8-tier multi-box-shadow neumorphic squish, single-element pure CSS 3D isometric polygon bevels, CSS Motion Path rotary corner brackets, dual-wave liquid meniscuses, difference blend inversion toggles, and cursor-tracked parallax glassmorphism.
-43. **UI/UX Pro Max: 192 Reasoning Profiles, 79 Searchable UI Styles & Multi-Dial Design System Generator** (\`ui-ux-pro-max-design-intelligence-matrix\`): Comprehensive design intelligence engine integrating 192 product reasoning profiles, 79 searchable UI styles (Soft UI, Neo-Brutalism, Swiss Editorial, Glassmorphism, Kinetic Minimal), 119 UX guidelines, 74 font pairings, 22 technology stacks, and multi-dial design tuning (variance 1-10, motion intensity 1-10, content density 1-10).
+43. **Domain Reasoning Matrix & Visual Style Taxonomy** (\`domain-reasoning-matrix-and-style-taxonomy\`): Comprehensive design intelligence engine integrating 192 domain reasoning profiles, 79 vetted aesthetic UI styles (Soft UI, Neo-Brutalism, Swiss Editorial, Dark Glassmorphism, Kinetic Minimal), 119 UX heuristics across a 10-tier priority ladder, 74 font pairings, 22 technology stacks, and multi-dial parameter tuning (variance 1-10, motion intensity 1-10, content density 1-10).
 
 ---
 
-## 37 REUSABLE SKILLS INSTALLED IN .agents/skills/
+## 40 REUSABLE SKILLS INSTALLED IN .agents/skills/
 
 Use the specialized skills in \`.agents/skills/\` for specific phases:
-- Art Direction & Systems: \`ui-ux-pro-max\`, \`creative-direction\`, \`design-style-selection\`, \`premium-visual-direction\`, \`design-system\`
+- Art Direction & Systems: \`domain-archetype-reasoning\`, \`visual-style-taxonomy\`, \`cross-platform-ui-matrix\`, \`creative-direction\`, \`design-style-selection\`, \`premium-visual-direction\`, \`design-system\`
 - Materials & Glass: \`refined-liquid-glass\`, \`liquid-glass\`
 - Motion & Animation: \`motion-design\`, \`cinematic-motion\`, \`animation-performance\`
 - Scroll Physics: \`advanced-scroll-animation\`, \`scroll-storytelling\`
 - 3D & Shaders: \`three-dimensional-web\`, \`shaders-and-effects\`
-- Restraint & QA: \`no-excessive-glow-policy\`, \`visual-qa\`, \`visual-motion-qa\`
+- Restraint & QA: \`no-excessive-glow-policy\`, \`ux-heuristics-engine\`, \`visual-qa\`, \`visual-motion-qa\`
 
 ---
 
@@ -232,7 +232,7 @@ Use the specialized skills in \`.agents/skills/\` for specific phases:
   logBlank();
   log(LogLevel.SUCCESS, '🎉 Creative Web Architect successfully initialized!');
   log(LogLevel.INFO, 'Every AI agent in this folder is now powered by:');
-  log(LogLevel.INFO, '  • 37 Specialized Creative Agent Skills in .agents/skills/');
+  log(LogLevel.INFO, '  • 40 Specialized Creative Agent Skills in .agents/skills/');
   log(LogLevel.INFO, '  • 43 Learned Architectural Techniques in knowledge/');
   log(LogLevel.INFO, '  • Strict No-Glow & Awwwards-grade Master Directives in AGENTS.md');
   logBlank();

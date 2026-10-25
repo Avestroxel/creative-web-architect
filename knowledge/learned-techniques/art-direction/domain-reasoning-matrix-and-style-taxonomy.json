@@ -1,0 +1,40 @@
+{
+  "id": "domain-reasoning-matrix-and-style-taxonomy",
+  "name": "Domain Reasoning Matrix & Visual Style Taxonomy: 192 Archetype Profiles, 79 Aesthetic Styles & Multi-Dial Parameter Tuning",
+  "description": "Exhaustive design intelligence architecture integrating 192 domain reasoning profiles, 79 vetted aesthetic UI styles (Soft UI, Neo-Brutalism, Swiss Editorial, Dark Glassmorphism, Kinetic Minimal), 119 UX heuristics across a 10-tier priority ladder, 74 font pairings, and a multi-dial parameter engine (variance, motion intensity, content density) across 22 technology stacks.",
+  "category": "art-direction",
+  "tags": [
+    "design-intelligence",
+    "domain-archetypes",
+    "visual-styles",
+    "style-taxonomy",
+    "design-dials",
+    "ux-heuristics",
+    "font-pairings",
+    "multi-stack"
+  ],
+  "designPhilosophy": "Replace generic AI design guessing with deterministic, domain-specific reasoning rules that pair brand archetypes with calibrated typography scales, semantic tokens, and layout density.",
+  "appropriateUseCases": [
+    "Autonomous design system scaffolding for new web applications",
+    "Design audit and anti-pattern remediation across enterprise platforms",
+    "Conversion-optimized landing pages and SaaS product dashboards",
+    "Multi-platform responsive interfaces across React, Vue, Next.js, Svelte, Tailwind, and native frameworks"
+  ],
+  "implementationApproach": "Follow the 10-tier priority ladder (Data Integrity -> Feasibility -> User Flow -> Accessibility -> Usability -> Ergonomics -> Performance -> Hierarchy -> Motion -> Delight) and calibrate visual tokens using variance (1-10), motion (1-10), and density (1-10) dials.",
+  "relevantTechnologies": [
+    "Modern CSS Design Tokens",
+    "BM25 & Semantic Search Engine",
+    "Tailwind / Vanilla CSS Systems",
+    "Semantic HTML5 & Accessible WAI-ARIA"
+  ],
+  "performanceConsiderations": "Enforce strict layout performance: pre-reserve image dimensions (CLS < 0.05), clamp backdrop blur under 28px, avoid layout thrashing on animated containers, and honor prefers-reduced-motion.",
+  "accessibilityRequirements": "Enforce minimum 4.5:1 text contrast, visible 2px keyboard focus indicators, 44x44px minimum touch targets, aria-labels for icon-only buttons, and zero unrequested audio (Silent by Default).",
+  "sourceReference": {
+    "type": "domain-taxonomy",
+    "title": "Creative Web Architect Native Design Intelligence Engine",
+    "date": "2026-10-25T22:30:00.000Z"
+  },
+  "validationStatus": "reviewed",
+  "targetSkill": "domain-archetype-reasoning",
+  "isExemptFromNoGlow": false
+}
