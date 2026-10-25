@@ -144,7 +144,7 @@ When asked to build, design, or scaffold any website, page, or component:
 
 ---
 
-## 42 LEARNED ARCHITECTURAL TECHNIQUES (INSTALLED IN KNOWLEDGE/)
+## 43 LEARNED ARCHITECTURAL TECHNIQUES (INSTALLED IN KNOWLEDGE/)
 
 In every project, you MUST inspect and autonomously apply 2 to 4 complementary techniques from your local \`knowledge/index.json\`:
 
@@ -190,13 +190,14 @@ In every project, you MUST inspect and autonomously apply 2 to 4 complementary t
 40. **Adaptive Rem Grid with Physics-Gated Reveals & Ghost Typography** (\`adaptive-rem-grid-with-physics-gated-reveals-and-ghost-typography\`): Comprehensive responsive architecture pairing a dual-directional viewport-relative rem grid with a curtain-sliding physics loader, Lenis smooth scroll-lock integration, stacked card container insets, spring-driven text clip-masks, and multi-axis ghost typography with slide-triggered re-reveals.
 41. **Single-Viewport Atmospheric Video Bleeding, Dual-Entity Lagging Cursor & Masked Blur-Up Reveals** (\`single-viewport-video-bleed-and-dual-cursor-kinematics\`): Single-screen non-scrolling full-viewport layout (overflow: hidden), looping video backdrop faded with inverted top gradient, un-blurred dual-masked typography reveals (word slide-up and letter slide-in from left), pulsing neon-green beacon dot (#39FF14), and dual-coordinate cursor kinematics (instant ring + 0.08 LERP glassmorphism pill with button-hover suppression).
 42. **Hyper-Tactile Button Foundry: Biometric, Gooey SVG, Neumorphic Stamp & Multi-Axis CSS Kinematics** (\`hyper-tactile-button-foundry-and-micro-physics\`): Comprehensive suite of 24 hyper-tactile interaction architectures spanning biometric fingerprint scanning with container morphing, organic SVG gooey matrix filters, 8-tier multi-box-shadow neumorphic squish, single-element pure CSS 3D isometric polygon bevels, CSS Motion Path rotary corner brackets, dual-wave liquid meniscuses, difference blend inversion toggles, and cursor-tracked parallax glassmorphism.
+43. **UI/UX Pro Max: 192 Reasoning Profiles, 79 Searchable UI Styles & Multi-Dial Design System Generator** (\`ui-ux-pro-max-design-intelligence-matrix\`): Comprehensive design intelligence engine integrating 192 product reasoning profiles, 79 searchable UI styles (Soft UI, Neo-Brutalism, Swiss Editorial, Glassmorphism, Kinetic Minimal), 119 UX guidelines, 74 font pairings, 22 technology stacks, and multi-dial design tuning (variance 1-10, motion intensity 1-10, content density 1-10).
 
 ---
 
-## 36 REUSABLE SKILLS INSTALLED IN .agents/skills/
+## 37 REUSABLE SKILLS INSTALLED IN .agents/skills/
 
 Use the specialized skills in \`.agents/skills/\` for specific phases:
-- Art Direction: \`creative-direction\`, \`design-style-selection\`, \`premium-visual-direction\`
+- Art Direction & Systems: \`ui-ux-pro-max\`, \`creative-direction\`, \`design-style-selection\`, \`premium-visual-direction\`, \`design-system\`
 - Materials & Glass: \`refined-liquid-glass\`, \`liquid-glass\`
 - Motion & Animation: \`motion-design\`, \`cinematic-motion\`, \`animation-performance\`
 - Scroll Physics: \`advanced-scroll-animation\`, \`scroll-storytelling\`
@@ -208,7 +209,7 @@ Use the specialized skills in \`.agents/skills/\` for specific phases:
 ## 5-STAGE REASONING & EXECUTION PIPELINE
 
 1. **Archetype Classification**: Analyze prompt keywords and identify the matching creative archetype (e.g. Studio Engineering, Auteur Cinema, Motorsport, 3D Product, Diorama, Hardware Audio, Bento Slate, Japanese Ma, or Street-Luxe).
-2. **Technique Synergy Selection**: Select 2 to 4 complementary techniques from the 42 learned techniques (1 primary hero anchor + 2 supporting micro-interactions). Verify zero conflicting scroll hijackers or overlapping 3D loops.
+2. **Technique Synergy Selection**: Select 2 to 4 complementary techniques from the 43 learned techniques (1 primary hero anchor + 2 supporting micro-interactions). Verify zero conflicting scroll hijackers or overlapping 3D loops.
 3. **Foundation & Semantic Skeleton**: Define CSS custom properties, adaptive rem grid scales, and semantic HTML5 layout with skip links.
 4. **Physical Kinematics**: Mount the hero canvas/WebGL entity and attach spring-damped micro-interactions (meniscus wave button, cipher decryption, magnetic follow).
 5. **Zero-Glow, Accessibility & Audio Restraint Gate**: Enforce mature obsidian/hairline contrast (no cheap purple bloom), add prefers-reduced-motion fallbacks, verify 60 FPS performance, and ensure zero unrequested audio (100% silent by default).
@@ -231,8 +232,8 @@ Use the specialized skills in \`.agents/skills/\` for specific phases:
   logBlank();
   log(LogLevel.SUCCESS, '🎉 Creative Web Architect successfully initialized!');
   log(LogLevel.INFO, 'Every AI agent in this folder is now powered by:');
-  log(LogLevel.INFO, '  • 36 Specialized Creative Agent Skills in .agents/skills/');
-  log(LogLevel.INFO, '  • 42 Learned Architectural Techniques in knowledge/');
+  log(LogLevel.INFO, '  • 37 Specialized Creative Agent Skills in .agents/skills/');
+  log(LogLevel.INFO, '  • 43 Learned Architectural Techniques in knowledge/');
   log(LogLevel.INFO, '  • Strict No-Glow & Awwwards-grade Master Directives in AGENTS.md');
   logBlank();
   log(LogLevel.INFO, 'To start building: Open this folder in Antigravity and prompt your agent!');

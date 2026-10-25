@@ -53,8 +53,8 @@ Open your project folder in **Antigravity**, **Cursor**, or **Claude Code**, and
 
 | Dimension | Count / Policy | Scope & Capability |
 | :--- | :--- | :--- |
-| **Specialized Skills** | **36 Skills** | Creative direction, Liquid Glass, spring kinematics, Three.js 3D, and Core Web Vitals QA. |
-| **Learned Techniques** | **42 Techniques** | Mathematically indexed patterns extracted from award-winning digital experiences. |
+| **Specialized Skills** | **37 Skills** | UI/UX Pro Max intelligence, Creative direction, Liquid Glass, spring kinematics, Three.js 3D, and Core Web Vitals QA. |
+| **Learned Techniques** | **43 Techniques** | Mathematically indexed patterns extracted from award-winning digital experiences. |
 | **Archetype Matrix** | **10 Archetypes** | Automated classification engine mapping any brief to complementary techniques & palettes. |
 | **Production Templates** | **9 Templates** | Standalone single-file verified deliverables (Tactile Button Laboratory, Loopstack, Baseline Tennis, Laocoön Bronze, Lumora Studio, KIMI F1, Soda 3D, Melli Honeybee, Hyper-GT). |
 | **Lighting Policy** | **Zero-Glow** | Eliminates cheap purple neon halos in favor of matte obsidian, hairline contrast, and quiet luxury. |
@@ -63,13 +63,13 @@ Open your project folder in **Antigravity**, **Cursor**, or **Claude Code**, and
 
 ---
 
-## 36 Specialized Agent Skills (Summary)
+## 37 Specialized Agent Skills (Summary)
 
-All 36 skills are installed in `.agents/skills/<skill-name>/SKILL.md`:
+All 37 skills are installed in `.agents/skills/<skill-name>/SKILL.md`:
 
 | Category | Skills Included |
 | :--- | :--- |
-| **Art Direction & Intelligence** | `brief-interpreter`, `creative-direction`, `premium-visual-direction`, `design-style-selection`, `content-writing`, `image-art-direction` |
+| **Art Direction & Intelligence** | `ui-ux-pro-max`, `brief-interpreter`, `creative-direction`, `premium-visual-direction`, `design-style-selection`, `content-writing`, `image-art-direction` |
 | **Design Systems & Materials** | `design-system`, `typography`, `layout-composition`, `liquid-glass`, `refined-liquid-glass`, `no-excessive-glow-policy` |
 | **Motion, Kinematics & Scroll** | `motion-design`, `cinematic-motion`, `advanced-scroll-animation`, `scroll-storytelling`, `hover-interaction-design`, `premium-button-interactions`, `toggle-and-switch-motion`, `page-transitions` |
 | **3D, WebGL & Shaders** | `three-dimensional-web`, `shaders-and-effects` |
@@ -78,9 +78,9 @@ All 36 skills are installed in `.agents/skills/<skill-name>/SKILL.md`:
 
 ---
 
-## 42 Learned Architectural Techniques (Summary)
+## 43 Learned Architectural Techniques (Summary)
 
-All 42 techniques are indexed in `knowledge/index.json` and detailed in `knowledge/learned-techniques/`:
+All 43 techniques are indexed in `knowledge/index.json` and detailed in `knowledge/learned-techniques/`:
 
 | Index | Technique Slug | Core Engineering Focus |
 | :---: | :--- | :--- |
@@ -126,6 +126,7 @@ All 42 techniques are indexed in `knowledge/index.json` and detailed in `knowled
 | **40** | `adaptive-rem-grid-with-physics-gated-reveals-and-ghost-typography` | Dual-directional adaptive rem grid, curtain-sliding physics loader, Lenis scroll lock, and multi-axis ghost typography. |
 | **41** | `single-viewport-video-bleed-and-dual-cursor-kinematics` | Single-screen full-viewport lock, looping video bleeding into black, dual-entity LERP cursor, and un-blur masked reveals. |
 | **42** | `hyper-tactile-button-foundry-and-micro-physics` | Comprehensive 24-architecture suite: biometric scan morphing, organic gooey SVG filters, 8-tier neumorphic stamp, and CSS Motion Path rotary brackets. |
+| **43** | `ui-ux-pro-max-design-intelligence-matrix` | UI/UX Pro Max: 192 reasoning profiles, 79 searchable UI styles, 119 UX heuristics, 74 font pairings, and multi-dial design tuning. |
 
 ---
 
