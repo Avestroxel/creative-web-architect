@@ -645,3 +645,119 @@ export function validateTechniqueSynergy(techniqueIds: string[]): {
     conflicts
   };
 }
+
+export interface ArchetypeDirectionInspiration {
+  archetypeId: DesignArchetypeId;
+  name: string;
+  weight: number;
+  divergentAesthetic: {
+    mood: string;
+    heroComposition: string;
+    suggestedPalette: ArchetypeDefinition['palette'];
+    suggestedTypography: ArchetypeDefinition['typography'];
+    motionAffinity: string;
+  };
+  rationale: string;
+}
+
+export interface AdaptiveArchetypeReasoningResult {
+  primaryArchetype: ArchetypeDefinition;
+  secondaryInspirations: ArchetypeDefinition[];
+  divergentDirections: ArchetypeDirectionInspiration[];
+  adaptiveDirectives: {
+    recommendedSkills: string[];
+    antiPatternsToAvoid: string[];
+    synthesisAdvice: string;
+  };
+}
+
+/**
+ * Performs adaptive archetype reasoning across candidate directions,
+ * treating archetypes as creative inspirations rather than rigid templates.
+ */
+export function reasonAdaptiveArchetypes(
+  prompt: string,
+  categoryHint?: string
+): AdaptiveArchetypeReasoningResult {
+  const base = classifyPromptArchetype(prompt);
+  const lower = prompt.toLowerCase();
+
+  // Find all scoring archetypes
+  const scoredArchetypes: Array<{ archetype: ArchetypeDefinition; score: number }> = [];
+  for (const arch of Object.values(ARCHETYPE_DEFINITIONS)) {
+    let score = 0;
+    for (const kw of arch.keywords) {
+      if (lower.includes(kw.toLowerCase())) {
+        score += kw.includes(' ') ? 3 : 1;
+      }
+    }
+    scoredArchetypes.push({ archetype: arch, score });
+  }
+
+  scoredArchetypes.sort((a, b) => b.score - a.score);
+
+  const primaryArchetype = base.archetype;
+  const secondaryInspirations = scoredArchetypes
+    .filter(s => s.archetype.id !== primaryArchetype.id)
+    .slice(0, 2)
+    .map(s => s.archetype);
+
+  // Synthesize 3 divergent directions to prevent repeating identical layouts
+  const divergentDirections: ArchetypeDirectionInspiration[] = [
+    {
+      archetypeId: primaryArchetype.id,
+      name: `${primaryArchetype.name} — Architectural Restraint`,
+      weight: 0.5,
+      divergentAesthetic: {
+        mood: 'Understated luxury, archival typography, matte obsidian surfaces, zero neon bloom',
+        heroComposition: 'Monumental asymmetric headline, generous 45% negative space void, minimal status coordinates',
+        suggestedPalette: primaryArchetype.palette,
+        suggestedTypography: primaryArchetype.typography,
+        motionAffinity: 'Spring-damped micro-interactions with 0.5px hairline transitions'
+      },
+      rationale: 'Prioritizes institutional permanence and credibility over aggressive visual effects.'
+    },
+    {
+      archetypeId: secondaryInspirations[0]?.id ?? 'modular-bento-slate',
+      name: `${secondaryInspirations[0]?.name ?? 'Architectural Bento'} — Kinetic Modernism`,
+      weight: 0.3,
+      divergentAesthetic: {
+        mood: 'High-contrast graphic cadence, variable typography waves, tactile interactive surfaces',
+        heroComposition: '65/35 split viewport: dynamic visual specimen paired with dense typographic metadata rail',
+        suggestedPalette: secondaryInspirations[0]?.palette ?? ARCHETYPE_DEFINITIONS['modular-bento-slate'].palette,
+        suggestedTypography: secondaryInspirations[0]?.typography ?? ARCHETYPE_DEFINITIONS['modular-bento-slate'].typography,
+        motionAffinity: 'Velocity-coupled skews, magnetic cursor pills, and spring-loaded card depression'
+      },
+      rationale: 'Introduces kinetic energy and contemporary editorial rhythm for modern audiences.'
+    },
+    {
+      archetypeId: secondaryInspirations[1]?.id ?? 'auteur-cinematic',
+      name: `${secondaryInspirations[1]?.name ?? 'Auteur Cinema'} — Spatial Chiaroscuro`,
+      weight: 0.2,
+      divergentAesthetic: {
+        mood: 'Cinematic depth staging, deep atmospheric gradients, subtle ambient particles',
+        heroComposition: 'Full-bleed proscenium viewport with centered focal artifact and scroll-driven depth reveals',
+        suggestedPalette: secondaryInspirations[1]?.palette ?? ARCHETYPE_DEFINITIONS['auteur-cinematic'].palette,
+        suggestedTypography: secondaryInspirations[1]?.typography ?? ARCHETYPE_DEFINITIONS['auteur-cinematic'].typography,
+        motionAffinity: 'Multi-plane parallax staging with 60fps frame budgeting and reduced-motion fallbacks'
+      },
+      rationale: 'Creates an immersive narrative journey when high emotional impact is required.'
+    }
+  ];
+
+  const allSkills = new Set<string>([
+    ...primaryArchetype.recommendedSkills,
+    ...secondaryInspirations.flatMap(s => s.recommendedSkills)
+  ]);
+
+  return {
+    primaryArchetype,
+    secondaryInspirations,
+    divergentDirections,
+    adaptiveDirectives: {
+      recommendedSkills: Array.from(allSkills).slice(0, 6),
+      antiPatternsToAvoid: base.designDirectives.antiPatternsToAvoid,
+      synthesisAdvice: `For "${prompt}", synthesize the quiet discipline of ${primaryArchetype.name} with the spatial storytelling of ${secondaryInspirations[0]?.name ?? 'Modernist Layout'}. Never clone fixed templates.`
+    }
+  };
+}

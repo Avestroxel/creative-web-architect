@@ -58,4 +58,21 @@ describe('Refined Visual Policy & Anti-Pattern Detection', () => {
     expect(audit.score).toBe(100);
     expect(audit.issues).toHaveLength(0);
   });
+
+  it('supports justified vibrant neon and brutalist policies contextually', () => {
+    const cyberpunkCSS = `
+      .hud-card {
+        border: 1px solid #00FFFF;
+        color: #00F0FF;
+      }
+    `;
+    // Under default policy, uncalibrated pure cyan is flagged
+    const defaultAudit = auditCSSVisualQuality(cyberpunkCSS);
+    expect(defaultAudit.passed).toBe(false);
+
+    // Under justified-neon context, it is allowed
+    const justifiedAudit = auditCSSVisualQuality(cyberpunkCSS, { allowJustifiedVibrancy: true });
+    expect(justifiedAudit.passed).toBe(true);
+    expect(justifiedAudit.activePolicy.styleId).toBe('justified-neon');
+  });
 });

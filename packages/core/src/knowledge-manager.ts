@@ -4,7 +4,7 @@
  * and selective retrieval of learned techniques.
  */
 
-import { promises as fs } from 'fs';
+import { promises as fs, readFileSync, existsSync } from 'fs';
 import { join, resolve } from 'path';
 import {
   ConflictCheckResult,
@@ -101,6 +101,54 @@ export class KnowledgeManager {
       this.indexCache = fallback;
       return fallback;
     }
+  }
+
+  /**
+   * Synchronously load the master knowledge index from disk (cached if available).
+   */
+  getIndexSync(): KnowledgeIndex {
+    if (this.indexCache) return this.indexCache;
+    try {
+      if (existsSync(this.indexPath)) {
+        const raw = readFileSync(this.indexPath, 'utf-8');
+        this.indexCache = JSON.parse(raw) as KnowledgeIndex;
+        return this.indexCache;
+      }
+    } catch {
+      // Fallback below
+    }
+    const fallback: KnowledgeIndex = {
+      version: '1.0.0',
+      updatedAt: new Date().toISOString(),
+      totalTechniques: 0,
+      categories: {},
+      techniques: []
+    };
+    this.indexCache = fallback;
+    return fallback;
+  }
+
+  /**
+   * Synchronously list all technique summaries.
+   */
+  listTechniquesSync(): TechniqueSummary[] {
+    return this.getIndexSync().techniques;
+  }
+
+  /**
+   * Synchronously load full technique details.
+   */
+  getTechniqueDetailsSync(category: KnowledgeCategory, id: string): LearnedTechnique | null {
+    const filePath = join(this.knowledgeDir, 'learned-techniques', category, `${id}.json`);
+    try {
+      if (existsSync(filePath)) {
+        const raw = readFileSync(filePath, 'utf-8');
+        return JSON.parse(raw) as LearnedTechnique;
+      }
+    } catch {
+      // Return null on failure
+    }
+    return null;
   }
 
   /**

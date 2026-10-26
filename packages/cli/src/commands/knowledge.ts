@@ -2,8 +2,8 @@
  * `cwa knowledge [search|list|status]` — Query and inspect the CWA knowledge base.
  */
 
-import { KnowledgeManager, KnowledgeCategory } from '@cwa/core';
-import { log, LogLevel, logHeader, color, style } from '../utils/logger.js';
+import { KnowledgeManager, KnowledgeCategory, ExperienceMemory } from '@cwa/core';
+import { log, LogLevel, logHeader, logBlank, color, style } from '../utils/logger.js';
 
 interface KnowledgeCliOptions {
   category?: string;
@@ -87,8 +87,53 @@ export async function handleKnowledge(
       break;
     }
 
+    case 'memory': {
+      logHeader('Creative Web Architect — Persistent Experience Memory');
+      const memory = new ExperienceMemory();
+      await memory.loadFromFile();
+      const stats = memory.getStats();
+
+      log(LogLevel.INFO, `Total Stored Lessons: ${style.bold(String(stats.total))}`);
+      log(LogLevel.INFO, `Validated Successes: ${color.green(String(stats.byStatus['validated-success'] || 0))}`);
+      log(LogLevel.INFO, `Tested Techniques: ${color.cyan(String(stats.byStatus['tested-technique'] || 0))}`);
+      log(LogLevel.INFO, `Known Failure Patterns: ${color.red(String(stats.byStatus['known-failure'] || 0))}`);
+      logBlank();
+
+      log(LogLevel.INFO, 'Provenance Breakdown:');
+      for (const [prov, count] of Object.entries(stats.byProvenance)) {
+        log(LogLevel.INFO, `  • ${color.cyan(prov.padEnd(24))} ${color.green(String(count))} record(s)`);
+      }
+      logBlank();
+
+      log(LogLevel.INFO, 'Validation Status Breakdown:');
+      for (const [vStatus, count] of Object.entries(stats.byValidationStatus)) {
+        log(LogLevel.INFO, `  • ${color.cyan(vStatus.padEnd(24))} ${color.green(String(count))} record(s)`);
+      }
+      logBlank();
+
+      const cautionary = memory.getKnownFailurePatterns();
+      if (cautionary.length > 0) {
+        log(LogLevel.WARN, 'Cautionary Failure Patterns Active:');
+        for (const pattern of cautionary.slice(0, 5)) {
+          log(LogLevel.WARN, `  ⚠ ${pattern}`);
+        }
+        logBlank();
+      }
+
+      const recent = memory.getRecentExperiences(5);
+      log(LogLevel.INFO, 'Recent Validated Experiences:');
+      for (const rec of recent) {
+        const badge = rec.status === 'validated-success' ? color.green('[VALIDATED]') : color.yellow(`[${rec.status}]`);
+        log(LogLevel.INFO, `  ${color.green('●')} ${style.bold(rec.category)} ${badge} (${rec.provenance})`);
+        log(LogLevel.INFO, `    Brief: ${rec.briefSummary}`);
+        log(LogLevel.INFO, `    Key Takeaway: ${rec.keyTakeaway}`);
+        log(LogLevel.INFO, `    Critic Score: ${rec.criticScore}/100 | Techniques: ${rec.techniquesUsed.slice(0, 3).join(', ')}`);
+      }
+      break;
+    }
+
     default:
       log(LogLevel.ERROR, `Unknown knowledge subcommand: ${subcommand}`);
-      log(LogLevel.INFO, 'Valid subcommands: cwa knowledge [status | list | search <query>]');
+      log(LogLevel.INFO, 'Valid subcommands: cwa knowledge [status | list | search <query> | memory]');
   }
 }

@@ -33,3 +33,6 @@ pnpm-debug.log*
 # Misc
 *.tgz
 .cache/
+.cwa/
+*.bak
+/index.html
