@@ -215,33 +215,61 @@ export class MotionIntelligenceEngine {
       });
     }
 
-    // 4. Micro-Interactions (Magnetic Follow & Status Pulse) - DEEP_CREATIVE and ARCHITECT_MAX
+    // 4. Micro-Interactions - Context-aware, avoiding forced magnetic follow
     if (mode !== 'FAST' && intent.interactionExpectations.cursorRelationship !== 'none') {
-      techniques.push({
-        id: 'micro-magnetic-cursor-follow',
-        name: 'Damped Magnetic Cursor Proximity Ring',
-        tier: 'micro',
-        purpose: 'Provide tactile proximity feedback when pointer approaches interactive targets.',
-        trigger: 'hover',
-        duration: '300ms (0.08 LERP)',
-        easing: 'cubic-bezier(0.25, 0.1, 0.25, 1)',
-        technicalImplementation: 'spring-physics',
-        propertiesAnimated: ['transform'],
-        deviceBehavior: {
-          desktop: 'Smooth LERP ring following mouse cursor and magnetically latching to buttons.',
-          mobileTouch: 'Hidden completely via media query: @media (pointer: coarse) { display: none; }',
-          lowPower: 'Disabled completely.'
-        },
-        performanceBudget: {
-          maxFrameBudgetMs: 10.0,
-          requiresCompositorOnly: true,
-          willChangeHint: true,
-          gpuImpact: 'low',
-          autoPauseOffscreen: true
-        },
-        reducedMotionAlternative: 'Disabled completely via @media (prefers-reduced-motion: reduce).',
-        cleanupLifecycle: 'rAF loop cancelled when pointer leaves window.'
-      });
+      if (intent.interactionExpectations.cursorRelationship === 'magnetic-ring') {
+        techniques.push({
+          id: 'micro-magnetic-cursor-follow',
+          name: 'Damped Magnetic Cursor Proximity Ring',
+          tier: 'micro',
+          purpose: 'Provide tactile proximity feedback when pointer approaches interactive targets (explicitly requested).',
+          trigger: 'hover',
+          duration: '300ms (0.08 LERP)',
+          easing: 'cubic-bezier(0.25, 0.1, 0.25, 1)',
+          technicalImplementation: 'spring-physics',
+          propertiesAnimated: ['transform'],
+          deviceBehavior: {
+            desktop: 'Smooth LERP ring following mouse cursor and magnetically latching to buttons.',
+            mobileTouch: 'Hidden completely via media query: @media (pointer: coarse) { display: none; }',
+            lowPower: 'Disabled completely.'
+          },
+          performanceBudget: {
+            maxFrameBudgetMs: 10.0,
+            requiresCompositorOnly: true,
+            willChangeHint: true,
+            gpuImpact: 'low',
+            autoPauseOffscreen: true
+          },
+          reducedMotionAlternative: 'Disabled completely via @media (prefers-reduced-motion: reduce).',
+          cleanupLifecycle: 'rAF loop cancelled when pointer leaves window.'
+        });
+      } else {
+        techniques.push({
+          id: 'micro-tactile-state-transition',
+          name: 'Quiet Grounded Micro-State Transition',
+          tier: 'micro',
+          purpose: 'Deliver crisp, tactile state feedback on hover with zero cursor dragging or spatial displacement.',
+          trigger: 'hover',
+          duration: '180ms',
+          easing: 'cubic-bezier(0.16, 1, 0.3, 1)',
+          technicalImplementation: 'css-transitions',
+          propertiesAnimated: ['border-color', 'background-color', 'color'],
+          deviceBehavior: {
+            desktop: 'Instant border/color shift preserving solid cursor positioning.',
+            mobileTouch: 'Instant tap feedback without pointer emulation.',
+            lowPower: 'Instant color transition.'
+          },
+          performanceBudget: {
+            maxFrameBudgetMs: 4.0,
+            requiresCompositorOnly: false,
+            willChangeHint: false,
+            gpuImpact: 'negligible',
+            autoPauseOffscreen: true
+          },
+          reducedMotionAlternative: 'Instant state shift without transition.',
+          cleanupLifecycle: 'CSS-driven; automatic garbage collection by browser.'
+        });
+      }
     }
 
     // 5. Ambient Motion (Canvas dynamics when justified) - ARCHITECT_MAX or 3D / Automotive

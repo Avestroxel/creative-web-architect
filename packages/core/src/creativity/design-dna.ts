@@ -202,12 +202,7 @@ export class DesignDNASystem {
         },
         profile: concept.motionStyle
       },
-      interaction: {
-        buttonStyle: 'Tactile press squish with 0.5px hairline boundary and subtle specular rim on hover',
-        hoverFeedback: 'Smooth spring-damped translateY(-2px) and opacity transition without layout thrashing',
-        cursorRelationship: intent.interactionExpectations.cursorRelationship,
-        activeFeedback: 'Physical 1.5px depression (translateY(1.5px)) and scale(0.985)'
-      },
+      interaction: this.synthesizeInteraction(intent, concept),
       signatureExperience: {
         name: concept.signatureInteractionIdea.split('with')[0]?.trim() || 'Signature Kinetic Reveal',
         description: concept.signatureInteractionIdea,
@@ -308,5 +303,65 @@ export class DesignDNASystem {
 - **Signature Interaction:** ${dna.signatureExperience.name} (${dna.signatureExperience.description})
 - **Audio & Restraint Mandate:** Strict Silent by Default (0 unrequested sound/audio), Zero cheap purple neon bloom, WCAG AA 4.5:1 contrast, 44px minimum mobile touch targets.
 `.trim();
+  }
+
+  /**
+   * Synthesizes diverse, context-appropriate button interactions tailored to the project category.
+   * Prevents monotonous magnetic follow and uniform translateY across unrelated website archetypes.
+   */
+  private synthesizeInteraction(intent: StructuredIntent, concept: CreativeConcept): {
+    buttonStyle: string;
+    hoverFeedback: string;
+    cursorRelationship: string;
+    activeFeedback: string;
+  } {
+    const cat = intent.category;
+    const promptLower = intent.rawPrompt.toLowerCase();
+    const isExplicitMagnetic = promptLower.includes('magnetic') || promptLower.includes('cursor follow');
+
+    if (cat === 'architecture' || cat === 'editorial') {
+      return {
+        buttonStyle: 'Architectural hairline border with quiet contrast shift and zero spatial displacement',
+        hoverFeedback: 'border-color transition to accent and gentle background tint without position translation',
+        cursorRelationship: isExplicitMagnetic ? 'magnetic-ring' : 'standard',
+        activeFeedback: 'opacity: 0.85 without transform'
+      };
+    }
+
+    if (cat === 'luxury-fashion') {
+      return {
+        buttonStyle: 'Haute editorial button with restrained tracking expansion and champagne gold border reveal',
+        hoverFeedback: 'letter-spacing: 0.08em and border-color fade with static element position',
+        cursorRelationship: isExplicitMagnetic ? 'magnetic-ring' : 'standard',
+        activeFeedback: 'opacity: 0.88 with static anchor'
+      };
+    }
+
+    if (cat === 'fintech-saas' || cat === 'dashboard') {
+      return {
+        buttonStyle: 'Precision slate button with crisp contrast inversion and sharp border definition',
+        hoverFeedback: 'solid background color fill with high contrast and zero cursor drag',
+        cursorRelationship: isExplicitMagnetic ? 'magnetic-ring' : 'standard',
+        activeFeedback: 'scale(0.99) with immediate return'
+      };
+    }
+
+    if (concept.directionType === 'experimental' || isExplicitMagnetic) {
+      return {
+        buttonStyle: 'Tactile press squish with 0.5px hairline boundary and micro-spring acoustics',
+        hoverFeedback: isExplicitMagnetic
+          ? 'Smooth spring-damped magnetic pull and subtle opacity transition'
+          : 'Subtle border-color highlight and fill elevation without cursor tracking',
+        cursorRelationship: isExplicitMagnetic ? 'magnetic-ring' : 'standard',
+        activeFeedback: 'Physical 1.5px depression (translateY(1.5px)) and scale(0.985)'
+      };
+    }
+
+    return {
+      buttonStyle: 'Refined modern button with restrained border-color highlight and background tint',
+      hoverFeedback: 'border-color transition and subtle background elevation with zero mouse follow',
+      cursorRelationship: 'standard',
+      activeFeedback: 'opacity: 0.9'
+    };
   }
 }

@@ -156,19 +156,28 @@ console.log('Stack deck mounted.');`
     }
 
     // Signature 2: Secondary Conversion / Tactile Button Interaction
+    // Grounded haptic feedback with zero mouse-follow drift and zero hover jumping
+    const buttonName = category === 'architecture' || category === 'editorial'
+      ? 'Architectural Hairline Aperture & Static Contrast Reveal'
+      : category === 'luxury-fashion'
+      ? 'Haute Monogram Tracking & Champagne Illumination'
+      : category === 'fintech-saas' || category === 'dashboard'
+      ? 'Precision Slate Inversion & Monospace Terminal Fill'
+      : 'Meniscus Liquid Wave Fill & Spring Haptic Squish';
+
     list.push({
       id: 'sig-hyper-tactile-action-drawer',
-      name: 'Meniscus Liquid Wave Fill & Spring Haptic Squish',
-      tagline: 'Haptic physical depression and smooth meniscus liquid reservoir fill on hover.',
-      description: 'A button interaction pairing an SVG liquid meniscus curve fill with 1.5px physical depression on click, offering unforgettable tactile feedback.',
-      purpose: 'Transform the primary conversion action into a delightful, unforgettable haptic touchpoint.',
+      name: buttonName,
+      tagline: 'Grounded tactile feedback with zero distracting spatial drift.',
+      description: 'A button interaction pairing an SVG liquid meniscus curve fill with subtle physical click depression, offering memorable tactile feedback without jumping or following the mouse.',
+      purpose: 'Transform the primary conversion action into an authentic, memorable touchpoint tailored to the archetype.',
       anchorSection: 'cta',
       interactionModel: 'tactile-press',
-      implementationGuide: 'Pure CSS border and transform with SVG background meniscus fill on hover.',
+      implementationGuide: 'CSS border-color and background transitions with stable element coordinates.',
       executableSnippet: {
         html: '<button type="button" class="cwa-btn-meniscus" aria-label="Initiate inquiry"><span>Inquire Now ↗</span></button>',
-        css: '.cwa-btn-meniscus { position: relative; display: inline-flex; align-items: center; justify-content: center; min-height: var(--cwa-touch-min); padding: 14px 32px; background: var(--cwa-surface); color: var(--cwa-ink); border: 1px solid var(--cwa-line); border-radius: 4px; font-weight: 600; cursor: pointer; transition: transform var(--cwa-dur-fast) var(--cwa-ease-spring), border-color var(--cwa-dur-fast) var(--cwa-ease-smooth); } .cwa-btn-meniscus:hover { transform: translateY(-2px); border-color: var(--cwa-accent); } .cwa-btn-meniscus:active { transform: translateY(1.5px) scale(0.985); }',
-        js: `// Button haptic click sound is 0% by default (Silent by Default)`
+        css: '.cwa-btn-meniscus { position: relative; display: inline-flex; align-items: center; justify-content: center; min-height: var(--cwa-touch-min); padding: 14px 32px; background: var(--cwa-surface); color: var(--cwa-ink); border: 1px solid var(--cwa-line); border-radius: 4px; font-weight: 600; cursor: pointer; transition: border-color var(--cwa-dur-fast) var(--cwa-ease-smooth), background-color var(--cwa-dur-fast) var(--cwa-ease-smooth), color var(--cwa-dur-fast) var(--cwa-ease-smooth); } .cwa-btn-meniscus:hover { border-color: var(--cwa-accent); } .cwa-btn-meniscus:active { opacity: 0.92; }',
+        js: `// Button interaction: 100% silent by default, stable coordinates`
       },
       mobileAlternative: 'Instant CSS :active state color change.',
       reducedMotionAlternative: 'Static color transition without spatial translation or scaling.',

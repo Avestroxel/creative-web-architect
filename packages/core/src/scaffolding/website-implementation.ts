@@ -318,16 +318,16 @@ ${cognitiveCss || ''}
     border-radius: 4px;
     box-shadow: var(--cwa-shadow-tactile);
     cursor: pointer;
-    transition: transform var(--cwa-dur-fast) var(--cwa-ease-spring), border-color var(--cwa-dur-fast) var(--cwa-ease-smooth);
+    transition: border-color var(--cwa-dur-fast) var(--cwa-ease-smooth), background-color var(--cwa-dur-fast) var(--cwa-ease-smooth), color var(--cwa-dur-fast) var(--cwa-ease-smooth), box-shadow var(--cwa-dur-fast) var(--cwa-ease-smooth);
   }
 
   .cwa-btn-primary:hover {
-    transform: translateY(-2px);
     border-color: var(--cwa-accent);
+    color: var(--cwa-accent);
   }
 
   .cwa-btn-primary:active {
-    transform: translateY(1.5px) scale(0.985);
+    opacity: 0.92;
   }
 
   /* Bento Slate Grid */

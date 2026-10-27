@@ -241,6 +241,7 @@ export class ExperienceMemory {
     patterns.push('Using width: 100vw without max-width: 100% causes horizontal scrollbar leaks on desktop OS');
     patterns.push('Animating top/left/width/height properties causes CPU layout thrashing and drops below 60 FPS');
     patterns.push('Suppressing keyboard focus ring with outline: none without providing a visible :focus-visible style');
+    patterns.push('Overusing magnetic cursor follow on buttons across diverse websites causes repetitive UX gimmicks and degrades brand individuality');
 
     return Array.from(new Set(patterns));
   }

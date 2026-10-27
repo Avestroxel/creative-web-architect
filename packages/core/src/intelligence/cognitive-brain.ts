@@ -166,7 +166,7 @@ export class CognitiveBrain {
       physicalAnalogy: 'Honed slate drafting tables with precision brass instruments and natural linen specimen trays',
       materialManifestation: 'Matte obsidian (#0a0b0e), frosted mineral glass (backdrop-filter: blur(16px)), crisp 0.5px hairline boundaries',
       opticalAtmosphere: 'Neutral museum-grade ambient wash with controlled directional key light',
-      tactileHaptics: 'Spring-damped magnetic attraction (stiffness: 180, damping: 22) with organic micro-settling',
+      tactileHaptics: 'Disciplined hairline border illumination (180ms ease) with archetype-grounded tactile feedback',
     };
   }
 
@@ -176,10 +176,10 @@ export class CognitiveBrain {
       threeSecondArc: {
         arrest: `0.0s–0.8s: Sudden optical clarity — pure void background with 1 commanding typographic mass and zero layout shift.`,
         unfold: `0.8s–2.0s: Staggered reveal of secondary coordinates, micro-rules, and tactile status indicators sliding from mask clips.`,
-        invite: `2.0s–3.0s: Interactive element (magnetic pill or interactive canvas aperture) registers ambient cursor hover with subtle spring awakening.`,
+        invite: `2.0s–3.0s: Primary interactive call-to-action registers ambient cursor focus with quiet hairline luminance awakening.`,
       },
       negativeSpaceRatio: '45% to 55% purposeful void (prohibits cramped multi-card clumping)',
-      kinestheticCue: 'Spring-damped cursor aura + subtle micro-arrow hover translation (+4px on X axis)',
+      kinestheticCue: 'Archetype-tailored state focus + subtle micro-arrow hover expansion (+4px on X axis) with zero vertical jumping',
     };
   }
 

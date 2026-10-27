@@ -116,7 +116,7 @@ export class ConceptGenerator {
       visualMetaphor: 'A leather-bound architectural monograph printed on heavy textured cotton stock.',
       layoutPhilosophy: 'Rigorous 12-column Swiss grid with 1px hairline container borders, monumental display typography, and generous whitespace breathing rooms.',
       gridSystem: '12-column structural grid, 72px margins, 24px gutters, max measure 68ch.',
-      heroExperience: 'Monumental display title with character-level opacity reveal over matte ground; subtle magnetic cursor attraction on primary CTA.',
+      heroExperience: 'Monumental display title with character-level opacity reveal over matte ground; quiet hairline border illumination on primary CTA.',
       sectionStructure: ['01 // Archival Overview', '02 // Selected Works Monograph', '03 // Materiality & Craft', '04 // Direct Inquiries'],
       palette,
       typography: {
@@ -171,7 +171,7 @@ export class ConceptGenerator {
       id: 'concept-experimental',
       name: `${intent.industry} — Street-Luxe Kinetic Asymmetry`,
       directionType: 'experimental',
-      tagline: 'Asymmetric viewport tensions, heavy industrial stencil typography, and magnetic interactions.',
+      tagline: 'Asymmetric viewport tensions, heavy industrial stencil typography, and tactile interactions.',
       archetypeInspirations: ['street-luxe-brutalism', 'modular-bento-slate'],
       visualMetaphor: 'An avant-garde Tokyo design gallery catalog taped with industrial stencil markings.',
       layoutPhilosophy: 'Intentionally off-axis alignments, viewport-breaking display numerals, staggered bento cards, and high tactile depression on interaction.',
@@ -192,7 +192,7 @@ export class ConceptGenerator {
         'Optical blur (4px) on secondary copy with hover un-blur'
       ],
       motionStyle: 'Elastic spring physics with inertial cursor lag (0.08 LERP), velocity-skew card dragging, and instant snap returns.',
-      signatureInteractionIdea: 'Sticky card deck stacking with geometric scale decay formula [targetScale = 1 - (total - 1 - i) * 0.03] and dual-cursor magnetic ring.',
+      signatureInteractionIdea: 'Sticky card deck stacking with geometric scale decay formula [targetScale = 1 - (total - 1 - i) * 0.03] and high-tactile stamp depression.',
       accessibilityConsiderations: 'prefers-reduced-motion: reduce disables all velocity skews and sticker drag; high optical contrast guaranteed.',
       feasibilityScore: 8.9,
       tradeOffs: {

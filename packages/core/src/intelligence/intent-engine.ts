@@ -167,7 +167,7 @@ const DOMAIN_RULES: DomainRule[] = [
       { id: 'inquiry', name: 'Studio Dialog & Inquiry', purpose: 'Direct contact with principal architects', suggestedComponentType: 'hairline-contact-modal' }
     ],
     motionLevel: 'subtle',
-    cursor: 'magnetic-ring'
+    cursor: 'standard'
   },
   {
     keywords: ['studio', 'agency', 'creative studio', 'design agency', 'engineering studio', 'digital products'],
@@ -233,7 +233,7 @@ const DOMAIN_RULES: DomainRule[] = [
       { id: 'contact', name: 'Direct Contact', purpose: 'One-click copy and secure message portal', suggestedComponentType: 'tactile-action-bar' }
     ],
     motionLevel: 'subtle',
-    cursor: 'magnetic-ring'
+    cursor: 'standard'
   },
   {
     keywords: ['saas', 'software', 'fintech', 'ai', 'developer tool', 'b2b', 'dashboard', 'analytics', 'platform'],
@@ -299,7 +299,7 @@ const DOMAIN_RULES: DomainRule[] = [
       { id: 'cta', name: 'Paddock Pass Booking', purpose: 'VIP experiential reservation', suggestedComponentType: 'tactile-action-bar' }
     ],
     motionLevel: 'cinematic',
-    cursor: 'magnetic-ring'
+    cursor: 'standard'
   },
   {
     keywords: ['luxury', 'fashion', 'jewelry', 'fragrance', 'couture', 'bespoke', 'monochrome'],
@@ -332,7 +332,7 @@ const DOMAIN_RULES: DomainRule[] = [
       { id: 'concierge', name: 'Private Salon Invitation', purpose: 'Direct discreet consultation request', suggestedComponentType: 'hairline-contact-modal' }
     ],
     motionLevel: 'subtle',
-    cursor: 'magnetic-ring'
+    cursor: 'standard'
   },
   {
     keywords: ['3d', 'threejs', 'webgl', 'sculpture', 'bronze', 'spatial', 'shader', 'statue'],
@@ -365,7 +365,7 @@ const DOMAIN_RULES: DomainRule[] = [
       { id: 'acquisition', name: 'Vault Catalog & Acquisition', purpose: 'Private collector provenance dossier', suggestedComponentType: 'hairline-contact-modal' }
     ],
     motionLevel: 'cinematic',
-    cursor: 'magnetic-ring'
+    cursor: 'standard'
   }
 ];
 
@@ -466,7 +466,9 @@ export class IntentEngine {
       },
       interactionExpectations: {
         tactileIntensity: lower.includes('tactile') || lower.includes('button') ? 'rich' : 'balanced',
-        cursorRelationship: matchedRule?.cursor ?? 'magnetic-ring'
+        cursorRelationship: (lower.includes('magnetic') || lower.includes('cursor follow'))
+          ? 'magnetic-ring'
+          : (matchedRule?.cursor ?? 'standard')
       },
       motionSuitability: {
         level: explicit.includes('Zero-motion preference')

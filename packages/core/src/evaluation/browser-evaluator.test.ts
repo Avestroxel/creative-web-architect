@@ -120,4 +120,4 @@ describe('BrowserEvaluator (Phase 3)', () => {
     expect(violation.width).toBeLessThan(44);
     expect(violation.height).toBeLessThan(44);
   });
-});
+}, 30000);

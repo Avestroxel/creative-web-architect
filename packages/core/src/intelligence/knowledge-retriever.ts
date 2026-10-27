@@ -79,9 +79,13 @@ export class KnowledgeRetriever {
       }
 
       // 2. Category Affinity
-      if (intent.category === 'architecture' || intent.category === 'creative-agency') {
+      if (intent.category === 'architecture') {
+        if (tags.includes('editorial-cards') || tags.includes('adaptive-grid') || tags.includes('monolithic') || tags.includes('minimal')) score += 5.0;
+      } else if (intent.category === 'creative-agency') {
         if (tags.includes('lumora') || tags.includes('editorial-cards') || tags.includes('adaptive-grid')) score += 5.0;
-        if (tags.includes('brush-trail') || tags.includes('magnetic')) score += 4.0;
+        if (promptLower.includes('magnetic') || promptLower.includes('cursor')) {
+          if (tags.includes('brush-trail') || tags.includes('magnetic')) score += 4.0;
+        }
       } else if (intent.category === 'product-3d' || is3DExplicit) {
         if (fullTech.category === 'three-dimensional-web' || tags.includes('threejs') || tags.includes('webgl')) score += 6.0;
       } else if (intent.category === 'automotive') {

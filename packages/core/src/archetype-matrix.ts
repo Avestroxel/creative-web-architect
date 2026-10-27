@@ -133,7 +133,7 @@ export const ARCHETYPE_DEFINITIONS: Record<DesignArchetypeId, ArchetypeDefinitio
     ],
     supportingTechniqueIds: [
       'scroll-driven-character-opacity-wave',
-      'damped-magnetic-cursor-follow-physics'
+      'mission-architectural-philosophy'
     ],
     recommendedSkills: [
       'creative-direction',
@@ -163,7 +163,7 @@ export const ARCHETYPE_DEFINITIONS: Record<DesignArchetypeId, ArchetypeDefinitio
       '2. Build kinetic Roman numeral chapter navigation markers with letter-by-letter stagger.',
       '3. Engineer polygonal clip-path portrait-to-landscape video reveals driven by scroll timelines.',
       '4. Implement friction-free horizontal timeline strip using CSS subgrid and translate3d transforms.',
-      '5. Apply magnetic floating index pill with spring damping.'
+      '5. Apply quiet hairline index pill with restrained typographic highlight.'
     ]
   },
 
@@ -479,7 +479,7 @@ export const ARCHETYPE_DEFINITIONS: Record<DesignArchetypeId, ArchetypeDefinitio
       'scroll-driven-character-opacity-wave'
     ],
     supportingTechniqueIds: [
-      'damped-magnetic-cursor-follow-physics',
+      'conversational-action-triage-and-optical-blur',
       'tactile-button-physics-and-micro-kinematics'
     ],
     recommendedSkills: [
